@@ -1,0 +1,17 @@
+TAP version 13
+# {"restRgbaMae":0.05330765306122449,"standaloneRgbaMae":0.7521852040816327}
+# Subtest: Candy uses the approved conversion and animates its original eyes
+ok 1 - Candy uses the approved conversion and animates its original eyes
+  ---
+  duration_ms: 14993.901625
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16199.541375

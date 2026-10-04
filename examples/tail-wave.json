@@ -1,0 +1,7 @@
+[
+ {"type":"pose","id":"tail","pose":{"pivotX":450,"pivotY":440}},
+ {"type":"keyframe","target":"tail","property":"rotation","time":0,"value":-10,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail","property":"rotation","time":2.5,"value":25,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail","property":"rotation","time":5,"value":-10,"easing":"ease-in-out"},
+ {"type":"attributes","id":"tail","attrs":{"fill":"#9675cf"}}
+]

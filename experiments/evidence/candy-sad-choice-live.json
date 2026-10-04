@@ -1,0 +1,29 @@
+{
+  "id": "candy-sad-fluid",
+  "prompt": "¿Cómo quieres que Candy exprese tristeza?",
+  "recommended": "gentle",
+  "reason": "Melancolía suave conserva mejor la lectura del rostro; la lágrima comunica una tristeza más evidente.",
+  "time": 5.2,
+  "previewRegion": {
+    "x": 250,
+    "y": 135,
+    "width": 185,
+    "height": 145
+  },
+  "revision": 24,
+  "status": "pending",
+  "options": [
+    {
+      "id": "gentle",
+      "label": "Melancolía suave",
+      "description": "Cejas y párpados sutiles; conserva ojos y boca originales.",
+      "preview": "/api/choice-preview?id=candy-sad-fluid&option=gentle"
+    },
+    {
+      "id": "tearful",
+      "label": "Tristeza con lágrima",
+      "description": "Añade una lágrima y refuerza la actuación ocular; mantiene iris, nariz y hocico.",
+      "preview": "/api/choice-preview?id=candy-sad-fluid&option=tearful"
+    }
+  ]
+}

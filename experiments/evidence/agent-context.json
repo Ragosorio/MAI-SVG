@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "documents": {
+    "PRODUCT.md": "# MAI SVG\nEditor local para artistas y agentes: convertir imágenes a geometría editable, componer personajes y crear movimiento exportable como SVG autónomo. Procesamiento sin cuentas ni claves. Identidad visual y alfa importan más que un número arbitrario de trazos.\n\nDecisión del usuario: `high-color-preserved`. Mantener el candidato aprobado; otras calidades son alternativas para comparar. Originales de No one intocables. Los 32 gatos convertidos no implican 32 aprobaciones visuales.\n\nÉxito observable: formas seleccionables; transacciones revisables y reversibles; varios componentes sin colisiones; keyframes editables; reproducción independiente; reapertura del proyecto; evidencias a tiempos concretos. Anatomía oculta y preparación de transparencia no se recuperan automáticamente.\n",
+    "VECTOR.md": "# Decisiones vectoriales\nLa fuente de verdad es SVG más metadatos MAI versionados. IDs estables, referencias locales, geometría real; cero imágenes incrustadas para simular vectorización. No redondear globalmente ni fusionar regiones del candidato aprobado.\n\n| Uso | Punto de partida | Qué esperar |\n|---|---|---|\n| Identidad, accesorios, alfa | high-color-preserved | Hasta decenas de miles de regiones; fidelidad primero |\n| Edición local | balanced-color-preserved como candidato | Menos detalle; medir y comparar antes de sustituir |\n| Animación de personaje completo | high-color-preserved y pose del grupo | Conserva alfa; coste de render depende de geometría |\n| Deformación anatómica | partes reconstruidas y simplificadas | Preparación manual, topología estable y rig explícito |\n\n`npm run mai -- quality --intent motion` explica la decisión sin cambiar el preset por defecto. Comparar a 100% y 400%, silueta, ojos, accesorios y alfa sobre fondos claro y oscuro. Registrar bytes, trazos, comandos, alfa y coste de interacción. Las métricas nunca aprueban estética por sí solas.\n",
+    "MOTION.md": "# Contrato de movimiento\nUsar poses de grupos para movimiento rígido. Definir pivote antes de giro o escala. Flotar, giro, pulso y aparecer son recetas reales de keyframes; rechazan sobrescritura de pistas. Ajustar duración antes de la receta. `track.copy` reutiliza pistas; `track.edit` desplaza, estira, invierte o elimina. Tiempos fuera de duración revierten toda la transacción.\n\nMorph: misma topología. Huesos y mallas: partes preparadas en coordenadas del documento. Máscaras de alfa, grupos transformados y SVG anidados requieren preparación explícita para deformación. Revisar inicio, mitad, fin y extremos del movimiento; un loop necesita continuidad de posición y velocidad según intención. El diagnóstico detecta valores de cierre distintos, pero no prueba continuidad de velocidad.\n\nComponentes SVG insertados conservan geometría y SMIL; el rig de origen se hornea y sus metadatos no se combinan con el rig de la escena. Se puede animar la pose del componente desde el timeline MAI. Animación nativa importada se conserva al exportar; no se convierte automáticamente en pistas editables. Selectores CSS, referencias y nombres de keyframes se aíslan por componente mediante CSS Tree; reglas globales como @font-face/@property requieren preparación explícita.\n\nExportar editable para continuar autoría y standalone para distribución. Muestreo adaptativo con presupuesto explícito; no es una cota matemática continua. Chromium/Firefox/WebKit son pruebas distintas de Safari nativo.\n"
+  },
+  "capabilities": {
+    "schemaVersion": 1,
+    "operationTypes": [
+      "scene.insert",
+      "track.edit",
+      "track.copy",
+      "motion.preset",
+      "canvas",
+      "attributes",
+      "gradient",
+      "create",
+      "delete",
+      "part.prepare",
+      "group",
+      "ungroup",
+      "order",
+      "rename",
+      "lock",
+      "pose",
+      "point.move",
+      "point.add",
+      "point.remove",
+      "path.split",
+      "path.close",
+      "path.curve",
+      "path.join",
+      "path.simplify",
+      "path.boolean",
+      "keyframe",
+      "keyframe.delete",
+      "timeline",
+      "bone.add",
+      "bone.pose",
+      "bone.ik",
+      "skin.unbind",
+      "skin.bind",
+      "skin.weight",
+      "mesh.add",
+      "mesh.move"
+    ],
+    "operationContract": "packages/core/model.ts / docs/CLI.md",
+    "workflow": [
+      "inspect",
+      "plan",
+      "preview",
+      "apply",
+      "render",
+      "audit",
+      "export"
+    ],
+    "defaultPreset": "high-color-preserved",
+    "concurrency": "expected-revision required; 409 means reread, never retry blind",
+    "limits": {
+      "transaction": 500,
+      "svgBytes": 33554432,
+      "svgElements": 100000,
+      "duration": 300,
+      "bones": 128
+    },
+    "commands": {
+      "context": "loads durable docs and current revision without token",
+      "proof": "FILE.svg --times 0,2.5,5 --output NEW_DIR",
+      "compare": "BEFORE.svg AFTER.svg --times 0,2.5,5 --output NEW_DIR",
+      "insert": "FILE.svg --expected-revision N --x 0 --y 0 --width 700 --height 700",
+      "apply": "ops.json --expected-revision N [--dry-run]",
+      "audit": "[FILE.svg]",
+      "quality": "--intent fidelity|edit|motion",
+      "objects": "--filter NAME --offset N",
+      "object": "ID",
+      "render": "[FILE.svg] --time T --output FILE.png",
+      "export": "--profile editable|standalone --expected-revision N"
+    },
+    "operations": {
+      "scene.insert": [
+        "svg",
+        "name",
+        "id?",
+        "x?",
+        "y?",
+        "width?",
+        "height?"
+      ],
+      "canvas": [
+        "width",
+        "height"
+      ],
+      "motion.preset": [
+        "id",
+        "kind: float|spin|pulse|fade",
+        "amplitude?"
+      ],
+      "track.edit": [
+        "target",
+        "property",
+        "action: shift|stretch|reverse|delete",
+        "amount?"
+      ],
+      "track.copy": [
+        "target",
+        "to",
+        "property",
+        "offset?"
+      ]
+    },
+    "constraints": [
+      "Imported authored animation is compiled to native SMIL; imported rig metadata is not merged. Geometry remains editable.",
+      "Composition scopes CSS selectors, references and keyframe names; global at-rules outside media/supports/keyframes require preparation.",
+      "Rig deformation requires prepared paths without transformed/nested SVG ancestors or alpha masks.",
+      "Presets reject track overwrites. Topology changes reject incompatible morphs."
+    ]
+  },
+  "state": {
+    "sessionId": "350c1bf2-0edf-4f37-bd8c-e86be2f0d3f7",
+    "revision": 16,
+    "asset": "candy_alchemist_cat",
+    "project": {
+      "version": 1,
+      "revision": 16,
+      "name": "candy_alchemist_cat",
+      "duration": 5,
+      "fps": 30,
+      "loop": true,
+      "poses": {
+        "mai-artwork": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "pivotX": 350,
+          "pivotY": 400
+        }
+      },
+      "baseTransforms": {
+        "mai-artwork": ""
+      },
+      "baseAttributes": {
+        "mai-artwork": {
+          "id": "mai-artwork",
+          "mask": "url(#mai-alpha)",
+          "data-mai-alpha-group": "true",
+          "data-mai-name": "Candy Alchemist · high-color-preserved"
+        }
+      },
+      "tracks": [
+        {
+          "target": "mai-artwork",
+          "property": "y",
+          "keys": [
+            {
+              "time": 0,
+              "value": 0,
+              "easing": "ease-in-out"
+            },
+            {
+              "time": 2.5,
+              "value": -10,
+              "easing": "ease-in-out"
+            },
+            {
+              "time": 5,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        }
+      ],
+      "bones": [],
+      "skins": [],
+      "meshes": []
+    },
+    "objects": 41976,
+    "canUndo": true,
+    "canRedo": true
+  },
+  "next": "Inspect target IDs, preview transaction, apply against observed revision, prove renders, audit and export."
+}

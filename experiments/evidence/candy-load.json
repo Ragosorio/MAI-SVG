@@ -1,0 +1,25 @@
+{
+  "sessionId": "52687019-1caa-4eb1-bd07-e897c7fecc6c",
+  "revision": 20,
+  "asset": "Candy · high-color-preserved · emociones.svg",
+  "project": {
+    "version": 1,
+    "revision": 20,
+    "name": "Candy · high-color-preserved · emociones.svg",
+    "duration": 5,
+    "fps": 30,
+    "loop": true,
+    "emotions": [],
+    "sprites": [],
+    "poses": {},
+    "baseTransforms": {},
+    "baseAttributes": {},
+    "tracks": [],
+    "bones": [],
+    "skins": [],
+    "meshes": []
+  },
+  "objects": 42021,
+  "canUndo": true,
+  "canRedo": false
+}

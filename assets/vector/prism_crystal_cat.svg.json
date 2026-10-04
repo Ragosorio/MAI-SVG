@@ -1,0 +1,43 @@
+{
+  "preset": "high-color-preserved",
+  "options": {
+    "mode": "spline",
+    "hierarchical": "stacked",
+    "colorPrecision": 8,
+    "layerDifference": 1,
+    "filterSpeckle": 0,
+    "simplify": 0.25,
+    "pathPrecision": 3,
+    "optimize": 0
+  },
+  "prequantizedColors": 256,
+  "alpha": {
+    "quantizedBeforeTracing": true,
+    "strategy": "vector-luminance-mask",
+    "colors": 32,
+    "nonOpaquePixels": 488910,
+    "transparentPixels": 281935
+  },
+  "width": 700,
+  "height": 700,
+  "sourceFormat": "png",
+  "sourceBytes": 561903,
+  "sha256": "c1f760573eea40f145b64caa17a27fe1aa42413e975a642794c09a0456bf3a6a",
+  "valid": true,
+  "problems": [],
+  "paths": 40141,
+  "commands": 242240,
+  "colors": 307,
+  "rasterImages": 0,
+  "bytes": 6199074,
+  "elements": 40145,
+  "artworkPaths": 29164,
+  "alphaMaskPaths": 10977,
+  "premultipliedRgbMae": 8.064,
+  "alphaMae": 3.5047,
+  "partialAlphaRgbMae": 7.5966,
+  "silhouetteIoU": 1,
+  "elapsedMs": 12276,
+  "processRssBytes": 1306918912,
+  "status": "pending-visual-review"
+}

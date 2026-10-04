@@ -1,0 +1,93 @@
+
+> mai-svg@0.1.0 mai
+> tsx packages/cli/main.ts apply examples/tail-wave.json --expected-revision 7 --label Animación de ejemplo por CLI
+
+{
+  "sessionId": "0cc667b2-53ff-4ec1-b8c2-765ea6153123",
+  "revision": 8,
+  "asset": "demo",
+  "project": {
+    "version": 1,
+    "revision": 8,
+    "name": "Sin título",
+    "duration": 5,
+    "fps": 30,
+    "loop": true,
+    "poses": {
+      "tail": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 450,
+        "pivotY": 440
+      }
+    },
+    "baseTransforms": {
+      "tail": ""
+    },
+    "baseAttributes": {
+      "tail": {
+        "id": "tail",
+        "data-mai-name": "Cola",
+        "d": "M450 480 C570 515 610 380 530 350 C565 445 500 440 450 440 Z",
+        "fill": "#9675cf"
+      }
+    },
+    "tracks": [
+      {
+        "target": "tail",
+        "property": "rotation",
+        "keys": [
+          {
+            "time": 0,
+            "value": -10,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.496,
+            "value": -15,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.5,
+            "value": 25,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5,
+            "value": -10,
+            "easing": "ease-in-out"
+          }
+        ]
+      }
+    ],
+    "bones": [],
+    "skins": [],
+    "meshes": []
+  },
+  "objects": 7,
+  "canUndo": true,
+  "canRedo": false,
+  "reload": false,
+  "patches": [
+    {
+      "id": "tail",
+      "attrs": {
+        "id": "tail",
+        "data-mai-name": "Cola",
+        "d": "M450 480 C570 515 610 380 530 350 C565 445 500 440 450 440 Z",
+        "fill": "#9675cf",
+        "transform": "translate(0 0) translate(450 440) rotate(0) scale(1 1) translate(-450 -440)"
+      }
+    }
+  ],
+  "elapsedMs": 0.58,
+  "transaction": {
+    "revision": 8,
+    "id": "37ee70a8-dd7a-4c33-a831-fcf7c530d5af",
+    "label": "Animación de ejemplo por CLI",
+    "time": "2026-10-04T06:47:15.043Z"
+  }
+}

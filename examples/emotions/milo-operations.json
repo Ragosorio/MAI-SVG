@@ -1,0 +1,1442 @@
+[
+  {
+    "type": "timeline",
+    "duration": 10,
+    "fps": 30,
+    "loop": true
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "neutral",
+      "name": "Sereno",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 299 316 299 316 337 C316 375 286 375 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 299 414 299 414 337 C414 375 384 375 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M332 390 C340 393 360 393 368 390 C360 397 340 397 332 390 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 296L321 291"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 291L421 296"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "happy",
+      "name": "Feliz",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 317 316 317 316 337 C316 357 286 357 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 317 414 317 414 337 C414 357 384 357 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M332 390 C340 410 360 410 368 390 C360 414 340 414 332 390 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0.5"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0.5"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": -6
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": -8
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": 8
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 296L321 291"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 291L421 296"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "surprised",
+      "name": "Sorprendido",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 284 316 284 316 337 C316 390 286 390 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 284 414 284 414 337 C414 390 384 390 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M338 390 C340 418 360 418 362 390 C360 422 340 422 338 390 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0.15"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0.15"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": 8
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": -8
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 296L321 291"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 291L421 296"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "angry",
+      "name": "Enojado",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 321 316 321 316 337 C316 353 286 353 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 321 414 321 414 337 C414 353 384 353 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M332 390 C340 388 360 388 368 390 C360 392 340 392 332 390 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0.2"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0.2"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": 6
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": 16
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": -16
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 292L321 307"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 307L421 292"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "sad",
+      "name": "Triste",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 310 316 310 316 337 C316 364 286 364 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 310 414 310 414 337 C414 364 384 364 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M332 405 C340 390 360 390 368 405 C360 394 340 394 332 405 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "1"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0.1"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0.1"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": -8
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": -18
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": 18
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 301L321 287"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 287L421 301"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "sleepy",
+      "name": "Dormido",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 335 316 335 316 337 C316 339 286 339 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 335 414 335 414 337 C414 339 384 339 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M332 390 C340 391 360 391 368 390 C360 395 340 395 332 390 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": -12
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": -22
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": 22
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 296L321 291"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 291L421 296"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "emotion.define",
+    "emotion": {
+      "id": "blink",
+      "name": "Parpadeo",
+      "targets": {
+        "eye-left": {
+          "attrs": {
+            "d": "M286 337 C286 336 316 336 316 337 C316 338 286 338 286 337 Z"
+          }
+        },
+        "eye-right": {
+          "attrs": {
+            "d": "M384 337 C384 336 414 336 414 337 C414 338 384 338 384 337 Z"
+          }
+        },
+        "mouth": {
+          "attrs": {
+            "d": "M332 390 C340 393 360 393 368 390 C360 397 340 397 332 390 Z"
+          }
+        },
+        "shine-left": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "shine-right": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "cheek-left": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "cheek-right": {
+          "attrs": {
+            "opacity": "0"
+          }
+        },
+        "head": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "ear-left": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "ear-right": {
+          "pose": {
+            "rotation": 0
+          }
+        },
+        "brow-left": {
+          "attrs": {
+            "d": "M279 296L321 291"
+          }
+        },
+        "brow-right": {
+          "attrs": {
+            "d": "M379 291L421 296"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "sprite.define",
+    "sprite": {
+      "id": "mood-effects",
+      "name": "Estados y efectos",
+      "initial": "neutral",
+      "variants": {
+        "neutral": [
+          "sprite-neutral"
+        ],
+        "happy": [
+          "sprite-happy"
+        ],
+        "surprised": [
+          "sprite-surprised"
+        ],
+        "angry": [
+          "sprite-angry"
+        ],
+        "sad": [
+          "sprite-sad"
+        ],
+        "sleepy": [
+          "sprite-sleepy"
+        ]
+      }
+    }
+  },
+  {
+    "type": "bone.add",
+    "bone": {
+      "id": "tail-root",
+      "name": "Cola / base",
+      "rest": {
+        "x": 421,
+        "y": 505,
+        "length": 75,
+        "angle": 0
+      },
+      "rotation": 0,
+      "x": 0,
+      "y": 0,
+      "minRotation": -35,
+      "maxRotation": 35
+    }
+  },
+  {
+    "type": "bone.add",
+    "bone": {
+      "id": "tail-tip",
+      "name": "Cola / punta",
+      "parentId": "tail-root",
+      "rest": {
+        "x": 496,
+        "y": 505,
+        "length": 104,
+        "angle": -78
+      },
+      "rotation": 0,
+      "x": 0,
+      "y": 0,
+      "minRotation": -35,
+      "maxRotation": 35
+    }
+  },
+  {
+    "type": "skin.bind",
+    "ids": [
+      "tail"
+    ],
+    "bones": [
+      "tail-root",
+      "tail-tip"
+    ]
+  },
+  {
+    "type": "pose",
+    "id": "character",
+    "pose": {
+      "pivotX": 350,
+      "pivotY": 560
+    }
+  },
+  {
+    "type": "pose",
+    "id": "body",
+    "pose": {
+      "pivotX": 350,
+      "pivotY": 530
+    }
+  },
+  {
+    "type": "pose",
+    "id": "head",
+    "pose": {
+      "pivotX": 350,
+      "pivotY": 390
+    }
+  },
+  {
+    "type": "pose",
+    "id": "ear-left",
+    "pose": {
+      "pivotX": 272,
+      "pivotY": 289
+    }
+  },
+  {
+    "type": "pose",
+    "id": "ear-right",
+    "pose": {
+      "pivotX": 430,
+      "pivotY": 289
+    }
+  },
+  {
+    "type": "pose",
+    "id": "arm-left",
+    "pose": {
+      "pivotX": 280,
+      "pivotY": 410
+    }
+  },
+  {
+    "type": "pose",
+    "id": "arm-right",
+    "pose": {
+      "pivotX": 422,
+      "pivotY": 410
+    }
+  },
+  {
+    "type": "pose",
+    "id": "shadow",
+    "pose": {
+      "pivotX": 350,
+      "pivotY": 574
+    }
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 0.55,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "blink",
+    "time": 0.65,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 0.78,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "happy",
+    "time": 1.4,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "happy",
+    "time": 1.95,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "surprised",
+    "time": 2.5,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "surprised",
+    "time": 3,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "angry",
+    "time": 3.6,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "angry",
+    "time": 4.15,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "sad",
+    "time": 4.8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "sad",
+    "time": 5.4,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "sleepy",
+    "time": 6,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "sleepy",
+    "time": 6.7,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "happy",
+    "time": 7.3,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "happy",
+    "time": 7.8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 8.5,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 9.4,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "blink",
+    "time": 9.5,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 9.65,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "emotion.keyframe",
+    "id": "neutral",
+    "time": 10,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "neutral",
+    "time": 0
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "happy",
+    "time": 1.15
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "surprised",
+    "time": 2.35
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "angry",
+    "time": 3.4
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "sad",
+    "time": 4.6
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "sleepy",
+    "time": 5.8
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "happy",
+    "time": 7.05
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "neutral",
+    "time": 8.35
+  },
+  {
+    "type": "sprite.keyframe",
+    "id": "mood-effects",
+    "state": "neutral",
+    "time": 10
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 0,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 0.8,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 1.1,
+    "value": 8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 1.38,
+    "value": -20,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 1.7,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 2.5,
+    "value": -8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 3.6,
+    "value": 3,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 4.8,
+    "value": 7,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 6,
+    "value": 12,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 6.7,
+    "value": 12,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 7,
+    "value": -6,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 7.3,
+    "value": -22,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 7.8,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "character",
+    "property": "y",
+    "time": 10,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 0,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 1.1,
+    "value": 0.92,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 1.38,
+    "value": 1.07,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 1.7,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 4.8,
+    "value": 0.98,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 6,
+    "value": 0.96,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 6.7,
+    "value": 0.96,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 7,
+    "value": 0.94,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 7.3,
+    "value": 1.06,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 7.8,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleY",
+    "time": 10,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 0,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 1.1,
+    "value": 1.05,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 1.38,
+    "value": 0.97,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 1.7,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 6,
+    "value": 1.03,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 6.7,
+    "value": 1.03,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 7.3,
+    "value": 0.96,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 7.8,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "body",
+    "property": "scaleX",
+    "time": 10,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 0,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 1.25,
+    "value": -65,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 1.45,
+    "value": -92,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 1.7,
+    "value": -65,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 1.95,
+    "value": -92,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 2.25,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 7.15,
+    "value": -55,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 7.4,
+    "value": -95,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 7.65,
+    "value": -55,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 8,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-right",
+    "property": "rotation",
+    "time": 10,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 0,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 1.4,
+    "value": 12,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 2.5,
+    "value": -18,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 3.6,
+    "value": 15,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 4.8,
+    "value": -8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 6,
+    "value": -5,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 7.3,
+    "value": 18,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 8.5,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "arm-left",
+    "property": "rotation",
+    "time": 10,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 0,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 1.4,
+    "value": -12,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 2.5,
+    "value": 8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 3.6,
+    "value": -8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 4.8,
+    "value": 5,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 6,
+    "value": 2,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 7.3,
+    "value": -14,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 8.5,
+    "value": 5,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-root",
+    "property": "boneRotation",
+    "time": 10,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 0,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 1.65,
+    "value": 18,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 2.8,
+    "value": -14,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 3.9,
+    "value": 12,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 5.1,
+    "value": -9,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 6.3,
+    "value": 4,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 7.55,
+    "value": 20,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 8.75,
+    "value": -8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "tail-tip",
+    "property": "boneRotation",
+    "time": 10,
+    "value": 0,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 0,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 1.1,
+    "value": 1.06,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 1.38,
+    "value": 0.82,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 1.7,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 7.3,
+    "value": 0.8,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 7.8,
+    "value": 1,
+    "easing": "ease-in-out"
+  },
+  {
+    "type": "keyframe",
+    "target": "shadow",
+    "property": "scaleX",
+    "time": 10,
+    "value": 1,
+    "easing": "ease-in-out"
+  }
+]

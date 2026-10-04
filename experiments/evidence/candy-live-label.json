@@ -1,0 +1,88 @@
+
+> mai-svg@0.1.0 mai
+> tsx packages/cli/main.ts apply examples/candy-label.json --expected-revision 10 --label Etiqueta del preset elegido
+
+{
+  "sessionId": "f398ff8f-7425-43a1-b12b-9cf7bd6904c3",
+  "revision": 11,
+  "asset": "candy_alchemist_cat",
+  "project": {
+    "version": 1,
+    "revision": 11,
+    "name": "candy_alchemist_cat",
+    "duration": 5,
+    "fps": 30,
+    "loop": true,
+    "poses": {
+      "mai-artwork": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 350,
+        "pivotY": 400
+      }
+    },
+    "baseTransforms": {
+      "mai-artwork": ""
+    },
+    "baseAttributes": {
+      "mai-artwork": {
+        "id": "mai-artwork",
+        "mask": "url(#mai-alpha)",
+        "data-mai-alpha-group": "true",
+        "data-mai-name": "Candy Alchemist · vector editable"
+      }
+    },
+    "tracks": [
+      {
+        "target": "mai-artwork",
+        "property": "y",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.5,
+            "value": -10,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      }
+    ],
+    "bones": [],
+    "skins": [],
+    "meshes": []
+  },
+  "objects": 41976,
+  "canUndo": true,
+  "canRedo": false,
+  "reload": false,
+  "patches": [
+    {
+      "id": "mai-artwork",
+      "attrs": {
+        "id": "mai-artwork",
+        "mask": "url(#mai-alpha)",
+        "data-mai-alpha-group": "true",
+        "data-mai-name": "Candy Alchemist · high-color-preserved",
+        "transform": "translate(0 0) translate(350 400) rotate(0) scale(1 1) translate(-350 -400)"
+      }
+    }
+  ],
+  "elapsedMs": 1.07,
+  "transaction": {
+    "revision": 11,
+    "id": "7659e227-8861-462e-89fa-3b3278f7cc67",
+    "label": "Etiqueta del preset elegido",
+    "time": "2026-10-04T07:08:26.987Z"
+  }
+}

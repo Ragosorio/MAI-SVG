@@ -1,0 +1,11 @@
+node_modules/
+.cache/
+apps/editor/dist/
+.DS_Store
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key

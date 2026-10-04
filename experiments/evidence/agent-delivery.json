@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "functionalTests": {
+    "passed": 24,
+    "failed": 0,
+    "file": "experiments/evidence/agent-core-tests.tap"
+  },
+  "typecheck": "passed",
+  "build": "passed",
+  "skillsValidated": 6,
+  "liveVerified": [
+    "CLI insertion preserves existing scene",
+    "component selection",
+    "float recipe creates editable track",
+    "undo restores original scene revision16"
+  ],
+  "defaultPreset": "high-color-preserved",
+  "renderEngine": "installed official Chrome fallback",
+  "proofTimes": [
+    0,
+    2.5,
+    5
+  ],
+  "comparisonIdenticalError": 0,
+  "compatibilityPending": [
+    "Firefox binary absent",
+    "WebKit binary absent",
+    "native Safari not tested"
+  ],
+  "limitations": [
+    "Imported rig authoring metadata not merged; animation compiled to SMIL",
+    "CSS global at-rules beyond media/supports/keyframes require preparation",
+    "Dense cats still require measured interaction and manual anatomy preparation"
+  ]
+}

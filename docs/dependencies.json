@@ -1,0 +1,157 @@
+[
+  {
+    "name": "@visioncortex/vtracer",
+    "version": "1.0.0-alpha.4",
+    "license": "MIT OR Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/visioncortex/vtracer.git",
+      "directory": "nodejs"
+    }
+  },
+  {
+    "name": "@xmldom/xmldom",
+    "version": "0.9.12",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/xmldom/xmldom.git"
+    }
+  },
+  {
+    "name": "paper",
+    "version": "0.12.18",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/paperjs/paper.js"
+    }
+  },
+  {
+    "name": "playwright",
+    "version": "1.63.0",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/microsoft/playwright.git"
+    }
+  },
+  {
+    "name": "react",
+    "version": "19.3.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/react/react.git",
+      "directory": "packages/react"
+    }
+  },
+  {
+    "name": "react-dom",
+    "version": "19.3.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/react/react.git",
+      "directory": "packages/react-dom"
+    }
+  },
+  {
+    "name": "sharp",
+    "version": "0.35.5",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/lovell/sharp.git"
+    }
+  },
+  {
+    "name": "svgo",
+    "version": "4.1.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/svg/svgo.git"
+    }
+  },
+  {
+    "name": "svgpath",
+    "version": "2.6.0",
+    "license": "MIT",
+    "repository": "fontello/svgpath"
+  },
+  {
+    "name": "ws",
+    "version": "8.22.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/websockets/ws.git"
+    }
+  },
+  {
+    "name": "@types/node",
+    "version": "22.19.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/node"
+    }
+  },
+  {
+    "name": "@types/react",
+    "version": "19.3.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/react"
+    }
+  },
+  {
+    "name": "@types/react-dom",
+    "version": "19.3.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/react-dom"
+    }
+  },
+  {
+    "name": "@types/ws",
+    "version": "8.18.2",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "directory": "types/ws"
+    }
+  },
+  {
+    "name": "tsx",
+    "version": "4.20.6",
+    "license": "MIT",
+    "repository": "privatenumber/tsx"
+  },
+  {
+    "name": "typescript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/TypeScript.git"
+    }
+  },
+  {
+    "name": "vite",
+    "version": "8.3.2",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/vitejs/vite.git",
+      "directory": "packages/vite"
+    }
+  }
+]

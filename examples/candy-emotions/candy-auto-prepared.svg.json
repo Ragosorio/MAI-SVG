@@ -1,0 +1,17 @@
+{
+  "sourceId": "mai-parts-source",
+  "parts": [
+    {
+      "id": "head-auto",
+      "name": "Cabeza propuesta"
+    },
+    {
+      "id": "flask-auto",
+      "name": "Frasco propuesto"
+    }
+  ],
+  "overlapPolicy": "later region wins",
+  "geometryPreserved": true,
+  "rig": "rigid poses; masks must be rebuilt before deforming geometry",
+  "review": "required"
+}

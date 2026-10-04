@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "times": [
+    1.7,
+    2.7,
+    3.9,
+    5.1,
+    6.3,
+    7.5
+  ],
+  "reports": [
+    {
+      "source": "/Users/roor.osorio/Desktop/MAI SVG/examples/emotions/milo-editable.svg",
+      "audit": {
+        "schemaVersion": 1,
+        "revision": 0,
+        "valid": true,
+        "metrics": {
+          "valid": true,
+          "problems": [],
+          "paths": 29,
+          "commands": 136,
+          "colors": 27,
+          "rasterImages": 0,
+          "bytes": 40196,
+          "elements": 73
+        },
+        "findings": [],
+        "visualApproval": "not evaluated",
+        "nativeSafari": "not evaluated"
+      },
+      "export": {
+        "profile": "standalone",
+        "bytes": 93843,
+        "paths": 29,
+        "samples": 2020,
+        "maxSampledInterpolationError": 0.24753,
+        "tolerance": 0.25,
+        "errorUnits": "path units / degrees / scale units / color channel values as applicable",
+        "scriptRequired": false,
+        "rasterImages": 0,
+        "rigStored": false,
+        "measurement": "adaptive checks at quarter, half and three-quarter positions; not a mathematical continuous error bound"
+      }
+    }
+  ],
+  "differences": [],
+  "visualApproval": "pending",
+  "engine": "chromium"
+}

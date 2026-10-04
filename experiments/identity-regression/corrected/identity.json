@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "reference": "/Users/roor.osorio/Desktop/MAI SVG/examples/candy-emotions/candy-reference.png",
+  "referenceSha256": "3bbb82a7dbc1a7e251331569e0ed0f6fc4153b99c0a47f7aae165f3d302597c9",
+  "candidate": "/Users/roor.osorio/Desktop/MAI SVG/examples/candy-emotions/candy-editable.svg",
+  "canonicalizedRigidParts": [
+    "candy-character",
+    "candy-head"
+  ],
+  "metric": "premultiplied RGBA MAE by feature, 0–255; not semantic identity recognition",
+  "visualReviewRequired": true,
+  "pass": true,
+  "frames": [
+    {
+      "time": 0,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "time": 0.66,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "time": 1.6,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "time": 2.8,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "time": 4.1,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "time": 5.2,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "time": 6.5,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 0.2989,
+          "maxMae": 1.5,
+          "pass": true
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 0.0702,
+          "maxMae": 1.5,
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[
+ {"type":"rename","id":"mai-artwork","name":"Candy Alchemist · vector editable"},
+ {"type":"pose","id":"mai-artwork","pose":{"pivotX":350,"pivotY":400}},
+ {"type":"keyframe","target":"mai-artwork","property":"y","time":0,"value":0,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"mai-artwork","property":"y","time":2.5,"value":-10,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"mai-artwork","property":"y","time":5,"value":0,"easing":"ease-in-out"}
+]

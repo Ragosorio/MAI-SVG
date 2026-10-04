@@ -1,0 +1,63 @@
+{
+  "master": "candy-editable.svg",
+  "columns": 3,
+  "rows": 2,
+  "cell": 230,
+  "frames": [
+    {
+      "name": "sereno",
+      "time": 0,
+      "svg": "sprites/candy-sereno.svg",
+      "x": 0,
+      "y": 0,
+      "width": 230,
+      "height": 230
+    },
+    {
+      "name": "feliz",
+      "time": 1.6,
+      "svg": "sprites/candy-feliz.svg",
+      "x": 230,
+      "y": 0,
+      "width": 230,
+      "height": 230
+    },
+    {
+      "name": "sorprendido",
+      "time": 2.8,
+      "svg": "sprites/candy-sorprendido.svg",
+      "x": 460,
+      "y": 0,
+      "width": 230,
+      "height": 230
+    },
+    {
+      "name": "enojado",
+      "time": 4.1,
+      "svg": "sprites/candy-enojado.svg",
+      "x": 0,
+      "y": 230,
+      "width": 230,
+      "height": 230
+    },
+    {
+      "name": "triste",
+      "time": 5.2,
+      "svg": "sprites/candy-triste.svg",
+      "x": 230,
+      "y": 230,
+      "width": 230,
+      "height": 230
+    },
+    {
+      "name": "dormido",
+      "time": 6.5,
+      "svg": "sprites/candy-dormido.svg",
+      "x": 460,
+      "y": 230,
+      "width": 230,
+      "height": 230
+    }
+  ],
+  "note": "PNG atlas is optional; individual sprites and animation masters remain pure vector SVG."
+}

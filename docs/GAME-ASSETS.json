@@ -1,0 +1,295 @@
+{
+  "count": 32,
+  "defaultPreset": "high-color-preserved",
+  "warning": "Technical vector validation is not visual approval. Compositions preserve original effects; static characters do not contain prepared anatomical rigs.",
+  "assets": [
+    {
+      "png": "alien_galaxy_cat.png",
+      "svg": "alien_galaxy_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/alien_galaxy_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/alien_galaxy_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/alien_galaxy_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "arce_autumn_cat.png",
+      "svg": "arce_autumn_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/arce_autumn_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/arce_autumn_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/arce_autumn_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "bytewhisker_cat.png",
+      "svg": "bytewhisker_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/bytewhisker_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/bytewhisker_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/bytewhisker_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "candy_alchemist_cat.png",
+      "svg": "candy_alchemist_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/candy_alchemist_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/candy_alchemist_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/candy_alchemist_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "user-selected-high-color-preserved"
+    },
+    {
+      "png": "canelo_cozy_cat.png",
+      "svg": "canelo_cozy_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/canelo_cozy_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/canelo_cozy_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/canelo_cozy_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "cyber_bloom_cat.png",
+      "svg": "cyber_bloom_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/cyber_bloom_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/cyber_bloom_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/cyber_bloom_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "deepsea_sprite_cat.png",
+      "svg": "deepsea_sprite_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/deepsea_sprite_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/deepsea_sprite_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/deepsea_sprite_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "fossilstone_guardian_cat.png",
+      "svg": "fossilstone_guardian_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/fossilstone_guardian_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/fossilstone_guardian_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/fossilstone_guardian_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "iridescent_origami_cat.png",
+      "svg": "iridescent_origami_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/iridescent_origami_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/iridescent_origami_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/iridescent_origami_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "jelly_aquatic_cat.png",
+      "svg": "jelly_aquatic_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/jelly_aquatic_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/jelly_aquatic_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/jelly_aquatic_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "kintsugi_tea_spirit_cat.png",
+      "svg": "kintsugi_tea_spirit_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/kintsugi_tea_spirit_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/kintsugi_tea_spirit_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/kintsugi_tea_spirit_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "lantern_spirit_cat.png",
+      "svg": "lantern_spirit_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/lantern_spirit_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/lantern_spirit_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/lantern_spirit_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "lumen_lens_cat.png",
+      "svg": "lumen_lens_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/lumen_lens_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/lumen_lens_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/lumen_lens_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "margarita_daisy_cat.png",
+      "svg": "margarita_daisy_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/margarita_daisy_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/margarita_daisy_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/margarita_daisy_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "masquerade_phantom_cat.png",
+      "svg": "masquerade_phantom_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/masquerade_phantom_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/masquerade_phantom_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/masquerade_phantom_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "mecha_neon_cat.png",
+      "svg": "mecha_neon_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/mecha_neon_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/mecha_neon_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/mecha_neon_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "menta_botanical_cat.png",
+      "svg": "menta_botanical_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/menta_botanical_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/menta_botanical_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/menta_botanical_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "mochi_bell_cat.png",
+      "svg": "mochi_bell_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/mochi_bell_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/mochi_bell_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/mochi_bell_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "molten_ember_cat.png",
+      "svg": "molten_ember_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/molten_ember_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/molten_ember_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/molten_ember_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "mushroom_druid_cat.png",
+      "svg": "mushroom_druid_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/mushroom_druid_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/mushroom_druid_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/mushroom_druid_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "neon_glitch_cat.png",
+      "svg": "neon_glitch_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/neon_glitch_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/neon_glitch_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/neon_glitch_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "nori_lunar_cat.png",
+      "svg": "nori_lunar_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/nori_lunar_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/nori_lunar_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/nori_lunar_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "nube_dream_cat.png",
+      "svg": "nube_dream_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/nube_dream_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/nube_dream_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/nube_dream_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "prism_crystal_cat.png",
+      "svg": "prism_crystal_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/prism_crystal_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/prism_crystal_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/prism_crystal_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "regal_cosmic_cat.png",
+      "svg": "regal_cosmic_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/regal_cosmic_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/regal_cosmic_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/regal_cosmic_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "sakura_whisper_cat.png",
+      "svg": "sakura_whisper_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/sakura_whisper_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/sakura_whisper_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/sakura_whisper_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "selene_moonlit_cat.png",
+      "svg": "selene_moonlit_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/selene_moonlit_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/selene_moonlit_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/selene_moonlit_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "sol_sunbeam_cat.png",
+      "svg": "sol_sunbeam_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/sol_sunbeam_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/sol_sunbeam_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/sol_sunbeam_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "sonata_prima_cat.png",
+      "svg": "sonata_prima_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/sonata_prima_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/sonata_prima_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/sonata_prima_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "steampunk_clockwork_cat.png",
+      "svg": "steampunk_clockwork_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/steampunk_clockwork_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/steampunk_clockwork_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/steampunk_clockwork_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "stormcloud_elemental_cat.png",
+      "svg": "stormcloud_elemental_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/stormcloud_elemental_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/stormcloud_elemental_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/stormcloud_elemental_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    },
+    {
+      "png": "storybook_ink_cat.png",
+      "svg": "storybook_ink_cat.svg",
+      "pngPath": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/storybook_ink_cat.png",
+      "vectorPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/vector/storybook_ink_cat.svg",
+      "compositionPath": "/Users/roor.osorio/Desktop/MAI SVG/assets/animated/storybook_ink_cat.svg",
+      "preset": "high-color-preserved",
+      "review": "pending"
+    }
+  ]
+}

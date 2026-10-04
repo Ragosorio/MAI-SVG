@@ -1,0 +1,15 @@
+[
+ {"type":"bone.add","bone":{"id":"tail-root","name":"Cola · raíz","rest":{"x":450,"y":440,"length":100,"angle":0},"rotation":0,"x":0,"y":0,"minRotation":-30,"maxRotation":40}},
+ {"type":"bone.add","bone":{"id":"tail-tip","name":"Cola · punta","parentId":"tail-root","rest":{"x":550,"y":440,"length":60,"angle":0},"rotation":0,"x":0,"y":0,"minRotation":-60,"maxRotation":60}},
+ {"type":"skin.bind","ids":["tail"],"bones":["tail-root","tail-tip"]},
+ {"type":"mesh.add","id":"tail","rows":3,"cols":3},
+ {"type":"keyframe","target":"tail-root","property":"boneRotation","time":0,"value":0,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail-root","property":"boneRotation","time":2.5,"value":20,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail-root","property":"boneRotation","time":5,"value":0,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail-tip","property":"boneRotation","time":0,"value":0,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail-tip","property":"boneRotation","time":2.5,"value":-35,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail-tip","property":"boneRotation","time":5,"value":0,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail::4","property":"meshX","time":0,"value":530,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail::4","property":"meshX","time":2.5,"value":545,"easing":"ease-in-out"},
+ {"type":"keyframe","target":"tail::4","property":"meshX","time":5,"value":530,"easing":"ease-in-out"}
+]

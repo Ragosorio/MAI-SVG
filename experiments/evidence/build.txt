@@ -1,0 +1,14 @@
+
+> mai-svg@0.1.0 build
+> vite build --config apps/editor/vite.config.ts
+
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 26 modules transformed.
+rendering chunks...
+computing gzip size...
+apps/editor/dist/index.html                   0.36 kB │ gzip:  0.27 kB
+apps/editor/dist/assets/index-M_CabOsG.css    6.69 kB │ gzip:  2.25 kB
+apps/editor/dist/assets/index-D1z1a9eL.js   267.51 kB │ gzip: 84.39 kB
+
+✓ built in 90ms

@@ -1,0 +1,57 @@
+{
+  "valid": true,
+  "problems": [],
+  "paths": 11854,
+  "commands": 98978,
+  "colors": 3361,
+  "rasterImages": 0,
+  "bytes": 2377728,
+  "elements": 11892,
+  "sources": [
+    {
+      "preset": "balanced-color-preserved",
+      "options": {
+        "mode": "spline",
+        "hierarchical": "stacked",
+        "colorPrecision": 8,
+        "layerDifference": 2,
+        "filterSpeckle": 1,
+        "simplify": 0.5,
+        "pathPrecision": 3,
+        "optimize": 0
+      },
+      "prequantizedColors": 128,
+      "alpha": {
+        "quantizedBeforeTracing": true,
+        "strategy": "vector-luminance-mask",
+        "colors": 16,
+        "nonOpaquePixels": 255013,
+        "transparentPixels": 245391
+      },
+      "width": 700,
+      "height": 700,
+      "sourceFormat": "webp",
+      "sourceBytes": 104662,
+      "sha256": "bd0c019052be8a3e4b683e6018b8091efaeaa8f1ec0c2316977862d4f017d350",
+      "valid": true,
+      "problems": [],
+      "paths": 11854,
+      "commands": 98978,
+      "colors": 3357,
+      "rasterImages": 0,
+      "bytes": 2297872,
+      "elements": 11858,
+      "artworkPaths": 5036,
+      "alphaMaskPaths": 6818,
+      "premultipliedRgbMae": 18.7321,
+      "alphaMae": 0.748,
+      "partialAlphaRgbMae": 20.8151,
+      "silhouetteIoU": 0.9982,
+      "elapsedMs": 1607,
+      "processRssBytes": 386482176,
+      "status": "pending-visual-review"
+    }
+  ],
+  "status": "pending-visual-review",
+  "preset": "balanced-color-preserved"
+}

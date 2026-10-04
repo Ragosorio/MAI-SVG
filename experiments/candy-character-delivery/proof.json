@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "times": [
+    0,
+    1.6,
+    2.8,
+    4.1,
+    5.2,
+    6.5
+  ],
+  "reports": [
+    {
+      "source": "/Users/roor.osorio/Desktop/MAI SVG/examples/candy-emotions/candy-editable.svg",
+      "audit": {
+        "schemaVersion": 1,
+        "revision": 0,
+        "valid": true,
+        "metrics": {
+          "valid": true,
+          "problems": [],
+          "paths": 49677,
+          "commands": 295053,
+          "colors": 311,
+          "rasterImages": 0,
+          "bytes": 8322428,
+          "elements": 49728
+        },
+        "findings": [
+          {
+            "code": "MAI_COMPLEXITY",
+            "severity": "warning",
+            "message": "49677 paths: interactive cost is unknown.",
+            "repair": "Measure real interaction; isolate parts and compare simplified variants."
+          },
+          {
+            "code": "MAI_ALPHA_RIG",
+            "severity": "info",
+            "message": "Masked group supports rigid movement; deforming descendants requires preparation.",
+            "repair": "Prepare parts; rebuild alpha intentionally before skin binding.",
+            "target": "mai-artwork"
+          }
+        ],
+        "visualApproval": "not evaluated",
+        "nativeSafari": "not evaluated"
+      },
+      "export": {
+        "profile": "standalone",
+        "bytes": 8333593,
+        "paths": 49677,
+        "samples": 1234,
+        "maxSampledInterpolationError": 0.24294,
+        "tolerance": 0.25,
+        "errorUnits": "path units / degrees / scale units / color channel values as applicable",
+        "scriptRequired": false,
+        "rasterImages": 0,
+        "rigStored": false,
+        "measurement": "adaptive checks at quarter, half and three-quarter positions; not a mathematical continuous error bound"
+      }
+    }
+  ],
+  "differences": [],
+  "visualApproval": "pending",
+  "engine": "chromium"
+}

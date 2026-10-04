@@ -1,0 +1,193 @@
+TAP version 13
+# Subtest: composition namespaces references, preserves native animation and reopens both components
+ok 1 - composition namespaces references, preserves native animation and reopens both components
+  ---
+  duration_ms: 15.326709
+  type: 'test'
+  ...
+# Subtest: composition and canvas rollback atomically on unsafe CSS or duplicate ID
+ok 2 - composition and canvas rollback atomically on unsafe CSS or duplicate ID
+  ---
+  duration_ms: 5.323958
+  type: 'test'
+  ...
+# Subtest: motion presets copy, stretch, reverse and delete without silent track overwrites
+ok 3 - motion presets copy, stretch, reverse and delete without silent track overwrites
+  ---
+  duration_ms: 3.820666
+  type: 'test'
+  ...
+# Subtest: diagnostics report loop seam and quality guidance preserves chosen default
+ok 4 - diagnostics report loop seam and quality guidance preserves chosen default
+  ---
+  duration_ms: 1.928833
+  type: 'test'
+  ...
+# Compatibility engine: chromium
+# Compatibility engine: firefox
+# Subtest: SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+not ok 5 - SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+  ---
+  duration_ms: 3007.056583
+  type: 'test'
+  location: '/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:1:317'
+  failureType: 'testCodeFailure'
+  error: |-
+    browserType.launch: Executable doesn't exist at /Users/roor.osorio/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    launch (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:3:90)
+    renderSvg (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:9:152)
+    TestContext.<anonymous> (/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:2:596)
+  ...
+# Subtest: standalone SVG plays as SVG document and HTML img in all three engines
+not ok 6 - standalone SVG plays as SVG document and HTML img in all three engines
+  ---
+  duration_ms: 1655.121959
+  type: 'test'
+  location: '/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:1:1549'
+  failureType: 'testCodeFailure'
+  error: |-
+    browserType.launch: Executable doesn't exist at /Users/roor.osorio/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    launch (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:3:90)
+    renderEmbeddedSvg (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:18:77)
+    TestContext.<anonymous> (/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:3:740)
+  ...
+# Subtest: partial alpha remains partial and empty background remains transparent
+ok 7 - partial alpha remains partial and empty background remains transparent
+  ---
+  duration_ms: 172.686209
+  type: 'test'
+  ...
+# Subtest: PNG, WebP and JPEG are decoded, unsupported data is rejected
+ok 8 - PNG, WebP and JPEG are decoded, unsupported data is rejected
+  ---
+  duration_ms: 521.119542
+  type: 'test'
+  ...
+# Subtest: multiple embedded images preserve effects, transform, placement and unique IDs
+ok 9 - multiple embedded images preserve effects, transform, placement and unique IDs
+  ---
+  duration_ms: 576.856709
+  type: 'test'
+  ...
+# Subtest: untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+ok 10 - untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+  ---
+  duration_ms: 2.558333
+  type: 'test'
+  ...
+# Subtest: fully transparent input is rejected instead of falsely claiming a successful conversion
+ok 11 - fully transparent input is rejected instead of falsely claiming a successful conversion
+  ---
+  duration_ms: 10.126416
+  type: 'test'
+  ...
+# Subtest: CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+ok 12 - CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+  ---
+  duration_ms: 1988.114167
+  type: 'test'
+  ...
+# Subtest: atomic transactions, locked paths and topology protection
+ok 13 - atomic transactions, locked paths and topology protection
+  ---
+  duration_ms: 7.402333
+  type: 'test'
+  ...
+# Subtest: Bezier point editing and selected-path booleans preserve unrelated SVG
+ok 14 - Bezier point editing and selected-path booleans preserve unrelated SVG
+  ---
+  duration_ms: 13.15
+  type: 'test'
+  ...
+# Subtest: two-bone IK reaches target, angle limits and hierarchy cycles are checked
+ok 15 - two-bone IK reaches target, angle limits and hierarchy cycles are checked
+  ---
+  duration_ms: 1.99325
+  type: 'test'
+  ...
+# Subtest: normalized weights and mesh deformation maintain path topology
+ok 16 - normalized weights and mesh deformation maintain path topology
+  ---
+  duration_ms: 3.914084
+  type: 'test'
+  ...
+# Subtest: editable SVG restores rig and tracks; standalone contains only declarative geometry
+ok 17 - editable SVG restores rig and tracks; standalone contains only declarative geometry
+  ---
+  duration_ms: 5.567
+  type: 'test'
+  ...
+# Subtest: Chromium SMIL frames match engine geometry at several times
+ok 18 - Chromium SMIL frames match engine geometry at several times
+  ---
+  duration_ms: 3418.73725
+  type: 'test'
+  ...
+# Subtest: rig and mesh animation bake to paths and reopen with authoring topology
+ok 19 - rig and mesh animation bake to paths and reopen with authoring topology
+  ---
+  duration_ms: 1459.469916
+  type: 'test'
+  ...
+# Subtest: imported metadata cannot resurrect unsafe attributes
+ok 20 - imported metadata cannot resurrect unsafe attributes
+  ---
+  duration_ms: 1.281375
+  type: 'test'
+  ...
+# Subtest: preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+ok 21 - preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+  ---
+  duration_ms: 717.685958
+  type: 'test'
+  ...
+# Subtest: importing a standalone SVG keeps native animation through subsequent editable saves
+ok 22 - importing a standalone SVG keeps native animation through subsequent editable saves
+  ---
+  duration_ms: 5.710708
+  type: 'test'
+  ...
+# Subtest: names and locks of animated parts survive reopening
+ok 23 - names and locks of animated parts survive reopening
+  ---
+  duration_ms: 2.179375
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:50536
+# MAI SVG editor: http://127.0.0.1:50536
+# CLI process+WS roundtrip 1682.9ms; server transaction below250ms verified
+# Subtest: CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+ok 24 - CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+  ---
+  duration_ms: 1886.621042
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 22
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6565.5945

@@ -1,0 +1,140 @@
+
+> mai-svg@0.1.0 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# Compatibility engine: chromium
+# Compatibility engine: firefox
+# Compatibility engine: webkit
+# Subtest: SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+ok 1 - SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+  ---
+  duration_ms: 5010.344375
+  type: 'test'
+  ...
+# Subtest: standalone SVG plays as SVG document and HTML img in all three engines
+ok 2 - standalone SVG plays as SVG document and HTML img in all three engines
+  ---
+  duration_ms: 2722.612667
+  type: 'test'
+  ...
+# Subtest: partial alpha remains partial and empty background remains transparent
+ok 3 - partial alpha remains partial and empty background remains transparent
+  ---
+  duration_ms: 147.821167
+  type: 'test'
+  ...
+# Subtest: PNG, WebP and JPEG are decoded, unsupported data is rejected
+ok 4 - PNG, WebP and JPEG are decoded, unsupported data is rejected
+  ---
+  duration_ms: 307.093
+  type: 'test'
+  ...
+# Subtest: multiple embedded images preserve effects, transform, placement and unique IDs
+ok 5 - multiple embedded images preserve effects, transform, placement and unique IDs
+  ---
+  duration_ms: 263.417291
+  type: 'test'
+  ...
+# Subtest: untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+ok 6 - untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+  ---
+  duration_ms: 0.929875
+  type: 'test'
+  ...
+# Subtest: fully transparent input is rejected instead of falsely claiming a successful conversion
+ok 7 - fully transparent input is rejected instead of falsely claiming a successful conversion
+  ---
+  duration_ms: 1.715708
+  type: 'test'
+  ...
+# Subtest: CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+ok 8 - CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+  ---
+  duration_ms: 883.700375
+  type: 'test'
+  ...
+# Subtest: atomic transactions, locked paths and topology protection
+ok 9 - atomic transactions, locked paths and topology protection
+  ---
+  duration_ms: 8.055416
+  type: 'test'
+  ...
+# Subtest: Bezier point editing and selected-path booleans preserve unrelated SVG
+ok 10 - Bezier point editing and selected-path booleans preserve unrelated SVG
+  ---
+  duration_ms: 6.612542
+  type: 'test'
+  ...
+# Subtest: two-bone IK reaches target, angle limits and hierarchy cycles are checked
+ok 11 - two-bone IK reaches target, angle limits and hierarchy cycles are checked
+  ---
+  duration_ms: 1.04775
+  type: 'test'
+  ...
+# Subtest: normalized weights and mesh deformation maintain path topology
+ok 12 - normalized weights and mesh deformation maintain path topology
+  ---
+  duration_ms: 3.222333
+  type: 'test'
+  ...
+# Subtest: editable SVG restores rig and tracks; standalone contains only declarative geometry
+ok 13 - editable SVG restores rig and tracks; standalone contains only declarative geometry
+  ---
+  duration_ms: 6.1535
+  type: 'test'
+  ...
+# Subtest: Chromium SMIL frames match engine geometry at several times
+ok 14 - Chromium SMIL frames match engine geometry at several times
+  ---
+  duration_ms: 1102.71675
+  type: 'test'
+  ...
+# Subtest: rig and mesh animation bake to paths and reopen with authoring topology
+ok 15 - rig and mesh animation bake to paths and reopen with authoring topology
+  ---
+  duration_ms: 387.640458
+  type: 'test'
+  ...
+# Subtest: imported metadata cannot resurrect unsafe attributes
+ok 16 - imported metadata cannot resurrect unsafe attributes
+  ---
+  duration_ms: 0.892625
+  type: 'test'
+  ...
+# Subtest: preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+ok 17 - preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+  ---
+  duration_ms: 145.86775
+  type: 'test'
+  ...
+# Subtest: importing a standalone SVG keeps native animation through subsequent editable saves
+ok 18 - importing a standalone SVG keeps native animation through subsequent editable saves
+  ---
+  duration_ms: 2.126667
+  type: 'test'
+  ...
+# Subtest: names and locks of animated parts survive reopening
+ok 19 - names and locks of animated parts survive reopening
+  ---
+  duration_ms: 1.005542
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:65251
+# MAI SVG editor: http://127.0.0.1:65251
+# CLI process+WS roundtrip 679.3ms; server transaction below250ms verified
+# Subtest: CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+ok 20 - CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+  ---
+  duration_ms: 768.293458
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8324.295708

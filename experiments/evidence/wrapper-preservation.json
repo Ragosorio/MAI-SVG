@@ -1,0 +1,16 @@
+{
+  "unchangedSurroundingElements": 18,
+  "passed": true,
+  "sourceViewBox": "0 0 1400 1400",
+  "outputViewBox": "0 0 1400 1400",
+  "output": {
+    "valid": true,
+    "problems": [],
+    "paths": 11854,
+    "commands": 98978,
+    "colors": 3361,
+    "rasterImages": 0,
+    "bytes": 2377728,
+    "elements": 11892
+  }
+}

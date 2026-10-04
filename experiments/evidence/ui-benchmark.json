@@ -1,0 +1,8 @@
+{
+  "asset": "candy_alchemist_cat",
+  "revision": "11",
+  "webSocketToTwoAnimationFramesMs": 24,
+  "operation": "rename mai-artwork",
+  "below250ms": true,
+  "note": "Two requestAnimationFrame callbacks after receiving committed WebSocket event; excludes CLI startup and server transaction."
+}

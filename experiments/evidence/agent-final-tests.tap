@@ -1,0 +1,43 @@
+TAP version 13
+# Subtest: composition namespaces references, preserves native animation and reopens both components
+ok 1 - composition namespaces references, preserves native animation and reopens both components
+  ---
+  duration_ms: 7.450917
+  type: 'test'
+  ...
+# Subtest: composition and canvas rollback atomically on unsafe CSS or duplicate ID
+ok 2 - composition and canvas rollback atomically on unsafe CSS or duplicate ID
+  ---
+  duration_ms: 2.413417
+  type: 'test'
+  ...
+# Subtest: motion presets copy, stretch, reverse and delete without silent track overwrites
+ok 3 - motion presets copy, stretch, reverse and delete without silent track overwrites
+  ---
+  duration_ms: 2.376125
+  type: 'test'
+  ...
+# Subtest: diagnostics report loop seam and quality guidance preserves chosen default
+ok 4 - diagnostics report loop seam and quality guidance preserves chosen default
+  ---
+  duration_ms: 0.578833
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:50704
+# MAI SVG editor: http://127.0.0.1:50704
+# CLI process+WS roundtrip 485.8ms; server transaction below250ms verified
+# Subtest: CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+ok 5 - CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+  ---
+  duration_ms: 544.317833
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 980.677375

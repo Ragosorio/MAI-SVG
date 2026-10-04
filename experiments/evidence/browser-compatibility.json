@@ -1,0 +1,70 @@
+{
+  "scope": "inline SVG paused and setCurrentTime; same-engine engine-frame comparison",
+  "nativeSafariTested": false,
+  "transparentScreenshotTestedOnlyInChromium": true,
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "time": 0.75,
+      "premultiplied": false,
+      "rgbaMae": 0.001228061224489796
+    },
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "time": 2.5,
+      "premultiplied": false,
+      "rgbaMae": 0
+    },
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "time": 4.4,
+      "premultiplied": false,
+      "rgbaMae": 0.0011704081632653062
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "time": 0.75,
+      "premultiplied": false,
+      "rgbaMae": 0.0005326530612244898
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "time": 2.5,
+      "premultiplied": false,
+      "rgbaMae": 0
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "time": 4.4,
+      "premultiplied": false,
+      "rgbaMae": 0.0007045918367346939
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "time": 0.75,
+      "premultiplied": false,
+      "rgbaMae": 0.00028316326530612246
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "time": 2.5,
+      "premultiplied": false,
+      "rgbaMae": 0
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "time": 4.4,
+      "premultiplied": false,
+      "rgbaMae": 0.000275
+    }
+  ]
+}

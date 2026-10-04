@@ -1,0 +1,26 @@
+{
+  "sessionId": "dafd8d83-eea3-44f5-8079-cf60781349de",
+  "revision": 23,
+  "asset": "candy-source.svg",
+  "choice": null,
+  "project": {
+    "version": 1,
+    "revision": 23,
+    "name": "candy-source.svg",
+    "duration": 5,
+    "fps": 30,
+    "loop": true,
+    "emotions": [],
+    "sprites": [],
+    "poses": {},
+    "baseTransforms": {},
+    "baseAttributes": {},
+    "tracks": [],
+    "bones": [],
+    "skins": [],
+    "meshes": []
+  },
+  "objects": 42016,
+  "canUndo": true,
+  "canRedo": false
+}

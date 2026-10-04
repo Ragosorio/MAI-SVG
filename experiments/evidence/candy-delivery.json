@@ -1,0 +1,15 @@
+{
+  "source": "high-color-preserved/candy_alchemist_cat",
+  "loadRevision": 20,
+  "applyRevision": 21,
+  "operations": 72,
+  "emotionStates": 6,
+  "blink": true,
+  "tracks": 21,
+  "vectorSprites": 6,
+  "geometryMasterRasterImages": 0,
+  "proof": "experiments/candy-approved-character",
+  "tests": "experiments/evidence/candy-character-tests.tap",
+  "uiScreenshot": "experiments/evidence/candy-editor.png",
+  "limitation": "Manual crop preparation and localized face reconstruction; not automatic anatomical rig or finished professional animation"
+}

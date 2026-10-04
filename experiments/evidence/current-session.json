@@ -1,0 +1,68 @@
+
+> mai-svg@0.1.0 mai
+> tsx packages/cli/main.ts session attach
+
+{
+  "sessionId": "5b3b5825-d533-4e7f-9456-79fdc1b8e681",
+  "revision": 11,
+  "asset": "candy_alchemist_cat",
+  "project": {
+    "version": 1,
+    "revision": 11,
+    "name": "candy_alchemist_cat",
+    "duration": 5,
+    "fps": 30,
+    "loop": true,
+    "poses": {
+      "mai-artwork": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 350,
+        "pivotY": 400
+      }
+    },
+    "baseTransforms": {
+      "mai-artwork": ""
+    },
+    "baseAttributes": {
+      "mai-artwork": {
+        "id": "mai-artwork",
+        "mask": "url(#mai-alpha)",
+        "data-mai-alpha-group": "true",
+        "data-mai-name": "Candy Alchemist · vector editable"
+      }
+    },
+    "tracks": [
+      {
+        "target": "mai-artwork",
+        "property": "y",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.5,
+            "value": -10,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      }
+    ],
+    "bones": [],
+    "skins": [],
+    "meshes": []
+  },
+  "objects": 41976,
+  "canUndo": true,
+  "canRedo": false
+}

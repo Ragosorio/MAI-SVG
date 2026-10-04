@@ -1,0 +1,26 @@
+{
+  "width": 700,
+  "height": 700,
+  "canonicalize": [
+    "candy-character",
+    "candy-head"
+  ],
+  "regions": [
+    {
+      "name": "nariz original",
+      "x": 324,
+      "y": 204,
+      "width": 29,
+      "height": 18,
+      "maxMae": 1.5
+    },
+    {
+      "name": "boca y hocico originales",
+      "x": 308,
+      "y": 221,
+      "width": 59,
+      "height": 27,
+      "maxMae": 1.5
+    }
+  ]
+}

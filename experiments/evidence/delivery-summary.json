@@ -1,0 +1,26 @@
+{
+  "preset": "high-color-preserved",
+  "converted": 32,
+  "compositions": 32,
+  "rasterImages": 0,
+  "tests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "build": "passed",
+  "browserEngines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "nativeSafari": "not tested",
+  "uiPropagationMs": 24,
+  "otherCatsVisualReview": "pending",
+  "rigTransparencyPreparation": "manual",
+  "localOnly": true,
+  "assetsValidated": 32,
+  "browserUIPlayback": "verified advancing playhead and pause/reset",
+  "exportSavedFromUI": "exports/candy_alchemist_cat-r11-standalone-feab0829.svg",
+  "currentRevision": 12
+}

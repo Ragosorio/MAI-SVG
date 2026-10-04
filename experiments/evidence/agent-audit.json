@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "revision": 0,
+  "valid": true,
+  "metrics": {
+    "valid": true,
+    "problems": [],
+    "paths": 5,
+    "commands": 26,
+    "colors": 4,
+    "rasterImages": 0,
+    "bytes": 3215,
+    "elements": 9
+  },
+  "findings": [],
+  "visualApproval": "not evaluated",
+  "nativeSafari": "not evaluated"
+}

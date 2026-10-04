@@ -1,0 +1,20 @@
+{
+  "regions": [
+    {
+      "id": "head-auto",
+      "name": "Cabeza propuesta",
+      "x": 195,
+      "y": 0,
+      "width": 280,
+      "height": 270
+    },
+    {
+      "id": "flask-auto",
+      "name": "Frasco propuesto",
+      "x": 443,
+      "y": 214,
+      "width": 124,
+      "height": 196
+    }
+  ]
+}

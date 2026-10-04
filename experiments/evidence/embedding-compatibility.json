@@ -1,0 +1,47 @@
+{
+  "nativeSafariTested": false,
+  "results": [
+    {
+      "engine": "chromium",
+      "embedding": "document",
+      "time": 2.5,
+      "rgbaMae": 0,
+      "method": "SVG document pauseAnimations/setCurrentTime"
+    },
+    {
+      "engine": "chromium",
+      "embedding": "img",
+      "time": 5,
+      "rgbaMae": 0,
+      "method": "1ms non-looping SMIL frozen at final pose"
+    },
+    {
+      "engine": "firefox",
+      "embedding": "document",
+      "time": 2.5,
+      "rgbaMae": 0,
+      "method": "SVG document pauseAnimations/setCurrentTime"
+    },
+    {
+      "engine": "firefox",
+      "embedding": "img",
+      "time": 5,
+      "rgbaMae": 0,
+      "method": "1ms non-looping SMIL frozen at final pose"
+    },
+    {
+      "engine": "webkit",
+      "embedding": "document",
+      "time": 2.5,
+      "rgbaMae": 0,
+      "method": "SVG document pauseAnimations/setCurrentTime"
+    },
+    {
+      "engine": "webkit",
+      "embedding": "img",
+      "time": 5,
+      "rgbaMae": 0,
+      "method": "1ms non-looping SMIL frozen at final pose"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+
+> mai-svg@0.1.0 mai
+> tsx packages/cli/main.ts render experiments/evidence/candy-floating-standalone.svg --time 2.5 --output experiments/evidence/candy-frame-2.5.png
+
+{
+  "width": 700,
+  "height": 700,
+  "time": 2.5,
+  "renderer": "isolated chromium",
+  "browserVersion": "153.0.8010.12",
+  "transparent": true,
+  "output": "/Users/roor.osorio/Desktop/MAI SVG/experiments/evidence/candy-frame-2.5.png"
+}

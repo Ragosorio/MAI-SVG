@@ -1,0 +1,66 @@
+{
+  "copiedAt": "2026-10-03",
+  "originalsModified": false,
+  "files": [
+    {
+      "file": "candy_alchemist_cat.png",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/candy_alchemist_cat.png",
+      "sha256": "d09c2e5294c18b85feed26401fb4e9ee1dca45401a9dc9087d8f347165f75387",
+      "bytes": 703337
+    },
+    {
+      "file": "candy_alchemist_cat.svg",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/candy_alchemist_cat.svg",
+      "sha256": "432f576c3b374a99e31d3512d68db88154a48c8545f2b3b5f5d3f1c3ec00f62a",
+      "bytes": 143923
+    },
+    {
+      "file": "iridescent_origami_cat.png",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/iridescent_origami_cat.png",
+      "sha256": "4744e4d2608694e58d6fdd06bf4a2796eea796c006177e46c68b3e992c2d3b0d",
+      "bytes": 427013
+    },
+    {
+      "file": "iridescent_origami_cat.svg",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/iridescent_origami_cat.svg",
+      "sha256": "eb6d4f0b348ef52134bedd1f2d0dc14d2018641d5f526e3c2a62a7fa4908909d",
+      "bytes": 84583
+    },
+    {
+      "file": "canelo_cozy_cat.png",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/canelo_cozy_cat.png",
+      "sha256": "b914f80fbe84a1ede29354b9eecb673651628f40098be1b29b62d8e703c45d8e",
+      "bytes": 714722
+    },
+    {
+      "file": "canelo_cozy_cat.svg",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/canelo_cozy_cat.svg",
+      "sha256": "fc27e66bf4a1ed7f6942e58bcc7b989237b3d98fb42dc85fce1111d24d114ca8",
+      "bytes": 165852
+    },
+    {
+      "file": "jelly_aquatic_cat.png",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/jelly_aquatic_cat.png",
+      "sha256": "1a53d4c40e0cdd46494ea791776d620a6a3c688cb4be7dc6cf84e2fb3a824f32",
+      "bytes": 670565
+    },
+    {
+      "file": "jelly_aquatic_cat.svg",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/jelly_aquatic_cat.svg",
+      "sha256": "f6b3dd62cb8ea6c0c2f8c8e2fbbcab054ed04ae76edca8feb02c1ed8d7b813c8",
+      "bytes": 176725
+    },
+    {
+      "file": "steampunk_clockwork_cat.png",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/steampunk_clockwork_cat.png",
+      "sha256": "eee1bbab1a61413550bcd95dd596141ed65a936e967c1b77461e587b269898f6",
+      "bytes": 598282
+    },
+    {
+      "file": "steampunk_clockwork_cat.svg",
+      "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/steampunk_clockwork_cat.svg",
+      "sha256": "e1821c2180e8c01c374edb973cda64278a7d93ad26d538359221baaff1051666",
+      "bytes": 150360
+    }
+  ]
+}

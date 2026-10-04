@@ -1,0 +1,13 @@
+{
+  "id": "smoke-preview",
+  "kind": "smoke",
+  "x": 515,
+  "y": 220,
+  "width": 100,
+  "height": 150,
+  "parent": "candy-flask",
+  "quality": "high",
+  "cycles": 3,
+  "color": "#ef98d7",
+  "seed": 7
+}

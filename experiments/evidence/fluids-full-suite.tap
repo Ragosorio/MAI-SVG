@@ -1,0 +1,303 @@
+
+> mai-svg@0.1.0 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: composition namespaces references, preserves native animation and reopens both components
+ok 1 - composition namespaces references, preserves native animation and reopens both components
+  ---
+  duration_ms: 19.804334
+  type: 'test'
+  ...
+# Subtest: composition and canvas rollback atomically on unsafe CSS or duplicate ID
+ok 2 - composition and canvas rollback atomically on unsafe CSS or duplicate ID
+  ---
+  duration_ms: 4.762041
+  type: 'test'
+  ...
+# Subtest: motion presets copy, stretch, reverse and delete without silent track overwrites
+ok 3 - motion presets copy, stretch, reverse and delete without silent track overwrites
+  ---
+  duration_ms: 8.547125
+  type: 'test'
+  ...
+# Subtest: diagnostics report loop seam and quality guidance preserves chosen default
+ok 4 - diagnostics report loop seam and quality guidance preserves chosen default
+  ---
+  duration_ms: 1.67225
+  type: 'test'
+  ...
+# Subtest: component CSS selectors, URLs and keyframes are isolated across repeated SVG
+ok 5 - component CSS selectors, URLs and keyframes are isolated across repeated SVG
+  ---
+  duration_ms: 14.078875
+  type: 'test'
+  ...
+# Subtest: scoped CSS renders its component without recoloring sibling geometry
+ok 6 - scoped CSS renders its component without recoloring sibling geometry
+  ---
+  duration_ms: 25533.645208
+  type: 'test'
+  ...
+# {"restRgbaMae":0.48935374149659866,"standaloneRgbaMae":0.4464173469387755}
+# Subtest: Candy uses the approved conversion and animates its original eyes
+ok 7 - Candy uses the approved conversion and animates its original eyes
+  ---
+  duration_ms: 40431.208708
+  type: 'test'
+  ...
+# Subtest: emotion library interpolates actual facial geometry and survives editable roundtrip
+ok 8 - emotion library interpolates actual facial geometry and survives editable roundtrip
+  ---
+  duration_ms: 320.857208
+  type: 'test'
+  ...
+# Subtest: sprite transitions are discrete and atlas freezes real vector frames with unique references
+ok 9 - sprite transitions are discrete and atlas freezes real vector frames with unique references
+  ---
+  duration_ms: 18.55125
+  type: 'test'
+  ...
+# Subtest: invalid sprite target overlap and locked emotion targets rollback the transaction
+ok 10 - invalid sprite target overlap and locked emotion targets rollback the transaction
+  ---
+  duration_ms: 1.197042
+  type: 'test'
+  ...
+# Subtest: standalone emotion and sprite frames match editor geometry at three story beats
+ok 11 - standalone emotion and sprite frames match editor geometry at three story beats
+  ---
+  duration_ms: 33577.551958
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:49893
+# Subtest: an agent CLI builds the emotion example from source, operations and exports it editable
+ok 12 - an agent CLI builds the emotion example from source, operations and exports it editable
+  ---
+  duration_ms: 6854.314375
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:49738
+# MAI SVG editor: http://127.0.0.1:49738
+# Subtest: preview choices are read-only, persistent, revision-bound, live, and undoable
+ok 13 - preview choices are read-only, persistent, revision-bound, live, and undoable
+  ---
+  duration_ms: 34748.627708
+  type: 'test'
+  ...
+# Compatibility engine: chromium
+# Compatibility engine: firefox
+# Subtest: SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+not ok 14 - SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+  ---
+  duration_ms: 32183.546791
+  type: 'test'
+  location: '/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:1:317'
+  failureType: 'testCodeFailure'
+  error: |-
+    browserType.launch: Executable doesn't exist at /Users/roor.osorio/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    launch (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:3:90)
+    renderSvg (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:9:152)
+    TestContext.<anonymous> (/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:2:596)
+  ...
+# Subtest: standalone SVG plays as SVG document and HTML img in all three engines
+not ok 15 - standalone SVG plays as SVG document and HTML img in all three engines
+  ---
+  duration_ms: 5885.197625
+  type: 'test'
+  location: '/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:1:1549'
+  failureType: 'testCodeFailure'
+  error: |-
+    browserType.launch: Executable doesn't exist at /Users/roor.osorio/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    launch (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:3:90)
+    renderEmbeddedSvg (/Users/roor.osorio/Desktop/MAI SVG/packages/server/render.ts:18:77)
+    TestContext.<anonymous> (/Users/roor.osorio/Desktop/MAI SVG/tests/compatibility.test.ts:3:740)
+  ...
+# Subtest: partial alpha remains partial and empty background remains transparent
+ok 16 - partial alpha remains partial and empty background remains transparent
+  ---
+  duration_ms: 949.275042
+  type: 'test'
+  ...
+# Subtest: PNG, WebP and JPEG are decoded, unsupported data is rejected
+ok 17 - PNG, WebP and JPEG are decoded, unsupported data is rejected
+  ---
+  duration_ms: 670.442625
+  type: 'test'
+  ...
+# Subtest: multiple embedded images preserve effects, transform, placement and unique IDs
+ok 18 - multiple embedded images preserve effects, transform, placement and unique IDs
+  ---
+  duration_ms: 375.38775
+  type: 'test'
+  ...
+# Subtest: untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+ok 19 - untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+  ---
+  duration_ms: 1.321166
+  type: 'test'
+  ...
+# Subtest: fully transparent input is rejected instead of falsely claiming a successful conversion
+ok 20 - fully transparent input is rejected instead of falsely claiming a successful conversion
+  ---
+  duration_ms: 2.673791
+  type: 'test'
+  ...
+# Subtest: CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+ok 21 - CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+  ---
+  duration_ms: 23545.100209
+  type: 'test'
+  ...
+# Subtest: atomic transactions, locked paths and topology protection
+ok 22 - atomic transactions, locked paths and topology protection
+  ---
+  duration_ms: 15.511875
+  type: 'test'
+  ...
+# Subtest: Bezier point editing and selected-path booleans preserve unrelated SVG
+ok 23 - Bezier point editing and selected-path booleans preserve unrelated SVG
+  ---
+  duration_ms: 16.69275
+  type: 'test'
+  ...
+# Subtest: two-bone IK reaches target, angle limits and hierarchy cycles are checked
+ok 24 - two-bone IK reaches target, angle limits and hierarchy cycles are checked
+  ---
+  duration_ms: 5.211167
+  type: 'test'
+  ...
+# Subtest: normalized weights and mesh deformation maintain path topology
+ok 25 - normalized weights and mesh deformation maintain path topology
+  ---
+  duration_ms: 4.112166
+  type: 'test'
+  ...
+# Subtest: editable SVG restores rig and tracks; standalone contains only declarative geometry
+ok 26 - editable SVG restores rig and tracks; standalone contains only declarative geometry
+  ---
+  duration_ms: 38.542708
+  type: 'test'
+  ...
+# Subtest: Chromium SMIL frames match engine geometry at several times
+ok 27 - Chromium SMIL frames match engine geometry at several times
+  ---
+  duration_ms: 34970.269375
+  type: 'test'
+  ...
+# Subtest: rig and mesh animation bake to paths and reopen with authoring topology
+ok 28 - rig and mesh animation bake to paths and reopen with authoring topology
+  ---
+  duration_ms: 3290.654125
+  type: 'test'
+  ...
+# Subtest: imported metadata cannot resurrect unsafe attributes
+ok 29 - imported metadata cannot resurrect unsafe attributes
+  ---
+  duration_ms: 1.825042
+  type: 'test'
+  ...
+# Subtest: preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+ok 30 - preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+  ---
+  duration_ms: 620.248084
+  type: 'test'
+  ...
+# Subtest: importing a standalone SVG keeps native animation through subsequent editable saves
+ok 31 - importing a standalone SVG keeps native animation through subsequent editable saves
+  ---
+  duration_ms: 5.4565
+  type: 'test'
+  ...
+# Subtest: names and locks of animated parts survive reopening
+ok 32 - names and locks of animated parts survive reopening
+  ---
+  duration_ms: 1.517
+  type: 'test'
+  ...
+# Subtest: fluid presets retain topology, loop exactly, remain editable and play standalone
+ok 33 - fluid presets retain topology, loop exactly, remain editable and play standalone
+  ---
+  duration_ms: 34740.43025
+  type: 'test'
+  ...
+# Subtest: fluid transaction rejects bad presets, protected parents and duplicate IDs atomically
+ok 34 - fluid transaction rejects bad presets, protected parents and duplicate IDs atomically
+  ---
+  duration_ms: 52.39575
+  type: 'test'
+  ...
+# Subtest: fluid CLI produces a real editable SVG from a config
+ok 35 - fluid CLI produces a real editable SVG from a config
+  ---
+  duration_ms: 3219.161583
+  type: 'test'
+  ...
+# Subtest: emotion.update changes a library without silently rewriting animation, rejects invalid topology and survives reopen
+ok 36 - emotion.update changes a library without silently rewriting animation, rejects invalid topology and survives reopen
+  ---
+  duration_ms: 7.40675
+  type: 'test'
+  ...
+# Subtest: identity protection blocks destructive edits including emotion expansion and preserves rigid acting
+ok 37 - identity protection blocks destructive edits including emotion expansion and preserves rigid acting
+  ---
+  duration_ms: 10.767083
+  type: 'test'
+  ...
+# Subtest: separation preserves original geometry and masks overlap with exclusive ownership
+ok 38 - separation preserves original geometry and masks overlap with exclusive ownership
+  ---
+  duration_ms: 28969.7565
+  type: 'test'
+  ...
+# Subtest: regional identity gate fails actual feature color loss and passes unchanged art
+ok 39 - regional identity gate fails actual feature color loss and passes unchanged art
+  ---
+  duration_ms: 8083.352166
+  type: 'test'
+  ...
+# Subtest: OpenCV segmentation accepts PNG, WebP and JPG hints and produces real contours
+ok 40 - OpenCV segmentation accepts PNG, WebP and JPG hints and produces real contours
+  ---
+  duration_ms: 2317.708
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:49864
+# MAI SVG editor: http://127.0.0.1:49864
+# CLI process+WS roundtrip 2976.7ms; server transaction below250ms verified
+# Subtest: CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+ok 41 - CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+  ---
+  duration_ms: 4018.629583
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 39
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43775.832167

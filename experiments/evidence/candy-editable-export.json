@@ -1,0 +1,18 @@
+
+> mai-svg@0.1.0 mai
+> tsx packages/cli/main.ts export --profile editable --expected-revision 12 --output experiments/evidence/candy-floating-editable.svg
+
+{
+  "output": "/Users/roor.osorio/Desktop/MAI SVG/experiments/evidence/candy-floating-editable.svg",
+  "profile": "editable",
+  "bytes": 8293013,
+  "paths": 49661,
+  "samples": 13,
+  "maxSampledInterpolationError": 0.11719,
+  "tolerance": 0.25,
+  "errorUnits": "path units / degrees / scale units / color channel values as applicable",
+  "scriptRequired": false,
+  "rasterImages": 0,
+  "rigStored": true,
+  "measurement": "adaptive checks at quarter, half and three-quarter positions; not a mathematical continuous error bound"
+}

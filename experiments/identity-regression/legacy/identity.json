@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "reference": "/Users/roor.osorio/Desktop/MAI SVG/examples/candy-emotions/candy-reference.png",
+  "referenceSha256": "3bbb82a7dbc1a7e251331569e0ed0f6fc4153b99c0a47f7aae165f3d302597c9",
+  "candidate": "/Users/roor.osorio/Desktop/MAI SVG/experiments/identity-regression/candy-legacy-distorted.svg",
+  "canonicalizedRigidParts": [],
+  "metric": "premultiplied RGBA MAE by feature, 0–255; not semantic identity recognition",
+  "visualReviewRequired": true,
+  "pass": false,
+  "frames": [
+    {
+      "time": 0,
+      "regions": [
+        {
+          "name": "nariz original",
+          "mae": 2.515,
+          "maxMae": 1.5,
+          "pass": false
+        },
+        {
+          "name": "boca y hocico originales",
+          "mae": 23.0458,
+          "maxMae": 1.5,
+          "pass": false
+        }
+      ],
+      "pass": false
+    }
+  ]
+}

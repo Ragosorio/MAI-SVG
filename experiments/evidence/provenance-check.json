@@ -1,0 +1,62 @@
+[
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/candy_alchemist_cat.png",
+    "fixture": "candy_alchemist_cat.png",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/candy_alchemist_cat.svg",
+    "fixture": "candy_alchemist_cat.svg",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/iridescent_origami_cat.png",
+    "fixture": "iridescent_origami_cat.png",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/iridescent_origami_cat.svg",
+    "fixture": "iridescent_origami_cat.svg",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/canelo_cozy_cat.png",
+    "fixture": "canelo_cozy_cat.png",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/canelo_cozy_cat.svg",
+    "fixture": "canelo_cozy_cat.svg",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/jelly_aquatic_cat.png",
+    "fixture": "jelly_aquatic_cat.png",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/jelly_aquatic_cat.svg",
+    "fixture": "jelly_aquatic_cat.svg",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/png/steampunk_clockwork_cat.png",
+    "fixture": "steampunk_clockwork_cat.png",
+    "originalUnchanged": true,
+    "copyMatches": true
+  },
+  {
+    "source": "/Users/roor.osorio/Desktop/No one/assets/cats-source/steampunk_clockwork_cat.svg",
+    "fixture": "steampunk_clockwork_cat.svg",
+    "originalUnchanged": true,
+    "copyMatches": true
+  }
+]

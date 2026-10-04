@@ -1,0 +1,157 @@
+TAP version 13
+# Subtest: composition namespaces references, preserves native animation and reopens both components
+ok 1 - composition namespaces references, preserves native animation and reopens both components
+  ---
+  duration_ms: 10.920167
+  type: 'test'
+  ...
+# Subtest: composition and canvas rollback atomically on unsafe CSS or duplicate ID
+ok 2 - composition and canvas rollback atomically on unsafe CSS or duplicate ID
+  ---
+  duration_ms: 3.058083
+  type: 'test'
+  ...
+# Subtest: motion presets copy, stretch, reverse and delete without silent track overwrites
+ok 3 - motion presets copy, stretch, reverse and delete without silent track overwrites
+  ---
+  duration_ms: 2.971084
+  type: 'test'
+  ...
+# Subtest: diagnostics report loop seam and quality guidance preserves chosen default
+ok 4 - diagnostics report loop seam and quality guidance preserves chosen default
+  ---
+  duration_ms: 0.671625
+  type: 'test'
+  ...
+# Subtest: component CSS selectors, URLs and keyframes are isolated across repeated SVG
+ok 5 - component CSS selectors, URLs and keyframes are isolated across repeated SVG
+  ---
+  duration_ms: 3.527541
+  type: 'test'
+  ...
+# Subtest: scoped CSS renders its component without recoloring sibling geometry
+ok 6 - scoped CSS renders its component without recoloring sibling geometry
+  ---
+  duration_ms: 963.107
+  type: 'test'
+  ...
+# Subtest: partial alpha remains partial and empty background remains transparent
+ok 7 - partial alpha remains partial and empty background remains transparent
+  ---
+  duration_ms: 142.362459
+  type: 'test'
+  ...
+# Subtest: PNG, WebP and JPEG are decoded, unsupported data is rejected
+ok 8 - PNG, WebP and JPEG are decoded, unsupported data is rejected
+  ---
+  duration_ms: 317.7585
+  type: 'test'
+  ...
+# Subtest: multiple embedded images preserve effects, transform, placement and unique IDs
+ok 9 - multiple embedded images preserve effects, transform, placement and unique IDs
+  ---
+  duration_ms: 436.121292
+  type: 'test'
+  ...
+# Subtest: untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+ok 10 - untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+  ---
+  duration_ms: 1.993417
+  type: 'test'
+  ...
+# Subtest: fully transparent input is rejected instead of falsely claiming a successful conversion
+ok 11 - fully transparent input is rejected instead of falsely claiming a successful conversion
+  ---
+  duration_ms: 5.305292
+  type: 'test'
+  ...
+# Subtest: CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+ok 12 - CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+  ---
+  duration_ms: 1017.583
+  type: 'test'
+  ...
+# Subtest: atomic transactions, locked paths and topology protection
+ok 13 - atomic transactions, locked paths and topology protection
+  ---
+  duration_ms: 6.899458
+  type: 'test'
+  ...
+# Subtest: Bezier point editing and selected-path booleans preserve unrelated SVG
+ok 14 - Bezier point editing and selected-path booleans preserve unrelated SVG
+  ---
+  duration_ms: 7.292916
+  type: 'test'
+  ...
+# Subtest: two-bone IK reaches target, angle limits and hierarchy cycles are checked
+ok 15 - two-bone IK reaches target, angle limits and hierarchy cycles are checked
+  ---
+  duration_ms: 1.722959
+  type: 'test'
+  ...
+# Subtest: normalized weights and mesh deformation maintain path topology
+ok 16 - normalized weights and mesh deformation maintain path topology
+  ---
+  duration_ms: 1.499834
+  type: 'test'
+  ...
+# Subtest: editable SVG restores rig and tracks; standalone contains only declarative geometry
+ok 17 - editable SVG restores rig and tracks; standalone contains only declarative geometry
+  ---
+  duration_ms: 5.491
+  type: 'test'
+  ...
+# Subtest: Chromium SMIL frames match engine geometry at several times
+ok 18 - Chromium SMIL frames match engine geometry at several times
+  ---
+  duration_ms: 2007.934
+  type: 'test'
+  ...
+# Subtest: rig and mesh animation bake to paths and reopen with authoring topology
+ok 19 - rig and mesh animation bake to paths and reopen with authoring topology
+  ---
+  duration_ms: 883.803708
+  type: 'test'
+  ...
+# Subtest: imported metadata cannot resurrect unsafe attributes
+ok 20 - imported metadata cannot resurrect unsafe attributes
+  ---
+  duration_ms: 0.895833
+  type: 'test'
+  ...
+# Subtest: preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+ok 21 - preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+  ---
+  duration_ms: 398.566875
+  type: 'test'
+  ...
+# Subtest: importing a standalone SVG keeps native animation through subsequent editable saves
+ok 22 - importing a standalone SVG keeps native animation through subsequent editable saves
+  ---
+  duration_ms: 2.149
+  type: 'test'
+  ...
+# Subtest: names and locks of animated parts survive reopening
+ok 23 - names and locks of animated parts survive reopening
+  ---
+  duration_ms: 1.063791
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:50819
+# MAI SVG editor: http://127.0.0.1:50819
+# CLI process+WS roundtrip 1067.7ms; server transaction below250ms verified
+# Subtest: CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+ok 24 - CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+  ---
+  duration_ms: 1163.817417
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3929.0795

@@ -1,0 +1,87 @@
+TAP version 13
+# Subtest: emotion library interpolates actual facial geometry and survives editable roundtrip
+ok 1 - emotion library interpolates actual facial geometry and survives editable roundtrip
+  ---
+  duration_ms: 277.998375
+  type: 'test'
+  ...
+# Subtest: sprite transitions are discrete and atlas freezes real vector frames with unique references
+ok 2 - sprite transitions are discrete and atlas freezes real vector frames with unique references
+  ---
+  duration_ms: 70.85475
+  type: 'test'
+  ...
+# Subtest: invalid sprite target overlap and locked emotion targets rollback the transaction
+ok 3 - invalid sprite target overlap and locked emotion targets rollback the transaction
+  ---
+  duration_ms: 1.8965
+  type: 'test'
+  ...
+# Subtest: standalone emotion and sprite frames match editor geometry at three story beats
+ok 4 - standalone emotion and sprite frames match editor geometry at three story beats
+  ---
+  duration_ms: 2225.353625
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:49328
+# Subtest: an agent CLI builds the emotion example from source, operations and exports it editable
+ok 5 - an agent CLI builds the emotion example from source, operations and exports it editable
+  ---
+  duration_ms: 2291.43825
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:49267
+# MAI SVG editor: http://127.0.0.1:49267
+# Subtest: preview choices are read-only, persistent, revision-bound, live, and undoable
+ok 6 - preview choices are read-only, persistent, revision-bound, live, and undoable
+  ---
+  duration_ms: 1923.869125
+  type: 'test'
+  ...
+# Subtest: fluid presets retain topology, loop exactly, remain editable and play standalone
+ok 7 - fluid presets retain topology, loop exactly, remain editable and play standalone
+  ---
+  duration_ms: 3268.118625
+  type: 'test'
+  ...
+# Subtest: fluid transaction rejects bad presets, protected parents and duplicate IDs atomically
+ok 8 - fluid transaction rejects bad presets, protected parents and duplicate IDs atomically
+  ---
+  duration_ms: 15.959125
+  type: 'test'
+  ...
+# Subtest: fluid CLI produces a real editable SVG from a config
+ok 9 - fluid CLI produces a real editable SVG from a config
+  ---
+  duration_ms: 577.631083
+  type: 'test'
+  ...
+# Subtest: emotion.update changes a library without silently rewriting animation, rejects invalid topology and survives reopen
+not ok 10 - emotion.update changes a library without silently rewriting animation, rejects invalid topology and survives reopen
+  ---
+  duration_ms: 1.226333
+  type: 'test'
+  location: '/Users/roor.osorio/Desktop/MAI SVG/tests/fluid.test.ts:1:3376'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (/Users/roor.osorio/Desktop/MAI SVG/tests/fluid.test.ts:8:594)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 9
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5392.671375

@@ -1,0 +1,8 @@
+import {readFile,writeFile,mkdir}from 'node:fs/promises';import assert from 'node:assert/strict';import {renderSvg,closeRenderer}from '../packages/server/render.js';import {identityCheck}from '../packages/cli/identity.js';import {parseSvg,serialize,elements}from '../packages/converter/svg.js';
+const folder='examples/candy-emotions';await mkdir('experiments/identity-regression',{recursive:true});
+const original=await readFile('assets/vector/candy_alchemist_cat.svg','utf8');try{await writeFile(folder+'/candy-reference.png',(await renderSvg(original)).png);}finally{await closeRenderer();}
+const legacyPath='experiments/identity-regression/candy-legacy-distorted.svg';
+try{await readFile(legacyPath);}catch{const legacy=parseSvg(await readFile(folder+'/sprites/candy-feliz.svg','utf8'));for(const e of elements(legacy))if(['candy-head','candy-character'].includes(e.getAttribute('id')??''))e.removeAttribute('transform');await writeFile('experiments/identity-regression/candy-legacy-distorted.svg',serialize(legacy));}
+const profile=JSON.parse(await readFile(folder+'/identity-profile.json','utf8'));
+const bad=await identityCheck(folder+'/candy-reference.png','experiments/identity-regression/candy-legacy-distorted.svg',{...profile,canonicalize:[]},[0],'experiments/identity-regression/legacy');assert.equal(bad.pass,false,'Regression gate must reject old mouth patches');
+const current=await identityCheck(folder+'/candy-reference.png',folder+'/candy-editable.svg',profile,[0,.66,1.6,2.8,4.1,5.2,6.5],'experiments/identity-regression/corrected');assert.equal(current.pass,true,'Invariant nose/mouth must remain faithful');console.log(JSON.stringify({legacyRejected:!bad.pass,currentPassed:current.pass,frames:current.frames.length},null,2));

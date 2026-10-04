@@ -1,0 +1,13 @@
+{
+  "profile": "editable",
+  "bytes": 126652,
+  "paths": 29,
+  "samples": 2020,
+  "maxSampledInterpolationError": 0.24753,
+  "tolerance": 0.25,
+  "errorUnits": "path units / degrees / scale units / color channel values as applicable",
+  "scriptRequired": false,
+  "rasterImages": 0,
+  "rigStored": true,
+  "measurement": "adaptive checks at quarter, half and three-quarter positions; not a mathematical continuous error bound"
+}

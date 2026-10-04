@@ -1,0 +1,5 @@
+[
+ {"type":"motion.preset","id":"tail","kind":"float","amplitude":12},
+ {"type":"track.copy","target":"tail","to":"body","property":"y"},
+ {"type":"track.edit","target":"body","property":"y","action":"stretch","amount":0.5}
+]

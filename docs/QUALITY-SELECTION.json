@@ -1,0 +1,13 @@
+{
+  "selectedAt": "2026-10-04",
+  "preset": "high-color-preserved",
+  "userStatement": "que sea el high-color-preserved ese es",
+  "referenceStyles": [
+    "candy_alchemist_cat",
+    "iridescent_origami_cat",
+    "canelo_cozy_cat",
+    "jelly_aquatic_cat",
+    "steampunk_clockwork_cat"
+  ],
+  "unseenCatsRequireReview": true
+}

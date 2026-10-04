@@ -1,0 +1,2712 @@
+{
+  "sessionId": "52687019-1caa-4eb1-bd07-e897c7fecc6c",
+  "revision": 21,
+  "asset": "Candy · high-color-preserved · emociones.svg",
+  "project": {
+    "version": 1,
+    "revision": 21,
+    "name": "Candy · high-color-preserved · emociones.svg",
+    "duration": 9,
+    "fps": 24,
+    "loop": true,
+    "emotions": [
+      {
+        "id": "neutral",
+        "name": "Sereno",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 1
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 1
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": 0
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 243 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M279 174Q296 163 313 161"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M362 145Q378 148 394 157"
+            }
+          }
+        }
+      },
+      {
+        "id": "happy",
+        "name": "Feliz",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 0.64
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 0.64
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": -2
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 251 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M279 174Q296 163 313 161"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M362 145Q378 148 394 157"
+            }
+          }
+        }
+      },
+      {
+        "id": "surprised",
+        "name": "Sorprendido",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 1.12
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 1.12
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": 1
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 257 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M279 174Q296 163 313 161"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M362 145Q378 148 394 157"
+            }
+          }
+        }
+      },
+      {
+        "id": "angry",
+        "name": "Enojado",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 0.5
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 0.5
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": 2
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 229 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "1",
+              "d": "M279 168Q296 168 313 179"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "1",
+              "d": "M362 164Q378 153 394 153"
+            }
+          }
+        }
+      },
+      {
+        "id": "sad",
+        "name": "Triste",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 0.8
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 0.8
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": -2
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 216 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "1",
+              "d": "M279 174Q296 163 313 161"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "1",
+              "d": "M362 145Q378 148 394 157"
+            }
+          }
+        }
+      },
+      {
+        "id": "sleepy",
+        "name": "Dormido",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 0.025
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 0.025
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": -1.5
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 233 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M279 174Q296 163 313 161"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M362 145Q378 148 394 157"
+            }
+          }
+        }
+      },
+      {
+        "id": "blink",
+        "name": "Parpadeo",
+        "targets": {
+          "candy-left-eye": {
+            "pose": {
+              "scaleY": 0.025
+            }
+          },
+          "candy-right-eye": {
+            "pose": {
+              "scaleY": 0.025
+            }
+          },
+          "candy-head": {
+            "pose": {
+              "rotation": 0
+            }
+          },
+          "candy-eye-fur": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-left": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-lid-right": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth-original": {
+            "attrs": {
+              "opacity": "1"
+            }
+          },
+          "candy-mouth-rebuilt": {
+            "attrs": {
+              "opacity": "0"
+            }
+          },
+          "candy-mouth": {
+            "attrs": {
+              "d": "M318 233Q337 243 356 233"
+            }
+          },
+          "candy-brow-left": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M279 174Q296 163 313 161"
+            }
+          },
+          "candy-brow-right": {
+            "attrs": {
+              "opacity": "0",
+              "d": "M362 145Q378 148 394 157"
+            }
+          }
+        }
+      }
+    ],
+    "sprites": [
+      {
+        "id": "candy-emotion-vfx",
+        "name": "Efectos de Candy",
+        "initial": "neutral",
+        "variants": {
+          "neutral": [
+            "candy-vfx-neutral"
+          ],
+          "happy": [
+            "candy-vfx-happy"
+          ],
+          "surprise": [
+            "candy-vfx-surprise"
+          ],
+          "angry": [
+            "candy-vfx-angry"
+          ],
+          "sad": [
+            "candy-vfx-sad"
+          ],
+          "sleep": [
+            "candy-vfx-sleep"
+          ]
+        }
+      }
+    ],
+    "poses": {
+      "candy-left-eye": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 296,
+        "pivotY": 196
+      },
+      "candy-right-eye": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 378,
+        "pivotY": 181
+      },
+      "candy-head": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 337,
+        "pivotY": 255
+      },
+      "candy-character": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 350,
+        "pivotY": 400
+      },
+      "candy-flask": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 460,
+        "pivotY": 376
+      }
+    },
+    "baseTransforms": {
+      "candy-left-eye": "",
+      "candy-right-eye": "",
+      "candy-head": "",
+      "candy-character": "",
+      "candy-eye-fur": "",
+      "candy-lid-left": "",
+      "candy-lid-right": "",
+      "candy-mouth-original": "",
+      "candy-mouth-rebuilt": "",
+      "candy-mouth": "",
+      "candy-brow-left": "",
+      "candy-brow-right": "",
+      "candy-vfx-neutral": "",
+      "candy-vfx-happy": "",
+      "candy-vfx-surprise": "",
+      "candy-vfx-angry": "",
+      "candy-vfx-sad": "",
+      "candy-vfx-sleep": "",
+      "candy-flask": ""
+    },
+    "baseAttributes": {
+      "candy-left-eye": {
+        "id": "candy-left-eye",
+        "data-mai-name": "Ojo turquesa original"
+      },
+      "candy-right-eye": {
+        "id": "candy-right-eye",
+        "data-mai-name": "Ojo violeta original"
+      },
+      "candy-head": {
+        "id": "candy-head",
+        "data-mai-name": "Cabeza · preparación por recorte vectorial"
+      },
+      "candy-character": {
+        "id": "candy-character",
+        "data-mai-name": "Candy · convertido desde PNG"
+      },
+      "candy-eye-fur": {
+        "id": "candy-eye-fur",
+        "opacity": "0"
+      },
+      "candy-lid-left": {
+        "id": "candy-lid-left",
+        "d": "M279 199Q296 207 313 199",
+        "fill": "none",
+        "stroke": "#8c5b58",
+        "stroke-width": "2.4",
+        "stroke-linecap": "round",
+        "opacity": "0"
+      },
+      "candy-lid-right": {
+        "id": "candy-lid-right",
+        "d": "M361 185Q378 193 395 185",
+        "fill": "none",
+        "stroke": "#8c5b58",
+        "stroke-width": "2.4",
+        "stroke-linecap": "round",
+        "opacity": "0"
+      },
+      "candy-mouth-original": {
+        "id": "candy-mouth-original"
+      },
+      "candy-mouth-rebuilt": {
+        "id": "candy-mouth-rebuilt",
+        "opacity": "0"
+      },
+      "candy-mouth": {
+        "id": "candy-mouth",
+        "d": "M318 233Q337 243 356 233",
+        "fill": "none",
+        "stroke": "#9e6654",
+        "stroke-width": "2.2",
+        "stroke-linecap": "round"
+      },
+      "candy-brow-left": {
+        "id": "candy-brow-left",
+        "d": "M279 170Q296 168 313 170",
+        "fill": "none",
+        "stroke": "#aa745e",
+        "stroke-width": "2.4",
+        "stroke-linecap": "round",
+        "opacity": "0"
+      },
+      "candy-brow-right": {
+        "id": "candy-brow-right",
+        "d": "M362 155Q378 153 394 155",
+        "fill": "none",
+        "stroke": "#aa745e",
+        "stroke-width": "2.4",
+        "stroke-linecap": "round",
+        "opacity": "0"
+      },
+      "candy-vfx-neutral": {
+        "id": "candy-vfx-neutral",
+        "opacity": "1"
+      },
+      "candy-vfx-happy": {
+        "id": "candy-vfx-happy",
+        "opacity": "0",
+        "fill": "#ff7eb8"
+      },
+      "candy-vfx-surprise": {
+        "id": "candy-vfx-surprise",
+        "opacity": "0",
+        "fill": "#ffe69f"
+      },
+      "candy-vfx-angry": {
+        "id": "candy-vfx-angry",
+        "opacity": "0",
+        "stroke": "#ff8f9c",
+        "stroke-width": "4",
+        "fill": "none"
+      },
+      "candy-vfx-sad": {
+        "id": "candy-vfx-sad",
+        "opacity": "0",
+        "fill": "#9adeff"
+      },
+      "candy-vfx-sleep": {
+        "id": "candy-vfx-sleep",
+        "opacity": "0",
+        "fill": "#e9ceff"
+      },
+      "candy-flask": {
+        "id": "candy-flask",
+        "data-mai-name": "Frasco y mano originales"
+      }
+    },
+    "tracks": [
+      {
+        "target": "candy-left-eye",
+        "property": "scaleY",
+        "keys": [
+          {
+            "time": 0,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 0.025,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 1.12,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 1.12,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 0.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 0.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 0.8,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 0.8,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 0.025,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 0.025,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 1,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-right-eye",
+        "property": "scaleY",
+        "keys": [
+          {
+            "time": 0,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 0.025,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 1.12,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 1.12,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 0.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 0.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 0.8,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 0.8,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 0.025,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 0.025,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0.64,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 1,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-head",
+        "property": "rotation",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": -1.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": -1.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-eye-fur",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-lid-left",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-lid-right",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-mouth-original",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 1,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-mouth-rebuilt",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-mouth",
+        "property": "d",
+        "keys": [
+          {
+            "time": 0,
+            "value": "M318 233Q337 243 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": "M318 233Q337 243 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": "M318 233Q337 243 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": "M318 233Q337 243 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": "M318 233Q337 251 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": "M318 233Q337 251 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": "M318 233Q337 257 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": "M318 233Q337 257 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": "M318 233Q337 229 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": "M318 233Q337 229 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": "M318 233Q337 216 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": "M318 233Q337 216 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": "M318 233Q337 233 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": "M318 233Q337 233 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": "M318 233Q337 251 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": "M318 233Q337 251 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": "M318 233Q337 243 356 233",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": "M318 233Q337 243 356 233",
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-brow-left",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-brow-left",
+        "property": "d",
+        "keys": [
+          {
+            "time": 0,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": "M279 168Q296 168 313 179",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": "M279 168Q296 168 313 179",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": "M279 174Q296 163 313 161",
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-brow-right",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-brow-right",
+        "property": "d",
+        "keys": [
+          {
+            "time": 0,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.55,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.66,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 0.8,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.3,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.55,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.2,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.8,
+            "value": "M362 164Q378 153 394 153",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.35,
+            "value": "M362 164Q378 153 394 153",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.9,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.55,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.15,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.4,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": "M362 145Q378 148 394 157",
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-vfx-neutral",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 0.55,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 0.66,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 0.8,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8.5,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 9,
+            "value": 1,
+            "easing": "step"
+          }
+        ]
+      },
+      {
+        "target": "candy-vfx-happy",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 1.3,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 2,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 7.4,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 8,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "step"
+          }
+        ]
+      },
+      {
+        "target": "candy-vfx-surprise",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2.55,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 3.2,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "step"
+          }
+        ]
+      },
+      {
+        "target": "candy-vfx-angry",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.8,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 4.35,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "step"
+          }
+        ]
+      },
+      {
+        "target": "candy-vfx-sad",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.9,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 5.55,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 6.15,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "step"
+          }
+        ]
+      },
+      {
+        "target": "candy-vfx-sleep",
+        "property": "opacity",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.66,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 0.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 1.3,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 2.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.2,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 3.8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.35,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 4.9,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 5.55,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 6.15,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 6.8,
+            "value": 1,
+            "easing": "step"
+          },
+          {
+            "time": 7.4,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "step"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "step"
+          }
+        ]
+      },
+      {
+        "target": "candy-character",
+        "property": "y",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.5,
+            "value": -6,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3,
+            "value": -3,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5,
+            "value": 3,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6,
+            "value": 5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.8,
+            "value": 5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.5,
+            "value": -6,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      },
+      {
+        "target": "candy-flask",
+        "property": "rotation",
+        "keys": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.2,
+            "value": -1.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 1.8,
+            "value": 1,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 2.8,
+            "value": -2,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 3.4,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 4.2,
+            "value": 1.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 5.2,
+            "value": 0,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 6.5,
+            "value": 0.7,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 7.5,
+            "value": -1.5,
+            "easing": "ease-in-out"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "ease-in-out"
+          }
+        ]
+      }
+    ],
+    "bones": [],
+    "skins": [],
+    "meshes": []
+  },
+  "objects": 42021,
+  "canUndo": true,
+  "canRedo": false,
+  "reload": false,
+  "patches": [
+    {
+      "id": "candy-left-eye",
+      "attrs": {
+        "id": "candy-left-eye",
+        "data-mai-name": "Ojo turquesa original",
+        "transform": "translate(0 0) translate(296 196) rotate(0) scale(1 1) translate(-296 -196)"
+      }
+    },
+    {
+      "id": "candy-right-eye",
+      "attrs": {
+        "id": "candy-right-eye",
+        "data-mai-name": "Ojo violeta original",
+        "transform": "translate(0 0) translate(378 181) rotate(0) scale(1 1) translate(-378 -181)"
+      }
+    },
+    {
+      "id": "candy-head",
+      "attrs": {
+        "id": "candy-head",
+        "data-mai-name": "Cabeza · preparación por recorte vectorial",
+        "transform": "translate(0 0) translate(337 255) rotate(0) scale(1 1) translate(-337 -255)"
+      }
+    },
+    {
+      "id": "candy-character",
+      "attrs": {
+        "id": "candy-character",
+        "data-mai-name": "Candy · convertido desde PNG",
+        "transform": "translate(0 0) translate(350 400) rotate(0) scale(1 1) translate(-350 -400)"
+      }
+    },
+    {
+      "id": "candy-vfx-neutral",
+      "attrs": {
+        "id": "candy-vfx-neutral",
+        "opacity": "1"
+      }
+    },
+    {
+      "id": "candy-vfx-happy",
+      "attrs": {
+        "id": "candy-vfx-happy",
+        "opacity": "0",
+        "fill": "#ff7eb8"
+      }
+    },
+    {
+      "id": "candy-vfx-surprise",
+      "attrs": {
+        "id": "candy-vfx-surprise",
+        "opacity": "0",
+        "fill": "#ffe69f"
+      }
+    },
+    {
+      "id": "candy-vfx-angry",
+      "attrs": {
+        "id": "candy-vfx-angry",
+        "opacity": "0",
+        "stroke": "#ff8f9c",
+        "stroke-width": "4",
+        "fill": "none"
+      }
+    },
+    {
+      "id": "candy-vfx-sad",
+      "attrs": {
+        "id": "candy-vfx-sad",
+        "opacity": "0",
+        "fill": "#9adeff"
+      }
+    },
+    {
+      "id": "candy-vfx-sleep",
+      "attrs": {
+        "id": "candy-vfx-sleep",
+        "opacity": "0",
+        "fill": "#e9ceff"
+      }
+    },
+    {
+      "id": "candy-flask",
+      "attrs": {
+        "id": "candy-flask",
+        "data-mai-name": "Frasco y mano originales",
+        "transform": "translate(0 0) translate(460 376) rotate(0) scale(1 1) translate(-460 -376)"
+      }
+    }
+  ],
+  "elapsedMs": 4575.89,
+  "transaction": {
+    "revision": 21,
+    "id": "8e0fb1fe-c050-415b-8554-12b4b5658e7a",
+    "label": "CLI transaction",
+    "time": "2026-10-04T15:25:49.915Z"
+  }
+}

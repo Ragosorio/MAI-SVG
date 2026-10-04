@@ -1,0 +1,143 @@
+{
+  "id": "candy-sad-fluid",
+  "prompt": "¿Cómo quieres que Candy exprese tristeza?",
+  "recommended": "gentle",
+  "reason": "Melancolía suave conserva mejor la lectura del rostro; la lágrima comunica una tristeza más evidente.",
+  "time": 5.2,
+  "previewRegion": {
+    "x": 250,
+    "y": 135,
+    "width": 185,
+    "height": 145
+  },
+  "options": [
+    {
+      "id": "gentle",
+      "label": "Melancolía suave",
+      "description": "Cejas y párpados sutiles; conserva ojos y boca originales.",
+      "ops": [
+        {
+          "type": "emotion.update",
+          "emotion": {
+            "id": "sad",
+            "name": "Triste",
+            "targets": {
+              "candy-head": {
+                "pose": {
+                  "rotation": -2
+                }
+              },
+              "candy-lid-left": {
+                "attrs": {
+                  "opacity": "0.15"
+                }
+              },
+              "candy-lid-right": {
+                "attrs": {
+                  "opacity": "0.15"
+                }
+              },
+              "candy-sad-brow-left": {
+                "attrs": {
+                  "opacity": "0.65"
+                }
+              },
+              "candy-sad-brow-right": {
+                "attrs": {
+                  "opacity": "0.65"
+                }
+              },
+              "candy-tear-left": {
+                "attrs": {
+                  "opacity": "0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "emotion.keyframe",
+          "id": "sad",
+          "time": 4.9,
+          "easing": "ease-in-out"
+        },
+        {
+          "type": "emotion.keyframe",
+          "id": "sad",
+          "time": 5.2,
+          "easing": "ease-in-out"
+        },
+        {
+          "type": "emotion.keyframe",
+          "id": "sad",
+          "time": 5.55,
+          "easing": "ease-in-out"
+        }
+      ]
+    },
+    {
+      "id": "tearful",
+      "label": "Tristeza con lágrima",
+      "description": "Añade una lágrima y refuerza la actuación ocular; mantiene iris, nariz y hocico.",
+      "ops": [
+        {
+          "type": "emotion.update",
+          "emotion": {
+            "id": "sad",
+            "name": "Triste",
+            "targets": {
+              "candy-head": {
+                "pose": {
+                  "rotation": -2
+                }
+              },
+              "candy-lid-left": {
+                "attrs": {
+                  "opacity": "0.25"
+                }
+              },
+              "candy-lid-right": {
+                "attrs": {
+                  "opacity": "0.25"
+                }
+              },
+              "candy-sad-brow-left": {
+                "attrs": {
+                  "opacity": "0.85"
+                }
+              },
+              "candy-sad-brow-right": {
+                "attrs": {
+                  "opacity": "0.85"
+                }
+              },
+              "candy-tear-left": {
+                "attrs": {
+                  "opacity": "0.65"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "emotion.keyframe",
+          "id": "sad",
+          "time": 4.9,
+          "easing": "ease-in-out"
+        },
+        {
+          "type": "emotion.keyframe",
+          "id": "sad",
+          "time": 5.2,
+          "easing": "ease-in-out"
+        },
+        {
+          "type": "emotion.keyframe",
+          "id": "sad",
+          "time": 5.55,
+          "easing": "ease-in-out"
+        }
+      ]
+    }
+  ]
+}

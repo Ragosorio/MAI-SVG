@@ -1,0 +1,10 @@
+{
+  "source": "experiments/color-preserved/candy_alchemist_cat/high-color-preserved.svg",
+  "png": "fixtures/candy_alchemist_cat.png",
+  "sha256": "8299cc1bfc28e8edf4343560cc7f756f0f6c77bd16e5b6f6ca2ca8b6dae7ce75",
+  "preset": "high-color-preserved",
+  "originalGeometryRetained": true,
+  "preparation": "Rigid vector crops; original eyes/nose/mouth retained. Conservative acting and temporary eyelids; no replacement mouth or copied fur patches",
+  "operations": 84,
+  "tracks": 25
+}
