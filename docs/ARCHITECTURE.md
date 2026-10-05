@@ -1,5 +1,7 @@
 # Arquitectura implementada
 
+La descripción siguiente corresponde a la base del editor. Para la ampliación local aún incompleta de agentes, consultar [diagnóstico actual](AGENT-FOUNDATION.md), [ADR-001](adr/001-agent-boundary.md) y [ADR-002](adr/002-agent-transactions-and-identity.md). Estos ADR diseñan la evolución; no afirman que los contratos nuevos estén implementados.
+
 Una aplicación web local servida por Node sobre loopback. Vite compila React; no hay servicio de nube, cuentas ni IA obligatoria. El proyecto SVG es la fuente de verdad y contiene metadatos JSON versionados en `<metadata id="mai-project">`.
 
 - **Converter:** Sharp decodifica a RGBA y normaliza orientación; VTracer WASM se ejecuta en worker con límites y timeout. Color y alfa se trazan por separado. SVGO conservador preserva la composición. Los reemplazos raster se hacen con XML, viewports SVG anidados y prefijos de IDs.

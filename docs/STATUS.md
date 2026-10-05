@@ -1,5 +1,48 @@
 # Estado de implementación — 2026-10-04
 
+## Superficie de agentes S0–S4 — estado verificado 2026-10-04
+
+Trabajo local sin commit sobre `dd57785`. MAI no interpreta lenguaje humano: Claude/Codex leen la instrucción y llaman herramientas tipadas (un registro → CLI, HTTP `/api/agent/call`, MCP con SDK oficial 1.32.0). `feedback.ts` queda como fallback sin ampliar. Las métricas no son aprobación estética; **las 44 áreas del pedido original no están completas** (ver «Qué falta»).
+
+Checkout actual: `npm run typecheck` y `npm run build` pasan; `npm test` **54 pruebas, 54 pasan, 0 omitidas** (`experiments/evidence/full-suite-20261004.log`).
+
+| Gate | Estado | Evidencia |
+|---|---|---|
+| S0 guards, referencias, contrato de preview, entorno | **Pasa** | F01/F03/F04/F05/F08 como regresiones en `tests/agent-surface.test.ts`; preview conserva 180 px lógicos y declara `scale`; Firefox/WebKit de Playwright y `.venv-segmentation/` instalados (DEPENDENCIES.md): los 4 fallos de entorno anteriores ahora se ejecutan y pasan |
+| S1 Agent IR y transacción atómica | **Pasa** | `tests/agent-plan.test.ts`: un plan = un commit; fallo del último comando, del disco, del render requerido o de identidad deja cero cambios; requestId idempotente y recuperado tras reinicio; CAS de revisión/tablero; undo restaura escena y decisión |
+| S2 integración visible | **Pasa** (tiempos de una sola muestra) | `tests/editor-flow.test.ts` en Chrome real: selección → comentario con captura → nota → mezcla → commit → WebSocket → repintado sin recarga → undo. `s2-editor-flow.json`: 94 ms servicio, 100 ms visible, una muestra en fixture pequeño |
+| S3 paridad CLI/API/MCP | **Pasa** | `tests/transports.test.ts`: mismo resultado normalizado y mismo error por los tres transportes; cliente SDK independiente lista y llama; ciclo de vida, JSON inválido, cancelación y EOF |
+| S4 Candy + agente externo | **Parcial** | Ver abajo. Falta la respuesta humana pendiente, aprobación artística y tiempos con muestras |
+
+### S4 en detalle
+
+Workspace aislado por corrida (`scripts/s4-workspace.ts`): copia del Candy aprobado con hash, sesión propia, skill generada y MCP; sin código fuente ni plan solución. Candy se prepara solo con herramientas de agente. Agente externo: **Codex** (`codex exec`, MCP stdio). Claude Code no pudo usarse como agente externo porque su OAuth estaba expirado. Verificación independiente: `scripts/s4-verify.ts`.
+
+| Corrida | Instrucción | Resultado |
+|---|---|---|
+| 1 | «Me gusta la primera pero con los ojos de la tercera. Conserva la boca y baja 30% la velocidad del humo.» | 9 llamadas, 0 errores. Un plan confirmado (A + ojos de C, boca preservada, humo ×0.7), identidad contra el aprobado pasa (nariz MAE .081, boca .084). `s4-candy-codex-run1.json` |
+| 2 | Petición no prevista: «Pensándolo mejor, quiero la segunda opción tal como estaba, pero el humo debería sentirse más pesado, como si costara subir. A la nariz no le toques nada.» | 48 llamadas, 11 errores de MAI y 4 rechazadas por el cliente. Encontró cinco huecos reales del producto (abajo). Confirmó el humo ×0.55 (factor .385) con la nariz preservada. **No aplicó B**: su boca cambia píxeles del borde de la nariz. Usó rodeos (aplicar y revertir la expresión fuera del plan, un tablero suelto). `s4-candy-codex-run2.json` |
+| 3 | La misma instrucción de la corrida 2, desde el mismo estado (plan de la corrida 1 reproducido por script y marcado como tal) y con las correcciones | 9 llamadas, 0 rechazos. Usó `rechoose` sobre el tablero original. El gate por píxeles de región bloqueó B en la nariz (MAE 2.50 > 1.5) y Codex **no aplicó nada**: pidió al humano el contorno exacto de la nariz. Estado intacto y coherente (rev 16). `s4-candy-codex-run3.json` |
+
+Huecos encontrados por la corrida 2 y corregidos con regresión (`S4 regression` en `tests/agent-plan.test.ts`, assert en `transports.test.ts`):
+1. Cambiar de opción en un tablero ya elegido: `variant.apply` con `rechoose:true`. La nueva aceptación reemplaza a la anterior en la misma transacción (`supersedes`), y undo vuelve a la anterior. Sin ese flag, `STALE_CHOICE` trae `recovery.action:"rechoose"`.
+2. Partes preservadas que solo son una región del arte compartido (la nariz de Candy, `ids: []`): el gate de identidad de los planes las evalúa por píxeles en su región (`method:"region-pixels"`, mismo umbral que `identity.check`), en vez de devolver `not_evaluated`.
+3. La frescura del tablero (`contentHash`) ignoraba solo revisión y decisiones; ahora también etiquetas, protecciones y baselines, que no cambian un fotograma.
+4. `history.undo/redo` estaban marcadas `destructiveHint`, y Codex las rechazaba sin preguntar. Son reversibles entre sí y ya no se marcan; `ops.apply`, `choice.dismiss/regenerate` e `identity.release` siguen marcadas.
+5. `part.candidates` con scope de una parte que solo es región (`candy.head`): busca dentro del ancestro con un único elemento (hallado en la corrida 3, corregido después).
+
+Conflicto que queda para decisión humana: la nariz en sí (el triángulo rosa) no cambia con B, pero la boca abierta de B toca el borde inferior de la caja de la nariz (MAE 2.50 en la caja, 8.08 en la de la boca): `experiments/evidence/s4-frames/nose-conflict-current-vs-B.png`. Opciones: delimitar la nariz con sus propios trazos (`part.candidates` → confirmar), aceptar ese borde, o pedir otra boca. MAI no elige.
+
+Fidelidad y entrega (corridas 2 y 3): fotograma completo en reposo frente al aprobado con MAE .0116/255 y SSIM .9999; alfa parcial conservada (8,529 píxeles parciales en ambos); 11 píxeles en el borde de extracción del humo difieren más de 2/255 en alfa (máx. 48). Es una limitación conocida. El humo es el original extraído (MAE en reposo .087) y fluye en los siete tiempos. Export editable de 10.4 MB que reabre con parámetros, modificadores y aceptaciones iguales. Standalone de 24.4 MB, 0 raster y 0 scripts. Las fuentes aprobadas no cambiaron (sha256).
+
+### Qué falta (no se marca como hecho)
+- S4: respuesta humana al conflicto nariz/boca; aprobación artística de las expresiones de Candy (las métricas no lo son); una petición nueva distinta después de las correcciones, porque la corrida 3 mide las correcciones y no la generalización; tiempos con muestras/percentiles en Candy (solo hay muestras únicas); prueba con Claude Code como agente externo.
+- Herramientas `experimental` (funcionan, sin calibrar en todos los assets): fluid.animate, motion.spring, morph.apply, part.candidates, expression.rig, critique, performance, export.capabilities, expression.propose.
+- Exportación: CSS animations y Lottie/dotLottie están `planned`; el componente React es `partial`. Rig anatómico automático, detección automática de partes, física de fluidos y Safari nativo: no implementados.
+- Los otros 31 gatos siguen pendientes de revisión individual.
+
+Las secciones siguientes conservan resultados históricos de etapas anteriores; sus conteos de pruebas no describen el estado actual.
+
 ## Decisión de calidad
 
 El usuario eligió **high-color-preserved**: «que sea el high-color-preserved ese es». Se conserva el candidato original elegido; es ahora el predeterminado del conversor, importación y batch. Registro: `QUALITY-SELECTION.json`.

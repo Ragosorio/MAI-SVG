@@ -1,0 +1,9 @@
+{
+  "kind": "Documentation integrity only; not JSON Schema standards validation or runtime execution",
+  "markdownFiles": 7,
+  "localLinksChecked": 15,
+  "schemaInternalRefsChecked": 27,
+  "exampleMatchesDocument": true,
+  "roadmapRequirements": 44,
+  "errors": []
+}

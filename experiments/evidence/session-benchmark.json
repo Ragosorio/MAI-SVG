@@ -1,7 +1,7 @@
 {
   "reference": "starterSvg / tail fill",
-  "cliProcessAndWebSocketMs": 2976.728083000001,
-  "serverTransactionMs": 164.95,
+  "cliProcessAndWebSocketMs": 3503.780583,
+  "serverTransactionMs": 6.59,
   "serverBelow250ms": true,
   "includesBrowserPaint": false
 }

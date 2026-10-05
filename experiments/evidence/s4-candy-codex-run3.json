@@ -1,0 +1,309 @@
+{
+ "verifiedAt": "2026-10-05T04:44:28.743Z",
+ "workspace": "/var/folders/tr/c7sds6b95pl373kj_mhpd7sc0000gn/T/mai-s4-candy-r3",
+ "prepared": {
+  "preparedAt": "2026-10-04T21:37:44.107Z",
+  "url": "http://127.0.0.1:4411",
+  "port": 4411,
+  "approvedSha256": "8299cc1bfc28e8edf4343560cc7f756f0f6c77bd16e5b6f6ca2ca8b6dae7ce75",
+  "projectSourceSha256": "8299cc1bfc28e8edf4343560cc7f756f0f6c77bd16e5b6f6ca2ca8b6dae7ce75",
+  "revision": 16,
+  "documentId": "doc-f0722141-f4e5-4eb9-a871-7b2a8ad0d66f",
+  "replayed": {
+   "from": "experiments/evidence/s4-candy-codex-run1.transcript.jsonl",
+   "requestId": "candy-a-eyes-c-smoke-070-commit-r15-replay",
+   "label": "Primera opción, ojos de la tercera, boca conservada y humo 30% más lento",
+   "text": "Me gusta la primera pero con los ojos de la tercera. Conserva la boca y baja 30% la velocidad del humo.",
+   "revision": 16,
+   "note": "Scripted replay of the plan an external agent committed earlier; not part of the new agent run."
+  }
+ },
+ "sources": {
+  "approvedUnchanged": true,
+  "projectAssetUnchanged": true
+ },
+ "history": [],
+ "state": {
+  "revision": 16,
+  "choice": {
+   "id": "expr-sadness-muucdgrd",
+   "status": "chosen",
+   "selected": "D-A-eyesC-keep",
+   "version": 1
+  },
+  "acceptances": [
+   {
+    "boardId": "expr-sadness-muucdgrd",
+    "version": 1,
+    "option": "D-A-eyesC-keep",
+    "label": "A + eyes de C + mouth como está",
+    "spec": {
+     "params": {
+      "sadness@eyes": 0.637,
+      "tiredness@eyes": 0.425
+     }
+    },
+    "requestId": "candy-a-eyes-c-smoke-070-commit-r15-replay",
+    "source": "user-direction",
+    "text": "Me gusta la primera pero con los ojos de la tercera. Conserva la boca y baja 30% la velocidad del humo.",
+    "at": "2026-10-04T21:37:43.277Z"
+   }
+  ],
+  "smokeSpeedFactor": 0.7,
+  "params": {
+   "sadness@eyes": 0.637,
+   "tiredness@eyes": 0.425
+  },
+  "paramTracks": [],
+  "protections": [
+   {
+    "id": "mouth",
+    "protection": [
+     "deformable",
+     "color-preserved",
+     "topology-preserved"
+    ]
+   },
+   {
+    "id": "eye-left",
+    "protection": [
+     "deformable",
+     "color-preserved",
+     "topology-preserved"
+    ]
+   },
+   {
+    "id": "eye-right",
+    "protection": [
+     "deformable",
+     "color-preserved",
+     "topology-preserved"
+    ]
+   },
+   {
+    "id": "nose",
+    "protection": [
+     "protected"
+    ]
+   }
+  ]
+ },
+ "identityVsApproved": {
+  "status": "pass",
+  "evaluatedParts": [
+   "candy.head.nose",
+   "candy.head.mouth",
+   "candy.head.eye-left",
+   "candy.head.eye-right"
+  ],
+  "skipped": [],
+  "perPart": [
+   {
+    "part": "candy.head.nose",
+    "expectation": "unchanged",
+    "maxMae": 0.0806,
+    "minSsim": 0.9992,
+    "statuses": [
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass"
+    ]
+   },
+   {
+    "part": "candy.head.mouth",
+    "expectation": "bounded",
+    "maxMae": 0.0842,
+    "minSsim": 0.9991,
+    "statuses": [
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass"
+    ]
+   },
+   {
+    "part": "candy.head.eye-left",
+    "expectation": "bounded",
+    "maxMae": 3.9976,
+    "minSsim": 0.918,
+    "statuses": [
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass"
+    ]
+   },
+   {
+    "part": "candy.head.eye-right",
+    "expectation": "bounded",
+    "maxMae": 3.6981,
+    "minSsim": 0.9318,
+    "statuses": [
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass",
+     "pass"
+    ]
+   }
+  ]
+ },
+ "smokeOriginal": {
+  "maeVsApprovedAtRest": 0.0869,
+  "note": "Smoke modifier disabled, expression neutral: compares the extracted original smoke to the approved conversion."
+ },
+ "restFidelity": {
+  "mae": 0.0116,
+  "ssim": 0.9999,
+  "silhouetteIoU": 1,
+  "pixels": 490000,
+  "maxAlphaDiff": 48,
+  "pixelsAlphaDiffOver2": 11,
+  "partialAlphaPixels": {
+   "approved": 8529,
+   "rest": 8529
+  },
+  "note": "Full frame at rest vs approved/candy_alchemist_cat.svg; partial alpha must survive (no flattening)."
+ },
+ "frames": [
+  {
+   "time": 0,
+   "file": "experiments/evidence/s4-frames/candy-t0.png",
+   "sha256": "68a646bcd27dc808"
+  },
+  {
+   "time": 0.66,
+   "file": "experiments/evidence/s4-frames/candy-t0.66.png",
+   "sha256": "cb38094935ebf3a0",
+   "smokeChangeVsPreviousMae": 52.3506
+  },
+  {
+   "time": 1.6,
+   "file": "experiments/evidence/s4-frames/candy-t1.6.png",
+   "sha256": "bf00ebf261735f9d",
+   "smokeChangeVsPreviousMae": 34.4984
+  },
+  {
+   "time": 2.8,
+   "file": "experiments/evidence/s4-frames/candy-t2.8.png",
+   "sha256": "ed0394aab57c0156",
+   "smokeChangeVsPreviousMae": 51.6055
+  },
+  {
+   "time": 4.1,
+   "file": "experiments/evidence/s4-frames/candy-t4.1.png",
+   "sha256": "ee8d9c1819364c60",
+   "smokeChangeVsPreviousMae": 59.489
+  },
+  {
+   "time": 5.2,
+   "file": "experiments/evidence/s4-frames/candy-t5.2.png",
+   "sha256": "f4de5ad022b4dc88",
+   "smokeChangeVsPreviousMae": 52.3504
+  },
+  {
+   "time": 6.5,
+   "file": "experiments/evidence/s4-frames/candy-t6.5.png",
+   "sha256": "1d40f1a288b746c0",
+   "smokeChangeVsPreviousMae": 55.7761
+  }
+ ],
+ "roundtrip": {
+  "paramsEqual": true,
+  "modifiersEqual": true,
+  "acceptances": 1
+ },
+ "exports": {
+  "editable": {
+   "ok": true,
+   "ms": 1213,
+   "file": "/var/folders/tr/c7sds6b95pl373kj_mhpd7sc0000gn/T/mai-s4-candy-r3/exports/candy.svg-r16-editable-709cac81.svg",
+   "bytes": 10375398,
+   "rasterImages": 0,
+   "scripts": 0,
+   "report": {
+    "profile": "editable",
+    "bytes": 10375398,
+    "paths": 52985,
+    "samples": 0,
+    "maxSampledInterpolationError": 0,
+    "tolerance": 0.25,
+    "errorUnits": "path units / degrees / scale units / color channel values as applicable",
+    "scriptRequired": false,
+    "rasterImages": 0,
+    "rigStored": true,
+    "modifiersBaked": false,
+    "modifiers": [
+     {
+      "id": "smoke-flow",
+      "technique": "geometry",
+      "samples": 24
+     }
+    ],
+    "measurement": "adaptive checks at quarter, half and three-quarter positions; modifiers use uniform samples; not a mathematical continuous error bound"
+   },
+   "compatibility": {
+    "id": "editable",
+    "label": "MAI SVG editable",
+    "status": "available",
+    "fidelity": "faithful",
+    "unsupported": []
+   },
+   "reopened": {
+    "paramsEqual": true,
+    "modifiersEqual": true,
+    "acceptances": 1,
+    "semanticNodes": 8
+   }
+  },
+  "standalone": {
+   "ok": true,
+   "ms": 2360,
+   "file": "/var/folders/tr/c7sds6b95pl373kj_mhpd7sc0000gn/T/mai-s4-candy-r3/exports/candy.svg-r16-standalone-b800d43b.svg",
+   "bytes": 24431445,
+   "rasterImages": 0,
+   "scripts": 0,
+   "report": {
+    "profile": "standalone",
+    "bytes": 24431445,
+    "paths": 52985,
+    "samples": 44750,
+    "maxSampledInterpolationError": 0,
+    "tolerance": 0.25,
+    "errorUnits": "path units / degrees / scale units / color channel values as applicable",
+    "scriptRequired": false,
+    "rasterImages": 0,
+    "rigStored": false,
+    "modifiersBaked": true,
+    "modifiers": [
+     {
+      "id": "smoke-flow",
+      "technique": "geometry",
+      "samples": 24
+     }
+    ],
+    "measurement": "adaptive checks at quarter, half and three-quarter positions; modifiers use uniform samples; not a mathematical continuous error bound"
+   },
+   "compatibility": {
+    "id": "standalone",
+    "label": "SVG animado (SMIL, sin scripts)",
+    "status": "available",
+    "fidelity": "faithful",
+    "unsupported": []
+   }
+  }
+ },
+ "transcript": "experiments/evidence/s4-candy-codex-run3.transcript.jsonl"
+}

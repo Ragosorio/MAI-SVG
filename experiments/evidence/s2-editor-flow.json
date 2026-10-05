@@ -1,0 +1,23 @@
+{
+ "startedAt": "2026-10-05T04:48:39.252Z",
+ "previewHashes": {
+  "A": "a117e3f35d87b214",
+  "B": "43bc54c75594ec2b",
+  "C": "e4a37ba05bc1a87c",
+  "D": "523f2022b74fa547"
+ },
+ "commit": {
+  "baseRevision": 6,
+  "revision": 7,
+  "identity": "pass",
+  "serviceMs": 87,
+  "visibleMs": 93,
+  "note": "visibleMs = response + WebSocket + React repaint, single sample"
+ },
+ "undo": {
+  "revision": 8,
+  "board": "pending"
+ },
+ "finishedAt": "2026-10-05T04:48:45.313Z",
+ "browser": "154.0.8037.97"
+}

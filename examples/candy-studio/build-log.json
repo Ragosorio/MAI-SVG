@@ -1,0 +1,1323 @@
+{
+ "builtAt": "2026-10-04T19:36:42.793Z",
+ "source": "assets/vector/candy_alchemist_cat.svg",
+ "calls": [
+  {
+   "tool": "timeline.set",
+   "args": {
+    "duration": 6,
+    "fps": 24,
+    "loop": true,
+    "label": "Timeline 6 s"
+   },
+   "ok": true,
+   "revision": 2,
+   "changes": {
+    "duration": {
+     "from": 5,
+     "to": 6
+    },
+    "fps": {
+     "from": 30,
+     "to": 24
+    },
+    "loop": {
+     "from": true,
+     "to": true
+    }
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "mouth",
+    "name": "Boca original",
+    "source": "#mai-artwork",
+    "alpha": false,
+    "region": {
+     "kind": "ellipse",
+     "cx": 344,
+     "cy": 230,
+     "rx": 28,
+     "ry": 14
+    },
+    "role": "mouth"
+   },
+   "ok": true,
+   "revision": 3,
+   "changes": {
+    "layer": "mouth",
+    "source": "mai-artwork"
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "eye-left",
+    "name": "Ojo turquesa",
+    "source": "#mai-artwork",
+    "alpha": false,
+    "region": {
+     "kind": "ellipse",
+     "cx": 296,
+     "cy": 195,
+     "rx": 24,
+     "ry": 23
+    },
+    "role": "eye-left"
+   },
+   "ok": true,
+   "revision": 4,
+   "changes": {
+    "layer": "eye-left",
+    "source": "mai-artwork"
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "eye-right",
+    "name": "Ojo violeta",
+    "source": "#mai-artwork",
+    "alpha": false,
+    "region": {
+     "kind": "ellipse",
+     "cx": 379,
+     "cy": 180,
+     "rx": 24,
+     "ry": 23
+    },
+    "role": "eye-right"
+   },
+   "ok": true,
+   "revision": 5,
+   "changes": {
+    "layer": "eye-right",
+    "source": "mai-artwork"
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "smoke",
+    "name": "Humo original del frasco",
+    "source": "#mai-artwork",
+    "role": "smoke",
+    "region": {
+     "kind": "polygon",
+     "points": [
+      {
+       "x": 482,
+       "y": 76
+      },
+      {
+       "x": 630,
+       "y": 76
+      },
+      {
+       "x": 630,
+       "y": 214
+      },
+      {
+       "x": 548,
+       "y": 214
+      },
+      {
+       "x": 530,
+       "y": 204
+      },
+      {
+       "x": 518,
+       "y": 197
+      },
+      {
+       "x": 500,
+       "y": 197
+      },
+      {
+       "x": 484,
+       "y": 180
+      }
+     ]
+    }
+   },
+   "ok": true,
+   "revision": 6,
+   "changes": {
+    "layer": "smoke",
+    "source": "mai-artwork"
+   }
+  },
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "group",
+      "ids": [
+       "mai-artwork",
+       "mouth",
+       "eye-left",
+       "eye-right",
+       "smoke"
+      ],
+      "id": "candy-root",
+      "name": "Candy"
+     },
+     {
+      "type": "pose",
+      "id": "candy-root",
+      "pose": {
+       "pivotX": 350,
+       "pivotY": 640
+      }
+     }
+    ],
+    "label": "Agrupar personaje"
+   },
+   "ok": true,
+   "revision": 7,
+   "changes": {
+    "operations": [
+     "group",
+     "pose"
+    ]
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "candy",
+    "role": "character",
+    "label": "Candy",
+    "targets": [
+     "candy-root"
+    ]
+   },
+   "ok": true,
+   "revision": 8,
+   "changes": {
+    "part": "candy",
+    "role": "character",
+    "targets": 1
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "head",
+    "role": "head",
+    "label": "Cabeza",
+    "targets": [],
+    "parent": "candy",
+    "region": {
+     "kind": "ellipse",
+     "cx": 337,
+     "cy": 190,
+     "rx": 112,
+     "ry": 86
+    }
+   },
+   "ok": true,
+   "revision": 9,
+   "changes": {
+    "part": "head",
+    "role": "head",
+    "targets": 0
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "flask",
+    "role": "flask",
+    "label": "Frasco",
+    "targets": [],
+    "parent": "candy",
+    "region": {
+     "kind": "rect",
+     "x": 443,
+     "y": 198,
+     "width": 122,
+     "height": 210
+    }
+   },
+   "ok": true,
+   "revision": 10,
+   "changes": {
+    "part": "flask",
+    "role": "flask",
+    "targets": 0
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "nose",
+    "role": "nose",
+    "label": "Nariz",
+    "targets": [],
+    "parent": "head",
+    "region": {
+     "kind": "ellipse",
+     "cx": 340,
+     "cy": 211,
+     "rx": 11,
+     "ry": 7
+    }
+   },
+   "ok": true,
+   "revision": 11,
+   "changes": {
+    "part": "nose",
+    "role": "nose",
+    "targets": 0
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "mouth",
+    "role": "mouth",
+    "label": "Boca",
+    "parent": "head"
+   },
+   "ok": true,
+   "revision": 12,
+   "changes": {
+    "part": "mouth",
+    "role": "mouth",
+    "targets": 1
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "eye-left",
+    "role": "eye-left",
+    "label": "Ojo izquierdo (turquesa)",
+    "parent": "head"
+   },
+   "ok": true,
+   "revision": 13,
+   "changes": {
+    "part": "eye-left",
+    "role": "eye-left",
+    "targets": 1
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "eye-right",
+    "role": "eye-right",
+    "label": "Ojo derecho (violeta)",
+    "parent": "head"
+   },
+   "ok": true,
+   "revision": 14,
+   "changes": {
+    "part": "eye-right",
+    "role": "eye-right",
+    "targets": 1
+   }
+  },
+  {
+   "tool": "part.label",
+   "args": {
+    "id": "smoke",
+    "role": "smoke",
+    "label": "Humo",
+    "parent": "flask"
+   },
+   "ok": true,
+   "revision": 15,
+   "changes": {
+    "part": "smoke",
+    "role": "smoke",
+    "targets": 1
+   }
+  },
+  {
+   "tool": "expression.rig",
+   "args": {
+    "part": "mouth",
+    "role": "mouth",
+    "landmarks": {
+     "left": {
+      "x": 331,
+      "y": 234
+     },
+     "right": {
+      "x": 358,
+      "y": 230
+     },
+     "center": {
+      "x": 341.5,
+      "y": 227
+     },
+     "lower": {
+      "x": 346,
+      "y": 232
+     }
+    }
+   },
+   "ok": true,
+   "revision": 16
+  },
+  {
+   "tool": "expression.rig",
+   "args": {
+    "part": "eye-left",
+    "role": "eye-left",
+    "landmarks": {
+     "inner": {
+      "x": 314,
+      "y": 199
+     },
+     "outer": {
+      "x": 277,
+      "y": 195
+     },
+     "upper": {
+      "x": 297,
+      "y": 177
+     },
+     "lower": {
+      "x": 296,
+      "y": 211
+     },
+     "iris": {
+      "x": 297,
+      "y": 197
+     }
+    }
+   },
+   "ok": true,
+   "revision": 17
+  },
+  {
+   "tool": "expression.rig",
+   "args": {
+    "part": "eye-right",
+    "role": "eye-right",
+    "landmarks": {
+     "inner": {
+      "x": 360,
+      "y": 180
+     },
+     "outer": {
+      "x": 397,
+      "y": 178
+     },
+     "upper": {
+      "x": 378,
+      "y": 161
+     },
+     "lower": {
+      "x": 378,
+      "y": 197
+     },
+     "iris": {
+      "x": 377,
+      "y": 181
+     }
+    }
+   },
+   "ok": true,
+   "revision": 18
+  },
+  {
+   "tool": "identity.preserve",
+   "args": {
+    "targets": [
+     "nose"
+    ],
+    "levels": [
+     "protected"
+    ]
+   },
+   "ok": true,
+   "revision": 19,
+   "changes": [
+    {
+     "part": "candy.head.nose",
+     "levels": [
+      "protected"
+     ],
+     "frozen": []
+    }
+   ]
+  },
+  {
+   "tool": "identity.preserve",
+   "args": {
+    "targets": [
+     "mouth",
+     "eyes"
+    ],
+    "levels": [
+     "deformable",
+     "color-preserved",
+     "topology-preserved"
+    ],
+    "freezeExpression": false
+   },
+   "ok": true,
+   "revision": 20,
+   "changes": [
+    {
+     "part": "candy.head.mouth",
+     "levels": [
+      "deformable",
+      "color-preserved",
+      "topology-preserved"
+     ],
+     "frozen": []
+    },
+    {
+     "part": "candy.head.eye-left",
+     "levels": [
+      "deformable",
+      "color-preserved",
+      "topology-preserved"
+     ],
+     "frozen": []
+    },
+    {
+     "part": "candy.head.eye-right",
+     "levels": [
+      "deformable",
+      "color-preserved",
+      "topology-preserved"
+     ],
+     "frozen": []
+    }
+   ]
+  },
+  {
+   "tool": "fluid.animate",
+   "args": {
+    "target": "candy.flask.smoke",
+    "preset": "smoke",
+    "quality": "balanced"
+   },
+   "ok": true,
+   "revision": 21,
+   "changes": {
+    "modifier": "smoke-flow",
+    "preset": "smoke",
+    "technique": "geometry"
+   }
+  },
+  {
+   "tool": "motion.preset",
+   "args": {
+    "target": "candy",
+    "kind": "breathe",
+    "layer": "pose",
+    "amplitude": 0.012
+   },
+   "ok": true,
+   "revision": 22,
+   "changes": {
+    "preset": "breathe",
+    "layer": "pose"
+   }
+  },
+  {
+   "tool": "scene.inspect",
+   "args": {},
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "export",
+   "args": {
+    "profile": "editable"
+   },
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "audit",
+   "args": {},
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "identity.check",
+   "args": {
+    "times": [
+     0,
+     1.5,
+     3
+    ]
+   },
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "critique",
+   "args": {
+    "samples": 48
+   },
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "preview.render",
+   "args": {
+    "times": [
+     0,
+     1.5,
+     3
+    ],
+    "scale": 1
+   },
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "preview.render",
+   "args": {
+    "times": [
+     0
+    ],
+    "part": "head",
+    "scale": 2
+   },
+   "ok": true,
+   "revision": 22
+  },
+  {
+   "tool": "expression.apply",
+   "args": {
+    "params": {
+     "sadness": 0.9
+    },
+    "dryRun": true,
+    "preview": {
+     "times": [
+      0
+     ],
+     "part": "head"
+    }
+   },
+   "ok": true,
+   "revision": 22,
+   "changes": {
+    "sadness": {
+     "from": 0,
+     "to": 0.9
+    }
+   }
+  },
+  {
+   "tool": "expression.apply",
+   "args": {
+    "params": {
+     "happiness": 0.9
+    },
+    "dryRun": true,
+    "preview": {
+     "times": [
+      0
+     ],
+     "part": "head"
+    }
+   },
+   "ok": true,
+   "revision": 22,
+   "changes": {
+    "happiness": {
+     "from": 0,
+     "to": 0.9
+    }
+   }
+  },
+  {
+   "tool": "expression.apply",
+   "args": {
+    "params": {
+     "surprise": 0.9
+    },
+    "dryRun": true,
+    "preview": {
+     "times": [
+      0
+     ],
+     "part": "head"
+    }
+   },
+   "ok": true,
+   "revision": 22,
+   "changes": {
+    "surprise": {
+     "from": 0,
+     "to": 0.9
+    }
+   }
+  },
+  {
+   "tool": "expression.apply",
+   "args": {
+    "params": {
+     "anger": 0.9
+    },
+    "dryRun": true,
+    "preview": {
+     "times": [
+      0
+     ],
+     "part": "head"
+    }
+   },
+   "ok": true,
+   "revision": 22,
+   "changes": {
+    "anger": {
+     "from": 0,
+     "to": 0.9
+    }
+   }
+  }
+ ],
+ "inspect": {
+  "parts": [
+   {
+    "id": "candy",
+    "address": "candy",
+    "role": "character",
+    "label": "Candy",
+    "status": "confirmed",
+    "protection": [],
+    "ids": [
+     "candy-root"
+    ],
+    "idCount": 1,
+    "paths": 44535,
+    "bounds": {
+     "x": 10.2,
+     "y": 10.8,
+     "width": 664.5,
+     "height": 666.8
+    },
+    "landmarks": [],
+    "animated": [
+     "scaleY@pose"
+    ],
+    "expression": [
+     {
+      "id": "mouth",
+      "role": "mouth",
+      "frozen": false,
+      "params": [
+       "happiness",
+       "sadness",
+       "anger",
+       "fear",
+       "surprise",
+       "tiredness",
+       "mouth-open",
+       "mouth-wide",
+       "mouth-round",
+       "lips-closed",
+       "smirk"
+      ]
+     },
+     {
+      "id": "eye-left",
+      "role": "eye-left",
+      "frozen": false,
+      "params": [
+       "sadness",
+       "happiness",
+       "anger",
+       "fear",
+       "surprise",
+       "tiredness",
+       "squint",
+       "look-x",
+       "look-y"
+      ]
+     },
+     {
+      "id": "eye-right",
+      "role": "eye-right",
+      "frozen": false,
+      "params": [
+       "sadness",
+       "happiness",
+       "anger",
+       "fear",
+       "surprise",
+       "tiredness",
+       "squint",
+       "look-x",
+       "look-y"
+      ]
+     }
+    ],
+    "modifiers": [
+     {
+      "id": "smoke-flow",
+      "kind": "flow",
+      "preset": "smoke",
+      "technique": "geometry",
+      "enabled": true,
+      "speedFactor": 1
+     }
+    ],
+    "secondary": [],
+    "children": [
+     {
+      "id": "head",
+      "address": "candy.head",
+      "role": "head",
+      "label": "Cabeza",
+      "status": "confirmed",
+      "protection": [],
+      "ids": [],
+      "idCount": 0,
+      "paths": 1526,
+      "bounds": {
+       "x": 225,
+       "y": 104,
+       "width": 224,
+       "height": 172
+      },
+      "landmarks": [],
+      "animated": [],
+      "expression": [
+       {
+        "id": "mouth",
+        "role": "mouth",
+        "frozen": false,
+        "params": [
+         "happiness",
+         "sadness",
+         "anger",
+         "fear",
+         "surprise",
+         "tiredness",
+         "mouth-open",
+         "mouth-wide",
+         "mouth-round",
+         "lips-closed",
+         "smirk"
+        ]
+       },
+       {
+        "id": "eye-left",
+        "role": "eye-left",
+        "frozen": false,
+        "params": [
+         "sadness",
+         "happiness",
+         "anger",
+         "fear",
+         "surprise",
+         "tiredness",
+         "squint",
+         "look-x",
+         "look-y"
+        ]
+       },
+       {
+        "id": "eye-right",
+        "role": "eye-right",
+        "frozen": false,
+        "params": [
+         "sadness",
+         "happiness",
+         "anger",
+         "fear",
+         "surprise",
+         "tiredness",
+         "squint",
+         "look-x",
+         "look-y"
+        ]
+       }
+      ],
+      "modifiers": [],
+      "secondary": [],
+      "children": [
+       {
+        "id": "mouth",
+        "address": "candy.head.mouth",
+        "role": "mouth",
+        "label": "Boca",
+        "status": "confirmed",
+        "protection": [
+         "deformable",
+         "color-preserved",
+         "topology-preserved"
+        ],
+        "ids": [
+         "mouth"
+        ],
+        "idCount": 1,
+        "paths": 344,
+        "bounds": {
+         "x": 316,
+         "y": 216,
+         "width": 56,
+         "height": 28
+        },
+        "landmarks": [
+         "left",
+         "right",
+         "center",
+         "lower"
+        ],
+        "animated": [],
+        "expression": [
+         {
+          "id": "mouth",
+          "role": "mouth",
+          "frozen": false,
+          "params": [
+           "happiness",
+           "sadness",
+           "anger",
+           "fear",
+           "surprise",
+           "tiredness",
+           "mouth-open",
+           "mouth-wide",
+           "mouth-round",
+           "lips-closed",
+           "smirk"
+          ]
+         }
+        ],
+        "modifiers": [],
+        "secondary": [],
+        "children": []
+       },
+       {
+        "id": "eye-left",
+        "address": "candy.head.eye-left",
+        "role": "eye-left",
+        "label": "Ojo izquierdo (turquesa)",
+        "status": "confirmed",
+        "protection": [
+         "deformable",
+         "color-preserved",
+         "topology-preserved"
+        ],
+        "ids": [
+         "eye-left"
+        ],
+        "idCount": 1,
+        "paths": 560,
+        "bounds": {
+         "x": 272,
+         "y": 172,
+         "width": 48,
+         "height": 46
+        },
+        "landmarks": [
+         "inner",
+         "outer",
+         "upper",
+         "lower",
+         "iris"
+        ],
+        "animated": [],
+        "expression": [
+         {
+          "id": "eye-left",
+          "role": "eye-left",
+          "frozen": false,
+          "params": [
+           "sadness",
+           "happiness",
+           "anger",
+           "fear",
+           "surprise",
+           "tiredness",
+           "squint",
+           "look-x",
+           "look-y"
+          ]
+         }
+        ],
+        "modifiers": [],
+        "secondary": [],
+        "children": []
+       },
+       {
+        "id": "eye-right",
+        "address": "candy.head.eye-right",
+        "role": "eye-right",
+        "label": "Ojo derecho (violeta)",
+        "status": "confirmed",
+        "protection": [
+         "deformable",
+         "color-preserved",
+         "topology-preserved"
+        ],
+        "ids": [
+         "eye-right"
+        ],
+        "idCount": 1,
+        "paths": 622,
+        "bounds": {
+         "x": 355,
+         "y": 157,
+         "width": 48,
+         "height": 46
+        },
+        "landmarks": [
+         "inner",
+         "outer",
+         "upper",
+         "lower",
+         "iris"
+        ],
+        "animated": [],
+        "expression": [
+         {
+          "id": "eye-right",
+          "role": "eye-right",
+          "frozen": false,
+          "params": [
+           "sadness",
+           "happiness",
+           "anger",
+           "fear",
+           "surprise",
+           "tiredness",
+           "squint",
+           "look-x",
+           "look-y"
+          ]
+         }
+        ],
+        "modifiers": [],
+        "secondary": [],
+        "children": []
+       },
+       {
+        "id": "nose",
+        "address": "candy.head.nose",
+        "role": "nose",
+        "label": "Nariz",
+        "status": "confirmed",
+        "protection": [
+         "protected"
+        ],
+        "ids": [],
+        "idCount": 0,
+        "paths": 0,
+        "bounds": {
+         "x": 329,
+         "y": 204,
+         "width": 22,
+         "height": 14
+        },
+        "landmarks": [],
+        "animated": [],
+        "expression": [],
+        "modifiers": [],
+        "secondary": [],
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "flask",
+      "address": "candy.flask",
+      "role": "flask",
+      "label": "Frasco",
+      "status": "confirmed",
+      "protection": [],
+      "ids": [],
+      "idCount": 0,
+      "paths": 1036,
+      "bounds": {
+       "x": 443,
+       "y": 198,
+       "width": 122,
+       "height": 210
+      },
+      "landmarks": [],
+      "animated": [],
+      "expression": [],
+      "modifiers": [
+       {
+        "id": "smoke-flow",
+        "kind": "flow",
+        "preset": "smoke",
+        "technique": "geometry",
+        "enabled": true,
+        "speedFactor": 1
+       }
+      ],
+      "secondary": [],
+      "children": [
+       {
+        "id": "smoke",
+        "address": "candy.flask.smoke",
+        "role": "smoke",
+        "label": "Humo",
+        "status": "confirmed",
+        "protection": [],
+        "ids": [
+         "smoke"
+        ],
+        "idCount": 1,
+        "paths": 1036,
+        "bounds": {
+         "x": 482,
+         "y": 76,
+         "width": 148,
+         "height": 138
+        },
+        "landmarks": [],
+        "animated": [],
+        "expression": [],
+        "modifiers": [
+         {
+          "id": "smoke-flow",
+          "kind": "flow",
+          "preset": "smoke",
+          "technique": "geometry",
+          "enabled": true,
+          "speedFactor": 1
+         }
+        ],
+        "secondary": [],
+        "children": []
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "expressionFeatures": [
+   {
+    "id": "mouth",
+    "role": "mouth",
+    "part": "mouth",
+    "frozen": false,
+    "params": [
+     "happiness",
+     "sadness",
+     "anger",
+     "fear",
+     "surprise",
+     "tiredness",
+     "mouth-open",
+     "mouth-wide",
+     "mouth-round",
+     "lips-closed",
+     "smirk"
+    ],
+    "sizePx": 27.295
+   },
+   {
+    "id": "eye-left",
+    "role": "eye-left",
+    "part": "eye-left",
+    "frozen": false,
+    "params": [
+     "sadness",
+     "happiness",
+     "anger",
+     "fear",
+     "surprise",
+     "tiredness",
+     "squint",
+     "look-x",
+     "look-y"
+    ],
+    "sizePx": 37.216
+   },
+   {
+    "id": "eye-right",
+    "role": "eye-right",
+    "part": "eye-right",
+    "frozen": false,
+    "params": [
+     "sadness",
+     "happiness",
+     "anger",
+     "fear",
+     "surprise",
+     "tiredness",
+     "squint",
+     "look-x",
+     "look-y"
+    ],
+    "sizePx": 37.054
+   }
+  ],
+  "modifiers": [
+   {
+    "id": "smoke-flow",
+    "kind": "flow",
+    "preset": "smoke",
+    "technique": "geometry",
+    "enabled": true,
+    "targets": 1790,
+    "params": {
+     "amplitude": 0.05,
+     "scale": 0.35,
+     "speed": 0.22,
+     "swirl": 1,
+     "wave": 0.5,
+     "waveLength": 0.5,
+     "anchorRadius": 0.18,
+     "growth": 1,
+     "cycles": 1,
+     "flicker": 0,
+     "samples": 24
+    }
+   }
+  ]
+ },
+ "audit": {
+  "errors": 0,
+  "warnings": 2,
+  "info": 2
+ },
+ "identity": {
+  "pass": true,
+  "perceptual": [
+   {
+    "part": "candy.head.mouth",
+    "time": 0,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 5.46,
+    "pass": true
+   },
+   {
+    "part": "candy.head.eye-left",
+    "time": 0,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 7.44,
+    "pass": true
+   },
+   {
+    "part": "candy.head.eye-right",
+    "time": 0,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 7.41,
+    "pass": true
+   },
+   {
+    "part": "candy.head.nose",
+    "time": 0,
+    "expectation": "unchanged",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 0,
+    "pass": true
+   },
+   {
+    "part": "candy.head.mouth",
+    "time": 1.5,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 5.46,
+    "pass": true
+   },
+   {
+    "part": "candy.head.eye-left",
+    "time": 1.5,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 7.44,
+    "pass": true
+   },
+   {
+    "part": "candy.head.eye-right",
+    "time": 1.5,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 7.41,
+    "pass": true
+   },
+   {
+    "part": "candy.head.nose",
+    "time": 1.5,
+    "expectation": "unchanged",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 0,
+    "pass": true
+   },
+   {
+    "part": "candy.head.mouth",
+    "time": 3,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 5.46,
+    "pass": true
+   },
+   {
+    "part": "candy.head.eye-left",
+    "time": 3,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 7.44,
+    "pass": true
+   },
+   {
+    "part": "candy.head.eye-right",
+    "time": 3,
+    "expectation": "deform within budget",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 7.41,
+    "pass": true
+   },
+   {
+    "part": "candy.head.nose",
+    "time": 3,
+    "expectation": "unchanged",
+    "mae": 0,
+    "ssim": 1,
+    "landmarkDriftPx": 0,
+    "budgetPx": 0,
+    "pass": true
+   }
+  ]
+ },
+ "critique": {
+  "findings": [],
+  "scores": {
+   "smoothness": 4,
+   "loop": 4,
+   "identity": 4,
+   "timing": 4,
+   "secondary": 4
+  }
+ }
+}

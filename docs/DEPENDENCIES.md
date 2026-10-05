@@ -30,3 +30,13 @@ Composición CSS: css-tree 3.1.0 (MIT), @types/css-tree 2.3.10 (MIT, desarrollo)
 
 
 Segmentación asistida: Python externo, opencv-python 5.0.0.93 (OpenCV 5.0.0) y numpy 2.0.2, fijados en scripts/requirements-segmentation.txt. OpenCV moderno usa Apache-2.0: https://opencv.org/license/. El paquete Python incluye avisos propios y de terceros; conservarlos al redistribuir. No está incorporado al bundle JavaScript. PyYAML 6.0.3 se usó exclusivamente en /private/tmp para validar skills.
+
+## Superficie para agentes (2026-10-04)
+
+| Paquete | Versión fijada | Licencia | Uso |
+|---|---|---|---|
+| ajv | 8.20.0 | MIT | Validador JSON Schema 2020-12 único para CLI, API HTTP, MCP y planes `mai.agent-plan/v1` |
+| @modelcontextprotocol/sdk | 1.32.0 | MIT | Servidor MCP por stdio (`mai mcp`) y cliente en las pruebas de paridad; arrastra express/hono/zod como dependencias transitivas del SDK |
+| zod | 3.25.76 | MIT | Dependencia par del SDK MCP |
+
+`npm audit`: 0 vulnerabilidades tras la instalación. Entorno de pruebas: navegadores Playwright 1.63 (Firefox, WebKit 26.6) instalados en la caché de Playwright del usuario; Chromium se resuelve con Google Chrome instalado. Segmentación OpenCV: entorno local `.venv-segmentation/` (Python 3.12, `scripts/requirements-segmentation.txt`, ignorado por git); `MAI_PYTHON` permite otro intérprete.

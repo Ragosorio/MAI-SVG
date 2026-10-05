@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mai-svg": {
+      "command": "npx",
+      "args": ["tsx", "packages/cli/main.ts", "mcp"],
+      "env": {}
+    }
+  }
+}

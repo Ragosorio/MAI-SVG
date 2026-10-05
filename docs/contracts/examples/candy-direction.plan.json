@@ -1,0 +1,45 @@
+{
+  "protocol": "mai.agent-plan/v1",
+  "requestId": "direction-candy-001",
+  "sessionId": "session-example",
+  "documentId": "document-candy-example",
+  "expectedRevision": 24,
+  "mode": "dry-run",
+  "label": "Variante A, ojos C, boca actual y humo más lento",
+  "constraints": {
+    "preserve": [{
+      "part": {"partId": "mouth", "within": "candy"},
+      "reference": {"kind": "snapshot", "id": "snapshot-example-24"},
+      "channels": ["geometry", "paint", "expression"],
+      "allowRigidMotion": true
+    }]
+  },
+  "commands": [
+    {
+      "id": "expression",
+      "type": "variant.apply",
+      "target": {"partId": "candy"},
+      "board": {"id": "sad-options", "version": 1},
+      "base": "A",
+      "take": {"eyes": "C"}
+    },
+    {
+      "id": "smoke-speed",
+      "type": "animation.adjust",
+      "target": {"partId": "smoke", "within": "candy"},
+      "sourceId": "smoke-flow",
+      "property": "speed",
+      "scale": 0.7,
+      "onOverflow": "reject"
+    }
+  ],
+  "validation": {
+    "times": [0, 0.66, 1.6, 2.8, 4.1, 5.2, 6.5],
+    "required": ["structural", "identity"],
+    "preview": true
+  },
+  "provenance": {
+    "kind": "user-direction",
+    "text": "Me gusta la primera pero con los ojos de la tercera. Conserva la boca y baja 30% la velocidad del humo."
+  }
+}

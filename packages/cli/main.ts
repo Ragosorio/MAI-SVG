@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 import {creative}from './creative.js';
+import {runTool,toolHelp,parseArgs,callSession}from './agent.js';
+import {toolByName}from '../agent/registry.js';
+import {startMcp}from '../mcp/server.js';
 import {assisted} from './assist.js';
 import {identityCheck}from './identity.js';
 import { readFile, writeFile, mkdir, readdir, copyFile, stat, rename, realpath } from 'node:fs/promises';
@@ -80,8 +83,16 @@ async function editabilityProof(){
   if(!shape)throw new Error('No identified artwork path');const id=shape.getAttribute('id');shape.setAttribute('fill','#ff00ff');
   const edited=serialize(doc);assertSvg(edited);const output=resolve(option('--output','experiments/editability-proof.svg')!);if(output===resolve(input))throw new Error('Proof cannot overwrite candidate');await writeFile(output,edited);console.log(JSON.stringify({selectedPath:id,operation:'set fill',output,reopened:!!elements(parseSvg(edited)).find(e=>e.getAttribute('id')===id&&e.getAttribute('fill')==='#ff00ff')}));
 }
+// Legacy file-oriented commands keep their contract; everything else goes through the agent tool registry.
+const legacy=(command==='export'&&args[0]!=='capabilities')||['apply','load','insert','session','objects','object','open','render','vectorize','segment','separate','identity-check','spritesheet','proof','gallery','serve','prove-editable','context','quality','validate','help','--help'].includes(command??'help')||(command==='compare'&&args.filter(a=>/\.svg$/i.test(a)).length===2)||(command==='preview'&&args.some(a=>/\.svg$/i.test(a)))||(command==='fluid'&&args[0]!=='animate');
+async function agentEntry(){if(command==='tools'){console.log(toolHelp());return true;}if(command==='mcp'){await startMcp();return true;}
+ if(command==='call'){const tool=toolByName(args[0]??'');if(!tool){console.log(JSON.stringify({ok:false,error:{code:'UNKNOWN_TOOL',message:`Unknown tool ${args[0]}`}}));process.exitCode=1;return true;}
+  // `call` is the generic form of every verb: same parser, same envelope, same exit codes (0 ok, 1 error, 2 conflict).
+  process.exitCode=await runTool([...tool.cli.split(' '),...args.slice(1).filter(a=>a!=='--json')]);return true;}
+ if(legacy)return false;const argv=[command!,...args].filter(a=>a!=='--json').map(a=>command==='choices'&&a==='show'?'inspect':a);const code=await runTool(argv);if(code<0)return false;process.exitCode=code;return true;}
 try{
-  if(await creative(command,args,option)){}
+  if(await agentEntry()){}
+  else if(await creative(command,args,option)){}
   else if(['segment','separate','identity-check'].includes(command!))console.log(JSON.stringify(await assisted(command!,args,option),null,2));
   else if(command==='preview'){if(!args[0]||args[0].startsWith('--'))throw Error('Specify SVG');const output=resolve(option('--output','experiments/preview.gif')!);if(output===resolve(args[0]))throw Error('Cannot overwrite source');console.log(JSON.stringify(await preview(args[0],output,Number(option('--fps','10')),Number(option('--width','480'))),null,2));}
   else if(command==='spritesheet'){if(!args[0]||args[0].startsWith('--'))throw Error('Specify editable SVG');const model=new VectorDocument(await readFile(args[0],'utf8'));const frames=Number(option('--frames','24'));if(!Number.isInteger(frames)||frames<2||frames>120)throw Error('Frames must be 2–120');const times=option('--times')?.split(',').map(Number)??Array.from({length:frames},(_,i)=>model.project.duration*i/frames);const result=spriteSheet(model,times,Number(option('--columns','6')),Number(option('--cell','180')));const output=resolve(option('--output','experiments/spritesheet.svg')!);if(output===resolve(args[0]))throw Error('Cannot overwrite source');await writeFile(output,result.svg);await writeFile(output+'.json',JSON.stringify(result.manifest,null,2));if(has('--png')){try{await writeFile(output+'.png',(await renderSvg(result.svg)).png);}finally{await closeRenderer();}}console.log(JSON.stringify({output,manifest:result.manifest},null,2));}

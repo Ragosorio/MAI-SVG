@@ -9,3 +9,6 @@ apps/editor/dist/
 !.env.example
 *.pem
 *.key
+
+# Local Python environment for OpenCV segmentation (scripts/requirements-segmentation.txt)
+.venv-segmentation/

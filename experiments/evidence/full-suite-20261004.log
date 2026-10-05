@@ -1,0 +1,373 @@
+
+> mai-svg@0.1.0 typecheck
+> tsc --noEmit
+
+
+> mai-svg@0.1.0 build
+> vite build --config apps/editor/vite.config.ts
+
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 31 modules transformed.
+rendering chunks...
+computing gzip size...
+apps/editor/dist/index.html                   0.36 kB │ gzip:  0.27 kB
+apps/editor/dist/assets/index-BHi4izdf.css   10.30 kB │ gzip:  3.12 kB
+apps/editor/dist/assets/index-CSAzzJb1.js   297.33 kB │ gzip: 94.94 kB
+
+✓ built in 95ms
+
+> mai-svg@0.1.0 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# MAI SVG editor: http://127.0.0.1:64506
+# MAI SVG editor: http://127.0.0.1:64506
+# Subtest: S1: one human request → one atomic, idempotent, undoable transaction (scene + board)
+ok 1 - S1: one human request → one atomic, idempotent, undoable transaction (scene + board)
+  ---
+  duration_ms: 5289.312458
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64644
+# Subtest: S1: a human edit while previews render makes the commit fail (CAS), and render failure blocks a required gate
+ok 2 - S1: a human edit while previews render makes the commit fail (CAS), and render failure blocks a required gate
+  ---
+  duration_ms: 6837.780625
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64750
+# Subtest: S4 regression: re-choosing on a chosen board and region-only preserved parts
+ok 3 - S4 regression: re-choosing on a chosen board and region-only preserved parts
+  ---
+  duration_ms: 6152.000458
+  type: 'test'
+  ...
+# Subtest: F01: protection covers indirect routes (drivers, params, clips, ancestors, modifiers) and rolls back
+ok 4 - F01: protection covers indirect routes (drivers, params, clips, ancestors, modifiers) and rolls back
+  ---
+  duration_ms: 17.948125
+  type: 'test'
+  ...
+# Subtest: F01: a driver created before protection cannot be exploited afterwards; deformable parts accept expression warps
+ok 5 - F01: a driver created before protection cannot be exploited afterwards; deformable parts accept expression warps
+  ---
+  duration_ms: 43.69475
+  type: 'test'
+  ...
+# Subtest: F04: collective references are scoped to one owner; proposals cannot be mutated
+ok 6 - F04: collective references are scoped to one owner; proposals cannot be mutated
+  ---
+  duration_ms: 139.923833
+  type: 'test'
+  ...
+# Subtest: F03: identity.check needs an explicit reference and coverage; nothing evaluated is never a pass
+ok 7 - F03: identity.check needs an explicit reference and coverage; nothing evaluated is never a pass
+  ---
+  duration_ms: 3327.096625
+  type: 'test'
+  ...
+# Subtest: F08: schemas reject incomplete unions, examples validate, operation types are all dispatched
+ok 8 - F08: schemas reject incomplete unions, examples validate, operation types are all dispatched
+  ---
+  duration_ms: 518.336959
+  type: 'test'
+  ...
+# Subtest: F05: CLI routes return one JSON object with stable exit codes
+ok 9 - F05: CLI routes return one JSON object with stable exit codes
+  ---
+  duration_ms: 15227.230958
+  type: 'test'
+  ...
+# Subtest: composition namespaces references, preserves native animation and reopens both components
+ok 10 - composition namespaces references, preserves native animation and reopens both components
+  ---
+  duration_ms: 24.818333
+  type: 'test'
+  ...
+# Subtest: composition and canvas rollback atomically on unsafe CSS or duplicate ID
+ok 11 - composition and canvas rollback atomically on unsafe CSS or duplicate ID
+  ---
+  duration_ms: 6.98125
+  type: 'test'
+  ...
+# Subtest: motion presets copy, stretch, reverse and delete without silent track overwrites
+ok 12 - motion presets copy, stretch, reverse and delete without silent track overwrites
+  ---
+  duration_ms: 3.470125
+  type: 'test'
+  ...
+# Subtest: diagnostics report loop seam and quality guidance preserves chosen default
+ok 13 - diagnostics report loop seam and quality guidance preserves chosen default
+  ---
+  duration_ms: 0.649583
+  type: 'test'
+  ...
+# Subtest: component CSS selectors, URLs and keyframes are isolated across repeated SVG
+ok 14 - component CSS selectors, URLs and keyframes are isolated across repeated SVG
+  ---
+  duration_ms: 3.41525
+  type: 'test'
+  ...
+# Subtest: scoped CSS renders its component without recoloring sibling geometry
+ok 15 - scoped CSS renders its component without recoloring sibling geometry
+  ---
+  duration_ms: 1922.372667
+  type: 'test'
+  ...
+# {"restRgbaMae":0.48935374149659866,"standaloneRgbaMae":0.4464173469387755}
+# Subtest: Candy uses the approved conversion and animates its original eyes
+ok 16 - Candy uses the approved conversion and animates its original eyes
+  ---
+  duration_ms: 20206.241417
+  type: 'test'
+  ...
+# Subtest: emotion library interpolates actual facial geometry and survives editable roundtrip
+ok 17 - emotion library interpolates actual facial geometry and survives editable roundtrip
+  ---
+  duration_ms: 1961.943167
+  type: 'test'
+  ...
+# Subtest: sprite transitions are discrete and atlas freezes real vector frames with unique references
+ok 18 - sprite transitions are discrete and atlas freezes real vector frames with unique references
+  ---
+  duration_ms: 223.907417
+  type: 'test'
+  ...
+# Subtest: invalid sprite target overlap and locked emotion targets rollback the transaction
+ok 19 - invalid sprite target overlap and locked emotion targets rollback the transaction
+  ---
+  duration_ms: 3.700709
+  type: 'test'
+  ...
+# Subtest: standalone emotion and sprite frames match editor geometry at three story beats
+ok 20 - standalone emotion and sprite frames match editor geometry at three story beats
+  ---
+  duration_ms: 5721.003125
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64682
+# Subtest: an agent CLI builds the emotion example from source, operations and exports it editable
+ok 21 - an agent CLI builds the emotion example from source, operations and exports it editable
+  ---
+  duration_ms: 10464.553875
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64510
+# MAI SVG editor: http://127.0.0.1:64510
+# Subtest: preview choices are read-only, persistent, revision-bound, live, and undoable
+ok 22 - preview choices are read-only, persistent, revision-bound, live, and undoable
+  ---
+  duration_ms: 5500.488666
+  type: 'test'
+  ...
+# Compatibility engine: chromium
+# Compatibility engine: firefox
+# Compatibility engine: webkit
+# Subtest: SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+ok 23 - SMIL transform playback matches native engine frames in Chromium, Firefox and WebKit
+  ---
+  duration_ms: 16637.996917
+  type: 'test'
+  ...
+# Subtest: standalone SVG plays as SVG document and HTML img in all three engines
+ok 24 - standalone SVG plays as SVG document and HTML img in all three engines
+  ---
+  duration_ms: 4932.445083
+  type: 'test'
+  ...
+# Subtest: partial alpha remains partial and empty background remains transparent
+ok 25 - partial alpha remains partial and empty background remains transparent
+  ---
+  duration_ms: 185.766042
+  type: 'test'
+  ...
+# Subtest: PNG, WebP and JPEG are decoded, unsupported data is rejected
+ok 26 - PNG, WebP and JPEG are decoded, unsupported data is rejected
+  ---
+  duration_ms: 514.863542
+  type: 'test'
+  ...
+# Subtest: multiple embedded images preserve effects, transform, placement and unique IDs
+ok 27 - multiple embedded images preserve effects, transform, placement and unique IDs
+  ---
+  duration_ms: 946.410333
+  type: 'test'
+  ...
+# Subtest: untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+ok 28 - untrusted SVG rejects script, external resources, entity expansion and raster camouflage
+  ---
+  duration_ms: 4.863
+  type: 'test'
+  ...
+# Subtest: fully transparent input is rejected instead of falsely claiming a successful conversion
+ok 29 - fully transparent input is rejected instead of falsely claiming a successful conversion
+  ---
+  duration_ms: 6.132834
+  type: 'test'
+  ...
+# Subtest: CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+ok 30 - CLI batch isolates invalid files and disambiguates equal PNG/WebP names
+  ---
+  duration_ms: 4069.827667
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64509
+# Subtest: S2: selection, comment, proposal, mix, commit, live repaint and undo in the editor
+ok 31 - S2: selection, comment, proposal, mix, commit, live repaint and undo in the editor
+  ---
+  duration_ms: 6789.567708
+  type: 'test'
+  ...
+# Subtest: atomic transactions, locked paths and topology protection
+ok 32 - atomic transactions, locked paths and topology protection
+  ---
+  duration_ms: 24.202416
+  type: 'test'
+  ...
+# Subtest: Bezier point editing and selected-path booleans preserve unrelated SVG
+ok 33 - Bezier point editing and selected-path booleans preserve unrelated SVG
+  ---
+  duration_ms: 13.003
+  type: 'test'
+  ...
+# Subtest: two-bone IK reaches target, angle limits and hierarchy cycles are checked
+ok 34 - two-bone IK reaches target, angle limits and hierarchy cycles are checked
+  ---
+  duration_ms: 50.332541
+  type: 'test'
+  ...
+# Subtest: normalized weights and mesh deformation maintain path topology
+ok 35 - normalized weights and mesh deformation maintain path topology
+  ---
+  duration_ms: 14.520666
+  type: 'test'
+  ...
+# Subtest: editable SVG restores rig and tracks; standalone contains only declarative geometry
+ok 36 - editable SVG restores rig and tracks; standalone contains only declarative geometry
+  ---
+  duration_ms: 56.069083
+  type: 'test'
+  ...
+# Subtest: Chromium SMIL frames match engine geometry at several times
+ok 37 - Chromium SMIL frames match engine geometry at several times
+  ---
+  duration_ms: 5361.631
+  type: 'test'
+  ...
+# Subtest: rig and mesh animation bake to paths and reopen with authoring topology
+ok 38 - rig and mesh animation bake to paths and reopen with authoring topology
+  ---
+  duration_ms: 3286.634541
+  type: 'test'
+  ...
+# Subtest: imported metadata cannot resurrect unsafe attributes
+ok 39 - imported metadata cannot resurrect unsafe attributes
+  ---
+  duration_ms: 2.153375
+  type: 'test'
+  ...
+# Subtest: preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+ok 40 - preserved alpha moves with a prepared part; rig refuses a fixed ancestor mask
+  ---
+  duration_ms: 1141.88625
+  type: 'test'
+  ...
+# Subtest: importing a standalone SVG keeps native animation through subsequent editable saves
+ok 41 - importing a standalone SVG keeps native animation through subsequent editable saves
+  ---
+  duration_ms: 12.442291
+  type: 'test'
+  ...
+# Subtest: names and locks of animated parts survive reopening
+ok 42 - names and locks of animated parts survive reopening
+  ---
+  duration_ms: 1.640792
+  type: 'test'
+  ...
+# Subtest: fluid presets retain topology, loop exactly, remain editable and play standalone
+ok 43 - fluid presets retain topology, loop exactly, remain editable and play standalone
+  ---
+  duration_ms: 7236.358584
+  type: 'test'
+  ...
+# Subtest: fluid transaction rejects bad presets, protected parents and duplicate IDs atomically
+ok 44 - fluid transaction rejects bad presets, protected parents and duplicate IDs atomically
+  ---
+  duration_ms: 37.569541
+  type: 'test'
+  ...
+# Subtest: fluid CLI produces a real editable SVG from a config
+ok 45 - fluid CLI produces a real editable SVG from a config
+  ---
+  duration_ms: 2472.387
+  type: 'test'
+  ...
+# Subtest: emotion.update changes a library without silently rewriting animation, rejects invalid topology and survives reopen
+ok 46 - emotion.update changes a library without silently rewriting animation, rejects invalid topology and survives reopen
+  ---
+  duration_ms: 7.167458
+  type: 'test'
+  ...
+# Subtest: identity protection blocks destructive edits including emotion expansion and preserves rigid acting
+ok 47 - identity protection blocks destructive edits including emotion expansion and preserves rigid acting
+  ---
+  duration_ms: 24.627416
+  type: 'test'
+  ...
+# Subtest: separation preserves original geometry and masks overlap with exclusive ownership
+ok 48 - separation preserves original geometry and masks overlap with exclusive ownership
+  ---
+  duration_ms: 1843.34025
+  type: 'test'
+  ...
+# Subtest: regional identity gate fails actual feature color loss and passes unchanged art
+ok 49 - regional identity gate fails actual feature color loss and passes unchanged art
+  ---
+  duration_ms: 2788.631875
+  type: 'test'
+  ...
+# Subtest: OpenCV segmentation accepts PNG, WebP and JPG hints and produces real contours
+ok 50 - OpenCV segmentation accepts PNG, WebP and JPG hints and produces real contours
+  ---
+  duration_ms: 1499.91325
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64707
+# MAI SVG editor: http://127.0.0.1:64707
+# CLI process+WS roundtrip 3503.8ms; server transaction below250ms verified
+# Subtest: CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+ok 51 - CLI changes arrive over WebSocket, conflicts reject, undo/redo and restart recover
+  ---
+  duration_ms: 3701.38525
+  type: 'test'
+  ...
+# Subtest: skills: generated copies match the source and cite only real tools
+ok 52 - skills: generated copies match the source and cite only real tools
+  ---
+  duration_ms: 17.454209
+  type: 'test'
+  ...
+# MAI SVG editor: http://127.0.0.1:64794
+# Subtest: S3: the same structured call gives the same result over CLI, HTTP and MCP
+ok 53 - S3: the same structured call gives the same result over CLI, HTTP and MCP
+  ---
+  duration_ms: 6506.000792
+  type: 'test'
+  ...
+# Subtest: S3: MCP lifecycle handles invalid JSON and exits on EOF
+ok 54 - S3: MCP lifecycle handles invalid JSON and exits on EOF
+  ---
+  duration_ms: 616.2295
+  type: 'test'
+  ...
+1..54
+# tests 54
+# suites 0
+# pass 54
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 34588.061375
+exit 0

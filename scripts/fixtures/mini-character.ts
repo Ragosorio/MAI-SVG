@@ -1,0 +1,21 @@
+// Small but complete character used by S1/S2 tests and the sandbox session: semantic parts, expression rig on
+// mouth and eyes, a flowing smoke part and a sadness choice board — all created through the agent API.
+import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {join} from 'node:path';
+import {createServer} from 'node:net';import {once} from 'node:events';
+import {startEditorServer} from '../../packages/server/server.js';
+export const FIXTURE='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><g id="char"><path id="face" d="M40 60C40 20 160 20 160 60C160 120 40 120 40 60Z" fill="#f2d6b0"/><g id="eye-left-g"><path id="eye-left-white" d="M62 55C62 45 88 45 88 55C88 65 62 65 62 55Z" fill="#ffffff"/><path id="eye-left-iris" d="M70 55C70 50 80 50 80 55C80 60 70 60 70 55Z" fill="#2a7f9e"/></g><g id="eye-right-g"><path id="eye-right-white" d="M112 55C112 45 138 45 138 55C138 65 112 65 112 55Z" fill="#ffffff"/><path id="eye-right-iris" d="M120 55C120 50 130 50 130 55C130 60 120 60 120 55Z" fill="#7a3f9e"/></g><path id="mouth" d="M85 85C95 92 105 92 115 85L115 88C105 96 95 96 85 88Z" fill="#a0505a"/><path id="nose" d="M96 70L104 70L100 76Z" fill="#d07080"/><path id="flask" d="M150 150L170 150L175 190L145 190Z" fill="#88ccff"/><g id="smoke"><path id="smoke-1" d="M155 145C150 130 170 120 160 105C175 115 172 132 165 145Z" fill="#f5a5de" opacity=".8"/><path id="smoke-2" d="M158 120C150 110 165 95 158 85C172 95 170 110 162 120Z" fill="#c9a5f5" opacity=".7"/></g></g></svg>';
+export async function port(){const probe=createServer();probe.listen(0,'127.0.0.1');await once(probe,'listening');const p=(probe.address() as {port:number}).port;await new Promise<void>(r=>probe.close(()=>r()));return p;}
+export async function studio(root:string,p:number){const app=await startEditorServer(p,root);const url=`http://127.0.0.1:${p}`;const cfg=JSON.parse(await readFile(join(root,'.cache/session.json'),'utf8'));
+ const post=async(path:string,body:unknown)=>{const r=await fetch(url+path,{method:'POST',headers:{'Content-Type':'application/json','x-mai-token':cfg.token},body:JSON.stringify(body)});return {status:r.status,body:await r.json()};};
+ const call=async(tool:string,args:Record<string,unknown>={})=>(await post('/api/agent/call',{tool,args})).body;return {app,post,call,url};}
+export async function buildFixture(call:(t:string,a?:Record<string,unknown>)=>Promise<Record<string,unknown>>,post:(p:string,b:unknown)=>Promise<{body:Record<string,unknown>}>){
+ let rev=(await post('/api/import',{name:'mini.svg',base64:Buffer.from(FIXTURE).toString('base64'),expectedRevision:0})).body.revision as number;
+ const label=(id:string,role:string,targets:string[],parent?:string)=>({type:'semantic.label',node:{id,role,label:id,targets,...(parent?{parent}:{}),status:'confirmed',source:'agent'}});
+ const step=async(tool:string,args:Record<string,unknown>)=>{const r=await call(tool,{...args,expectedRevision:rev});assert.equal(r.ok,true,`${tool}: ${JSON.stringify(r.error)}`);rev=r.revision as number;return r;};
+ await step('ops.apply',{ops:[label('char','character',['char']),label('head','head',['face'],'char'),label('mouth','mouth',['mouth'],'head'),label('eye-left','eye-left',['eye-left-g'],'head'),label('eye-right','eye-right',['eye-right-g'],'head'),label('nose','nose',['nose'],'head'),label('flask','flask',['flask'],'char'),label('smoke','smoke',['smoke'],'flask'),{type:'timeline',duration:4}]});
+ await step('expression.rig',{part:'mouth',role:'mouth',landmarks:{left:{x:85,y:86},right:{x:115,y:86},center:{x:100,y:89},lower:{x:100,y:94}},region:{kind:'ellipse',cx:100,cy:89,rx:24,ry:13}});
+ await step('expression.rig',{part:'eye-left',role:'eye-left',landmarks:{inner:{x:88,y:56},outer:{x:62,y:55},upper:{x:75,y:46},lower:{x:75,y:64},iris:{x:75,y:55}},region:{kind:'ellipse',cx:75,cy:55,rx:18,ry:14}});
+ await step('expression.rig',{part:'eye-right',role:'eye-right',landmarks:{inner:{x:112,y:56},outer:{x:138,y:55},upper:{x:125,y:46},lower:{x:125,y:64},iris:{x:125,y:55}},region:{kind:'ellipse',cx:125,cy:55,rx:18,ry:14}});
+ await step('fluid.animate',{target:'char.flask.smoke',preset:'smoke',id:'smoke-flow'});
+ await step('expression.propose',{emotion:'sadness',intensity:.8,count:3,time:0});
+ return rev;}

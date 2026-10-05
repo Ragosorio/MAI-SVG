@@ -1,0 +1,62 @@
+{
+  "description": "Observed behavior before the S0 fixes; defects are reported, not endorsed.",
+  "directRecolor": "blocked",
+  "driverRecolor": {
+    "allowed": true,
+    "renderedBlue": true
+  },
+  "eyesAcrossCharacters": {
+    "resolved": [
+      "catA.catA-left",
+      "catA.catA-right",
+      "catB.catB-left",
+      "catB.catB-right"
+    ]
+  },
+  "emptyIdentityCheck": {
+    "ok": true,
+    "tool": "identity.check",
+    "revision": 0,
+    "pass": true,
+    "mode": "balanced",
+    "structural": {
+      "identityDrift": [],
+      "colorsUnchanged": true
+    },
+    "perceptual": [],
+    "note": "Compara cada fotograma con el mismo fotograma sin expresión ni modificadores: aísla la deformación de la identidad del movimiento rígido. No es aprobación artística."
+  },
+  "incompleteRegion": "accepted by registry validator",
+  "cli": [
+    {
+      "args": [
+        "export",
+        "capabilities",
+        "--json"
+      ],
+      "status": 1,
+      "stdout": "",
+      "stderr": "{\"error\":\"Error: ENOENT: no such file or directory, open 'capabilities'\"}\n"
+    },
+    {
+      "args": [
+        "capabilities",
+        "--json"
+      ],
+      "status": 0,
+      "ok": true,
+      "tool": "capabilities",
+      "tools": 44
+    },
+    {
+      "args": [
+        "call",
+        "capabilities",
+        "--json"
+      ],
+      "status": 1,
+      "stdout": "",
+      "stderr": "{\"error\":\"Error: Unknown flag --json for capabilities. Valid: --tool\"}\n"
+    }
+  ]
+}

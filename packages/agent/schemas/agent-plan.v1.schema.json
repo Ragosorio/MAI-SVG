@@ -1,0 +1,370 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "urn:mai:agent-plan:v1",
+ "title": "MAI Agent Plan v1",
+ "description": "Runtime contract of plan.execute (validated by packages/agent/plan.ts with Ajv). Semantic validation and snapshot preconditions apply in addition to this schema.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "protocol",
+  "requestId",
+  "sessionId",
+  "documentId",
+  "expectedRevision",
+  "mode",
+  "label",
+  "commands",
+  "validation",
+  "provenance"
+ ],
+ "properties": {
+  "protocol": {
+   "const": "mai.agent-plan/v1"
+  },
+  "requestId": {
+   "$ref": "#/$defs/id"
+  },
+  "sessionId": {
+   "$ref": "#/$defs/id"
+  },
+  "documentId": {
+   "$ref": "#/$defs/id"
+  },
+  "expectedRevision": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "mode": {
+   "enum": [
+    "dry-run",
+    "commit"
+   ]
+  },
+  "label": {
+   "type": "string",
+   "minLength": 1,
+   "maxLength": 120
+  },
+  "constraints": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "preserve"
+   ],
+   "properties": {
+    "preserve": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 32,
+     "items": {
+      "$ref": "#/$defs/preserve"
+     }
+    }
+   }
+  },
+  "commands": {
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 64,
+   "items": {
+    "oneOf": [
+     {
+      "$ref": "#/$defs/variantApply"
+     },
+     {
+      "$ref": "#/$defs/identityPreserve"
+     },
+     {
+      "$ref": "#/$defs/animationAdjust"
+     }
+    ]
+   }
+  },
+  "validation": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "times",
+    "required",
+    "preview"
+   ],
+   "properties": {
+    "times": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 8,
+     "uniqueItems": true,
+     "items": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 300
+     }
+    },
+    "required": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 3,
+     "uniqueItems": true,
+     "contains": {
+      "const": "structural"
+     },
+     "items": {
+      "enum": [
+       "structural",
+       "identity",
+       "perceptual"
+      ]
+     }
+    },
+    "preview": {
+     "type": "boolean"
+    }
+   }
+  },
+  "provenance": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "kind",
+    "text"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "user-direction",
+      "editor-choice",
+      "agent-proposal"
+     ]
+    },
+    "text": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 4000
+    },
+    "referenceId": {
+     "$ref": "#/$defs/id"
+    }
+   },
+   "description": "Audit context only. Claimed provenance is not proof of human authorization. An agent-proposal may prepare but may not accept a pending choice without user direction."
+  }
+ },
+ "$defs": {
+  "id": {
+   "type": "string",
+   "minLength": 1,
+   "maxLength": 128,
+   "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+  },
+  "part": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "partId"
+   ],
+   "properties": {
+    "partId": {
+     "$ref": "#/$defs/id"
+    },
+    "within": {
+     "$ref": "#/$defs/id"
+    }
+   },
+   "description": "Stable semantic ID in the plan document. within is an optional owner character/part ID, checked before mutation; no fuzzy text matching."
+  },
+  "reference": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "kind",
+    "id"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "snapshot",
+      "baseline"
+     ]
+    },
+    "id": {
+     "$ref": "#/$defs/id"
+    }
+   }
+  },
+  "preserve": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "part",
+    "reference",
+    "channels",
+    "allowRigidMotion"
+   ],
+   "properties": {
+    "part": {
+     "$ref": "#/$defs/part"
+    },
+    "reference": {
+     "$ref": "#/$defs/reference"
+    },
+    "channels": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 3,
+     "uniqueItems": true,
+     "items": {
+      "enum": [
+       "geometry",
+       "paint",
+       "expression"
+      ]
+     }
+    },
+    "allowRigidMotion": {
+     "type": "boolean"
+    }
+   },
+   "description": "Captured before all commands. Preserves local evaluated channels at validation.times; rigid alignment must be explicit and bounded."
+  },
+  "variantApply": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "type",
+    "target",
+    "board",
+    "base"
+   ],
+   "properties": {
+    "id": {
+     "$ref": "#/$defs/id"
+    },
+    "type": {
+     "const": "variant.apply"
+    },
+    "target": {
+     "$ref": "#/$defs/part"
+    },
+    "board": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "id",
+      "version"
+     ],
+     "properties": {
+      "id": {
+       "$ref": "#/$defs/id"
+      },
+      "version": {
+       "type": "integer",
+       "minimum": 1
+      }
+     }
+    },
+    "base": {
+     "$ref": "#/$defs/id"
+    },
+    "take": {
+     "type": "object",
+     "additionalProperties": false,
+     "minProperties": 1,
+     "properties": {
+      "mouth": {
+       "$ref": "#/$defs/id"
+      },
+      "eyes": {
+       "$ref": "#/$defs/id"
+      },
+      "brows": {
+       "$ref": "#/$defs/id"
+      },
+      "ears": {
+       "$ref": "#/$defs/id"
+      }
+     }
+    },
+    "rechoose": {
+     "type": "boolean",
+     "description": "The board was already chosen and the human changed their mind: the new acceptance supersedes the latest one in the same transaction (parameters of the previous option that the new one does not set return to 0; preserved slots are kept). Undo returns to the previous acceptance."
+    }
+   }
+  },
+  "identityPreserve": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "type",
+    "target",
+    "reference",
+    "policy"
+   ],
+   "properties": {
+    "id": {
+     "$ref": "#/$defs/id"
+    },
+    "type": {
+     "const": "identity.preserve"
+    },
+    "target": {
+     "$ref": "#/$defs/part"
+    },
+    "reference": {
+     "$ref": "#/$defs/reference"
+    },
+    "policy": {
+     "enum": [
+      "locked",
+      "protected",
+      "deformable",
+      "style-preserved",
+      "topology-preserved",
+      "color-preserved",
+      "silhouette-preserved"
+     ]
+    }
+   },
+   "description": "Adds persistent constraints; cannot weaken existing protection. Requires the identity validation gate. Not an implicit reset to neutral geometry."
+  },
+  "animationAdjust": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "type",
+    "target",
+    "sourceId",
+    "property",
+    "scale",
+    "onOverflow"
+   ],
+   "properties": {
+    "id": {
+     "$ref": "#/$defs/id"
+    },
+    "type": {
+     "const": "animation.adjust"
+    },
+    "target": {
+     "$ref": "#/$defs/part"
+    },
+    "sourceId": {
+     "$ref": "#/$defs/id"
+    },
+    "property": {
+     "const": "speed"
+    },
+    "scale": {
+     "type": "number",
+     "exclusiveMinimum": 0,
+     "maximum": 20
+    },
+    "onOverflow": {
+     "const": "reject"
+    }
+   },
+   "description": "First slice: scale one resolved animation source. A factor of 0.7 means 30 percent slower. Timeline or required loop incompatibility rejects the entire plan."
+  }
+ }
+}

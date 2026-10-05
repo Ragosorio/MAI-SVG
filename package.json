@@ -9,11 +9,15 @@
     "test": "tsx --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "build": "vite build --config apps/editor/vite.config.ts",
-    "start": "tsx packages/cli/main.ts serve --editor"
+    "start": "tsx packages/cli/main.ts serve --editor",
+    "skills": "tsx scripts/build-skills.ts",
+    "mcp": "tsx packages/cli/main.ts mcp"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.0",
     "@visioncortex/vtracer": "1.0.0-alpha.4",
     "@xmldom/xmldom": "0.9.12",
+    "ajv": "8.20.0",
     "css-tree": "3.1.0",
     "paper": "0.12.18",
     "playwright": "1.63.0",
@@ -22,7 +26,8 @@
     "sharp": "0.35.5",
     "svgo": "4.1.0",
     "svgpath": "2.6.0",
-    "ws": "8.22.0"
+    "ws": "8.22.0",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@types/css-tree": "2.3.10",
