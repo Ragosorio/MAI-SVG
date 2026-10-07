@@ -54,6 +54,7 @@ export type Acceptance={boardId:string;version:number;option:string;label?:strin
 export type Project={documentId?:string;baselines?:Baseline[];acceptances?:Acceptance[];identity?:{ids:string[]};version:1;revision:number;name:string;duration:number;fps:number;loop:boolean;emotions:Emotion[];sprites:Sprite[];poses:Record<string,Pose>;baseTransforms:Record<string,string>;baseAttributes:Record<string,Attributes>;tracks:Track[];bones:Bone[];skins:Skin[];meshes:Mesh[];
  params?:Record<string,ParamDef>;layers?:Layer[];markers?:Marker[];regions?:TimeRegion[];clips?:Clip[];
  semantic?:{nodes:SemanticNode[];relations:SemanticRelation[]};preservation?:PreservationMode;decisions?:Decision[];
+ smokeEmitters?:import('./smoke.js').SmokeEmitterConfig[];
  expression?:ExpressionRig;modifiers?:Modifier[];secondary?:Secondary[];stateMachine?:StateMachine;components?:ComponentDef[];visemes?:Partial<Record<Viseme,Record<string,number>>>};
 export const newProject=(name='Sin título'):Project=>({version:1,revision:0,name,duration:5,fps:30,loop:true,emotions:[],sprites:[],poses:{},baseTransforms:{},baseAttributes:{},tracks:[],bones:[],skins:[],meshes:[]});
 export type Attributes=Record<string,string>;

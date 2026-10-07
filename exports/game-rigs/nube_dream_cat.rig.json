@@ -1,0 +1,180 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/nube_dream_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "nube_dream_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 280,
+     "y": 328
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 280,
+    "cy": 200,
+    "rx": 160,
+    "ry": 130
+   }
+  },
+  {
+   "id": "nube_dream_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "nube_dream_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 220,
+     "y": 120
+    },
+    "tip": {
+     "x": 200,
+     "y": 26
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "nube_dream_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "nube_dream_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 400,
+     "y": 160
+    },
+    "tip": {
+     "x": 462,
+     "y": 108
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "nube_dream_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "nube_dream_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 255,
+     "y": 211.0
+    },
+    "outer": {
+     "x": 200,
+     "y": 211.0
+    },
+    "upper": {
+     "x": 227.5,
+     "y": 190
+    },
+    "lower": {
+     "x": 227.5,
+     "y": 232
+    },
+    "iris": {
+     "x": 227.5,
+     "y": 211.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 227.5,
+    "cy": 211.0,
+    "rx": 41.25,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "nube_dream_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "nube_dream_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 305,
+     "y": 243.5
+    },
+    "outer": {
+     "x": 368,
+     "y": 243.5
+    },
+    "upper": {
+     "x": 336.5,
+     "y": 222
+    },
+    "lower": {
+     "x": 336.5,
+     "y": 265
+    },
+    "iris": {
+     "x": 336.5,
+     "y": 243.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 336.5,
+    "cy": 243.5,
+    "rx": 47.25,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "nube_dream_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 478,
+     "y": 600
+    },
+    "spine1": {
+     "x": 550,
+     "y": 450
+    },
+    "spine2": {
+     "x": 552,
+     "y": 300
+    },
+    "spine3": {
+     "x": 552,
+     "y": 212
+    }
+   },
+   "notes": "radius=105"
+  }
+ ]
+}

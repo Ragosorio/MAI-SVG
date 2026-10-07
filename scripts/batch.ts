@@ -3,7 +3,7 @@ import {join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {convertFile,PRESETS} from '../packages/converter/index.js';
 import {assertSvg,parseSvg,elements,prefixIds,serialize,SVG_NS} from '../packages/converter/svg.js';
-const source='/Users/roor.osorio/Desktop/No one/assets/cats-source';
+const source='/Users/roor.osorio/Desktop/No one - raster (fuera del repo)/cats-source';
 const preset=PRESETS.find(p=>p.id==='high-color-preserved')!;
 const selected={selectedAt:'2026-10-04',preset:preset.id,userStatement:'que sea el high-color-preserved ese es',referenceStyles:['candy_alchemist_cat','iridescent_origami_cat','canelo_cozy_cat','jelly_aquatic_cat','steampunk_clockwork_cat'],unseenCatsRequireReview:true};
 await writeFile('docs/QUALITY-SELECTION.json',JSON.stringify(selected,null,2));

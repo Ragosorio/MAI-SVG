@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/selene_moonlit_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "selene_moonlit_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 266,
+     "y": 284
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 282,
+    "cy": 175,
+    "rx": 150,
+    "ry": 115
+   }
+  },
+  {
+   "id": "selene_moonlit_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "selene_moonlit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 215,
+     "y": 110
+    },
+    "tip": {
+     "x": 200,
+     "y": 18
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "selene_moonlit_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "selene_moonlit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 390,
+     "y": 120
+    },
+    "tip": {
+     "x": 435,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "selene_moonlit_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "selene_moonlit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 265,
+     "y": 182.0
+    },
+    "outer": {
+     "x": 220,
+     "y": 182.0
+    },
+    "upper": {
+     "x": 242.5,
+     "y": 162
+    },
+    "lower": {
+     "x": 242.5,
+     "y": 202
+    },
+    "iris": {
+     "x": 242.5,
+     "y": 182.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 242.5,
+    "cy": 182.0,
+    "rx": 33.75,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "selene_moonlit_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "selene_moonlit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 199.0
+    },
+    "outer": {
+     "x": 350,
+     "y": 199.0
+    },
+    "upper": {
+     "x": 326.0,
+     "y": 180
+    },
+    "lower": {
+     "x": 326.0,
+     "y": 218
+    },
+    "iris": {
+     "x": 326.0,
+     "y": 199.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 326.0,
+    "cy": 199.0,
+    "rx": 36.0,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "selene_moonlit_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 490,
+     "y": 625
+    },
+    "spine1": {
+     "x": 620,
+     "y": 560
+    },
+    "spine2": {
+     "x": 635,
+     "y": 430
+    },
+    "spine3": {
+     "x": 590,
+     "y": 320
+    },
+    "spine4": {
+     "x": 500,
+     "y": 280
+    },
+    "spine5": {
+     "x": 445,
+     "y": 330
+    }
+   },
+   "notes": "radius=75"
+  }
+ ]
+}

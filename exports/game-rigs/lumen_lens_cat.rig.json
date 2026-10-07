@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/lumen_lens_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "lumen_lens_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 416,
+     "y": 332
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 420,
+    "cy": 190,
+    "rx": 166,
+    "ry": 135
+   }
+  },
+  {
+   "id": "lumen_lens_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "lumen_lens_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 360,
+     "y": 115
+    },
+    "tip": {
+     "x": 325,
+     "y": 25
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "lumen_lens_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "lumen_lens_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 555,
+     "y": 165
+    },
+    "tip": {
+     "x": 632,
+     "y": 108
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "lumen_lens_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "lumen_lens_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 402,
+     "y": 193.5
+    },
+    "outer": {
+     "x": 345,
+     "y": 193.5
+    },
+    "upper": {
+     "x": 373.5,
+     "y": 165
+    },
+    "lower": {
+     "x": 373.5,
+     "y": 222
+    },
+    "iris": {
+     "x": 373.5,
+     "y": 193.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 373.5,
+    "cy": 193.5,
+    "rx": 42.75,
+    "ry": 54.15
+   }
+  },
+  {
+   "id": "lumen_lens_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "lumen_lens_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 450,
+     "y": 232.5
+    },
+    "outer": {
+     "x": 505,
+     "y": 232.5
+    },
+    "upper": {
+     "x": 477.5,
+     "y": 205
+    },
+    "lower": {
+     "x": 477.5,
+     "y": 260
+    },
+    "iris": {
+     "x": 477.5,
+     "y": 232.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 477.5,
+    "cy": 232.5,
+    "rx": 41.25,
+    "ry": 52.25
+   }
+  },
+  {
+   "id": "lumen_lens_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 300,
+     "y": 550
+    },
+    "spine1": {
+     "x": 225,
+     "y": 475
+    },
+    "spine2": {
+     "x": 150,
+     "y": 400
+    },
+    "spine3": {
+     "x": 92,
+     "y": 325
+    },
+    "spine4": {
+     "x": 130,
+     "y": 262
+    },
+    "spine5": {
+     "x": 210,
+     "y": 236
+    }
+   },
+   "notes": "radius=75"
+  }
+ ]
+}

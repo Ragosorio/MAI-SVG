@@ -1,0 +1,184 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/canelo_cozy_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "canelo_cozy_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 312
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 190,
+    "rx": 158,
+    "ry": 125
+   }
+  },
+  {
+   "id": "canelo_cozy_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "canelo_cozy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 250,
+     "y": 96
+    },
+    "tip": {
+     "x": 220,
+     "y": 10
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "canelo_cozy_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "canelo_cozy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 420,
+     "y": 130
+    },
+    "tip": {
+     "x": 478,
+     "y": 82
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "canelo_cozy_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "canelo_cozy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 288,
+     "y": 181.5
+    },
+    "outer": {
+     "x": 239,
+     "y": 181.5
+    },
+    "upper": {
+     "x": 263.5,
+     "y": 158
+    },
+    "lower": {
+     "x": 263.5,
+     "y": 205
+    },
+    "iris": {
+     "x": 263.5,
+     "y": 181.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 263.5,
+    "cy": 181.5,
+    "rx": 36.75,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "canelo_cozy_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "canelo_cozy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 335,
+     "y": 206.5
+    },
+    "outer": {
+     "x": 385,
+     "y": 206.5
+    },
+    "upper": {
+     "x": 360.0,
+     "y": 183
+    },
+    "lower": {
+     "x": 360.0,
+     "y": 230
+    },
+    "iris": {
+     "x": 360.0,
+     "y": 206.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360.0,
+    "cy": 206.5,
+    "rx": 37.5,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "canelo_cozy_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 545,
+     "y": 612
+    },
+    "spine1": {
+     "x": 530,
+     "y": 470
+    },
+    "spine2": {
+     "x": 495,
+     "y": 330
+    },
+    "spine3": {
+     "x": 540,
+     "y": 232
+    },
+    "spine4": {
+     "x": 625,
+     "y": 292
+    }
+   },
+   "notes": "radius=70"
+  }
+ ]
+}

@@ -1,11 +1,16 @@
 # MAI-SVG
 
-Conversor local PNG/WebP/JPG → geometría SVG, editor de puntos y animaciones, CLI y sincronización por WebSocket. Proyecto independiente; los originales de **No one** permanecen intactos.
+Conversor local PNG/WebP/JPG → geometría SVG, editor de puntos y animaciones, CLI y sincronización por WebSocket.
+
+MAI SVG nació porque quería una herramienta para editar y animar SVG, y para probarla necesitaba un proyecto de verdad. ¿Qué mejor que un videojuego? Así salió **[NO ONE LIKE CATS](https://github.com/Ragosorio/no-one-like-cats)** ([jugar](https://ragosorio.github.io/no-one-like-cats/)): todos sus gatos pasaron por aquí y se mueven como SVG puro, sin una sola imagen raster.
+
+Es código abierto (MIT) y es para la comunidad: cualquier colaboración es bienvenida, desde un issue hasta un PR. Sígueme en [instagram.com/ragosorio](https://www.instagram.com/ragosorio).
 
 ## Abrir
 
 ```sh
-cd '/Users/roor.osorio/Desktop/MAI SVG'
+git clone https://github.com/Ragosorio/MAI-SVG.git
+cd MAI-SVG
 npm ci
 npx playwright install chromium
 npm run build
@@ -52,3 +57,14 @@ Rutas para videojuegos y correspondencias de los 32 gatos: [GAME-ASSETS](docs/GA
 
 
 Fluidos editables y decisiones del asistente con opciones visuales: [guía y CLI](docs/FLUIDS-AND-CHOICES.md). Candy incluye humo ascendente conectado a la botella y candidatos de tristeza que conservan sus facciones.
+
+## Para NO ONE LIKE CATS
+
+- `scripts/game-export.ts`: exporta los gatos al perfil *game-compact* (mismo dibujo, verificado píxel a píxel) → `game/public/cats-svg/`.
+- `scripts/game-thumbs.ts`: traza ligera con control de calidad → `game/public/cats-svg/lite/`.
+- `exports/game-rigs/`: rigs (ojos, orejas, cabeza, cola, flotantes) en formato MAI.
+
+## Licencia
+
+MIT — ver [LICENSE](LICENSE).
+

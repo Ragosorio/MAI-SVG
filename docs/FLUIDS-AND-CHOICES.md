@@ -50,3 +50,7 @@ Pruebas: tests/fluid.test.ts verifica cuatro presets, topología, movimiento, lo
 
 
 Para comparar facciones usar previewRegion {x,y,width,height} en píxeles renderizados: recorta las miniaturas sin modificar el SVG. emotion.update reemplaza una definición existente sin reescribir sus claves previas; aplicar emotion.keyframe en los tiempos intencionales. Candy usa ambos mecanismos para las alternativas de tristeza.
+
+## Emisión independiente de humo
+
+`smoke.emit` (`mai smoke emit`, MCP `emit_smoke`) crea y ajusta bocanadas vectoriales con nacimiento, subida, expansión, remolinos y disipación. Se diferencia de deformar el humo dibujado con `fluid.animate`. Usa `config` y `expectedRevision`; `source` opcional oculta de forma reversible la capa original y desactiva su modificador. `dryRun` y preview están disponibles. Controles en **Emisor de humo**; descripción y límites en docs/EDITOR.md. Es un efecto procedural, sin física de gases o colisiones.

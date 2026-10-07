@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/margarita_daisy_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "margarita_daisy_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 485,
+     "y": 316
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 470,
+    "cy": 195,
+    "rx": 146,
+    "ry": 115
+   }
+  },
+  {
+   "id": "margarita_daisy_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "margarita_daisy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 360,
+     "y": 150
+    },
+    "tip": {
+     "x": 310,
+     "y": 75
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "margarita_daisy_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "margarita_daisy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 500,
+     "y": 95
+    },
+    "tip": {
+     "x": 530,
+     "y": 15
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "margarita_daisy_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "margarita_daisy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 440,
+     "y": 215.0
+    },
+    "outer": {
+     "x": 385,
+     "y": 215.0
+    },
+    "upper": {
+     "x": 412.5,
+     "y": 195
+    },
+    "lower": {
+     "x": 412.5,
+     "y": 235
+    },
+    "iris": {
+     "x": 412.5,
+     "y": 215.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 412.5,
+    "cy": 215.0,
+    "rx": 41.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "margarita_daisy_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "margarita_daisy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 485,
+     "y": 182.5
+    },
+    "outer": {
+     "x": 530,
+     "y": 182.5
+    },
+    "upper": {
+     "x": 507.5,
+     "y": 160
+    },
+    "lower": {
+     "x": 507.5,
+     "y": 205
+    },
+    "iris": {
+     "x": 507.5,
+     "y": 182.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 507.5,
+    "cy": 182.5,
+    "rx": 33.75,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "margarita_daisy_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 275,
+     "y": 355
+    },
+    "spine1": {
+     "x": 190,
+     "y": 400
+    },
+    "spine2": {
+     "x": 112,
+     "y": 330
+    },
+    "spine3": {
+     "x": 88,
+     "y": 230
+    },
+    "spine4": {
+     "x": 150,
+     "y": 132
+    },
+    "spine5": {
+     "x": 240,
+     "y": 116
+    },
+    "spine6": {
+     "x": 275,
+     "y": 182
+    }
+   },
+   "notes": "radius=62"
+  }
+ ]
+}

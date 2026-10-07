@@ -1,0 +1,275 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/stormcloud_elemental_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "stormcloud_elemental_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 280,
+     "y": 314
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290,
+    "cy": 210,
+    "rx": 150,
+    "ry": 125
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "stormcloud_elemental_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 125
+    },
+    "tip": {
+     "x": 150,
+     "y": 22
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "stormcloud_elemental_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "stormcloud_elemental_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 360,
+     "y": 135
+    },
+    "tip": {
+     "x": 395,
+     "y": 55
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "stormcloud_elemental_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "stormcloud_elemental_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 260,
+     "y": 227.5
+    },
+    "outer": {
+     "x": 205,
+     "y": 227.5
+    },
+    "upper": {
+     "x": 232.5,
+     "y": 205
+    },
+    "lower": {
+     "x": 232.5,
+     "y": 250
+    },
+    "iris": {
+     "x": 232.5,
+     "y": 227.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 232.5,
+    "cy": 227.5,
+    "rx": 41.25,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "stormcloud_elemental_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 237.5
+    },
+    "outer": {
+     "x": 350,
+     "y": 237.5
+    },
+    "upper": {
+     "x": 326.0,
+     "y": 220
+    },
+    "lower": {
+     "x": 326.0,
+     "y": 255
+    },
+    "iris": {
+     "x": 326.0,
+     "y": 237.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 326.0,
+    "cy": 237.5,
+    "rx": 36.0,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 482,
+     "y": 402
+    },
+    "spine1": {
+     "x": 575,
+     "y": 390
+    },
+    "spine2": {
+     "x": 635,
+     "y": 325
+    },
+    "spine3": {
+     "x": 600,
+     "y": 250
+    },
+    "spine4": {
+     "x": 525,
+     "y": 210
+    },
+    "spine5": {
+     "x": 525,
+     "y": 150
+    },
+    "spine6": {
+     "x": 575,
+     "y": 100
+    },
+    "spine7": {
+     "x": 550,
+     "y": 60
+    },
+    "spine8": {
+     "x": 475,
+     "y": 75
+    }
+   },
+   "notes": "radius=60"
+  },
+  {
+   "id": "stormcloud_elemental_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 60,
+    "cy": 382,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 132,
+    "cy": 470,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 585,
+    "cy": 486,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 295,
+    "cy": 25,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "stormcloud_elemental_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 208,
+    "cy": 60,
+    "rx": 10,
+    "ry": 10
+   }
+  }
+ ]
+}

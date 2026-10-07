@@ -43,3 +43,18 @@ Render PNG captura un fotograma con Chromium aislado. Incluye CSS original y SMI
 El servidor confirma el archivo guardado aunque el navegador integrado no complete la descarga. El CLI también puede elegir una ruta de salida. Los SVG de distribución importados conservan sus animaciones nativas, pero solamente el perfil editable recupera las pistas de autoría.
 
 Para practicar rig sin la fragmentación del raster, importa `examples/rig-demo-editable.svg`: contiene dos huesos de cola, pesos, una malla y keyframes. Los puntos vinculados se mueven en reposo; fuera de reposo se pueden seleccionar para editar pesos, pero primero vuelve a reposo o desvincula el rig para cambiar su geometría.
+
+
+## Limpieza de blancos y humo ascendente
+
+El inspector ofrece **Limpieza por color**: selecciona una región o un grupo, ajusta la tolerancia y busca blancos. También permite buscar en todo el dibujo. Marca formas para verlas en magenta; **Quitar marcadas** elimina solo esas formas en una transacción reversible. Máscaras, definiciones, objetos bloqueados y elementos/regiones de partes protegidas se excluyen. Gradientes no se clasifican como blanco plano. Se muestran hasta 500 candidatas; acota la región para revisar el resto. No sustituye la revisión visual de brillos, pelo y reflejos. La selección se comparte con agentes.
+
+**Movimiento de fluidos** permite ajustar la velocidad, subida, remolinos y ondulación lateral de los modificadores geométricos. **Humo ascendente** reduce la onda lateral y activa bolsas que ascienden con expansión y remolinos locales, con el emisor anclado. Es deformación procedural del arte existente, no partículas o simulación física. El preset conserva el factor de velocidad y cada cambio se puede deshacer.
+
+## Emisor de humo
+
+**Emisor de humo** genera bocanadas vectoriales independientes con bordes suaves: nacen, ascienden, se expanden, giran y se disipan. Ajusta origen X/Y, altura, anchura, densidad, tiempo de subida, expansión, turbulencia, viento, opacidad y color; pulsa **Aplicar humo**. Cada aplicación se puede deshacer. El tiempo de subida se ajusta a ciclos enteros de la escena para cerrar el loop.
+
+La herramienta compartida `smoke.emit` (`mai smoke emit`, MCP `emit_smoke`) acepta `config` y `expectedRevision`; `source` opcional conserva oculto el dibujo original y desactiva su flujo. Actualizar el mismo id reemplaza solo el emisor. El perfil editable conserva controles y pistas; el autónomo reproduce SMIL sin imágenes ni scripts. Es emisión procedural artística, sin simulación de colisiones o física de gases.
+
+El emisor acepta `palette` (1–8 colores #RRGGBB) y expone cada tono en el inspector. La distribución de colores entre bocanadas mantiene las mismas trayectorias, tiempos y opacidades. Elegir un color único elimina la paleta explícitamente.

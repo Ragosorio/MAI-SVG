@@ -1,0 +1,275 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/steampunk_clockwork_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "steampunk_clockwork_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 435,
+     "y": 312
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 450,
+    "cy": 178,
+    "rx": 160,
+    "ry": 135
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "steampunk_clockwork_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 360,
+     "y": 140
+    },
+    "tip": {
+     "x": 345,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "steampunk_clockwork_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "steampunk_clockwork_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 555,
+     "y": 185
+    },
+    "tip": {
+     "x": 610,
+     "y": 135
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "steampunk_clockwork_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "steampunk_clockwork_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 400,
+     "y": 195.0
+    },
+    "outer": {
+     "x": 352,
+     "y": 195.0
+    },
+    "upper": {
+     "x": 376.0,
+     "y": 170
+    },
+    "lower": {
+     "x": 376.0,
+     "y": 220
+    },
+    "iris": {
+     "x": 376.0,
+     "y": 195.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 376.0,
+    "cy": 195.0,
+    "rx": 36.0,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "steampunk_clockwork_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 450,
+     "y": 222.5
+    },
+    "outer": {
+     "x": 500,
+     "y": 222.5
+    },
+    "upper": {
+     "x": 475.0,
+     "y": 200
+    },
+    "lower": {
+     "x": 475.0,
+     "y": 245
+    },
+    "iris": {
+     "x": 475.0,
+     "y": 222.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 475.0,
+    "cy": 222.5,
+    "rx": 37.5,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 222,
+     "y": 410
+    },
+    "spine1": {
+     "x": 150,
+     "y": 390
+    },
+    "spine2": {
+     "x": 130,
+     "y": 320
+    },
+    "spine3": {
+     "x": 150,
+     "y": 260
+    },
+    "spine4": {
+     "x": 185,
+     "y": 210
+    },
+    "spine5": {
+     "x": 180,
+     "y": 160
+    },
+    "spine6": {
+     "x": 130,
+     "y": 145
+    },
+    "spine7": {
+     "x": 78,
+     "y": 210
+    },
+    "spine8": {
+     "x": 100,
+     "y": 280
+    }
+   },
+   "notes": "radius=38"
+  },
+  {
+   "id": "steampunk_clockwork_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 150,
+    "cy": 96,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 115,
+    "cy": 110,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 236,
+    "cy": 140,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 255,
+    "cy": 166,
+    "rx": 17,
+    "ry": 17
+   }
+  },
+  {
+   "id": "steampunk_clockwork_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 250,
+    "cy": 192,
+    "rx": 15,
+    "ry": 15
+   }
+  }
+ ]
+}

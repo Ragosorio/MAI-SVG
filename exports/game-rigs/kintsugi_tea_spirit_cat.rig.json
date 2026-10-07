@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/kintsugi_tea_spirit_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "kintsugi_tea_spirit_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 256
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 325,
+    "cy": 156,
+    "rx": 125,
+    "ry": 110
+   }
+  },
+  {
+   "id": "kintsugi_tea_spirit_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "kintsugi_tea_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 250,
+     "y": 100
+    },
+    "tip": {
+     "x": 225,
+     "y": 18
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "kintsugi_tea_spirit_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "kintsugi_tea_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 400,
+     "y": 115
+    },
+    "tip": {
+     "x": 450,
+     "y": 46
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "kintsugi_tea_spirit_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "kintsugi_tea_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 252,
+     "y": 172.0
+    },
+    "outer": {
+     "x": 215,
+     "y": 172.0
+    },
+    "upper": {
+     "x": 233.5,
+     "y": 152
+    },
+    "lower": {
+     "x": 233.5,
+     "y": 192
+    },
+    "iris": {
+     "x": 233.5,
+     "y": 172.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 233.5,
+    "cy": 172.0,
+    "rx": 27.75,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "kintsugi_tea_spirit_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "kintsugi_tea_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 312,
+     "y": 192.5
+    },
+    "outer": {
+     "x": 370,
+     "y": 192.5
+    },
+    "upper": {
+     "x": 341.0,
+     "y": 175
+    },
+    "lower": {
+     "x": 341.0,
+     "y": 210
+    },
+    "iris": {
+     "x": 341.0,
+     "y": 192.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 341.0,
+    "cy": 192.5,
+    "rx": 43.5,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "kintsugi_tea_spirit_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 482,
+     "y": 492
+    },
+    "spine1": {
+     "x": 555,
+     "y": 400
+    },
+    "spine2": {
+     "x": 556,
+     "y": 300
+    },
+    "spine3": {
+     "x": 545,
+     "y": 212
+    },
+    "spine4": {
+     "x": 535,
+     "y": 142
+    },
+    "spine5": {
+     "x": 500,
+     "y": 115
+    }
+   },
+   "notes": "radius=50"
+  }
+ ]
+}

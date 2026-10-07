@@ -1,0 +1,252 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/lantern_spirit_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "lantern_spirit_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 280,
+     "y": 264
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 282,
+    "cy": 178,
+    "rx": 126,
+    "ry": 98
+   }
+  },
+  {
+   "id": "lantern_spirit_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "lantern_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 235,
+     "y": 110
+    },
+    "tip": {
+     "x": 210,
+     "y": 22
+    }
+   },
+   "notes": "halfWidth=35"
+  },
+  {
+   "id": "lantern_spirit_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "lantern_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 370,
+     "y": 140
+    },
+    "tip": {
+     "x": 425,
+     "y": 98
+    }
+   },
+   "notes": "halfWidth=33"
+  },
+  {
+   "id": "lantern_spirit_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "lantern_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 175.0
+    },
+    "outer": {
+     "x": 215,
+     "y": 175.0
+    },
+    "upper": {
+     "x": 238.5,
+     "y": 150
+    },
+    "lower": {
+     "x": 238.5,
+     "y": 200
+    },
+    "iris": {
+     "x": 238.5,
+     "y": 175.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 238.5,
+    "cy": 175.0,
+    "rx": 35.25,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "lantern_spirit_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "lantern_spirit_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 210.0
+    },
+    "outer": {
+     "x": 350,
+     "y": 210.0
+    },
+    "upper": {
+     "x": 326.0,
+     "y": 192
+    },
+    "lower": {
+     "x": 326.0,
+     "y": 228
+    },
+    "iris": {
+     "x": 326.0,
+     "y": 210.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 326.0,
+    "cy": 210.0,
+    "rx": 36.0,
+    "ry": 34.199999999999996
+   }
+  },
+  {
+   "id": "lantern_spirit_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 400,
+     "y": 575
+    },
+    "spine1": {
+     "x": 500,
+     "y": 575
+    },
+    "spine2": {
+     "x": 575,
+     "y": 475
+    },
+    "spine3": {
+     "x": 560,
+     "y": 350
+    },
+    "spine4": {
+     "x": 500,
+     "y": 250
+    },
+    "spine5": {
+     "x": 550,
+     "y": 165
+    },
+    "spine6": {
+     "x": 590,
+     "y": 168
+    }
+   },
+   "notes": "radius=62"
+  },
+  {
+   "id": "lantern_spirit_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 472,
+    "cy": 150,
+    "rx": 34,
+    "ry": 34
+   }
+  },
+  {
+   "id": "lantern_spirit_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 420,
+    "cy": 322,
+    "rx": 32,
+    "ry": 32
+   }
+  },
+  {
+   "id": "lantern_spirit_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 425,
+    "cy": 242,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "lantern_spirit_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 482,
+    "cy": 78,
+    "rx": 24,
+    "ry": 24
+   }
+  }
+ ]
+}

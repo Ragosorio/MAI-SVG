@@ -1,0 +1,184 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/sakura_whisper_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "sakura_whisper_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 324
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 310,
+    "cy": 200,
+    "rx": 160,
+    "ry": 130
+   }
+  },
+  {
+   "id": "sakura_whisper_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "sakura_whisper_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 230,
+     "y": 115
+    },
+    "tip": {
+     "x": 205,
+     "y": 10
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "sakura_whisper_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "sakura_whisper_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 145
+    },
+    "tip": {
+     "x": 508,
+     "y": 68
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "sakura_whisper_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "sakura_whisper_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 288,
+     "y": 199.0
+    },
+    "outer": {
+     "x": 222,
+     "y": 199.0
+    },
+    "upper": {
+     "x": 255.0,
+     "y": 170
+    },
+    "lower": {
+     "x": 255.0,
+     "y": 228
+    },
+    "iris": {
+     "x": 255.0,
+     "y": 199.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 255.0,
+    "cy": 199.0,
+    "rx": 49.5,
+    "ry": 55.099999999999994
+   }
+  },
+  {
+   "id": "sakura_whisper_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "sakura_whisper_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 332,
+     "y": 225.0
+    },
+    "outer": {
+     "x": 395,
+     "y": 225.0
+    },
+    "upper": {
+     "x": 363.5,
+     "y": 200
+    },
+    "lower": {
+     "x": 363.5,
+     "y": 250
+    },
+    "iris": {
+     "x": 363.5,
+     "y": 225.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 363.5,
+    "cy": 225.0,
+    "rx": 47.25,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "sakura_whisper_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 490,
+     "y": 625
+    },
+    "spine1": {
+     "x": 580,
+     "y": 500
+    },
+    "spine2": {
+     "x": 600,
+     "y": 380
+    },
+    "spine3": {
+     "x": 550,
+     "y": 290
+    },
+    "spine4": {
+     "x": 480,
+     "y": 300
+    }
+   },
+   "notes": "radius=75"
+  }
+ ]
+}

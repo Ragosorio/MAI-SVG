@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/nori_lunar_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "nori_lunar_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 220,
+     "y": 314
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 240,
+    "cy": 190,
+    "rx": 160,
+    "ry": 125
+   }
+  },
+  {
+   "id": "nori_lunar_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "nori_lunar_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 180,
+     "y": 100
+    },
+    "tip": {
+     "x": 155,
+     "y": 16
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "nori_lunar_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "nori_lunar_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 350,
+     "y": 140
+    },
+    "tip": {
+     "x": 400,
+     "y": 72
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "nori_lunar_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "nori_lunar_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 220,
+     "y": 195.0
+    },
+    "outer": {
+     "x": 172,
+     "y": 195.0
+    },
+    "upper": {
+     "x": 196.0,
+     "y": 172
+    },
+    "lower": {
+     "x": 196.0,
+     "y": 218
+    },
+    "iris": {
+     "x": 196.0,
+     "y": 195.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 196.0,
+    "cy": 195.0,
+    "rx": 36.0,
+    "ry": 43.699999999999996
+   }
+  },
+  {
+   "id": "nori_lunar_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "nori_lunar_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 268,
+     "y": 216.5
+    },
+    "outer": {
+     "x": 318,
+     "y": 216.5
+    },
+    "upper": {
+     "x": 293.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 293.0,
+     "y": 235
+    },
+    "iris": {
+     "x": 293.0,
+     "y": 216.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 293.0,
+    "cy": 216.5,
+    "rx": 37.5,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "nori_lunar_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 510,
+     "y": 500
+    },
+    "spine1": {
+     "x": 625,
+     "y": 425
+    },
+    "spine2": {
+     "x": 650,
+     "y": 275
+    },
+    "spine3": {
+     "x": 590,
+     "y": 140
+    },
+    "spine4": {
+     "x": 500,
+     "y": 125
+    },
+    "spine5": {
+     "x": 440,
+     "y": 200
+    }
+   },
+   "notes": "radius=70"
+  }
+ ]
+}

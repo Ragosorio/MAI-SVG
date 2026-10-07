@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/menta_botanical_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "menta_botanical_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 270,
+     "y": 312
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 268,
+    "cy": 195,
+    "rx": 150,
+    "ry": 120
+   }
+  },
+  {
+   "id": "menta_botanical_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "menta_botanical_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 210,
+     "y": 115
+    },
+    "tip": {
+     "x": 172,
+     "y": 22
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "menta_botanical_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "menta_botanical_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 365,
+     "y": 135
+    },
+    "tip": {
+     "x": 422,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "menta_botanical_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "menta_botanical_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 240,
+     "y": 196.0
+    },
+    "outer": {
+     "x": 198,
+     "y": 196.0
+    },
+    "upper": {
+     "x": 219.0,
+     "y": 172
+    },
+    "lower": {
+     "x": 219.0,
+     "y": 220
+    },
+    "iris": {
+     "x": 219.0,
+     "y": 196.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 219.0,
+    "cy": 196.0,
+    "rx": 31.5,
+    "ry": 45.599999999999994
+   }
+  },
+  {
+   "id": "menta_botanical_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "menta_botanical_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 290,
+     "y": 216.5
+    },
+    "outer": {
+     "x": 332,
+     "y": 216.5
+    },
+    "upper": {
+     "x": 311.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 311.0,
+     "y": 235
+    },
+    "iris": {
+     "x": 311.0,
+     "y": 216.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 311.0,
+    "cy": 216.5,
+    "rx": 31.5,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "menta_botanical_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 475,
+     "y": 428
+    },
+    "spine1": {
+     "x": 490,
+     "y": 300
+    },
+    "spine2": {
+     "x": 482,
+     "y": 178
+    },
+    "spine3": {
+     "x": 550,
+     "y": 88
+    },
+    "spine4": {
+     "x": 650,
+     "y": 140
+    },
+    "spine5": {
+     "x": 625,
+     "y": 215
+    }
+   },
+   "notes": "radius=62"
+  }
+ ]
+}

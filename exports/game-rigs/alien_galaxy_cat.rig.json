@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/alien_galaxy_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "alien_galaxy_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 385,
+     "y": 388
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 372,
+    "cy": 280,
+    "rx": 128,
+    "ry": 108
+   }
+  },
+  {
+   "id": "alien_galaxy_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "alien_galaxy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 250,
+     "y": 212
+    },
+    "tip": {
+     "x": 110,
+     "y": 135
+    }
+   },
+   "notes": "halfWidth=62"
+  },
+  {
+   "id": "alien_galaxy_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "alien_galaxy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 452,
+     "y": 168
+    },
+    "tip": {
+     "x": 482,
+     "y": 10
+    }
+   },
+   "notes": "halfWidth=55"
+  },
+  {
+   "id": "alien_galaxy_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "alien_galaxy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 364,
+     "y": 311.0
+    },
+    "outer": {
+     "x": 274,
+     "y": 311.0
+    },
+    "upper": {
+     "x": 319.0,
+     "y": 270
+    },
+    "lower": {
+     "x": 319.0,
+     "y": 352
+    },
+    "iris": {
+     "x": 319.0,
+     "y": 311.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 319.0,
+    "cy": 311.0,
+    "rx": 67.5,
+    "ry": 77.89999999999999
+   }
+  },
+  {
+   "id": "alien_galaxy_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "alien_galaxy_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 407,
+     "y": 269.0
+    },
+    "outer": {
+     "x": 475,
+     "y": 269.0
+    },
+    "upper": {
+     "x": 441.0,
+     "y": 228
+    },
+    "lower": {
+     "x": 441.0,
+     "y": 310
+    },
+    "iris": {
+     "x": 441.0,
+     "y": 269.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 441.0,
+    "cy": 269.0,
+    "rx": 51.0,
+    "ry": 77.89999999999999
+   }
+  },
+  {
+   "id": "alien_galaxy_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 468,
+     "y": 580
+    },
+    "spine1": {
+     "x": 580,
+     "y": 560
+    },
+    "spine2": {
+     "x": 592,
+     "y": 470
+    },
+    "spine3": {
+     "x": 545,
+     "y": 400
+    },
+    "spine4": {
+     "x": 600,
+     "y": 355
+    },
+    "spine5": {
+     "x": 632,
+     "y": 392
+    },
+    "spine6": {
+     "x": 615,
+     "y": 432
+    }
+   },
+   "notes": "radius=42"
+  }
+ ]
+}

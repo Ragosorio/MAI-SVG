@@ -1,10 +1,12 @@
+import {smokeOperations,type SmokeEmitterConfig} from './smoke.js';
 import type {Operation} from './model.js';
-export type FluidConfig={id:string;kind:'smoke'|'water'|'wind'|'lava';x:number;y:number;width:number;height:number;parent?:string;quality?:'draft'|'balanced'|'high';cycles?:number;seed?:number;color?:string};
+export type FluidConfig=Partial<Omit<SmokeEmitterConfig,'id'|'x'|'y'|'width'|'height'|'parent'|'color'|'quality'|'seed'>>&{mode?:'ribbon'|'emitter';id:string;kind:'smoke'|'water'|'wind'|'lava';x:number;y:number;width:number;height:number;parent?:string;quality?:'draft'|'balanced'|'high';cycles?:number;seed?:number;color?:string};
 const round=(v:number)=>Number(v.toFixed(3));
 // Periodic travelling waves, sampled into editable, stable-topology paths.
 export function fluidOperations(c:FluidConfig,duration:number):Operation[]{
  if(!['smoke','water','wind','lava'].includes(c.kind)||!['draft','balanced','high'].includes(c.quality??'balanced')||!Number.isFinite(duration)||duration<.1||duration>300)throw Error('Invalid fluid preset');
  if(!/^[A-Za-z_][\w.-]{0,80}$/.test(c.id)||['__proto__','constructor','prototype','mai-project'].includes(c.id)||![c.x,c.y,c.width,c.height].every(Number.isFinite)||Math.abs(c.x)>1e5||Math.abs(c.y)>1e5||c.width<1||c.height<1||c.width>10000||c.height>10000||!Number.isInteger(c.cycles??3)||(c.cycles??3)<1||(c.cycles??3)>12||!Number.isInteger(c.seed??1))throw Error('Invalid fluid geometry');
+ if(c.kind==='smoke'&&c.mode==='emitter')return smokeOperations(c,duration);
  const color=c.color??({smoke:'#f5a5de',water:'#63cfff',wind:'#c5eaff',lava:'#ff713f'}[c.kind]);if(!/^#[\da-f]{6}$/i.test(color))throw Error('Fluid color requires #RRGGBB');
  const quality=c.quality??'balanced',count=quality==='draft'?3:quality==='high'?9:6,samples=quality==='draft'?8:quality==='high'?32:16,cycles=c.cycles??3,seed=c.seed??1;
  const ops:Operation[]=[{type:'create',tag:'g',id:c.id,parent:c.parent,attrs:{'data-mai-name':`${c.kind} · ${quality}`}}];

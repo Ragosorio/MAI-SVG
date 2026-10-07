@@ -1,0 +1,293 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/iridescent_origami_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "iridescent_origami_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 296,
+     "y": 332
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 240,
+    "rx": 152,
+    "ry": 96
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "iridescent_origami_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 210,
+     "y": 160
+    },
+    "tip": {
+     "x": 178,
+     "y": 50
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "iridescent_origami_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "iridescent_origami_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 390,
+     "y": 160
+    },
+    "tip": {
+     "x": 446,
+     "y": 50
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "iridescent_origami_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "iridescent_origami_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 255,
+     "y": 254.0
+    },
+    "outer": {
+     "x": 198,
+     "y": 254.0
+    },
+    "upper": {
+     "x": 226.5,
+     "y": 228
+    },
+    "lower": {
+     "x": 226.5,
+     "y": 280
+    },
+    "iris": {
+     "x": 226.5,
+     "y": 254.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 226.5,
+    "cy": 254.0,
+    "rx": 42.75,
+    "ry": 49.4
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "iridescent_origami_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 325,
+     "y": 254.0
+    },
+    "outer": {
+     "x": 388,
+     "y": 254.0
+    },
+    "upper": {
+     "x": 356.5,
+     "y": 228
+    },
+    "lower": {
+     "x": 356.5,
+     "y": 280
+    },
+    "iris": {
+     "x": 356.5,
+     "y": 254.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 356.5,
+    "cy": 254.0,
+    "rx": 47.25,
+    "ry": 49.4
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 382
+    },
+    "spine1": {
+     "x": 525,
+     "y": 300
+    },
+    "spine2": {
+     "x": 550,
+     "y": 236
+    },
+    "spine3": {
+     "x": 580,
+     "y": 166
+    },
+    "spine4": {
+     "x": 560,
+     "y": 92
+    },
+    "spine5": {
+     "x": 510,
+     "y": 105
+    }
+   },
+   "notes": "radius=34"
+  },
+  {
+   "id": "iridescent_origami_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 128,
+    "cy": 420,
+    "rx": 72,
+    "ry": 72
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 620,
+    "cy": 305,
+    "rx": 58,
+    "ry": 58
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 170,
+    "cy": 535,
+    "rx": 32,
+    "ry": 32
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 215,
+    "rx": 24,
+    "ry": 24
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 155,
+    "cy": 330,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.float-5",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 475,
+    "cy": 212,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "iridescent_origami_cat.float-6",
+   "role": "prop-float",
+   "label": "Flotante 7",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 592,
+    "cy": 455,
+    "rx": 16,
+    "ry": 16
+   }
+  }
+ ]
+}

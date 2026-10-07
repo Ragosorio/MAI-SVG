@@ -1,0 +1,263 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/mushroom_druid_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "mushroom_druid_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 410,
+     "y": 302
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 378,
+    "cy": 170,
+    "rx": 168,
+    "ry": 132
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "mushroom_druid_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 160
+    },
+    "tip": {
+     "x": 276,
+     "y": 100
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "mushroom_druid_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "mushroom_druid_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 465,
+     "y": 120
+    },
+    "tip": {
+     "x": 488,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "mushroom_druid_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "mushroom_druid_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 400,
+     "y": 201.0
+    },
+    "outer": {
+     "x": 352,
+     "y": 201.0
+    },
+    "upper": {
+     "x": 376.0,
+     "y": 180
+    },
+    "lower": {
+     "x": 376.0,
+     "y": 222
+    },
+    "iris": {
+     "x": 376.0,
+     "y": 201.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 376.0,
+    "cy": 201.0,
+    "rx": 36.0,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "mushroom_druid_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 430,
+     "y": 197.5
+    },
+    "outer": {
+     "x": 452,
+     "y": 197.5
+    },
+    "upper": {
+     "x": 441.0,
+     "y": 180
+    },
+    "lower": {
+     "x": 441.0,
+     "y": 215
+    },
+    "iris": {
+     "x": 441.0,
+     "y": 197.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 441.0,
+    "cy": 197.5,
+    "rx": 16.5,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 290,
+     "y": 590
+    },
+    "spine1": {
+     "x": 160,
+     "y": 600
+    },
+    "spine2": {
+     "x": 70,
+     "y": 500
+    },
+    "spine3": {
+     "x": 85,
+     "y": 390
+    },
+    "spine4": {
+     "x": 150,
+     "y": 320
+    },
+    "spine5": {
+     "x": 225,
+     "y": 345
+    }
+   },
+   "notes": "radius=70"
+  },
+  {
+   "id": "mushroom_druid_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 201,
+    "cy": 315,
+    "rx": 11,
+    "ry": 11
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 220,
+    "cy": 328,
+    "rx": 13,
+    "ry": 13
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 285,
+    "cy": 410,
+    "rx": 11,
+    "ry": 11
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 158,
+    "cy": 485,
+    "rx": 15,
+    "ry": 15
+   }
+  },
+  {
+   "id": "mushroom_druid_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 215,
+    "cy": 575,
+    "rx": 9,
+    "ry": 9
+   }
+  }
+ ]
+}

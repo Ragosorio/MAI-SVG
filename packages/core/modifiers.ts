@@ -7,7 +7,7 @@ type Bounds={x:number;y:number;width:number;height:number};
 export function pathsBounds(ds:string[]):Bounds{let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;for(const d of ds)for(const s of segments(d))for(const p of s.points){if(p.x<x0)x0=p.x;if(p.y<y0)y0=p.y;if(p.x>x1)x1=p.x;if(p.y>y1)y1=p.y;}if(!Number.isFinite(x0))return {x:0,y:0,width:0,height:0};return {x:x0,y:y0,width:x1-x0,height:y1-y0};}
 // What a preset means for an EXISTING asset: it parameterizes the flow field, it never adds template geometry.
 export const FLUID_PRESETS:Record<FluidPreset,{direction:Point;params:Record<string,number>;describe:string}>={
- smoke:{direction:{x:0,y:-1},params:{amplitude:.05,scale:.35,speed:.22,swirl:1,wave:.5,waveLength:.5,anchorRadius:.18,growth:1,cycles:1,flicker:0},describe:'Asciende y se enrosca; casi inmóvil en el emisor, más libre arriba.'},
+ smoke:{direction:{x:0,y:-1},params:{amplitude:.055,scale:.18,speed:.28,swirl:.65,wave:0,lift:1.4,spread:.15,waveLength:.5,anchorRadius:.22,growth:1,cycles:1,flicker:0},describe:'Asciende y se enrosca; casi inmóvil en el emisor, más libre arriba.'},
  steam:{direction:{x:0,y:-1},params:{amplitude:.035,scale:.25,speed:.4,swirl:.8,wave:.6,waveLength:.4,anchorRadius:.12,growth:1.2,cycles:2,flicker:0},describe:'Vapor rápido y fino.'},
  fog:{direction:{x:1,y:0},params:{amplitude:.03,scale:.6,speed:.08,swirl:.6,wave:.2,waveLength:.8,anchorRadius:0,growth:0,cycles:1,flicker:0},describe:'Deriva lenta y amplia, sin emisor.'},
  cloud:{direction:{x:1,y:0},params:{amplitude:.02,scale:.7,speed:.05,swirl:.7,wave:.1,waveLength:.9,anchorRadius:0,growth:0,cycles:1,flicker:0},describe:'Ondulación muy lenta del contorno.'},
@@ -44,7 +44,15 @@ export function flowField(m:Modifier,duration:number,loop=true):Field{
   const fall=anchorR>0?smooth(Math.min(1,dist/anchorR)):1,grow=growth>0?Math.pow(Math.max(0,Math.min(1,s/extent)),.5)*growth+(1-Math.min(1,growth)):1;
   const wave=Math.sin(2*Math.PI*(s/waveLength-waveC*T))*waveAmt;let k=amplitude*fall*grow;
   if(flicker>0){const steps=Math.max(2,cycles*8),q=Math.floor(T*steps)%steps;k*=1+flicker*.5*Math.sin(q*2.39996+(P.seed??7));}
-  return {x:k*(swirl*vx+wave*nor.x),y:k*(swirl*vy+wave*nor.y)};};
+  // Rising plumes carry local pockets upward instead of bending the entire column as one wave.
+  // The carrier phase travels along the emitter axis; curl varies independently at multiple scales.
+  const lift=P.lift??0,spread=P.spread??0;
+  const pocket=.5+.5*Math.sin(2*Math.PI*(s/scale-cycles*T)+(P.seed??7));
+  const rise=lift*(.25+.75*pocket),side=(p.x-anchor.x)*nor.x+(p.y-anchor.y)*nor.y;
+  const expand=spread*Math.tanh(side/scale)*Math.max(0,Math.min(1,s/extent));
+  // Keep the rising tip inside the extraction bounds: moving through a fixed clip would cut it flat.
+  if(lift>0){const travel=Math.min(dir.x>0?(b.x+b.width-p.x)/dir.x:dir.x<0?(b.x-p.x)/dir.x:Infinity,dir.y>0?(b.y+b.height-p.y)/dir.y:dir.y<0?(b.y-p.y)/dir.y:Infinity);k*=smooth(Math.max(0,Math.min(1,travel/Math.max(1,amplitude*(lift+swirl)*2))));}
+  return {x:k*(swirl*vx+wave*nor.x+rise*dir.x+expand*nor.x),y:k*(swirl*vy+wave*nor.y+rise*dir.y+expand*nor.y)};};
  // Loop policy "crossfade": when speedFactor makes cycles fractional, blend F(t) toward F(t−D) over the last
  // `loopBlend` of the timeline (smoothstep weights): position and velocity match at the seam.
  const blend=Math.max(.02,Math.min(.5,P.loopBlend??.2)),fractional=loop&&Math.abs(sf-Math.round(sf))>1e-9;

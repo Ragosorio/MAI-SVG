@@ -1,0 +1,184 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/jelly_aquatic_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "jelly_aquatic_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 236,
+     "y": 322
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 238,
+    "cy": 210,
+    "rx": 122,
+    "ry": 100
+   }
+  },
+  {
+   "id": "jelly_aquatic_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "jelly_aquatic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 150
+    },
+    "tip": {
+     "x": 155,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "jelly_aquatic_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "jelly_aquatic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 310,
+     "y": 166
+    },
+    "tip": {
+     "x": 388,
+     "y": 146
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "jelly_aquatic_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "jelly_aquatic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 200,
+     "y": 232.5
+    },
+    "outer": {
+     "x": 145,
+     "y": 232.5
+    },
+    "upper": {
+     "x": 172.5,
+     "y": 205
+    },
+    "lower": {
+     "x": 172.5,
+     "y": 260
+    },
+    "iris": {
+     "x": 172.5,
+     "y": 232.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 172.5,
+    "cy": 232.5,
+    "rx": 41.25,
+    "ry": 52.25
+   }
+  },
+  {
+   "id": "jelly_aquatic_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "jelly_aquatic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 230,
+     "y": 261.5
+    },
+    "outer": {
+     "x": 285,
+     "y": 261.5
+    },
+    "upper": {
+     "x": 257.5,
+     "y": 235
+    },
+    "lower": {
+     "x": 257.5,
+     "y": 288
+    },
+    "iris": {
+     "x": 257.5,
+     "y": 261.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 257.5,
+    "cy": 261.5,
+    "rx": 41.25,
+    "ry": 50.349999999999994
+   }
+  },
+  {
+   "id": "jelly_aquatic_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 440,
+     "y": 392
+    },
+    "spine1": {
+     "x": 550,
+     "y": 380
+    },
+    "spine2": {
+     "x": 600,
+     "y": 300
+    },
+    "spine3": {
+     "x": 578,
+     "y": 212
+    },
+    "spine4": {
+     "x": 525,
+     "y": 150
+    }
+   },
+   "notes": "radius=48"
+  }
+ ]
+}

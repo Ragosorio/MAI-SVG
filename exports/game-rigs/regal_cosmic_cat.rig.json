@@ -1,0 +1,256 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/regal_cosmic_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "regal_cosmic_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 460,
+     "y": 264
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 465,
+    "cy": 152,
+    "rx": 126,
+    "ry": 126
+   }
+  },
+  {
+   "id": "regal_cosmic_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "regal_cosmic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 395,
+     "y": 115
+    },
+    "tip": {
+     "x": 370,
+     "y": 32
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "regal_cosmic_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "regal_cosmic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 535,
+     "y": 140
+    },
+    "tip": {
+     "x": 595,
+     "y": 90
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "regal_cosmic_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "regal_cosmic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 452,
+     "y": 167.5
+    },
+    "outer": {
+     "x": 410,
+     "y": 167.5
+    },
+    "upper": {
+     "x": 431.0,
+     "y": 150
+    },
+    "lower": {
+     "x": 431.0,
+     "y": 185
+    },
+    "iris": {
+     "x": 431.0,
+     "y": 167.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 431.0,
+    "cy": 167.5,
+    "rx": 31.5,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "regal_cosmic_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "regal_cosmic_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 488,
+     "y": 184.0
+    },
+    "outer": {
+     "x": 525,
+     "y": 184.0
+    },
+    "upper": {
+     "x": 506.5,
+     "y": 170
+    },
+    "lower": {
+     "x": 506.5,
+     "y": 198
+    },
+    "iris": {
+     "x": 506.5,
+     "y": 184.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 506.5,
+    "cy": 184.0,
+    "rx": 27.75,
+    "ry": 26.599999999999998
+   }
+  },
+  {
+   "id": "regal_cosmic_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 280,
+     "y": 575
+    },
+    "spine1": {
+     "x": 150,
+     "y": 525
+    },
+    "spine2": {
+     "x": 100,
+     "y": 400
+    },
+    "spine3": {
+     "x": 165,
+     "y": 300
+    },
+    "spine4": {
+     "x": 250,
+     "y": 225
+    },
+    "spine5": {
+     "x": 275,
+     "y": 125
+    },
+    "spine6": {
+     "x": 175,
+     "y": 75
+    },
+    "spine7": {
+     "x": 75,
+     "y": 165
+    }
+   },
+   "notes": "radius=85"
+  },
+  {
+   "id": "regal_cosmic_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 568,
+    "cy": 288,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "regal_cosmic_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 562,
+    "cy": 540,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "regal_cosmic_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 608,
+    "cy": 592,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "regal_cosmic_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 332,
+    "cy": 230,
+    "rx": 22,
+    "ry": 22
+   }
+  }
+ ]
+}

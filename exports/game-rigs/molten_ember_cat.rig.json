@@ -1,0 +1,312 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/molten_ember_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "molten_ember_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 460,
+     "y": 264
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 460,
+    "cy": 160,
+    "rx": 140,
+    "ry": 108
+   }
+  },
+  {
+   "id": "molten_ember_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "molten_ember_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 360,
+     "y": 115
+    },
+    "tip": {
+     "x": 326,
+     "y": 12
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "molten_ember_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "molten_ember_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 515,
+     "y": 100
+    },
+    "tip": {
+     "x": 552,
+     "y": 20
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "molten_ember_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "molten_ember_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 468,
+     "y": 156.5
+    },
+    "outer": {
+     "x": 415,
+     "y": 156.5
+    },
+    "upper": {
+     "x": 441.5,
+     "y": 135
+    },
+    "lower": {
+     "x": 441.5,
+     "y": 178
+    },
+    "iris": {
+     "x": 441.5,
+     "y": 156.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 441.5,
+    "cy": 156.5,
+    "rx": 39.75,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "molten_ember_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "molten_ember_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 510,
+     "y": 169.0
+    },
+    "outer": {
+     "x": 545,
+     "y": 169.0
+    },
+    "upper": {
+     "x": 527.5,
+     "y": 150
+    },
+    "lower": {
+     "x": 527.5,
+     "y": 188
+    },
+    "iris": {
+     "x": 527.5,
+     "y": 169.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 527.5,
+    "cy": 169.0,
+    "rx": 26.25,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "molten_ember_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 282,
+     "y": 392
+    },
+    "spine1": {
+     "x": 190,
+     "y": 412
+    },
+    "spine2": {
+     "x": 135,
+     "y": 330
+    },
+    "spine3": {
+     "x": 140,
+     "y": 230
+    },
+    "spine4": {
+     "x": 160,
+     "y": 145
+    },
+    "spine5": {
+     "x": 225,
+     "y": 118
+    },
+    "spine6": {
+     "x": 275,
+     "y": 165
+    }
+   },
+   "notes": "radius=64"
+  },
+  {
+   "id": "molten_ember_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 216,
+    "cy": 78,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 75,
+    "cy": 190,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 120,
+    "cy": 270,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 276,
+    "rx": 15,
+    "ry": 15
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 270,
+    "cy": 366,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-5",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 592,
+    "cy": 446,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-6",
+   "role": "prop-float",
+   "label": "Flotante 7",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 210,
+    "cy": 515,
+    "rx": 26,
+    "ry": 26
+   }
+  },
+  {
+   "id": "molten_ember_cat.float-7",
+   "role": "prop-float",
+   "label": "Flotante 8",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 282,
+    "cy": 125,
+    "rx": 12,
+    "ry": 12
+   }
+  }
+ ]
+}

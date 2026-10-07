@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/masquerade_phantom_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "masquerade_phantom_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 322
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290,
+    "cy": 198,
+    "rx": 148,
+    "ry": 125
+   }
+  },
+  {
+   "id": "masquerade_phantom_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "masquerade_phantom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 140
+    },
+    "tip": {
+     "x": 140,
+     "y": 60
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "masquerade_phantom_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "masquerade_phantom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 390,
+     "y": 140
+    },
+    "tip": {
+     "x": 445,
+     "y": 60
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "masquerade_phantom_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "masquerade_phantom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 240,
+     "y": 250.0
+    },
+    "outer": {
+     "x": 195,
+     "y": 250.0
+    },
+    "upper": {
+     "x": 217.5,
+     "y": 228
+    },
+    "lower": {
+     "x": 217.5,
+     "y": 272
+    },
+    "iris": {
+     "x": 217.5,
+     "y": 250.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 217.5,
+    "cy": 250.0,
+    "rx": 33.75,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "masquerade_phantom_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "masquerade_phantom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 250.0
+    },
+    "outer": {
+     "x": 355,
+     "y": 250.0
+    },
+    "upper": {
+     "x": 328.5,
+     "y": 228
+    },
+    "lower": {
+     "x": 328.5,
+     "y": 272
+    },
+    "iris": {
+     "x": 328.5,
+     "y": 250.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 328.5,
+    "cy": 250.0,
+    "rx": 39.75,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "masquerade_phantom_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 430,
+     "y": 380
+    },
+    "spine1": {
+     "x": 520,
+     "y": 430
+    },
+    "spine2": {
+     "x": 600,
+     "y": 480
+    },
+    "spine3": {
+     "x": 620,
+     "y": 560
+    },
+    "spine4": {
+     "x": 560,
+     "y": 620
+    },
+    "spine5": {
+     "x": 470,
+     "y": 650
+    }
+   },
+   "notes": "radius=70"
+  }
+ ]
+}

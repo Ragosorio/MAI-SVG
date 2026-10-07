@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/arce_autumn_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "arce_autumn_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 465,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 468,
+    "cy": 195,
+    "rx": 128,
+    "ry": 95
+   }
+  },
+  {
+   "id": "arce_autumn_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "arce_autumn_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 135
+    },
+    "tip": {
+     "x": 336,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "arce_autumn_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "arce_autumn_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 540,
+     "y": 108
+    },
+    "tip": {
+     "x": 556,
+     "y": 18
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "arce_autumn_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "arce_autumn_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 452,
+     "y": 190.0
+    },
+    "outer": {
+     "x": 410,
+     "y": 190.0
+    },
+    "upper": {
+     "x": 431.0,
+     "y": 170
+    },
+    "lower": {
+     "x": 431.0,
+     "y": 210
+    },
+    "iris": {
+     "x": 431.0,
+     "y": 190.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 431.0,
+    "cy": 190.0,
+    "rx": 31.5,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "arce_autumn_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "arce_autumn_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 500,
+     "y": 170.0
+    },
+    "outer": {
+     "x": 540,
+     "y": 170.0
+    },
+    "upper": {
+     "x": 520.0,
+     "y": 148
+    },
+    "lower": {
+     "x": 520.0,
+     "y": 192
+    },
+    "iris": {
+     "x": 520.0,
+     "y": 170.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 520.0,
+    "cy": 170.0,
+    "rx": 30.0,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "arce_autumn_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 262,
+     "y": 335
+    },
+    "spine1": {
+     "x": 165,
+     "y": 320
+    },
+    "spine2": {
+     "x": 150,
+     "y": 262
+    },
+    "spine3": {
+     "x": 220,
+     "y": 180
+    },
+    "spine4": {
+     "x": 230,
+     "y": 100
+    },
+    "spine5": {
+     "x": 130,
+     "y": 90
+    }
+   },
+   "notes": "radius=60"
+  }
+ ]
+}

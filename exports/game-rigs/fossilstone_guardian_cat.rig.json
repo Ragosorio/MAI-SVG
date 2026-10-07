@@ -1,0 +1,204 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/fossilstone_guardian_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "fossilstone_guardian_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 236,
+     "y": 296
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 238,
+    "cy": 180,
+    "rx": 132,
+    "ry": 108
+   }
+  },
+  {
+   "id": "fossilstone_guardian_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "fossilstone_guardian_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 140,
+     "y": 116
+    },
+    "tip": {
+     "x": 96,
+     "y": 36
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "fossilstone_guardian_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "fossilstone_guardian_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 330,
+     "y": 110
+    },
+    "tip": {
+     "x": 370,
+     "y": 33
+    }
+   },
+   "notes": "halfWidth=35"
+  },
+  {
+   "id": "fossilstone_guardian_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "fossilstone_guardian_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 205,
+     "y": 198.5
+    },
+    "outer": {
+     "x": 148,
+     "y": 198.5
+    },
+    "upper": {
+     "x": 176.5,
+     "y": 172
+    },
+    "lower": {
+     "x": 176.5,
+     "y": 225
+    },
+    "iris": {
+     "x": 176.5,
+     "y": 198.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 176.5,
+    "cy": 198.5,
+    "rx": 42.75,
+    "ry": 50.349999999999994
+   }
+  },
+  {
+   "id": "fossilstone_guardian_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "fossilstone_guardian_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 265,
+     "y": 198.5
+    },
+    "outer": {
+     "x": 315,
+     "y": 198.5
+    },
+    "upper": {
+     "x": 290.0,
+     "y": 172
+    },
+    "lower": {
+     "x": 290.0,
+     "y": 225
+    },
+    "iris": {
+     "x": 290.0,
+     "y": 198.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290.0,
+    "cy": 198.5,
+    "rx": 37.5,
+    "ry": 50.349999999999994
+   }
+  },
+  {
+   "id": "fossilstone_guardian_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 418
+    },
+    "spine1": {
+     "x": 540,
+     "y": 350
+    },
+    "spine2": {
+     "x": 500,
+     "y": 280
+    },
+    "spine3": {
+     "x": 452,
+     "y": 210
+    },
+    "spine4": {
+     "x": 465,
+     "y": 128
+    },
+    "spine5": {
+     "x": 530,
+     "y": 96
+    },
+    "spine6": {
+     "x": 615,
+     "y": 120
+    },
+    "spine7": {
+     "x": 635,
+     "y": 180
+    },
+    "spine8": {
+     "x": 590,
+     "y": 212
+    },
+    "spine9": {
+     "x": 560,
+     "y": 190
+    }
+   },
+   "notes": "radius=32"
+  }
+ ]
+}

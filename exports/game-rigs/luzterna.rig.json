@@ -1,0 +1,245 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "experiments/game-luzterna/luzterna.svg",
+ "viewBox": [
+  0,
+  0,
+  610,
+  640
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "luzterna.head",
+   "role": "head",
+   "label": "Cabeza + sombrero",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 270
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 330,
+    "cy": 150,
+    "rx": 195,
+    "ry": 125
+   }
+  },
+  {
+   "id": "luzterna.ear-left",
+   "role": "ear-left",
+   "label": "Oreja",
+   "targets": [],
+   "parent": "luzterna.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 265,
+     "y": 105
+    },
+    "tip": {
+     "x": 255,
+     "y": 45
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "luzterna.ear-right",
+   "role": "ear-right",
+   "label": "Oreja",
+   "targets": [],
+   "parent": "luzterna.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 405,
+     "y": 160
+    },
+    "tip": {
+     "x": 442,
+     "y": 118
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "luzterna.eye-left",
+   "role": "eye-left",
+   "label": "Ojo",
+   "targets": [],
+   "parent": "luzterna.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 275,
+     "y": 180.0
+    },
+    "outer": {
+     "x": 235,
+     "y": 180.0
+    },
+    "upper": {
+     "x": 255.0,
+     "y": 160
+    },
+    "lower": {
+     "x": 255.0,
+     "y": 200
+    },
+    "iris": {
+     "x": 255.0,
+     "y": 180.0
+    }
+   }
+  },
+  {
+   "id": "luzterna.eye-right",
+   "role": "eye-right",
+   "label": "Ojo",
+   "targets": [],
+   "parent": "luzterna.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 300,
+     "y": 203.5
+    },
+    "outer": {
+     "x": 350,
+     "y": 203.5
+    },
+    "upper": {
+     "x": 325.0,
+     "y": 185
+    },
+    "lower": {
+     "x": 325.0,
+     "y": 222
+    },
+    "iris": {
+     "x": 325.0,
+     "y": 203.5
+    }
+   }
+  },
+  {
+   "id": "luzterna.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 460,
+     "y": 440
+    },
+    "spine1": {
+     "x": 520,
+     "y": 360
+    },
+    "spine2": {
+     "x": 490,
+     "y": 280
+    },
+    "spine3": {
+     "x": 530,
+     "y": 205
+    },
+    "spine4": {
+     "x": 585,
+     "y": 235
+    }
+   },
+   "notes": "radius=55"
+  },
+  {
+   "id": "luzterna.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 66,
+    "cy": 165,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "luzterna.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 60,
+    "cy": 292,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "luzterna.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 408,
+    "cy": 295,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "luzterna.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 98,
+    "cy": 145,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "luzterna.float-4",
+   "role": "prop-float",
+   "label": "Farol",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 330,
+    "rx": 70,
+    "ry": 70
+   }
+  }
+ ]
+}

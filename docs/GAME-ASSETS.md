@@ -42,3 +42,9 @@ Preset: high-color-preserved. Los originales no se modifican. Usar personajes pa
 | storybook_ink_cat.png | storybook_ink_cat.svg |
 
 Rutas completas y estado: GAME-ASSETS.json y GAME-ASSETS.csv. Candy animado corregido se entregará separado de estos originales.
+
+## Entrega a NO ONE LIKE CATS (2026-10-05)
+
+- `npx tsx scripts/game-export.ts assets/vector "<No one>/game/public/cats-svg"` genera el perfil **game-compact/v1**: mismo SVG high-color-preserved, solo fusiona tramos `L` colineales y reescribe comandos relativos. IDs, colores, máscara alfa y orden intactos; `mai compare` da MAE 0 y error máximo 0 (neon_glitch). 262 MB → 190 MB. Pruebas: `tests/game-export.test.ts`.
+- Rigs de juego en `exports/game-rigs/<gato>.rig.json` (`mai.game-rig/v1`): nodos semánticos `head` (elipse + `neck`), `ear-*` (`base`/`tip`), `eye-*` (`inner/outer/upper/lower/iris` como la plantilla `eye`), `tail` (espina) y `prop-float`. Anotados por agente con cuadrícula; `status: proposed`, revisión visual pendiente.
+- El juego (PixiJS) no reproduce SMIL: rasteriza el SVG puro a 1.5× y lo deforma en una malla con esos rigs (`game/src/art/livingCat.ts`, compacto en `game/src/data/catRigs.json`). Mantener ambos en sincronía si se edita un rig.

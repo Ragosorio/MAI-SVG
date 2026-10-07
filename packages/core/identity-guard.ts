@@ -56,11 +56,11 @@ export function protectedNodes(model:VectorDocument){const nodes:{id:string;targ
  return nodes;}
 const allowedFor=(levels:ProtectionLevel[])=>levels.map(l=>new Set(ALLOWED[l])).reduce((a,b)=>new Set([...a].filter(x=>b.has(x))));
 const scaleBudget=(m:VectorDocument)=>({strict:.02,balanced:.05,free:.15}[m.project.preservation??'balanced']);
-export function guardIdentity(model:VectorDocument,op:Operation){
+export function guardIdentity(model:VectorDocument,op:Operation,renderCache?:Map<string,Set<string>>){
  if(op.type==='identity.protect'||op.type==='identity.release'||op.type.startsWith('semantic.')||op.type==='landmark.set'||op.type==='landmark.delete')return;
  const nodes=protectedNodes(model);if(!nodes.length)return;const {targets,cats,scale}=categories(op,model.project);if(!targets.length||!cats.length)return;
  const isAncestor=(a:Node,b:Node)=>{let p:Node|null=b;while(p){if(p===a)return true;p=p.parentNode;}return false;};
- for(const n of nodes){const allowed=allowedFor(n.levels);const set=renderSet(model,n.targets);
+ for(const n of nodes){const allowed=allowedFor(n.levels);const set=renderCache?.get(n.id)??renderSet(model,n.targets);renderCache?.set(n.id,set);
   for(const target of targets){const e=model.index.get(target);if(!e)continue;let ancestorOnly=false;
    const related=set.has(target)||n.targets.some(id=>{const p=model.index.get(id);if(!p)return false;if(isAncestor(p as unknown as Node,e as unknown as Node))return true;
     if(op.type!=='create'&&isAncestor(e as unknown as Node,p as unknown as Node)&&cats.some(c=>['structure','style','geometry','topology','scale'].includes(c))){ancestorOnly=true;return true;}return false;});

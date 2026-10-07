@@ -96,3 +96,28 @@ test('S4 regression: re-choosing on a chosen board and region-only preserved par
   const back=await (await fetch(s.url+'/api/state')).json();assert.equal(back.choice.selected,accepted);assert.equal(back.project.acceptances.length,1);
  }finally{await s.app.close();await rm(root,{recursive:true,force:true});}
 });
+
+// Review regressions: every required part must be evaluated, and protection must survive relabeling/reopening.
+test('S1: mixed identity coverage blocks commit when a required region cannot render or has no coverage',async()=>{
+ for(const region of [undefined,{kind:'rect' as const,x:0,y:0,width:10,height:10}]){
+  const doc=new VectorDocument(FIXTURE);
+  doc.apply([{type:'semantic.label',node:{id:'mouth',role:'mouth',label:'mouth',targets:['mouth'],status:'confirmed',source:'agent'}},{type:'semantic.label',node:{id:'nose',role:'nose',label:'nose',targets:[],...(region?{region}:{}),status:'confirmed',source:'agent'}}]);
+  const original=doc.toSVG();let commits=0;
+  const host:PlanHost={model:()=>doc,revision:()=>1,sessionId:()=>'s',documentId:()=>'doc',board:()=>undefined,reference:async()=>({doc:new VectorDocument(original),label:'original'}),saveSnapshot:async()=>'draft',render:async()=>{throw Error('renderer down');},metrics:async()=>({mae:0,ssim:1,silhouetteIoU:1}),writeArtifact:async()=>'x',receipts:new Map(),commit:async(ops,_rev,_label,pre,receipt)=>{commits++;pre();doc.apply(ops);return receipt({revision:2,id:'tx'});}};
+  const p:Plan={protocol:'mai.agent-plan/v1',requestId:'mixed',sessionId:'s',documentId:'doc',expectedRevision:1,mode:'commit',label:'preserve both',constraints:{preserve:[{part:{partId:'nose'},reference:{kind:'snapshot',id:'original'},channels:['geometry','paint'],allowRigidMotion:false}]},commands:[{id:'protect',type:'identity.preserve',target:{partId:'mouth'},reference:{kind:'snapshot',id:'original'},policy:'locked'}],validation:{times:[0],required:['structural','identity'],preview:false},provenance:{kind:'user-direction',text:'Conserva boca y nariz'}};
+  await assert.rejects(new PlanExecutor(host).execute(p),(e:{code?:string})=>e.code==='VALIDATION_NOT_EVALUATED');
+  assert.equal(commits,0);assert.equal(doc.toSVG(),original);assert.equal(host.receipts.size,0);
+ }
+});
+
+test('S1: identity.preserve accumulates protection and persists it through SVG reopening',async()=>{
+ const doc=new VectorDocument(FIXTURE);
+ doc.apply([{type:'semantic.label',node:{id:'mouth',role:'mouth',label:'mouth',targets:['mouth'],status:'confirmed',source:'agent',protection:['color-preserved']}}]);
+ const original=doc.toSVG();
+ const host:PlanHost={model:()=>doc,revision:()=>1,sessionId:()=>'s',documentId:()=>'doc',board:()=>undefined,reference:async()=>({doc:new VectorDocument(original),label:'original'}),saveSnapshot:async()=>'draft',render:async()=>{throw Error('unexpected render');},metrics:async()=>({mae:0,ssim:1,silhouetteIoU:1}),writeArtifact:async()=>'x',receipts:new Map(),commit:async(ops,_rev,_label,pre,receipt)=>{pre();doc.apply(ops);return receipt({revision:2,id:'tx'});}};
+ const result=await new PlanExecutor(host).execute({protocol:'mai.agent-plan/v1',requestId:'protect',sessionId:'s',documentId:'doc',expectedRevision:1,mode:'commit',label:'lock mouth',commands:[{id:'geometry',type:'identity.preserve',target:{partId:'mouth'},reference:{kind:'snapshot',id:'original'},policy:'topology-preserved'},{id:'lock',type:'identity.preserve',target:{partId:'mouth'},reference:{kind:'snapshot',id:'original'},policy:'locked'}],validation:{times:[0],required:['structural','identity'],preview:false},provenance:{kind:'user-direction',text:'Bloquea la boca'}});
+ assert.equal(result.committed,true);
+ const reopened=new VectorDocument(doc.toSVG());
+ assert.deepEqual(reopened.project.semantic?.nodes.find(n=>n.id==='mouth')?.protection,['color-preserved','topology-preserved','locked']);
+ assert.throws(()=>reopened.apply([{type:'pose',id:'mouth',pose:{x:10}}]));
+});

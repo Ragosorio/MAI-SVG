@@ -1,0 +1,282 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/prism_crystal_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "prism_crystal_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 505,
+     "y": 322
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 500,
+    "cy": 220,
+    "rx": 126,
+    "ry": 100
+   }
+  },
+  {
+   "id": "prism_crystal_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "prism_crystal_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 405,
+     "y": 160
+    },
+    "tip": {
+     "x": 356,
+     "y": 76
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "prism_crystal_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "prism_crystal_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 538,
+     "y": 130
+    },
+    "tip": {
+     "x": 525,
+     "y": 16
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "prism_crystal_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "prism_crystal_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 465,
+     "y": 244.0
+    },
+    "outer": {
+     "x": 418,
+     "y": 244.0
+    },
+    "upper": {
+     "x": 441.5,
+     "y": 220
+    },
+    "lower": {
+     "x": 441.5,
+     "y": 268
+    },
+    "iris": {
+     "x": 441.5,
+     "y": 244.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 441.5,
+    "cy": 244.0,
+    "rx": 35.25,
+    "ry": 45.599999999999994
+   }
+  },
+  {
+   "id": "prism_crystal_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "prism_crystal_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 508,
+     "y": 208.5
+    },
+    "outer": {
+     "x": 560,
+     "y": 208.5
+    },
+    "upper": {
+     "x": 534.0,
+     "y": 185
+    },
+    "lower": {
+     "x": 534.0,
+     "y": 232
+    },
+    "iris": {
+     "x": 534.0,
+     "y": 208.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 534.0,
+    "cy": 208.5,
+    "rx": 39.0,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "prism_crystal_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 282,
+     "y": 390
+    },
+    "spine1": {
+     "x": 200,
+     "y": 500
+    },
+    "spine2": {
+     "x": 115,
+     "y": 425
+    },
+    "spine3": {
+     "x": 125,
+     "y": 325
+    },
+    "spine4": {
+     "x": 210,
+     "y": 250
+    },
+    "spine5": {
+     "x": 265,
+     "y": 150
+    },
+    "spine6": {
+     "x": 150,
+     "y": 86
+    }
+   },
+   "notes": "radius=46"
+  },
+  {
+   "id": "prism_crystal_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 80,
+    "cy": 145,
+    "rx": 15,
+    "ry": 15
+   }
+  },
+  {
+   "id": "prism_crystal_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 142,
+    "cy": 230,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "prism_crystal_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 90,
+    "cy": 392,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "prism_crystal_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 622,
+    "cy": 305,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "prism_crystal_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 115,
+    "cy": 195,
+    "rx": 10,
+    "ry": 10
+   }
+  },
+  {
+   "id": "prism_crystal_cat.float-5",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 165,
+    "cy": 255,
+    "rx": 10,
+    "ry": 10
+   }
+  }
+ ]
+}

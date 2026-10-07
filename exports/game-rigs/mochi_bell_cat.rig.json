@@ -1,0 +1,180 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/mochi_bell_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "mochi_bell_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 336
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 205,
+    "rx": 162,
+    "ry": 130
+   }
+  },
+  {
+   "id": "mochi_bell_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "mochi_bell_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 245,
+     "y": 128
+    },
+    "tip": {
+     "x": 236,
+     "y": 14
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "mochi_bell_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "mochi_bell_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 430,
+     "y": 165
+    },
+    "tip": {
+     "x": 500,
+     "y": 106
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "mochi_bell_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "mochi_bell_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 280,
+     "y": 210.0
+    },
+    "outer": {
+     "x": 222,
+     "y": 210.0
+    },
+    "upper": {
+     "x": 251.0,
+     "y": 182
+    },
+    "lower": {
+     "x": 251.0,
+     "y": 238
+    },
+    "iris": {
+     "x": 251.0,
+     "y": 210.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 251.0,
+    "cy": 210.0,
+    "rx": 43.5,
+    "ry": 53.199999999999996
+   }
+  },
+  {
+   "id": "mochi_bell_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "mochi_bell_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 328,
+     "y": 243.5
+    },
+    "outer": {
+     "x": 395,
+     "y": 243.5
+    },
+    "upper": {
+     "x": 361.5,
+     "y": 215
+    },
+    "lower": {
+     "x": 361.5,
+     "y": 272
+    },
+    "iris": {
+     "x": 361.5,
+     "y": 243.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 361.5,
+    "cy": 243.5,
+    "rx": 50.25,
+    "ry": 54.15
+   }
+  },
+  {
+   "id": "mochi_bell_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 490,
+     "y": 578
+    },
+    "spine1": {
+     "x": 590,
+     "y": 452
+    },
+    "spine2": {
+     "x": 552,
+     "y": 322
+    },
+    "spine3": {
+     "x": 450,
+     "y": 360
+    }
+   },
+   "notes": "radius=68"
+  }
+ ]
+}

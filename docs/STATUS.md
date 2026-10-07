@@ -1,10 +1,12 @@
-# Estado de implementación — 2026-10-04
+# Estado de implementación — 2026-10-05
 
 ## Superficie de agentes S0–S4 — estado verificado 2026-10-04
 
-Trabajo local sin commit sobre `dd57785`. MAI no interpreta lenguaje humano: Claude/Codex leen la instrucción y llaman herramientas tipadas (un registro → CLI, HTTP `/api/agent/call`, MCP con SDK oficial 1.32.0). `feedback.ts` queda como fallback sin ampliar. Las métricas no son aprobación estética; **las 44 áreas del pedido original no están completas** (ver «Qué falta»).
+Base integrada en `a7a0a6e`; correcciones de preservación del 2026-10-05 en el checkout local. MAI no interpreta lenguaje humano: Claude/Codex leen la instrucción y llaman herramientas tipadas (un registro → CLI, HTTP `/api/agent/call`, MCP con SDK oficial 1.32.0). `feedback.ts` queda como fallback sin ampliar. Las métricas no son aprobación estética; **las 44 áreas del pedido original no están completas** (ver «Qué falta»).
 
-Checkout actual: `npm run typecheck` y `npm run build` pasan; `npm test` **54 pruebas, 54 pasan, 0 omitidas** (`experiments/evidence/full-suite-20261004.log`).
+Checkout verificado el 2026-10-05: `npm run typecheck` y `npm run build` pasan; `npm test` **60 pruebas, 60 pasan, 0 omitidas**, incluyendo Firefox y WebKit (`experiments/evidence/smoke-emitter-suite-20261005.log`).
+
+Correcciones de la revisión: el gate de identidad bloquea el plan si cualquier parte requerida queda sin evaluar, incluso si otras pasan; `identity.preserve` acumula las protecciones sobre el borrador y las conserva al asociar la referencia. Regresiones: cobertura mixta con y sin región/renderizador, cero commit ante cobertura incompleta, bloqueo persistente después de guardar/reabrir y rechazo de una pose posterior.
 
 | Gate | Estado | Evidencia |
 |---|---|---|
@@ -13,6 +15,12 @@ Checkout actual: `npm run typecheck` y `npm run build` pasan; `npm test` **54 pr
 | S2 integración visible | **Pasa** (tiempos de una sola muestra) | `tests/editor-flow.test.ts` en Chrome real: selección → comentario con captura → nota → mezcla → commit → WebSocket → repintado sin recarga → undo. `s2-editor-flow.json`: 94 ms servicio, 100 ms visible, una muestra en fixture pequeño |
 | S3 paridad CLI/API/MCP | **Pasa** | `tests/transports.test.ts`: mismo resultado normalizado y mismo error por los tres transportes; cliente SDK independiente lista y llama; ciclo de vida, JSON inválido, cancelación y EOF |
 | S4 Candy + agente externo | **Parcial** | Ver abajo. Falta la respuesta humana pendiente, aprobación artística y tiempos con muestras |
+
+Comprobación adicional del 2026-10-05 en copia aislada de Candy: dry-run, commit del humo ×0.8 con boca bloqueada y nariz preservada, y undo completo. Identidad pasa en 0/1/3 s sin partes omitidas; nariz MAE 0. El tablero permanece pendiente. Evidencia: `experiments/evidence/preservation-candy-20261005.json` y `.png`. Es una regresión técnica por script, no una nueva corrida de agente externo ni aprobación artística.
+
+Prueba visible adicional del 2026-10-05: un subagente independiente, sin historial ni acceso al código/pruebas, recibió una dirección nueva de ensayo para reducir el humo 40% conservando ojos/boca/nariz y dejando las expresiones pendientes. Inspeccionó el vocabulario público y la escena, preparó dry-run, revisó cuatro previews y confirmó una transacción (rev 17 → 18). Postcommit: 16 evaluaciones de identidad, MAE 0, sin omisiones; factor humo 0.6 y tablero pending. El editor visible se actualizó por WebSocket sin recargar. Dry-run 26.35 s, commit 29.65 s, identidad posterior 13.12 s; muestras únicas, rendimiento pendiente. Dos tropiezos recuperados: red local bloqueada por sandbox y `execute --help` no soportado. Evidencia: `experiments/evidence/live-candy-trial-20261005.json` y `live-candy-editor-20261005.jpg`. Es una prueba con subagente y herramientas públicas; no sustituye la corrida pendiente de un cliente externo independiente ni decide la aprobación artística.
+
+Ajuste visual solicitado el 2026-10-05: el usuario rechazó el humo anterior por parecer una ola. El preset geométrico smoke elimina la onda lateral coherente, atenúa el movimiento de la punta junto al recorte para evitar un corte plano, y agrega subida local (`lift`) y expansión (`spread`) con ruido a varias escalas y emisor anclado. Controles del inspector para velocidad/subida/remolinos/ondulación; aplicado en la sesión aislada (rev 35), identidad de ojos/boca/nariz pasa contra snapshot previo. Evidencia: `smoke-refinement-20261005.json`, `smoke-cleanup-editor-20261005.jpg`. No es física ni aprobación estética automática. Limpieza por color: selección/región o dibujo, tolerancia de blanco plano, candidatos resaltados, exclusión de defs/máscaras/partes y regiones protegidas, retiro de IDs revisados y undo. La búsqueda en Candy dio 1246 candidatas y excluyó 129 protegidas, sin borrarlas. Prueba de navegador cubre ámbito, exclusiones, resaltado sin guardarlo, eliminación selectiva y undo; prueba de humo cubre anclaje, ascenso predominante y cierre de loop a velocidad fraccional.
 
 ### S4 en detalle
 
@@ -135,3 +143,11 @@ Choices propose/show/choose/dismiss admite 2–4 alternativas, recomendación ra
 Pruebas actuales: npm test 41 pruebas, 39 pasan y 2 fallan por falta de los ejecutables de Firefox/WebKit. Typecheck y build pasan. Skills mai-svg/mai-refine-animation actualizadas y validadas. Fluidos: topología, loop, playback/exportación SMIL y rechazo atómico. Decisiones: previews sin edición, recorte de facciones, persistencia, WebSocket, elegir, undo, duplicados, conflictos y token. CLI fluid genera un SVG editable real. Regresión de nariz/boca: rechaza el caso antiguo y aprueba siete tiempos con los efectos actuales.
 
 Entregables: examples/candy-emotions/{candy-editable.svg,candy-standalone.svg,candy-preview.gif,sad-choice.json,options/,sprites/}; guía docs/FLUIDS-AND-CHOICES.md y evidencia experiments/evidence/{fluids-full-suite.tap,candy-fluid-identity.json,candy-fluid-live-apply.json,candy-sad-choice-live.json,candy-fluid-choice-editor.png}. Son previews y candidatos locales; queda revisión artística y optimización de los SVG grandes.
+
+## Emisión de humo — 2026-10-05
+
+El usuario rechazó tanto la deformación inicial como la variante ascendente porque parecían una ola. Se añadió un emisor independiente: bocanadas vectoriales suaves, nacimiento escalonado, subida, expansión, remolinos y disipación con reciclado transparente. Controles en el inspector y `smoke.emit` compartido por API, CLI y MCP. El tiempo de vida se ajusta a ciclos enteros del loop; el mismo id permite modificar el emisor en una transacción con deshacer. Los gradientes propios se retiran al reemplazarlo, conservando referencias compartidas. No es CFD ni reconocimiento automático del contenido del SVG.
+
+Candy aislado en http://127.0.0.1:4498/ pasó de revisión 35 a 36. Emisor en (504,233), 32 bocanadas, subida 4.5 s, altura 190, expansión 1 y turbulencia .8. La capa de humo original queda oculta y su modificador desactivado, conservando geometría y alfa; no se han eliminado blancos. Ojos, boca y nariz pasan identidad contra el snapshot anterior en 0, 2.25, 4.5, 6.75 y 9 s. Candidato visible, pendiente de revisión artística del usuario. Aplicar este cambio en Candy tardó 39.287 s: sigue siendo lento en SVG grande. Evidencia: experiments/evidence/smoke-emitter-candy-20261005.json.
+
+Regresiones verifican ascenso, expansión, desaparición, cierre de loop, reapertura editable, equivalencia raster editor/SMIL autónomo, rechazo de controles fuera de presupuesto, previsualización sin mutación, actualización sin acumulación de gradientes, preservación de gradientes compartidos y deshacer del emisor junto con la fuente. Se reutilizan comprobaciones de referencias solo entre claves generadas consecutivas; la identidad continúa verificándose y los cambios estructurales invalidan esa caché.

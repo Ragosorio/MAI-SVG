@@ -41,3 +41,23 @@ test('S2: selection, comment, proposal, mix, commit, live repaint and undo in th
   await mkdir('experiments/evidence',{recursive:true});await writeFile('experiments/evidence/s2-editor-flow.json',JSON.stringify({...evidence,finishedAt:new Date().toISOString(),browser:browser.version()},null,1));
  }finally{await browser.close();await s.app.close();await rm(root,{recursive:true,force:true});}
 });
+
+test('color cleanup previews scoped whites, excludes protections/defs, deletes only reviewed paths and undoes',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'mai-color-cleanup-'));await mkdir(join(root,'apps/editor'),{recursive:true});await symlink(resolve('apps/editor/dist'),join(root,'apps/editor/dist'));
+ const s=await studio(root,await port());const browser=await chromium.launch({headless:true,...(!existsSync(chromium.executablePath())&&existsSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')?{channel:'chrome'}:{})});
+ try{
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><mask id="mask"><rect id="mask-white" width="100" height="100" fill="white"/></mask></defs><g id="cleanup"><rect id="white" x="1" y="1" width="10" height="10" fill="white"/><rect id="near" x="20" y="1" width="10" height="10" fill="#fafafa"/><rect id="protected" x="40" y="1" width="10" height="10" fill="white"/><rect id="red" x="60" y="1" width="10" height="10" fill="red"/></g><rect id="outside" x="1" y="40" width="10" height="10" fill="white"/></svg>';
+  const r=await s.post('/api/import',{name:'cleanup.svg',base64:Buffer.from(svg).toString('base64'),expectedRevision:0});assert.equal(r.status,200);const imported=r.body;
+  const protection=await s.call('ops.apply',{expectedRevision:imported.revision,ops:[{type:'semantic.label',node:{id:'face',label:'face',role:'mouth',targets:['protected'],protection:['locked'],status:'confirmed',source:'agent'}}]});assert.equal(protection.ok,true);
+  const page=await browser.newPage({viewport:{width:1440,height:1000}});await page.goto(s.url);await page.getByText('Sesión conectada').waitFor();
+  await page.locator('.layer-list button',{hasText:'cleanup'}).click();
+  await page.getByRole('button',{name:'Buscar blancos',exact:true}).click();
+  assert.equal(await page.getByRole('checkbox',{name:'Revisar white',exact:true}).count(),1);assert.equal(await page.getByRole('checkbox',{name:'Revisar near',exact:true}).count(),1);
+  for(const id of ['protected','mask-white','outside','red'])assert.equal(await page.getByRole('checkbox',{name:'Revisar '+id,exact:true}).count(),0,id);
+  await page.getByRole('checkbox',{name:'Revisar white',exact:true}).check();await page.locator('.scene #white[data-mai-cleanup-preview="true"]').waitFor();
+  assert.ok(!(await(await fetch(s.url+'/api/svg')).text()).includes('data-mai-cleanup-preview'));
+  await page.getByRole('button',{name:'Quitar marcadas (1)',exact:true}).click();await page.locator('.scene #white').waitFor({state:'detached'});
+  assert.equal(await page.locator('.scene #near').count(),1);assert.equal(await page.locator('.scene #protected').count(),1);
+  await page.getByRole('button',{name:'Deshacer',exact:true}).click();await page.locator('.scene #white').waitFor();
+ }finally{await browser.close();await s.app.close();await rm(root,{recursive:true,force:true});}
+});

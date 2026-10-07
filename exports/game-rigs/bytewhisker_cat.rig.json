@@ -1,0 +1,180 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/bytewhisker_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "bytewhisker_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 340,
+     "y": 352
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 345,
+    "cy": 215,
+    "rx": 165,
+    "ry": 135
+   }
+  },
+  {
+   "id": "bytewhisker_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "bytewhisker_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 282,
+     "y": 140
+    },
+    "tip": {
+     "x": 256,
+     "y": 14
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "bytewhisker_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "bytewhisker_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 480,
+     "y": 180
+    },
+    "tip": {
+     "x": 567,
+     "y": 125
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "bytewhisker_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "bytewhisker_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 330,
+     "y": 212.5
+    },
+    "outer": {
+     "x": 272,
+     "y": 212.5
+    },
+    "upper": {
+     "x": 301.0,
+     "y": 185
+    },
+    "lower": {
+     "x": 301.0,
+     "y": 240
+    },
+    "iris": {
+     "x": 301.0,
+     "y": 212.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 301.0,
+    "cy": 212.5,
+    "rx": 43.5,
+    "ry": 52.25
+   }
+  },
+  {
+   "id": "bytewhisker_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "bytewhisker_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 372,
+     "y": 255.0
+    },
+    "outer": {
+     "x": 430,
+     "y": 255.0
+    },
+    "upper": {
+     "x": 401.0,
+     "y": 228
+    },
+    "lower": {
+     "x": 401.0,
+     "y": 282
+    },
+    "iris": {
+     "x": 401.0,
+     "y": 255.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 401.0,
+    "cy": 255.0,
+    "rx": 43.5,
+    "ry": 51.3
+   }
+  },
+  {
+   "id": "bytewhisker_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 510,
+     "y": 612
+    },
+    "spine1": {
+     "x": 588,
+     "y": 522
+    },
+    "spine2": {
+     "x": 600,
+     "y": 420
+    },
+    "spine3": {
+     "x": 562,
+     "y": 330
+    }
+   },
+   "notes": "radius=72"
+  }
+ ]
+}

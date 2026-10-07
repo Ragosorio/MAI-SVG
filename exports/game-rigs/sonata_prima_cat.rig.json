@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/sonata_prima_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "sonata_prima_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 260,
+     "y": 324
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 278,
+    "cy": 195,
+    "rx": 166,
+    "ry": 135
+   }
+  },
+  {
+   "id": "sonata_prima_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "sonata_prima_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 120
+    },
+    "tip": {
+     "x": 170,
+     "y": 15
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "sonata_prima_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "sonata_prima_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 415,
+     "y": 150
+    },
+    "tip": {
+     "x": 478,
+     "y": 100
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "sonata_prima_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "sonata_prima_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 250,
+     "y": 206.5
+    },
+    "outer": {
+     "x": 198,
+     "y": 206.5
+    },
+    "upper": {
+     "x": 224.0,
+     "y": 178
+    },
+    "lower": {
+     "x": 224.0,
+     "y": 235
+    },
+    "iris": {
+     "x": 224.0,
+     "y": 206.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 224.0,
+    "cy": 206.5,
+    "rx": 39.0,
+    "ry": 54.15
+   }
+  },
+  {
+   "id": "sonata_prima_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "sonata_prima_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 300,
+     "y": 240.0
+    },
+    "outer": {
+     "x": 360,
+     "y": 240.0
+    },
+    "upper": {
+     "x": 330.0,
+     "y": 210
+    },
+    "lower": {
+     "x": 330.0,
+     "y": 270
+    },
+    "iris": {
+     "x": 330.0,
+     "y": 240.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 330.0,
+    "cy": 240.0,
+    "rx": 45.0,
+    "ry": 57.0
+   }
+  },
+  {
+   "id": "sonata_prima_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 600
+    },
+    "spine1": {
+     "x": 610,
+     "y": 520
+    },
+    "spine2": {
+     "x": 640,
+     "y": 400
+    },
+    "spine3": {
+     "x": 590,
+     "y": 300
+    },
+    "spine4": {
+     "x": 500,
+     "y": 282
+    },
+    "spine5": {
+     "x": 440,
+     "y": 330
+    }
+   },
+   "notes": "radius=75"
+  }
+ ]
+}

@@ -1,8 +1,23 @@
 # Flowing existing artwork (smoke, steam, water, fire, lava, wind, hair, cloth, grass…)
 
-MAI animates **the smoke that is already drawn** — it never swaps it for a template.
+For requests to animate existing artwork, preserve the drawn source. When the human explicitly asks for literal smoke emission instead, use the independent emitter below and retain the original as a recoverable hidden layer.
 1. Find it: {{tool:part.resolve}} `candy.flask.smoke`. If it does not exist, the smoke is still baked in the trace: {{tool:part.extract}} with a polygon region around it (`source` = the trace group, e.g. `#mai-artwork`; leave a margin over transparent background, keep the bottle out), `role:"smoke"`, `parent:"flask"`. Ambiguous? {{tool:part.candidates}} with a box and `propose`, wait for the human.
 2. {{tool:fluid.animate}} `{target:"candy.flask.smoke", preset:"smoke"}` — the preset parameterizes a curl-noise flow field + traveling waves anchored at the emitter (bottom of the part for rising presets), preserving silhouette and alpha. `technique:"geometry"` (default, exact and editable) or `"filter"` (feTurbulence/feDisplacementMap, light for web export).
 3. Adjust from words with {{tool:animation.adjust}} (or inside a plan): `speed` ("más lento" → scale < 1), `amplitude`, `turbulence`, `direction` (`{x,y}`, e.g. left = `{x:-1,y:-1}` for smoke rising leftwards).
    Speed changes are exact; on looping timelines MAI closes the loop with an explicit crossfade (reported as `loopPolicy`). Filter technique needs whole tiles per loop (`LOOP_INCOMPATIBLE` otherwise).
 4. Look at frames across the loop ({{tool:preview.render}} times 0, ¼, ½, ¾ of duration). These are procedural effects, not physics (no collisions/viscosity).
+
+
+## When smoke looks like a wave
+Do not merely slow it down. Inspect the current modifier parameters: `wave` is coherent sideways undulation. Use a dry-run of `modifier.update` through `ops.apply` to tune the geometry flow with `wave:0`, `lift:1.4`, `spread:0.15`, `swirl:0.65`, `scale:0.18`, `amplitude:0.055`, `anchorRadius:0.22`, preserving its `speedFactor`. These are the rising-smoke preset values, not a promise of physical smoke. `lift` carries local pockets along the direction; `spread` opens the plume farther from the emitter. Preserve the source artwork and check the face against a pre-change snapshot. Watch the loop before saying the acting is approved. The geometry editor exposes Subida, Remolinos and Ondulación lateral; filter technique does not implement lift/spread.
+
+For stray white regions, the editor's Limpieza por color scopes candidates to the selection or drawing, excludes defs/masks/locked/protected parts, highlights marked candidates, and removes only the reviewed IDs with undo. White can be a legitimate highlight: never issue a blanket delete. Shared selection is available through `scene.selection`; agents can review those IDs and use the normal revision-checked operations.
+
+## Independent smoke emission
+Use {{tool:smoke.emit}} when the human asks for smoke that is born, rises, billows, expands and dissipates. This is deterministic vector gas emission with independently phased parcels and transparent recycling, not a CFD simulation. Soft overlapping radial lobes preserve transparency without embedded images.
+
+Inspect the bottle opening visually. Supply config `{id:"smoke-emitter",parent:"candy-root",x:504,y:233,width:130,height:190,density:32,lifetime:4.5,diffusion:1,turbulence:0.8,wind:0.15,opacity:0.38,color:"#ded5e2",seed:17}` with expectedRevision. These coordinates are a Candy candidate, not a universal preset. Optional `source:"candy.flask.smoke"` hides that separate original layer and disables its flow; it does not delete it. The new emitter must be outside the hidden source. Dry-run first; look at several frames and check the protected face against the pre-change snapshot. Do not claim visual approval from those metrics.
+
+Call the same tool with the same id to adjust its parameters. Replacement is one undoable transaction, with its owned gradients cleaned up. `lifetime` is quantized to a whole number of cycles (at most 12) in the scene duration, reported as `loopLifetime`. The editor exposes Emisor de humo controls for source coordinates, height, width, density, ascent time, expansion, turbulence, wind, opacity and color. Generated ellipse lobes and animation tracks remain editable; standalone export bakes standard SMIL.
+
+For Candy’s requested colors, retain the same motion config and add `palette:["#ef98d7","#c9a5f5","#9de1dc"]` (pink, lilac, turquoise). The palette persists with the emitter and distributes tones across independently phased puffs without changing their tracks. Config objects returned in project metadata may include fluid `kind`/`mode`; omit those two fields when calling `smoke.emit`.

@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/sol_sunbeam_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "sol_sunbeam_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 445,
+     "y": 314
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 440,
+    "cy": 195,
+    "rx": 145,
+    "ry": 115
+   }
+  },
+  {
+   "id": "sol_sunbeam_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "sol_sunbeam_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 330,
+     "y": 150
+    },
+    "tip": {
+     "x": 283,
+     "y": 86
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "sol_sunbeam_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "sol_sunbeam_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 495,
+     "y": 100
+    },
+    "tip": {
+     "x": 498,
+     "y": 10
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "sol_sunbeam_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "sol_sunbeam_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 412,
+     "y": 205.0
+    },
+    "outer": {
+     "x": 355,
+     "y": 205.0
+    },
+    "upper": {
+     "x": 383.5,
+     "y": 182
+    },
+    "lower": {
+     "x": 383.5,
+     "y": 228
+    },
+    "iris": {
+     "x": 383.5,
+     "y": 205.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 383.5,
+    "cy": 205.0,
+    "rx": 42.75,
+    "ry": 43.699999999999996
+   }
+  },
+  {
+   "id": "sol_sunbeam_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "sol_sunbeam_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 452,
+     "y": 175.0
+    },
+    "outer": {
+     "x": 505,
+     "y": 175.0
+    },
+    "upper": {
+     "x": 478.5,
+     "y": 150
+    },
+    "lower": {
+     "x": 478.5,
+     "y": 200
+    },
+    "iris": {
+     "x": 478.5,
+     "y": 175.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 478.5,
+    "cy": 175.0,
+    "rx": 39.75,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "sol_sunbeam_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 262,
+     "y": 352
+    },
+    "spine1": {
+     "x": 150,
+     "y": 300
+    },
+    "spine2": {
+     "x": 82,
+     "y": 225
+    },
+    "spine3": {
+     "x": 86,
+     "y": 140
+    },
+    "spine4": {
+     "x": 140,
+     "y": 90
+    },
+    "spine5": {
+     "x": 210,
+     "y": 100
+    },
+    "spine6": {
+     "x": 250,
+     "y": 165
+    }
+   },
+   "notes": "radius=60"
+  }
+ ]
+}

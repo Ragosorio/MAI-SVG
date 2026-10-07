@@ -1,0 +1,120 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/mecha_neon_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "mecha_neon_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 460,
+     "y": 252
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 465,
+    "cy": 152,
+    "rx": 132,
+    "ry": 110
+   }
+  },
+  {
+   "id": "mecha_neon_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "mecha_neon_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 395,
+     "y": 100
+    },
+    "tip": {
+     "x": 360,
+     "y": 10
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "mecha_neon_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "mecha_neon_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 550,
+     "y": 100
+    },
+    "tip": {
+     "x": 610,
+     "y": 12
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "mecha_neon_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 282,
+     "y": 345
+    },
+    "spine1": {
+     "x": 215,
+     "y": 380
+    },
+    "spine2": {
+     "x": 130,
+     "y": 340
+    },
+    "spine3": {
+     "x": 80,
+     "y": 280
+    },
+    "spine4": {
+     "x": 80,
+     "y": 200
+    },
+    "spine5": {
+     "x": 120,
+     "y": 150
+    },
+    "spine6": {
+     "x": 185,
+     "y": 140
+    },
+    "spine7": {
+     "x": 262,
+     "y": 125
+    }
+   },
+   "notes": "radius=32"
+  }
+ ]
+}

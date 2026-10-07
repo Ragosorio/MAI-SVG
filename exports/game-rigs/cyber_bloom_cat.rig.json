@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/cyber_bloom_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "cyber_bloom_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 260,
+     "y": 332
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 252,
+    "cy": 232,
+    "rx": 128,
+    "ry": 105
+   }
+  },
+  {
+   "id": "cyber_bloom_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "cyber_bloom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 172,
+     "y": 140
+    },
+    "tip": {
+     "x": 142,
+     "y": 24
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "cyber_bloom_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "cyber_bloom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 340,
+     "y": 150
+    },
+    "tip": {
+     "x": 375,
+     "y": 64
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "cyber_bloom_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "cyber_bloom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 215,
+     "y": 247.0
+    },
+    "outer": {
+     "x": 172,
+     "y": 247.0
+    },
+    "upper": {
+     "x": 193.5,
+     "y": 222
+    },
+    "lower": {
+     "x": 193.5,
+     "y": 272
+    },
+    "iris": {
+     "x": 193.5,
+     "y": 247.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 193.5,
+    "cy": 247.0,
+    "rx": 32.25,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "cyber_bloom_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "cyber_bloom_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 256.0
+    },
+    "outer": {
+     "x": 310,
+     "y": 256.0
+    },
+    "upper": {
+     "x": 286.0,
+     "y": 232
+    },
+    "lower": {
+     "x": 286.0,
+     "y": 280
+    },
+    "iris": {
+     "x": 286.0,
+     "y": 256.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 286.0,
+    "cy": 256.0,
+    "rx": 36.0,
+    "ry": 45.599999999999994
+   }
+  },
+  {
+   "id": "cyber_bloom_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 468,
+     "y": 436
+    },
+    "spine1": {
+     "x": 522,
+     "y": 440
+    },
+    "spine2": {
+     "x": 576,
+     "y": 410
+    },
+    "spine3": {
+     "x": 614,
+     "y": 350
+    },
+    "spine4": {
+     "x": 614,
+     "y": 262
+    },
+    "spine5": {
+     "x": 588,
+     "y": 210
+    },
+    "spine6": {
+     "x": 530,
+     "y": 148
+    }
+   },
+   "notes": "radius=36"
+  }
+ ]
+}

@@ -1,0 +1,200 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/storybook_ink_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "storybook_ink_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 240,
+     "y": 294
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 238,
+    "cy": 200,
+    "rx": 136,
+    "ry": 110
+   }
+  },
+  {
+   "id": "storybook_ink_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "storybook_ink_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 150,
+     "y": 140
+    },
+    "tip": {
+     "x": 83,
+     "y": 76
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "storybook_ink_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "storybook_ink_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 290,
+     "y": 115
+    },
+    "tip": {
+     "x": 302,
+     "y": 20
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "storybook_ink_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "storybook_ink_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 230,
+     "y": 223.0
+    },
+    "outer": {
+     "x": 165,
+     "y": 223.0
+    },
+    "upper": {
+     "x": 197.5,
+     "y": 198
+    },
+    "lower": {
+     "x": 197.5,
+     "y": 248
+    },
+    "iris": {
+     "x": 197.5,
+     "y": 223.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 197.5,
+    "cy": 223.0,
+    "rx": 48.75,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "storybook_ink_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "storybook_ink_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 260,
+     "y": 201.5
+    },
+    "outer": {
+     "x": 302,
+     "y": 201.5
+    },
+    "upper": {
+     "x": 281.0,
+     "y": 178
+    },
+    "lower": {
+     "x": 281.0,
+     "y": 225
+    },
+    "iris": {
+     "x": 281.0,
+     "y": 201.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 281.0,
+    "cy": 201.5,
+    "rx": 31.5,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "storybook_ink_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 450,
+     "y": 325
+    },
+    "spine1": {
+     "x": 550,
+     "y": 325
+    },
+    "spine2": {
+     "x": 615,
+     "y": 275
+    },
+    "spine3": {
+     "x": 625,
+     "y": 200
+    },
+    "spine4": {
+     "x": 575,
+     "y": 125
+    },
+    "spine5": {
+     "x": 500,
+     "y": 90
+    },
+    "spine6": {
+     "x": 425,
+     "y": 125
+    },
+    "spine7": {
+     "x": 425,
+     "y": 185
+    },
+    "spine8": {
+     "x": 465,
+     "y": 200
+    }
+   },
+   "notes": "radius=55"
+  }
+ ]
+}

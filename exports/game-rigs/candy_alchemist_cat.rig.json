@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/candy_alchemist_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "candy_alchemist_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 252
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 330,
+    "cy": 172,
+    "rx": 122,
+    "ry": 102
+   }
+  },
+  {
+   "id": "candy_alchemist_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "candy_alchemist_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 270,
+     "y": 125
+    },
+    "tip": {
+     "x": 210,
+     "y": 50
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "candy_alchemist_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "candy_alchemist_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 380,
+     "y": 110
+    },
+    "tip": {
+     "x": 415,
+     "y": 22
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "candy_alchemist_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "candy_alchemist_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 315,
+     "y": 192.5
+    },
+    "outer": {
+     "x": 278,
+     "y": 192.5
+    },
+    "upper": {
+     "x": 296.5,
+     "y": 175
+    },
+    "lower": {
+     "x": 296.5,
+     "y": 210
+    },
+    "iris": {
+     "x": 296.5,
+     "y": 192.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 296.5,
+    "cy": 192.5,
+    "rx": 27.75,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "candy_alchemist_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "candy_alchemist_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 358,
+     "y": 179.0
+    },
+    "outer": {
+     "x": 400,
+     "y": 179.0
+    },
+    "upper": {
+     "x": 379.0,
+     "y": 160
+    },
+    "lower": {
+     "x": 379.0,
+     "y": 198
+    },
+    "iris": {
+     "x": 379.0,
+     "y": 179.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 379.0,
+    "cy": 179.0,
+    "rx": 31.5,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "candy_alchemist_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 560
+    },
+    "spine1": {
+     "x": 535,
+     "y": 452
+    },
+    "spine2": {
+     "x": 600,
+     "y": 395
+    },
+    "spine3": {
+     "x": 660,
+     "y": 455
+    },
+    "spine4": {
+     "x": 645,
+     "y": 560
+    },
+    "spine5": {
+     "x": 615,
+     "y": 630
+    }
+   },
+   "notes": "radius=40"
+  }
+ ]
+}

@@ -1,0 +1,312 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/neon_glitch_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "agent (visual, grid-measured)",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "neon_glitch_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 360,
+     "y": 306
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 378,
+    "cy": 200,
+    "rx": 136,
+    "ry": 110
+   }
+  },
+  {
+   "id": "neon_glitch_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "parent": "neon_glitch_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 280,
+     "y": 115
+    },
+    "tip": {
+     "x": 250,
+     "y": 8
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "neon_glitch_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "parent": "neon_glitch_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "base": {
+     "x": 465,
+     "y": 120
+    },
+    "tip": {
+     "x": 548,
+     "y": 20
+    }
+   },
+   "notes": "halfWidth=44"
+  },
+  {
+   "id": "neon_glitch_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "parent": "neon_glitch_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 355,
+     "y": 212.5
+    },
+    "outer": {
+     "x": 300,
+     "y": 212.5
+    },
+    "upper": {
+     "x": 327.5,
+     "y": 190
+    },
+    "lower": {
+     "x": 327.5,
+     "y": 235
+    },
+    "iris": {
+     "x": 327.5,
+     "y": 212.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 327.5,
+    "cy": 212.5,
+    "rx": 41.25,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "neon_glitch_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "parent": "neon_glitch_cat.head",
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "inner": {
+     "x": 400,
+     "y": 244.0
+    },
+    "outer": {
+     "x": 452,
+     "y": 244.0
+    },
+    "upper": {
+     "x": 426.0,
+     "y": 220
+    },
+    "lower": {
+     "x": 426.0,
+     "y": 268
+    },
+    "iris": {
+     "x": 426.0,
+     "y": 244.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 426.0,
+    "cy": 244.0,
+    "rx": 39.0,
+    "ry": 45.599999999999994
+   }
+  },
+  {
+   "id": "neon_glitch_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 295,
+     "y": 540
+    },
+    "spine1": {
+     "x": 225,
+     "y": 500
+    },
+    "spine2": {
+     "x": 160,
+     "y": 440
+    },
+    "spine3": {
+     "x": 120,
+     "y": 380
+    },
+    "spine4": {
+     "x": 135,
+     "y": 340
+    },
+    "spine5": {
+     "x": 200,
+     "y": 325
+    },
+    "spine6": {
+     "x": 240,
+     "y": 335
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "neon_glitch_cat.float-0",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 545,
+    "cy": 205,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-1",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 500,
+    "cy": 400,
+    "rx": 32,
+    "ry": 32
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-2",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 548,
+    "cy": 255,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-3",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 510,
+    "cy": 435,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-4",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 512,
+    "cy": 495,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-5",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 270,
+    "cy": 595,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-6",
+   "role": "prop-float",
+   "label": "Flotante 7",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 482,
+    "cy": 66,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "neon_glitch_cat.float-7",
+   "role": "prop-float",
+   "label": "Flotante 8",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 235,
+    "cy": 410,
+    "rx": 20,
+    "ry": 20
+   }
+  }
+ ]
+}
