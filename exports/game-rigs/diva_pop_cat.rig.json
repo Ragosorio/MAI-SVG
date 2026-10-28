@@ -1,0 +1,274 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/diva_pop_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "diva_pop_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 195,
+    "rx": 150,
+    "ry": 120
+   }
+  },
+  {
+   "id": "diva_pop_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "diva_pop_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 255,
+     "y": 110
+    },
+    "tip": {
+     "x": 250,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "diva_pop_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "diva_pop_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 410,
+     "y": 165
+    },
+    "tip": {
+     "x": 432,
+     "y": 135
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "diva_pop_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "diva_pop_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 280,
+     "y": 205.5
+    },
+    "outer": {
+     "x": 237,
+     "y": 205.5
+    },
+    "upper": {
+     "x": 258.5,
+     "y": 187
+    },
+    "lower": {
+     "x": 258.5,
+     "y": 224
+    },
+    "iris": {
+     "x": 258.5,
+     "y": 205.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 258.5,
+    "cy": 205.5,
+    "rx": 32.25,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "diva_pop_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "diva_pop_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 321,
+     "y": 232.0
+    },
+    "outer": {
+     "x": 365,
+     "y": 232.0
+    },
+    "upper": {
+     "x": 343.0,
+     "y": 212
+    },
+    "lower": {
+     "x": 343.0,
+     "y": 252
+    },
+    "iris": {
+     "x": 343.0,
+     "y": 232.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 343.0,
+    "cy": 232.0,
+    "rx": 33.0,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "diva_pop_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 585,
+     "y": 470
+    },
+    "spine1": {
+     "x": 625,
+     "y": 390
+    },
+    "spine2": {
+     "x": 610,
+     "y": 300
+    },
+    "spine3": {
+     "x": 560,
+     "y": 240
+    },
+    "spine4": {
+     "x": 490,
+     "y": 225
+    }
+   },
+   "notes": "radius=60"
+  },
+  {
+   "id": "diva_pop_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 165,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "diva_pop_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 540,
+    "cy": 180,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "diva_pop_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 140,
+    "cy": 130,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "diva_pop_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 85,
+    "cy": 410,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "diva_pop_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 480,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "diva_pop_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 605,
+    "cy": 480,
+    "rx": 18,
+    "ry": 18
+   }
+  }
+ ]
+}

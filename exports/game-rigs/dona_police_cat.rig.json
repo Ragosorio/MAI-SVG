@@ -1,0 +1,222 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/dona_police_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "dona_police_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 325,
+    "cy": 185,
+    "rx": 140,
+    "ry": 115
+   }
+  },
+  {
+   "id": "dona_police_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "dona_police_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 240,
+     "y": 104
+    },
+    "tip": {
+     "x": 224,
+     "y": 60
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "dona_police_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "dona_police_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 446,
+     "y": 150
+    },
+    "tip": {
+     "x": 486,
+     "y": 120
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "dona_police_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "dona_police_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 290,
+     "y": 180.0
+    },
+    "outer": {
+     "x": 238,
+     "y": 180.0
+    },
+    "upper": {
+     "x": 264.0,
+     "y": 163
+    },
+    "lower": {
+     "x": 264.0,
+     "y": 197
+    },
+    "iris": {
+     "x": 264.0,
+     "y": 180.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 264.0,
+    "cy": 180.0,
+    "rx": 39.0,
+    "ry": 32.3
+   }
+  },
+  {
+   "id": "dona_police_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "dona_police_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 322,
+     "y": 208.0
+    },
+    "outer": {
+     "x": 376,
+     "y": 208.0
+    },
+    "upper": {
+     "x": 349.0,
+     "y": 190
+    },
+    "lower": {
+     "x": 349.0,
+     "y": 226
+    },
+    "iris": {
+     "x": 349.0,
+     "y": 208.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 349.0,
+    "cy": 208.0,
+    "rx": 40.5,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "dona_police_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 480,
+     "y": 560
+    },
+    "spine1": {
+     "x": 540,
+     "y": 590
+    },
+    "spine2": {
+     "x": 600,
+     "y": 560
+    },
+    "spine3": {
+     "x": 630,
+     "y": 500
+    },
+    "spine4": {
+     "x": 620,
+     "y": 440
+    },
+    "spine5": {
+     "x": 590,
+     "y": 400
+    },
+    "spine6": {
+     "x": 550,
+     "y": 410
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "dona_police_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 115,
+    "cy": 240,
+    "rx": 55,
+    "ry": 60
+   }
+  },
+  {
+   "id": "dona_police_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 375,
+    "cy": 510,
+    "rx": 50,
+    "ry": 45
+   }
+  }
+ ]
+}

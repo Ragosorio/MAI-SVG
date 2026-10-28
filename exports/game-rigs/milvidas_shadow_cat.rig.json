@@ -1,0 +1,229 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/milvidas_shadow_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "milvidas_shadow_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 350,
+     "y": 340
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 355,
+    "cy": 225,
+    "rx": 135,
+    "ry": 110
+   }
+  },
+  {
+   "id": "milvidas_shadow_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "milvidas_shadow_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 160
+    },
+    "tip": {
+     "x": 288,
+     "y": 105
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "milvidas_shadow_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "milvidas_shadow_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 195
+    },
+    "tip": {
+     "x": 462,
+     "y": 162
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "milvidas_shadow_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "milvidas_shadow_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 344,
+     "y": 235.0
+    },
+    "outer": {
+     "x": 298,
+     "y": 235.0
+    },
+    "upper": {
+     "x": 321.0,
+     "y": 216
+    },
+    "lower": {
+     "x": 321.0,
+     "y": 254
+    },
+    "iris": {
+     "x": 321.0,
+     "y": 235.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 321.0,
+    "cy": 235.0,
+    "rx": 34.5,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "milvidas_shadow_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "milvidas_shadow_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 373,
+     "y": 257.0
+    },
+    "outer": {
+     "x": 418,
+     "y": 257.0
+    },
+    "upper": {
+     "x": 395.5,
+     "y": 238
+    },
+    "lower": {
+     "x": 395.5,
+     "y": 276
+    },
+    "iris": {
+     "x": 395.5,
+     "y": 257.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 395.5,
+    "cy": 257.0,
+    "rx": 33.75,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "milvidas_shadow_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 510,
+     "y": 540
+    },
+    "spine1": {
+     "x": 545,
+     "y": 470
+    },
+    "spine2": {
+     "x": 570,
+     "y": 400
+    },
+    "spine3": {
+     "x": 590,
+     "y": 335
+    },
+    "spine4": {
+     "x": 580,
+     "y": 295
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "milvidas_shadow_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 255,
+    "cy": 78,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "milvidas_shadow_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 118,
+    "cy": 178,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "milvidas_shadow_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 90,
+    "cy": 390,
+    "rx": 30,
+    "ry": 30
+   }
+  }
+ ]
+}

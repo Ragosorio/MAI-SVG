@@ -1,0 +1,283 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/tailor_eras_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "tailor_eras_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 310,
+     "y": 280
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 320,
+    "cy": 155,
+    "rx": 110,
+    "ry": 125
+   }
+  },
+  {
+   "id": "tailor_eras_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tailor_eras_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 220,
+     "y": 140
+    },
+    "tip": {
+     "x": 186,
+     "y": 109
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "tailor_eras_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tailor_eras_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 370,
+     "y": 90
+    },
+    "tip": {
+     "x": 387,
+     "y": 40
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "tailor_eras_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tailor_eras_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 300,
+     "y": 218.0
+    },
+    "outer": {
+     "x": 255,
+     "y": 218.0
+    },
+    "upper": {
+     "x": 277.5,
+     "y": 203
+    },
+    "lower": {
+     "x": 277.5,
+     "y": 233
+    },
+    "iris": {
+     "x": 277.5,
+     "y": 218.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 277.5,
+    "cy": 218.0,
+    "rx": 33.75,
+    "ry": 28.5
+   }
+  },
+  {
+   "id": "tailor_eras_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tailor_eras_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 330,
+     "y": 190.0
+    },
+    "outer": {
+     "x": 374,
+     "y": 190.0
+    },
+    "upper": {
+     "x": 352.0,
+     "y": 174
+    },
+    "lower": {
+     "x": 352.0,
+     "y": 206
+    },
+    "iris": {
+     "x": 352.0,
+     "y": 190.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 352.0,
+    "cy": 190.0,
+    "rx": 33.0,
+    "ry": 30.4
+   }
+  },
+  {
+   "id": "tailor_eras_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 440,
+     "y": 535
+    },
+    "spine1": {
+     "x": 490,
+     "y": 590
+    },
+    "spine2": {
+     "x": 555,
+     "y": 605
+    },
+    "spine3": {
+     "x": 610,
+     "y": 575
+    },
+    "spine4": {
+     "x": 635,
+     "y": 520
+    },
+    "spine5": {
+     "x": 615,
+     "y": 465
+    },
+    "spine6": {
+     "x": 585,
+     "y": 440
+    }
+   },
+   "notes": "radius=32"
+  },
+  {
+   "id": "tailor_eras_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1 (pulsera arriba der.)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 560,
+    "cy": 200,
+    "rx": 45,
+    "ry": 45
+   }
+  },
+  {
+   "id": "tailor_eras_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2 (pulsera izq.)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 112,
+    "cy": 335,
+    "rx": 48,
+    "ry": 48
+   }
+  },
+  {
+   "id": "tailor_eras_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3 (pulsera abajo der.)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 580,
+    "cy": 375,
+    "rx": 42,
+    "ry": 42
+   }
+  },
+  {
+   "id": "tailor_eras_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4 (destello)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 135,
+    "cy": 268,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "tailor_eras_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5 (destello)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 580,
+    "cy": 265,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "tailor_eras_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6 (destello)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 620,
+    "cy": 178,
+    "rx": 14,
+    "ry": 14
+   }
+  }
+ ],
+ "notes": "Pulseras de la amistad y 3 destellos flotan. Los destellitos chicos se aceptan (coordinador)."
+}

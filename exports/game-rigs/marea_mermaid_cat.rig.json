@@ -1,0 +1,229 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/marea_mermaid_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "marea_mermaid_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 290
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290,
+    "cy": 185,
+    "rx": 145,
+    "ry": 105
+   }
+  },
+  {
+   "id": "marea_mermaid_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marea_mermaid_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 261,
+     "y": 117
+    },
+    "tip": {
+     "x": 249,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "marea_mermaid_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marea_mermaid_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 397,
+     "y": 160
+    },
+    "tip": {
+     "x": 450,
+     "y": 115
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "marea_mermaid_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marea_mermaid_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 270,
+     "y": 187.0
+    },
+    "outer": {
+     "x": 231,
+     "y": 187.0
+    },
+    "upper": {
+     "x": 250.5,
+     "y": 166
+    },
+    "lower": {
+     "x": 250.5,
+     "y": 208
+    },
+    "iris": {
+     "x": 250.5,
+     "y": 187.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 250.5,
+    "cy": 187.0,
+    "rx": 29.25,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "marea_mermaid_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marea_mermaid_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 303,
+     "y": 216.0
+    },
+    "outer": {
+     "x": 346,
+     "y": 216.0
+    },
+    "upper": {
+     "x": 324.5,
+     "y": 196
+    },
+    "lower": {
+     "x": 324.5,
+     "y": 236
+    },
+    "iris": {
+     "x": 324.5,
+     "y": 216.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 324.5,
+    "cy": 216.0,
+    "rx": 32.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "marea_mermaid_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 366,
+     "y": 529
+    },
+    "spine1": {
+     "x": 451,
+     "y": 544
+    },
+    "spine2": {
+     "x": 529,
+     "y": 521
+    },
+    "spine3": {
+     "x": 568,
+     "y": 482
+    },
+    "spine4": {
+     "x": 560,
+     "y": 425
+    }
+   },
+   "notes": "radius=48"
+  },
+  {
+   "id": "marea_mermaid_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 560,
+    "cy": 140,
+    "rx": 55,
+    "ry": 55
+   }
+  },
+  {
+   "id": "marea_mermaid_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 583,
+    "cy": 284,
+    "rx": 38,
+    "ry": 38
+   }
+  },
+  {
+   "id": "marea_mermaid_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 89,
+    "cy": 167,
+    "rx": 45,
+    "ry": 45
+   }
+  }
+ ]
+}

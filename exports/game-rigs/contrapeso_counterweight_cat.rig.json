@@ -1,0 +1,335 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/contrapeso_counterweight_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "contrapeso_counterweight_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 292,
+     "y": 322
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 292,
+    "cy": 205,
+    "rx": 175,
+    "ry": 120
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "contrapeso_counterweight_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 222,
+     "y": 123
+    },
+    "tip": {
+     "x": 210,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=44"
+  },
+  {
+   "id": "contrapeso_counterweight_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "contrapeso_counterweight_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 403,
+     "y": 157
+    },
+    "tip": {
+     "x": 449,
+     "y": 105
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "contrapeso_counterweight_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "contrapeso_counterweight_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 272,
+     "y": 204.0
+    },
+    "outer": {
+     "x": 224,
+     "y": 204.0
+    },
+    "upper": {
+     "x": 248.0,
+     "y": 186
+    },
+    "lower": {
+     "x": 248.0,
+     "y": 222
+    },
+    "iris": {
+     "x": 248.0,
+     "y": 204.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 248.0,
+    "cy": 204.0,
+    "rx": 36.0,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "contrapeso_counterweight_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 318,
+     "y": 225.5
+    },
+    "outer": {
+     "x": 373,
+     "y": 225.5
+    },
+    "upper": {
+     "x": 345.5,
+     "y": 207
+    },
+    "lower": {
+     "x": 345.5,
+     "y": 244
+    },
+    "iris": {
+     "x": 345.5,
+     "y": 225.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 345.5,
+    "cy": 225.5,
+    "rx": 41.25,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 575,
+     "y": 560
+    },
+    "spine1": {
+     "x": 620,
+     "y": 480
+    },
+    "spine2": {
+     "x": 600,
+     "y": 410
+    },
+    "spine3": {
+     "x": 560,
+     "y": 350
+    },
+    "spine4": {
+     "x": 520,
+     "y": 290
+    },
+    "spine5": {
+     "x": 545,
+     "y": 245
+    },
+    "spine6": {
+     "x": 600,
+     "y": 240
+    },
+    "spine7": {
+     "x": 640,
+     "y": 280
+    },
+    "spine8": {
+     "x": 650,
+     "y": 320
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 530,
+    "cy": 170,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 485,
+    "cy": 215,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 70,
+    "cy": 355,
+    "rx": 32,
+    "ry": 32
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 97,
+    "cy": 440,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 623,
+    "cy": 573,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 528,
+    "cy": 535,
+    "rx": 55,
+    "ry": 100
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 440,
+    "cy": 360,
+    "rx": 40,
+    "ry": 38
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-pin-3",
+   "role": "prop-pin",
+   "label": "Fijo 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 485,
+    "cy": 215,
+    "rx": 26,
+    "ry": 26
+   }
+  },
+  {
+   "id": "contrapeso_counterweight_cat.prop-pin-4",
+   "role": "prop-pin",
+   "label": "Fijo 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 530,
+    "cy": 170,
+    "rx": 34,
+    "ry": 32
+   }
+  }
+ ]
+}

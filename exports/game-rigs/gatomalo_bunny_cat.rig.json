@@ -1,0 +1,233 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/gatomalo_bunny_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "gatomalo_bunny_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 310,
+     "y": 290
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 310,
+    "cy": 159,
+    "rx": 142,
+    "ry": 141
+   }
+  },
+  {
+   "id": "gatomalo_bunny_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatomalo_bunny_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 180,
+     "y": 160
+    },
+    "tip": {
+     "x": 141,
+     "y": 113
+    }
+   },
+   "notes": "halfWidth=20"
+  },
+  {
+   "id": "gatomalo_bunny_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatomalo_bunny_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 390,
+     "y": 95
+    },
+    "tip": {
+     "x": 412,
+     "y": 45
+    }
+   },
+   "notes": "halfWidth=20"
+  },
+  {
+   "id": "gatomalo_bunny_cat.ear-extra-1",
+   "role": "ear-extra",
+   "label": "Oreja extra 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatomalo_bunny_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 185,
+     "y": 215
+    },
+    "tip": {
+     "x": 51,
+     "y": 327
+    }
+   },
+   "notes": "halfWidth=42 · oreja de conejo izquierda (diadema)"
+  },
+  {
+   "id": "gatomalo_bunny_cat.ear-extra-2",
+   "role": "ear-extra",
+   "label": "Oreja extra 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatomalo_bunny_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 140
+    },
+    "tip": {
+     "x": 614,
+     "y": 269
+    }
+   },
+   "notes": "halfWidth=45 · oreja de conejo derecha (diadema)"
+  },
+  {
+   "id": "gatomalo_bunny_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatomalo_bunny_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 234.0
+    },
+    "outer": {
+     "x": 224,
+     "y": 234.0
+    },
+    "upper": {
+     "x": 243.0,
+     "y": 222
+    },
+    "lower": {
+     "x": 243.0,
+     "y": 246
+    },
+    "iris": {
+     "x": 243.0,
+     "y": 234.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 243.0,
+    "cy": 234.0,
+    "rx": 28.5,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "gatomalo_bunny_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatomalo_bunny_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 333,
+     "y": 210.0
+    },
+    "outer": {
+     "x": 370,
+     "y": 210.0
+    },
+    "upper": {
+     "x": 351.5,
+     "y": 197
+    },
+    "lower": {
+     "x": 351.5,
+     "y": 223
+    },
+    "iris": {
+     "x": 351.5,
+     "y": 210.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 351.5,
+    "cy": 210.0,
+    "rx": 27.75,
+    "ry": 24.7
+   }
+  },
+  {
+   "id": "gatomalo_bunny_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 505,
+     "y": 495
+    },
+    "spine1": {
+     "x": 540,
+     "y": 530
+    },
+    "spine2": {
+     "x": 590,
+     "y": 530
+    },
+    "spine3": {
+     "x": 630,
+     "y": 490
+    },
+    "spine4": {
+     "x": 645,
+     "y": 440
+    },
+    "spine5": {
+     "x": 625,
+     "y": 395
+    },
+    "spine6": {
+     "x": 600,
+     "y": 380
+    }
+   },
+   "notes": "radius=30"
+  }
+ ],
+ "notes": "4 orejas: las 2 de gato y las 2 de conejo de la diadema (se mueven como orejas largas)."
+}

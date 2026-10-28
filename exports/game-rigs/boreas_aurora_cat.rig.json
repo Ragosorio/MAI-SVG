@@ -1,0 +1,207 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/boreas_aurora_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "boreas_aurora_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 270,
+     "y": 310
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 280,
+    "cy": 192,
+    "rx": 140,
+    "ry": 120
+   }
+  },
+  {
+   "id": "boreas_aurora_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "boreas_aurora_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 205,
+     "y": 120
+    },
+    "tip": {
+     "x": 180,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "boreas_aurora_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "boreas_aurora_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 175
+    },
+    "tip": {
+     "x": 420,
+     "y": 138
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "boreas_aurora_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "boreas_aurora_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 245,
+     "y": 200.0
+    },
+    "outer": {
+     "x": 202,
+     "y": 200.0
+    },
+    "upper": {
+     "x": 223.5,
+     "y": 180
+    },
+    "lower": {
+     "x": 223.5,
+     "y": 220
+    },
+    "iris": {
+     "x": 223.5,
+     "y": 200.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 223.5,
+    "cy": 200.0,
+    "rx": 32.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "boreas_aurora_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "boreas_aurora_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 287,
+     "y": 226.0
+    },
+    "outer": {
+     "x": 334,
+     "y": 226.0
+    },
+    "upper": {
+     "x": 310.5,
+     "y": 206
+    },
+    "lower": {
+     "x": 310.5,
+     "y": 246
+    },
+    "iris": {
+     "x": 310.5,
+     "y": 226.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 310.5,
+    "cy": 226.0,
+    "rx": 35.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "boreas_aurora_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 455,
+     "y": 500
+    },
+    "spine1": {
+     "x": 450,
+     "y": 400
+    },
+    "spine2": {
+     "x": 460,
+     "y": 300
+    },
+    "spine3": {
+     "x": 505,
+     "y": 215
+    },
+    "spine4": {
+     "x": 570,
+     "y": 185
+    },
+    "spine5": {
+     "x": 625,
+     "y": 230
+    },
+    "spine6": {
+     "x": 640,
+     "y": 300
+    }
+   },
+   "notes": "radius=60"
+  },
+  {
+   "id": "boreas_aurora_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 622,
+    "cy": 212,
+    "rx": 12,
+    "ry": 12
+   }
+  }
+ ]
+}

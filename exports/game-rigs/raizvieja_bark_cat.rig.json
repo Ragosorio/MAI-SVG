@@ -1,0 +1,207 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/raizvieja_bark_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "raizvieja_bark_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 315
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 205,
+    "rx": 158,
+    "ry": 110
+   }
+  },
+  {
+   "id": "raizvieja_bark_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "raizvieja_bark_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 253,
+     "y": 128
+    },
+    "tip": {
+     "x": 237,
+     "y": 54
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "raizvieja_bark_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "raizvieja_bark_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 424,
+     "y": 175
+    },
+    "tip": {
+     "x": 473,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "raizvieja_bark_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "raizvieja_bark_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 292,
+     "y": 209.5
+    },
+    "outer": {
+     "x": 247,
+     "y": 209.5
+    },
+    "upper": {
+     "x": 269.5,
+     "y": 187
+    },
+    "lower": {
+     "x": 269.5,
+     "y": 232
+    },
+    "iris": {
+     "x": 269.5,
+     "y": 209.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 269.5,
+    "cy": 209.5,
+    "rx": 33.75,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "raizvieja_bark_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "raizvieja_bark_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 338,
+     "y": 238.5
+    },
+    "outer": {
+     "x": 383,
+     "y": 238.5
+    },
+    "upper": {
+     "x": 360.5,
+     "y": 216
+    },
+    "lower": {
+     "x": 360.5,
+     "y": 261
+    },
+    "iris": {
+     "x": 360.5,
+     "y": 238.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360.5,
+    "cy": 238.5,
+    "rx": 33.75,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "raizvieja_bark_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 544,
+     "y": 459
+    },
+    "spine1": {
+     "x": 505,
+     "y": 350
+    },
+    "spine2": {
+     "x": 529,
+     "y": 264
+    },
+    "spine3": {
+     "x": 607,
+     "y": 249
+    },
+    "spine4": {
+     "x": 653,
+     "y": 327
+    },
+    "spine5": {
+     "x": 645,
+     "y": 436
+    },
+    "spine6": {
+     "x": 614,
+     "y": 505
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "raizvieja_bark_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 72,
+    "cy": 400,
+    "rx": 30,
+    "ry": 30
+   }
+  }
+ ]
+}

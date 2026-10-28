@@ -1,0 +1,226 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/escafandra_fishbowl_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "escafandra_fishbowl_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 330
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 305,
+    "cy": 200,
+    "rx": 160,
+    "ry": 125
+   }
+  },
+  {
+   "id": "escafandra_fishbowl_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escafandra_fishbowl_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 225,
+     "y": 150
+    },
+    "tip": {
+     "x": 232,
+     "y": 60
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "escafandra_fishbowl_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escafandra_fishbowl_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 165
+    },
+    "tip": {
+     "x": 465,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "escafandra_fishbowl_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escafandra_fishbowl_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 202.5
+    },
+    "outer": {
+     "x": 215,
+     "y": 202.5
+    },
+    "upper": {
+     "x": 238.5,
+     "y": 183
+    },
+    "lower": {
+     "x": 238.5,
+     "y": 222
+    },
+    "iris": {
+     "x": 238.5,
+     "y": 202.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 238.5,
+    "cy": 202.5,
+    "rx": 35.25,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "escafandra_fishbowl_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escafandra_fishbowl_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 303,
+     "y": 224.0
+    },
+    "outer": {
+     "x": 357,
+     "y": 224.0
+    },
+    "upper": {
+     "x": 330.0,
+     "y": 203
+    },
+    "lower": {
+     "x": 330.0,
+     "y": 245
+    },
+    "iris": {
+     "x": 330.0,
+     "y": 224.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 330.0,
+    "cy": 224.0,
+    "rx": 40.5,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "escafandra_fishbowl_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 580
+    },
+    "spine1": {
+     "x": 590,
+     "y": 575
+    },
+    "spine2": {
+     "x": 630,
+     "y": 520
+    },
+    "spine3": {
+     "x": 620,
+     "y": 460
+    },
+    "spine4": {
+     "x": 575,
+     "y": 430
+    },
+    "spine5": {
+     "x": 565,
+     "y": 395
+    },
+    "spine6": {
+     "x": 600,
+     "y": 375
+    },
+    "spine7": {
+     "x": 630,
+     "y": 400
+    }
+   },
+   "notes": "radius=28"
+  },
+  {
+   "id": "escafandra_fishbowl_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 90,
+    "cy": 378,
+    "rx": 65,
+    "ry": 45
+   }
+  },
+  {
+   "id": "escafandra_fishbowl_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 580,
+    "cy": 240,
+    "rx": 95,
+    "ry": 90
+   }
+  }
+ ]
+}

@@ -1,0 +1,308 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/masamadre_mass_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "masamadre_mass_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 410,
+     "y": 330
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 405,
+    "cy": 215,
+    "rx": 175,
+    "ry": 120
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "masamadre_mass_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 362,
+     "y": 128
+    },
+    "tip": {
+     "x": 356,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "masamadre_mass_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "masamadre_mass_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 520,
+     "y": 170
+    },
+    "tip": {
+     "x": 567,
+     "y": 119
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "masamadre_mass_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "masamadre_mass_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 414,
+     "y": 185.0
+    },
+    "outer": {
+     "x": 367,
+     "y": 185.0
+    },
+    "upper": {
+     "x": 390.5,
+     "y": 167
+    },
+    "lower": {
+     "x": 390.5,
+     "y": 203
+    },
+    "iris": {
+     "x": 390.5,
+     "y": 185.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 390.5,
+    "cy": 185.0,
+    "rx": 35.25,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "masamadre_mass_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 459,
+     "y": 214.5
+    },
+    "outer": {
+     "x": 504,
+     "y": 214.5
+    },
+    "upper": {
+     "x": 481.5,
+     "y": 196
+    },
+    "lower": {
+     "x": 481.5,
+     "y": 233
+    },
+    "iris": {
+     "x": 481.5,
+     "y": 214.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 481.5,
+    "cy": 214.5,
+    "rx": 33.75,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 205,
+     "y": 610
+    },
+    "spine1": {
+     "x": 135,
+     "y": 615
+    },
+    "spine2": {
+     "x": 85,
+     "y": 560
+    },
+    "spine3": {
+     "x": 75,
+     "y": 480
+    },
+    "spine4": {
+     "x": 95,
+     "y": 415
+    },
+    "spine5": {
+     "x": 135,
+     "y": 385
+    }
+   },
+   "notes": "radius=46"
+  },
+  {
+   "id": "masamadre_mass_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 130,
+    "cy": 140,
+    "rx": 58,
+    "ry": 58
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 276,
+    "cy": 95,
+    "rx": 24,
+    "ry": 24
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 80,
+    "cy": 293,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 635,
+    "cy": 205,
+    "rx": 26,
+    "ry": 26
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 612,
+    "cy": 284,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 198,
+    "cy": 192,
+    "rx": 13,
+    "ry": 13
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 222,
+    "cy": 405,
+    "rx": 22,
+    "ry": 32
+   }
+  },
+  {
+   "id": "masamadre_mass_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 175,
+    "cy": 275,
+    "rx": 75,
+    "ry": 42
+   }
+  }
+ ]
+}

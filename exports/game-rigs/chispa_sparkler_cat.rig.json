@@ -1,0 +1,252 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/chispa_sparkler_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "chispa_sparkler_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 318,
+     "y": 335
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 222,
+    "rx": 175,
+    "ry": 113
+   }
+  },
+  {
+   "id": "chispa_sparkler_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "chispa_sparkler_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 255,
+     "y": 138
+    },
+    "tip": {
+     "x": 241,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "chispa_sparkler_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "chispa_sparkler_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 442,
+     "y": 224
+    },
+    "tip": {
+     "x": 515,
+     "y": 156
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "chispa_sparkler_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "chispa_sparkler_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 292,
+     "y": 217.5
+    },
+    "outer": {
+     "x": 238,
+     "y": 217.5
+    },
+    "upper": {
+     "x": 265.0,
+     "y": 193
+    },
+    "lower": {
+     "x": 265.0,
+     "y": 242
+    },
+    "iris": {
+     "x": 265.0,
+     "y": 217.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 265.0,
+    "cy": 217.5,
+    "rx": 40.5,
+    "ry": 46.55
+   }
+  },
+  {
+   "id": "chispa_sparkler_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "chispa_sparkler_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 337,
+     "y": 257.0
+    },
+    "outer": {
+     "x": 398,
+     "y": 257.0
+    },
+    "upper": {
+     "x": 367.5,
+     "y": 232
+    },
+    "lower": {
+     "x": 367.5,
+     "y": 282
+    },
+    "iris": {
+     "x": 367.5,
+     "y": 257.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 367.5,
+    "cy": 257.0,
+    "rx": 45.75,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "chispa_sparkler_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 583,
+     "y": 498
+    },
+    "spine1": {
+     "x": 575,
+     "y": 420
+    },
+    "spine2": {
+     "x": 529,
+     "y": 350
+    },
+    "spine3": {
+     "x": 537,
+     "y": 296
+    },
+    "spine4": {
+     "x": 575,
+     "y": 264
+    },
+    "spine5": {
+     "x": 611,
+     "y": 233
+    },
+    "spine6": {
+     "x": 614,
+     "y": 195
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "chispa_sparkler_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 537,
+    "cy": 233,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "chispa_sparkler_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 638,
+    "cy": 373,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "chispa_sparkler_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 579,
+    "cy": 140,
+    "rx": 8,
+    "ry": 8
+   }
+  },
+  {
+   "id": "chispa_sparkler_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 638,
+    "cy": 140,
+    "rx": 8,
+    "ry": 8
+   }
+  }
+ ]
+}

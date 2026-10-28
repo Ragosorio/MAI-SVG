@@ -1,0 +1,282 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/tachon_strikeout_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "tachon_strikeout_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 350,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 355,
+    "cy": 195,
+    "rx": 145,
+    "ry": 112
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tachon_strikeout_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 305,
+     "y": 131
+    },
+    "tip": {
+     "x": 289,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "tachon_strikeout_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tachon_strikeout_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 447,
+     "y": 171
+    },
+    "tip": {
+     "x": 498,
+     "y": 104
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "tachon_strikeout_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tachon_strikeout_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 339,
+     "y": 192.0
+    },
+    "outer": {
+     "x": 292,
+     "y": 192.0
+    },
+    "upper": {
+     "x": 315.5,
+     "y": 172
+    },
+    "lower": {
+     "x": 315.5,
+     "y": 212
+    },
+    "iris": {
+     "x": 315.5,
+     "y": 192.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 315.5,
+    "cy": 192.0,
+    "rx": 35.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tachon_strikeout_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 381,
+     "y": 217.5
+    },
+    "outer": {
+     "x": 429,
+     "y": 217.5
+    },
+    "upper": {
+     "x": 405.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 405.0,
+     "y": 237
+    },
+    "iris": {
+     "x": 405.0,
+     "y": 217.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 405.0,
+    "cy": 217.5,
+    "rx": 36.0,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 555,
+     "y": 500
+    },
+    "spine1": {
+     "x": 600,
+     "y": 475
+    },
+    "spine2": {
+     "x": 628,
+     "y": 415
+    },
+    "spine3": {
+     "x": 632,
+     "y": 350
+    },
+    "spine4": {
+     "x": 605,
+     "y": 310
+    },
+    "spine5": {
+     "x": 570,
+     "y": 302
+    },
+    "spine6": {
+     "x": 548,
+     "y": 320
+    }
+   },
+   "notes": "radius=36"
+  },
+  {
+   "id": "tachon_strikeout_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 58,
+    "cy": 258,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 102,
+    "cy": 313,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 212,
+    "cy": 148,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 539,
+    "cy": 230,
+    "rx": 28,
+    "ry": 40
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 515,
+    "cy": 290,
+    "rx": 28,
+    "ry": 40
+   }
+  },
+  {
+   "id": "tachon_strikeout_cat.prop-pin-3",
+   "role": "prop-pin",
+   "label": "Fijo 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 490,
+    "cy": 350,
+    "rx": 26,
+    "ry": 40
+   }
+  }
+ ]
+}

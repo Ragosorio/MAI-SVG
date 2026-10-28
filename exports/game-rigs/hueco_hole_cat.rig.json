@@ -1,0 +1,196 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/hueco_hole_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "hueco_hole_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 250,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 245,
+    "cy": 195,
+    "rx": 160,
+    "ry": 120
+   }
+  },
+  {
+   "id": "hueco_hole_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hueco_hole_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 110
+    },
+    "tip": {
+     "x": 165,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "hueco_hole_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hueco_hole_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 375,
+     "y": 170
+    },
+    "tip": {
+     "x": 420,
+     "y": 147
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "hueco_hole_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hueco_hole_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 219,
+     "y": 212.5
+    },
+    "outer": {
+     "x": 172,
+     "y": 212.5
+    },
+    "upper": {
+     "x": 195.5,
+     "y": 192
+    },
+    "lower": {
+     "x": 195.5,
+     "y": 233
+    },
+    "iris": {
+     "x": 195.5,
+     "y": 212.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 195.5,
+    "cy": 212.5,
+    "rx": 35.25,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "hueco_hole_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hueco_hole_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 251,
+     "y": 247.0
+    },
+    "outer": {
+     "x": 295,
+     "y": 247.0
+    },
+    "upper": {
+     "x": 273.0,
+     "y": 227
+    },
+    "lower": {
+     "x": 273.0,
+     "y": 267
+    },
+    "iris": {
+     "x": 273.0,
+     "y": 247.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 273.0,
+    "cy": 247.0,
+    "rx": 33.0,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "hueco_hole_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 520,
+     "y": 500
+    },
+    "spine1": {
+     "x": 600,
+     "y": 450
+    },
+    "spine2": {
+     "x": 622,
+     "y": 370
+    },
+    "spine3": {
+     "x": 590,
+     "y": 312
+    },
+    "spine4": {
+     "x": 522,
+     "y": 296
+    },
+    "spine5": {
+     "x": 478,
+     "y": 262
+    },
+    "spine6": {
+     "x": 522,
+     "y": 218
+    },
+    "spine7": {
+     "x": 590,
+     "y": 210
+    }
+   },
+   "notes": "radius=45"
+  }
+ ]
+}

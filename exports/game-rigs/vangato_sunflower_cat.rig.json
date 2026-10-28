@@ -1,0 +1,212 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/vangato_sunflower_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "vangato_sunflower_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 320,
+    "cy": 176,
+    "rx": 148,
+    "ry": 144
+   }
+  },
+  {
+   "id": "vangato_sunflower_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vangato_sunflower_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 255,
+     "y": 105
+    },
+    "tip": {
+     "x": 258,
+     "y": 43
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "vangato_sunflower_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vangato_sunflower_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 455,
+     "y": 190
+    },
+    "tip": {
+     "x": 494,
+     "y": 109
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "vangato_sunflower_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vangato_sunflower_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 299,
+     "y": 208.5
+    },
+    "outer": {
+     "x": 264,
+     "y": 208.5
+    },
+    "upper": {
+     "x": 281.5,
+     "y": 194
+    },
+    "lower": {
+     "x": 281.5,
+     "y": 223
+    },
+    "iris": {
+     "x": 281.5,
+     "y": 208.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 281.5,
+    "cy": 208.5,
+    "rx": 26.25,
+    "ry": 27.55
+   }
+  },
+  {
+   "id": "vangato_sunflower_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vangato_sunflower_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 340,
+     "y": 230.0
+    },
+    "outer": {
+     "x": 376,
+     "y": 230.0
+    },
+    "upper": {
+     "x": 358.0,
+     "y": 214
+    },
+    "lower": {
+     "x": 358.0,
+     "y": 246
+    },
+    "iris": {
+     "x": 358.0,
+     "y": 230.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 358.0,
+    "cy": 230.0,
+    "rx": 27.0,
+    "ry": 30.4
+   }
+  },
+  {
+   "id": "vangato_sunflower_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 545,
+     "y": 615
+    },
+    "spine1": {
+     "x": 605,
+     "y": 570
+    },
+    "spine2": {
+     "x": 640,
+     "y": 500
+    },
+    "spine3": {
+     "x": 648,
+     "y": 430
+    },
+    "spine4": {
+     "x": 625,
+     "y": 375
+    },
+    "spine5": {
+     "x": 585,
+     "y": 352
+    },
+    "spine6": {
+     "x": 550,
+     "y": 370
+    },
+    "spine7": {
+     "x": 555,
+     "y": 410
+    }
+   },
+   "notes": "radius=34"
+  },
+  {
+   "id": "vangato_sunflower_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (girasol)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 135,
+    "cy": 300,
+    "rx": 95,
+    "ry": 105
+   }
+  }
+ ],
+ "notes": "Girasol fijo (pin); el remolino del fondo se dobla un poco con la cabeza."
+}

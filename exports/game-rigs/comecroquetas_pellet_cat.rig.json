@@ -1,0 +1,226 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/comecroquetas_pellet_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "comecroquetas_pellet_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 380,
+     "y": 450
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 370,
+    "cy": 333,
+    "rx": 132,
+    "ry": 97
+   }
+  },
+  {
+   "id": "comecroquetas_pellet_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "comecroquetas_pellet_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 305,
+     "y": 260
+    },
+    "tip": {
+     "x": 299,
+     "y": 210
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "comecroquetas_pellet_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "comecroquetas_pellet_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 455,
+     "y": 270
+    },
+    "tip": {
+     "x": 483,
+     "y": 227
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "comecroquetas_pellet_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "comecroquetas_pellet_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 292,
+     "y": 336.5
+    },
+    "outer": {
+     "x": 248,
+     "y": 336.5
+    },
+    "upper": {
+     "x": 270.0,
+     "y": 314
+    },
+    "lower": {
+     "x": 270.0,
+     "y": 359
+    },
+    "iris": {
+     "x": 270.0,
+     "y": 336.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 270.0,
+    "cy": 336.5,
+    "rx": 33.0,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "comecroquetas_pellet_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "comecroquetas_pellet_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 334,
+     "y": 353.0
+    },
+    "outer": {
+     "x": 392,
+     "y": 353.0
+    },
+    "upper": {
+     "x": 363.0,
+     "y": 322
+    },
+    "lower": {
+     "x": 363.0,
+     "y": 384
+    },
+    "iris": {
+     "x": 363.0,
+     "y": 353.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 363.0,
+    "cy": 353.0,
+    "rx": 43.5,
+    "ry": 58.9
+   }
+  },
+  {
+   "id": "comecroquetas_pellet_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 575,
+     "y": 580
+    },
+    "spine1": {
+     "x": 610,
+     "y": 550
+    },
+    "spine2": {
+     "x": 635,
+     "y": 500
+    },
+    "spine3": {
+     "x": 640,
+     "y": 460
+    }
+   },
+   "notes": "radius=22"
+  },
+  {
+   "id": "comecroquetas_pellet_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1 (croqueta 1)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 60,
+    "cy": 465,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "comecroquetas_pellet_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2 (croqueta 2)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 138,
+    "cy": 465,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "comecroquetas_pellet_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3 (croqueta 3)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 220,
+    "cy": 465,
+    "rx": 25,
+    "ry": 25
+   }
+  }
+ ],
+ "notes": "Pixel art: la cuadrícula se dobla un poco al girar la cabeza. Las 3 croquetas flotan desfasadas."
+}

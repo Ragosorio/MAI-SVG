@@ -1,0 +1,214 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/pendulo_clock_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "pendulo_clock_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 460,
+     "y": 310
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 470,
+    "cy": 185,
+    "rx": 165,
+    "ry": 125
+   }
+  },
+  {
+   "id": "pendulo_clock_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "pendulo_clock_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 140
+    },
+    "tip": {
+     "x": 375,
+     "y": 78
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "pendulo_clock_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "pendulo_clock_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 600,
+     "y": 175
+    },
+    "tip": {
+     "x": 640,
+     "y": 147
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "pendulo_clock_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "pendulo_clock_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 434,
+     "y": 202.0
+    },
+    "outer": {
+     "x": 392,
+     "y": 202.0
+    },
+    "upper": {
+     "x": 413.0,
+     "y": 182
+    },
+    "lower": {
+     "x": 413.0,
+     "y": 222
+    },
+    "iris": {
+     "x": 413.0,
+     "y": 202.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 413.0,
+    "cy": 202.0,
+    "rx": 31.5,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "pendulo_clock_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "pendulo_clock_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 479,
+     "y": 232.0
+    },
+    "outer": {
+     "x": 528,
+     "y": 232.0
+    },
+    "upper": {
+     "x": 503.5,
+     "y": 212
+    },
+    "lower": {
+     "x": 503.5,
+     "y": 252
+    },
+    "iris": {
+     "x": 503.5,
+     "y": 232.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 503.5,
+    "cy": 232.0,
+    "rx": 36.75,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "pendulo_clock_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 195,
+     "y": 420
+    },
+    "spine1": {
+     "x": 200,
+     "y": 330
+    },
+    "spine2": {
+     "x": 225,
+     "y": 240
+    },
+    "spine3": {
+     "x": 215,
+     "y": 170
+    },
+    "spine4": {
+     "x": 170,
+     "y": 140
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "pendulo_clock_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 262,
+    "rx": 62,
+    "ry": 62
+   }
+  },
+  {
+   "id": "pendulo_clock_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 112,
+    "cy": 385,
+    "rx": 22,
+    "ry": 22
+   }
+  }
+ ]
+}

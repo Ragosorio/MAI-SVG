@@ -1,0 +1,267 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/cascada_upfall_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "cascada_upfall_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 305,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 322,
+    "cy": 185,
+    "rx": 165,
+    "ry": 120
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cascada_upfall_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 234,
+     "y": 124
+    },
+    "tip": {
+     "x": 223,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "cascada_upfall_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cascada_upfall_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 445,
+     "y": 191
+    },
+    "tip": {
+     "x": 498,
+     "y": 154
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "cascada_upfall_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cascada_upfall_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 293,
+     "y": 194.0
+    },
+    "outer": {
+     "x": 251,
+     "y": 194.0
+    },
+    "upper": {
+     "x": 272.0,
+     "y": 176
+    },
+    "lower": {
+     "x": 272.0,
+     "y": 212
+    },
+    "iris": {
+     "x": 272.0,
+     "y": 194.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 272.0,
+    "cy": 194.0,
+    "rx": 31.5,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cascada_upfall_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 328,
+     "y": 222.0
+    },
+    "outer": {
+     "x": 373,
+     "y": 222.0
+    },
+    "upper": {
+     "x": 350.5,
+     "y": 204
+    },
+    "lower": {
+     "x": 350.5,
+     "y": 240
+    },
+    "iris": {
+     "x": 350.5,
+     "y": 222.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 350.5,
+    "cy": 222.0,
+    "rx": 33.75,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 520,
+     "y": 600
+    },
+    "spine1": {
+     "x": 600,
+     "y": 580
+    },
+    "spine2": {
+     "x": 640,
+     "y": 510
+    },
+    "spine3": {
+     "x": 640,
+     "y": 430
+    },
+    "spine4": {
+     "x": 615,
+     "y": 370
+    },
+    "spine5": {
+     "x": 580,
+     "y": 325
+    },
+    "spine6": {
+     "x": 560,
+     "y": 300
+    }
+   },
+   "notes": "radius=48"
+  },
+  {
+   "id": "cascada_upfall_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 527,
+    "cy": 120,
+    "rx": 36,
+    "ry": 36
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 608,
+    "cy": 212,
+    "rx": 26,
+    "ry": 26
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 522,
+    "cy": 208,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 78,
+    "cy": 300,
+    "rx": 24,
+    "ry": 24
+   }
+  },
+  {
+   "id": "cascada_upfall_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 492,
+    "cy": 320,
+    "rx": 26,
+    "ry": 55
+   }
+  }
+ ]
+}

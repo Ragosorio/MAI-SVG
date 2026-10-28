@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/kage_ninja_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "kage_ninja_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 310
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290,
+    "cy": 195,
+    "rx": 150,
+    "ry": 115
+   }
+  },
+  {
+   "id": "kage_ninja_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "kage_ninja_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 215,
+     "y": 110
+    },
+    "tip": {
+     "x": 195,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "kage_ninja_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "kage_ninja_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 405,
+     "y": 150
+    },
+    "tip": {
+     "x": 452,
+     "y": 118
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "kage_ninja_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "kage_ninja_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 267,
+     "y": 212.5
+    },
+    "outer": {
+     "x": 222,
+     "y": 212.5
+    },
+    "upper": {
+     "x": 244.5,
+     "y": 192
+    },
+    "lower": {
+     "x": 244.5,
+     "y": 233
+    },
+    "iris": {
+     "x": 244.5,
+     "y": 212.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 244.5,
+    "cy": 212.5,
+    "rx": 33.75,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "kage_ninja_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "kage_ninja_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 312,
+     "y": 237.0
+    },
+    "outer": {
+     "x": 359,
+     "y": 237.0
+    },
+    "upper": {
+     "x": 335.5,
+     "y": 217
+    },
+    "lower": {
+     "x": 335.5,
+     "y": 257
+    },
+    "iris": {
+     "x": 335.5,
+     "y": 237.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 335.5,
+    "cy": 237.0,
+    "rx": 35.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "kage_ninja_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 575,
+     "y": 560
+    },
+    "spine1": {
+     "x": 620,
+     "y": 470
+    },
+    "spine2": {
+     "x": 615,
+     "y": 380
+    },
+    "spine3": {
+     "x": 580,
+     "y": 300
+    },
+    "spine4": {
+     "x": 530,
+     "y": 255
+    },
+    "spine5": {
+     "x": 480,
+     "y": 268
+    }
+   },
+   "notes": "radius=45"
+  }
+ ]
+}

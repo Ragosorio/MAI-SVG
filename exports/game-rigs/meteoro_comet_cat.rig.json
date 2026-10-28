@@ -1,0 +1,305 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/meteoro_comet_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "meteoro_comet_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 265,
+     "y": 325
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 255,
+    "cy": 200,
+    "rx": 165,
+    "ry": 128
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "meteoro_comet_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 194,
+     "y": 132
+    },
+    "tip": {
+     "x": 175,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "meteoro_comet_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "meteoro_comet_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 381,
+     "y": 179
+    },
+    "tip": {
+     "x": 428,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=33"
+  },
+  {
+   "id": "meteoro_comet_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "meteoro_comet_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 235,
+     "y": 209.0
+    },
+    "outer": {
+     "x": 191,
+     "y": 209.0
+    },
+    "upper": {
+     "x": 213.0,
+     "y": 187
+    },
+    "lower": {
+     "x": 213.0,
+     "y": 231
+    },
+    "iris": {
+     "x": 213.0,
+     "y": 209.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 213.0,
+    "cy": 209.0,
+    "rx": 33.0,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "meteoro_comet_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 278,
+     "y": 242.5
+    },
+    "outer": {
+     "x": 327,
+     "y": 242.5
+    },
+    "upper": {
+     "x": 302.5,
+     "y": 222
+    },
+    "lower": {
+     "x": 302.5,
+     "y": 263
+    },
+    "iris": {
+     "x": 302.5,
+     "y": 242.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 302.5,
+    "cy": 242.5,
+    "rx": 36.75,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 505,
+     "y": 482
+    },
+    "spine1": {
+     "x": 474,
+     "y": 404
+    },
+    "spine2": {
+     "x": 451,
+     "y": 319
+    },
+    "spine3": {
+     "x": 459,
+     "y": 241
+    },
+    "spine4": {
+     "x": 505,
+     "y": 187
+    },
+    "spine5": {
+     "x": 575,
+     "y": 179
+    },
+    "spine6": {
+     "x": 622,
+     "y": 233
+    },
+    "spine7": {
+     "x": 630,
+     "y": 311
+    },
+    "spine8": {
+     "x": 628,
+     "y": 390
+    }
+   },
+   "notes": "radius=46"
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 560,
+    "cy": 206,
+    "rx": 33,
+    "ry": 33
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 595,
+    "cy": 451,
+    "rx": 38,
+    "ry": 38
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 467,
+    "cy": 152,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 346,
+    "cy": 68,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 97,
+    "cy": 338,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 82,
+    "cy": 416,
+    "rx": 21,
+    "ry": 21
+   }
+  },
+  {
+   "id": "meteoro_comet_cat.prop-float-7",
+   "role": "prop-float",
+   "label": "Flotante 7",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 136,
+    "cy": 138,
+    "rx": 13,
+    "ry": 13
+   }
+  }
+ ]
+}

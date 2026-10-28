@@ -1,0 +1,241 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/ronron_purr_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "ronron_purr_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 195,
+    "rx": 150,
+    "ry": 110
+   }
+  },
+  {
+   "id": "ronron_purr_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ronron_purr_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 240,
+     "y": 137
+    },
+    "tip": {
+     "x": 216,
+     "y": 59
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "ronron_purr_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ronron_purr_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 396,
+     "y": 184
+    },
+    "tip": {
+     "x": 452,
+     "y": 121
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "ronron_purr_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ronron_purr_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 285,
+     "y": 203.0
+    },
+    "outer": {
+     "x": 224,
+     "y": 203.0
+    },
+    "upper": {
+     "x": 254.5,
+     "y": 183
+    },
+    "lower": {
+     "x": 254.5,
+     "y": 223
+    },
+    "iris": {
+     "x": 254.5,
+     "y": 203.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 254.5,
+    "cy": 203.0,
+    "rx": 45.75,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "ronron_purr_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ronron_purr_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 329,
+     "y": 229.0
+    },
+    "outer": {
+     "x": 393,
+     "y": 229.0
+    },
+    "upper": {
+     "x": 361.0,
+     "y": 212
+    },
+    "lower": {
+     "x": 361.0,
+     "y": 246
+    },
+    "iris": {
+     "x": 361.0,
+     "y": 229.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 361.0,
+    "cy": 229.0,
+    "rx": 48.0,
+    "ry": 32.3
+   }
+  },
+  {
+   "id": "ronron_purr_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 520,
+     "y": 580
+    },
+    "spine1": {
+     "x": 575,
+     "y": 540
+    },
+    "spine2": {
+     "x": 600,
+     "y": 460
+    },
+    "spine3": {
+     "x": 595,
+     "y": 380
+    },
+    "spine4": {
+     "x": 580,
+     "y": 310
+    },
+    "spine5": {
+     "x": 545,
+     "y": 262
+    },
+    "spine6": {
+     "x": 500,
+     "y": 265
+    },
+    "spine7": {
+     "x": 480,
+     "y": 290
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "ronron_purr_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 128,
+    "cy": 373,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "ronron_purr_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 152,
+    "cy": 340,
+    "rx": 13,
+    "ry": 13
+   }
+  },
+  {
+   "id": "ronron_purr_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 342,
+    "cy": 72,
+    "rx": 100,
+    "ry": 34
+   }
+  }
+ ]
+}

@@ -2,6 +2,7 @@
 name: mai-vectorize
 description: Convert PNG, WebP, JPG or SVG-embedded raster into real vector geometry with MAI SVG and compare fidelity candidates locally.
 ---
+<!-- Generated from skills-src by scripts/build-skills.ts — edit the source, then run: npm run skills -->
 
 # MAI conversion
 

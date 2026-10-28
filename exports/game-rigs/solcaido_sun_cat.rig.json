@@ -1,0 +1,199 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/solcaido_sun_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "solcaido_sun_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 340
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360,
+    "cy": 200,
+    "rx": 170,
+    "ry": 135
+   }
+  },
+  {
+   "id": "solcaido_sun_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "solcaido_sun_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 290,
+     "y": 180
+    },
+    "tip": {
+     "x": 275,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "solcaido_sun_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "solcaido_sun_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 455,
+     "y": 210
+    },
+    "tip": {
+     "x": 492,
+     "y": 190
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "solcaido_sun_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "solcaido_sun_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 320,
+     "y": 249.0
+    },
+    "outer": {
+     "x": 282,
+     "y": 249.0
+    },
+    "upper": {
+     "x": 301.0,
+     "y": 232
+    },
+    "lower": {
+     "x": 301.0,
+     "y": 266
+    },
+    "iris": {
+     "x": 301.0,
+     "y": 249.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 301.0,
+    "cy": 249.0,
+    "rx": 28.5,
+    "ry": 32.3
+   }
+  },
+  {
+   "id": "solcaido_sun_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "solcaido_sun_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 351,
+     "y": 274.5
+    },
+    "outer": {
+     "x": 392,
+     "y": 274.5
+    },
+    "upper": {
+     "x": 371.5,
+     "y": 256
+    },
+    "lower": {
+     "x": 371.5,
+     "y": 293
+    },
+    "iris": {
+     "x": 371.5,
+     "y": 274.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 371.5,
+    "cy": 274.5,
+    "rx": 30.75,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "solcaido_sun_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 540,
+     "y": 540
+    },
+    "spine1": {
+     "x": 575,
+     "y": 470
+    },
+    "spine2": {
+     "x": 595,
+     "y": 390
+    },
+    "spine3": {
+     "x": 580,
+     "y": 310
+    },
+    "spine4": {
+     "x": 545,
+     "y": 285
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "solcaido_sun_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 150,
+    "cy": 150,
+    "rx": 72,
+    "ry": 72
+   }
+  }
+ ]
+}

@@ -12,3 +12,8 @@ apps/editor/dist/
 
 # Local Python environment for OpenCV segmentation (scripts/requirements-segmentation.txt)
 .venv-segmentation/
+
+# Local only (never in this public repo): another project's mascot experiments, agent debug scripts, restore log
+experiments/boost-*/
+scripts/.tmp/
+RESTAURACION-*.md

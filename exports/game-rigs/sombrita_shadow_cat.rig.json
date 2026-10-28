@@ -1,0 +1,203 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/sombrita_shadow_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "sombrita_shadow_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 260,
+     "y": 315
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 255,
+    "cy": 190,
+    "rx": 150,
+    "ry": 120
+   }
+  },
+  {
+   "id": "sombrita_shadow_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sombrita_shadow_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 105
+    },
+    "tip": {
+     "x": 160,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "sombrita_shadow_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sombrita_shadow_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 375,
+     "y": 170
+    },
+    "tip": {
+     "x": 425,
+     "y": 142
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "sombrita_shadow_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sombrita_shadow_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 234,
+     "y": 209.0
+    },
+    "outer": {
+     "x": 187,
+     "y": 209.0
+    },
+    "upper": {
+     "x": 210.5,
+     "y": 187
+    },
+    "lower": {
+     "x": 210.5,
+     "y": 231
+    },
+    "iris": {
+     "x": 210.5,
+     "y": 209.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 210.5,
+    "cy": 209.0,
+    "rx": 35.25,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "sombrita_shadow_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sombrita_shadow_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 276,
+     "y": 243.0
+    },
+    "outer": {
+     "x": 326,
+     "y": 243.0
+    },
+    "upper": {
+     "x": 301.0,
+     "y": 222
+    },
+    "lower": {
+     "x": 301.0,
+     "y": 264
+    },
+    "iris": {
+     "x": 301.0,
+     "y": 243.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 301.0,
+    "cy": 243.0,
+    "rx": 37.5,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "sombrita_shadow_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 540
+    },
+    "spine1": {
+     "x": 555,
+     "y": 470
+    },
+    "spine2": {
+     "x": 585,
+     "y": 385
+    },
+    "spine3": {
+     "x": 565,
+     "y": 305
+    },
+    "spine4": {
+     "x": 510,
+     "y": 272
+    },
+    "spine5": {
+     "x": 460,
+     "y": 300
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "sombrita_shadow_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 445,
+    "cy": 172,
+    "rx": 55,
+    "ry": 55
+   }
+  }
+ ]
+}

@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/bigoton_rival_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "bigoton_rival_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 390,
+     "y": 330
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 390,
+    "cy": 231,
+    "rx": 109,
+    "ry": 104
+   }
+  },
+  {
+   "id": "bigoton_rival_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigoton_rival_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 190
+    },
+    "tip": {
+     "x": 278,
+     "y": 106
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "bigoton_rival_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigoton_rival_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 470,
+     "y": 215
+    },
+    "tip": {
+     "x": 520,
+     "y": 165
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "bigoton_rival_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigoton_rival_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 392,
+     "y": 247.0
+    },
+    "outer": {
+     "x": 350,
+     "y": 247.0
+    },
+    "upper": {
+     "x": 371.0,
+     "y": 228
+    },
+    "lower": {
+     "x": 371.0,
+     "y": 266
+    },
+    "iris": {
+     "x": 371.0,
+     "y": 247.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 371.0,
+    "cy": 247.0,
+    "rx": 31.5,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "bigoton_rival_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigoton_rival_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 424,
+     "y": 273.0
+    },
+    "outer": {
+     "x": 460,
+     "y": 273.0
+    },
+    "upper": {
+     "x": 442.0,
+     "y": 257
+    },
+    "lower": {
+     "x": 442.0,
+     "y": 289
+    },
+    "iris": {
+     "x": 442.0,
+     "y": 273.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 442.0,
+    "cy": 273.0,
+    "rx": 27.0,
+    "ry": 30.4
+   }
+  },
+  {
+   "id": "bigoton_rival_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 315,
+     "y": 540
+    },
+    "spine1": {
+     "x": 260,
+     "y": 535
+    },
+    "spine2": {
+     "x": 225,
+     "y": 495
+    },
+    "spine3": {
+     "x": 212,
+     "y": 445
+    },
+    "spine4": {
+     "x": 195,
+     "y": 400
+    },
+    "spine5": {
+     "x": 165,
+     "y": 380
+    },
+    "spine6": {
+     "x": 145,
+     "y": 405
+    }
+   },
+   "notes": "radius=22"
+  }
+ ]
+}

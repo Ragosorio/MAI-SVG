@@ -1,0 +1,297 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/tempano_iceplate_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "tempano_iceplate_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290,
+    "cy": 185,
+    "rx": 150,
+    "ry": 116
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tempano_iceplate_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 240,
+     "y": 116
+    },
+    "tip": {
+     "x": 222,
+     "y": 56
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "tempano_iceplate_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tempano_iceplate_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 400,
+     "y": 152
+    },
+    "tip": {
+     "x": 437,
+     "y": 116
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "tempano_iceplate_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tempano_iceplate_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 200.0
+    },
+    "outer": {
+     "x": 223,
+     "y": 200.0
+    },
+    "upper": {
+     "x": 242.5,
+     "y": 181
+    },
+    "lower": {
+     "x": 242.5,
+     "y": 219
+    },
+    "iris": {
+     "x": 242.5,
+     "y": 200.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 242.5,
+    "cy": 200.0,
+    "rx": 29.25,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tempano_iceplate_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 220.5
+    },
+    "outer": {
+     "x": 350,
+     "y": 220.5
+    },
+    "upper": {
+     "x": 326.0,
+     "y": 201
+    },
+    "lower": {
+     "x": 326.0,
+     "y": 240
+    },
+    "iris": {
+     "x": 326.0,
+     "y": 220.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 326.0,
+    "cy": 220.5,
+    "rx": 36.0,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 470
+    },
+    "spine1": {
+     "x": 478,
+     "y": 380
+    },
+    "spine2": {
+     "x": 495,
+     "y": 300
+    },
+    "spine3": {
+     "x": 535,
+     "y": 250
+    },
+    "spine4": {
+     "x": 595,
+     "y": 262
+    },
+    "spine5": {
+     "x": 640,
+     "y": 310
+    },
+    "spine6": {
+     "x": 655,
+     "y": 370
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 75,
+    "cy": 232,
+    "rx": 46,
+    "ry": 46
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 466,
+    "cy": 210,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 552,
+    "cy": 192,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 625,
+    "cy": 216,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 86,
+    "cy": 446,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 100,
+    "cy": 306,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "tempano_iceplate_cat.prop-float-7",
+   "role": "prop-float",
+   "label": "Flotante 7",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 656,
+    "cy": 402,
+    "rx": 10,
+    "ry": 10
+   }
+  }
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/lunita_moonphase_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "lunita_moonphase_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 355,
+     "y": 340
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 352,
+    "cy": 225,
+    "rx": 150,
+    "ry": 113
+   }
+  },
+  {
+   "id": "lunita_moonphase_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lunita_moonphase_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 299,
+     "y": 136
+    },
+    "tip": {
+     "x": 288,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "lunita_moonphase_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lunita_moonphase_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 470,
+     "y": 194
+    },
+    "tip": {
+     "x": 529,
+     "y": 148
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "lunita_moonphase_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lunita_moonphase_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 338,
+     "y": 224.0
+    },
+    "outer": {
+     "x": 290,
+     "y": 224.0
+    },
+    "upper": {
+     "x": 314.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 314.0,
+     "y": 250
+    },
+    "iris": {
+     "x": 314.0,
+     "y": 224.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 314.0,
+    "cy": 224.0,
+    "rx": 36.0,
+    "ry": 49.4
+   }
+  },
+  {
+   "id": "lunita_moonphase_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lunita_moonphase_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 380,
+     "y": 258.5
+    },
+    "outer": {
+     "x": 430,
+     "y": 258.5
+    },
+    "upper": {
+     "x": 405.0,
+     "y": 233
+    },
+    "lower": {
+     "x": 405.0,
+     "y": 284
+    },
+    "iris": {
+     "x": 405.0,
+     "y": 258.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 405.0,
+    "cy": 258.5,
+    "rx": 37.5,
+    "ry": 48.45
+   }
+  },
+  {
+   "id": "lunita_moonphase_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 568,
+     "y": 600
+    },
+    "spine1": {
+     "x": 560,
+     "y": 482
+    },
+    "spine2": {
+     "x": 591,
+     "y": 389
+    },
+    "spine3": {
+     "x": 630,
+     "y": 331
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "lunita_moonphase_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 574,
+    "cy": 228,
+    "rx": 48,
+    "ry": 48
+   }
+  },
+  {
+   "id": "lunita_moonphase_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 93,
+    "cy": 342,
+    "rx": 40,
+    "ry": 40
+   }
+  }
+ ]
+}

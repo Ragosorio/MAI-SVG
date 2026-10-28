@@ -1,0 +1,248 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/neblino_teapot_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "neblino_teapot_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 295
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 315,
+    "cy": 190,
+    "rx": 150,
+    "ry": 105
+   }
+  },
+  {
+   "id": "neblino_teapot_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "neblino_teapot_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 261,
+     "y": 117
+    },
+    "tip": {
+     "x": 245,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "neblino_teapot_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "neblino_teapot_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 443,
+     "y": 194
+    },
+    "tip": {
+     "x": 498,
+     "y": 167
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "neblino_teapot_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "neblino_teapot_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 201.5
+    },
+    "outer": {
+     "x": 250,
+     "y": 201.5
+    },
+    "upper": {
+     "x": 276.0,
+     "y": 177
+    },
+    "lower": {
+     "x": 276.0,
+     "y": 226
+    },
+    "iris": {
+     "x": 276.0,
+     "y": 201.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 276.0,
+    "cy": 201.5,
+    "rx": 39.0,
+    "ry": 46.55
+   }
+  },
+  {
+   "id": "neblino_teapot_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "neblino_teapot_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 339,
+     "y": 241.0
+    },
+    "outer": {
+     "x": 389,
+     "y": 241.0
+    },
+    "upper": {
+     "x": 364.0,
+     "y": 218
+    },
+    "lower": {
+     "x": 364.0,
+     "y": 264
+    },
+    "iris": {
+     "x": 364.0,
+     "y": 241.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 364.0,
+    "cy": 241.0,
+    "rx": 37.5,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "neblino_teapot_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 436,
+     "y": 373
+    },
+    "spine1": {
+     "x": 505,
+     "y": 327
+    },
+    "spine2": {
+     "x": 560,
+     "y": 272
+    },
+    "spine3": {
+     "x": 599,
+     "y": 218
+    },
+    "spine4": {
+     "x": 599,
+     "y": 156
+    },
+    "spine5": {
+     "x": 560,
+     "y": 132
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "neblino_teapot_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 110,
+    "cy": 322,
+    "rx": 46,
+    "ry": 46
+   }
+  },
+  {
+   "id": "neblino_teapot_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 117,
+    "cy": 233,
+    "rx": 10,
+    "ry": 10
+   }
+  },
+  {
+   "id": "neblino_teapot_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 93,
+    "cy": 451,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "neblino_teapot_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 638,
+    "cy": 373,
+    "rx": 14,
+    "ry": 14
+   }
+  }
+ ]
+}

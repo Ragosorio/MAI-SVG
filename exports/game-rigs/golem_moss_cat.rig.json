@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/golem_moss_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "golem_moss_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 220,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 205,
+    "cy": 210,
+    "rx": 145,
+    "ry": 98
+   }
+  },
+  {
+   "id": "golem_moss_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "golem_moss_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 183,
+     "y": 124
+    },
+    "tip": {
+     "x": 163,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "golem_moss_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "golem_moss_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 319,
+     "y": 179
+    },
+    "tip": {
+     "x": 362,
+     "y": 121
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "golem_moss_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "golem_moss_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 210,
+     "y": 189.0
+    },
+    "outer": {
+     "x": 167,
+     "y": 189.0
+    },
+    "upper": {
+     "x": 188.5,
+     "y": 170
+    },
+    "lower": {
+     "x": 188.5,
+     "y": 208
+    },
+    "iris": {
+     "x": 188.5,
+     "y": 189.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 188.5,
+    "cy": 189.0,
+    "rx": 32.25,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "golem_moss_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "golem_moss_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 249,
+     "y": 214.5
+    },
+    "outer": {
+     "x": 289,
+     "y": 214.5
+    },
+    "upper": {
+     "x": 269.0,
+     "y": 194
+    },
+    "lower": {
+     "x": 269.0,
+     "y": 235
+    },
+    "iris": {
+     "x": 269.0,
+     "y": 214.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 269.0,
+    "cy": 214.5,
+    "rx": 30.0,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "golem_moss_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 537,
+     "y": 467
+    },
+    "spine1": {
+     "x": 575,
+     "y": 404
+    },
+    "spine2": {
+     "x": 614,
+     "y": 342
+    },
+    "spine3": {
+     "x": 614,
+     "y": 288
+    },
+    "spine4": {
+     "x": 568,
+     "y": 264
+    },
+    "spine5": {
+     "x": 529,
+     "y": 280
+    }
+   },
+   "notes": "radius=40"
+  }
+ ]
+}

@@ -1,0 +1,282 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/polvillo_dust_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "polvillo_dust_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 315,
+     "y": 325
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 320,
+    "cy": 215,
+    "rx": 170,
+    "ry": 125
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "polvillo_dust_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 248,
+     "y": 134
+    },
+    "tip": {
+     "x": 222,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=44"
+  },
+  {
+   "id": "polvillo_dust_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "polvillo_dust_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 422,
+     "y": 192
+    },
+    "tip": {
+     "x": 490,
+     "y": 130
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "polvillo_dust_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "polvillo_dust_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 289,
+     "y": 206.5
+    },
+    "outer": {
+     "x": 242,
+     "y": 206.5
+    },
+    "upper": {
+     "x": 265.5,
+     "y": 186
+    },
+    "lower": {
+     "x": 265.5,
+     "y": 227
+    },
+    "iris": {
+     "x": 265.5,
+     "y": 206.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 265.5,
+    "cy": 206.5,
+    "rx": 35.25,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "polvillo_dust_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 339,
+     "y": 238.5
+    },
+    "outer": {
+     "x": 395,
+     "y": 238.5
+    },
+    "upper": {
+     "x": 367.0,
+     "y": 219
+    },
+    "lower": {
+     "x": 367.0,
+     "y": 258
+    },
+    "iris": {
+     "x": 367.0,
+     "y": 238.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 367.0,
+    "cy": 238.5,
+    "rx": 42.0,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 515,
+     "y": 590
+    },
+    "spine1": {
+     "x": 565,
+     "y": 560
+    },
+    "spine2": {
+     "x": 600,
+     "y": 490
+    },
+    "spine3": {
+     "x": 612,
+     "y": 420
+    },
+    "spine4": {
+     "x": 588,
+     "y": 365
+    },
+    "spine5": {
+     "x": 545,
+     "y": 348
+    },
+    "spine6": {
+     "x": 512,
+     "y": 372
+    }
+   },
+   "notes": "radius=36"
+  },
+  {
+   "id": "polvillo_dust_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 478,
+    "cy": 262,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 458,
+    "cy": 316,
+    "rx": 10,
+    "ry": 10
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 572,
+    "cy": 325,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 485,
+    "cy": 430,
+    "rx": 10,
+    "ry": 10
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 141,
+    "cy": 186,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "polvillo_dust_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 288,
+    "rx": 9,
+    "ry": 9
+   }
+  }
+ ]
+}

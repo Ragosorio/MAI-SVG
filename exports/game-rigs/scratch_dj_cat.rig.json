@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/scratch_dj_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "scratch_dj_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 290
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 285,
+    "cy": 170,
+    "rx": 115,
+    "ry": 115
+   }
+  },
+  {
+   "id": "scratch_dj_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "scratch_dj_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 180,
+     "y": 170
+    },
+    "tip": {
+     "x": 111,
+     "y": 142
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "scratch_dj_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "scratch_dj_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 330,
+     "y": 100
+    },
+    "tip": {
+     "x": 324,
+     "y": 42
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "scratch_dj_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "scratch_dj_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 241.5
+    },
+    "outer": {
+     "x": 225,
+     "y": 241.5
+    },
+    "upper": {
+     "x": 243.5,
+     "y": 227
+    },
+    "lower": {
+     "x": 243.5,
+     "y": 256
+    },
+    "iris": {
+     "x": 243.5,
+     "y": 241.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 243.5,
+    "cy": 241.5,
+    "rx": 27.75,
+    "ry": 27.55
+   }
+  },
+  {
+   "id": "scratch_dj_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "scratch_dj_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 290,
+     "y": 203.0
+    },
+    "outer": {
+     "x": 338,
+     "y": 203.0
+    },
+    "upper": {
+     "x": 314.0,
+     "y": 180
+    },
+    "lower": {
+     "x": 314.0,
+     "y": 226
+    },
+    "iris": {
+     "x": 314.0,
+     "y": 203.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 314.0,
+    "cy": 203.0,
+    "rx": 36.0,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "scratch_dj_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 440,
+     "y": 560
+    },
+    "spine1": {
+     "x": 500,
+     "y": 580
+    },
+    "spine2": {
+     "x": 560,
+     "y": 560
+    },
+    "spine3": {
+     "x": 585,
+     "y": 500
+    },
+    "spine4": {
+     "x": 570,
+     "y": 450
+    },
+    "spine5": {
+     "x": 530,
+     "y": 430
+    },
+    "spine6": {
+     "x": 490,
+     "y": 450
+    }
+   },
+   "notes": "radius=30"
+  }
+ ]
+}

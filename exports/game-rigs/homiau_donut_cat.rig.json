@@ -1,0 +1,204 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/homiau_donut_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "homiau_donut_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 350,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360,
+    "cy": 190,
+    "rx": 120,
+    "ry": 100
+   }
+  },
+  {
+   "id": "homiau_donut_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "homiau_donut_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 318,
+     "y": 105
+    },
+    "tip": {
+     "x": 318,
+     "y": 57
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "homiau_donut_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "homiau_donut_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 442,
+     "y": 148
+    },
+    "tip": {
+     "x": 468,
+     "y": 103
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "homiau_donut_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "homiau_donut_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 318,
+     "y": 145.0
+    },
+    "outer": {
+     "x": 262,
+     "y": 145.0
+    },
+    "upper": {
+     "x": 290.0,
+     "y": 118
+    },
+    "lower": {
+     "x": 290.0,
+     "y": 172
+    },
+    "iris": {
+     "x": 290.0,
+     "y": 145.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 290.0,
+    "cy": 145.0,
+    "rx": 42.0,
+    "ry": 51.3
+   }
+  },
+  {
+   "id": "homiau_donut_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "homiau_donut_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 320,
+     "y": 160.0
+    },
+    "outer": {
+     "x": 386,
+     "y": 160.0
+    },
+    "upper": {
+     "x": 353.0,
+     "y": 128
+    },
+    "lower": {
+     "x": 353.0,
+     "y": 192
+    },
+    "iris": {
+     "x": 353.0,
+     "y": 160.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 353.0,
+    "cy": 160.0,
+    "rx": 49.5,
+    "ry": 60.8
+   }
+  },
+  {
+   "id": "homiau_donut_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 490,
+     "y": 585
+    },
+    "spine1": {
+     "x": 540,
+     "y": 575
+    },
+    "spine2": {
+     "x": 565,
+     "y": 540
+    },
+    "spine3": {
+     "x": 578,
+     "y": 500
+    },
+    "spine4": {
+     "x": 592,
+     "y": 468
+    },
+    "spine5": {
+     "x": 606,
+     "y": 455
+    }
+   },
+   "notes": "radius=22"
+  },
+  {
+   "id": "homiau_donut_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (dona en la pata)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 155,
+    "cy": 205,
+    "rx": 80,
+    "ry": 78
+   }
+  }
+ ],
+ "notes": "La dona va fija (pin) para que la cabeza no la arrastre."
+}

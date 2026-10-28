@@ -1,0 +1,184 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/vapor_ronin_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "vapor_ronin_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 345,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 345,
+    "cy": 205,
+    "rx": 255,
+    "ry": 125
+   }
+  },
+  {
+   "id": "vapor_ronin_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vapor_ronin_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 285,
+     "y": 100
+    },
+    "tip": {
+     "x": 272,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "vapor_ronin_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vapor_ronin_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 455,
+     "y": 152
+    },
+    "tip": {
+     "x": 498,
+     "y": 109
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "vapor_ronin_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vapor_ronin_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 333,
+     "y": 206.5
+    },
+    "outer": {
+     "x": 293,
+     "y": 206.5
+    },
+    "upper": {
+     "x": 313.0,
+     "y": 187
+    },
+    "lower": {
+     "x": 313.0,
+     "y": 226
+    },
+    "iris": {
+     "x": 313.0,
+     "y": 206.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 313.0,
+    "cy": 206.5,
+    "rx": 30.0,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "vapor_ronin_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vapor_ronin_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 369,
+     "y": 237.5
+    },
+    "outer": {
+     "x": 416,
+     "y": 237.5
+    },
+    "upper": {
+     "x": 392.5,
+     "y": 218
+    },
+    "lower": {
+     "x": 392.5,
+     "y": 257
+    },
+    "iris": {
+     "x": 392.5,
+     "y": 237.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 392.5,
+    "cy": 237.5,
+    "rx": 35.25,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "vapor_ronin_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 544,
+     "y": 544
+    },
+    "spine1": {
+     "x": 591,
+     "y": 467
+    },
+    "spine2": {
+     "x": 614,
+     "y": 389
+    },
+    "spine3": {
+     "x": 591,
+     "y": 327
+    },
+    "spine4": {
+     "x": 537,
+     "y": 319
+    }
+   },
+   "notes": "radius=48"
+  }
+ ]
+}

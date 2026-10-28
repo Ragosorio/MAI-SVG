@@ -1,0 +1,203 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/horizonte_blackhole_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "horizonte_blackhole_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 260,
+     "y": 315
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 270,
+    "cy": 195,
+    "rx": 160,
+    "ry": 115
+   }
+  },
+  {
+   "id": "horizonte_blackhole_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "horizonte_blackhole_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 200,
+     "y": 125
+    },
+    "tip": {
+     "x": 180,
+     "y": 68
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "horizonte_blackhole_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "horizonte_blackhole_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 170
+    },
+    "tip": {
+     "x": 425,
+     "y": 142
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "horizonte_blackhole_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "horizonte_blackhole_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 238,
+     "y": 217.5
+    },
+    "outer": {
+     "x": 192,
+     "y": 217.5
+    },
+    "upper": {
+     "x": 215.0,
+     "y": 197
+    },
+    "lower": {
+     "x": 215.0,
+     "y": 238
+    },
+    "iris": {
+     "x": 215.0,
+     "y": 217.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 215.0,
+    "cy": 217.5,
+    "rx": 34.5,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "horizonte_blackhole_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "horizonte_blackhole_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 287,
+     "y": 245.0
+    },
+    "outer": {
+     "x": 334,
+     "y": 245.0
+    },
+    "upper": {
+     "x": 310.5,
+     "y": 226
+    },
+    "lower": {
+     "x": 310.5,
+     "y": 264
+    },
+    "iris": {
+     "x": 310.5,
+     "y": 245.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 310.5,
+    "cy": 245.0,
+    "rx": 35.25,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "horizonte_blackhole_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 460,
+     "y": 470
+    },
+    "spine1": {
+     "x": 540,
+     "y": 455
+    },
+    "spine2": {
+     "x": 600,
+     "y": 410
+    },
+    "spine3": {
+     "x": 615,
+     "y": 345
+    },
+    "spine4": {
+     "x": 575,
+     "y": 300
+    },
+    "spine5": {
+     "x": 515,
+     "y": 290
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "horizonte_blackhole_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 510,
+    "cy": 190,
+    "rx": 60,
+    "ry": 60
+   }
+  }
+ ]
+}

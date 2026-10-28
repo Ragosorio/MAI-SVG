@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/escarcha_frost_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "escarcha_frost_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 198,
+    "rx": 145,
+    "ry": 108
+   }
+  },
+  {
+   "id": "escarcha_frost_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escarcha_frost_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 236,
+     "y": 126
+    },
+    "tip": {
+     "x": 208,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "escarcha_frost_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escarcha_frost_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 404,
+     "y": 160
+    },
+    "tip": {
+     "x": 455,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "escarcha_frost_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escarcha_frost_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 280,
+     "y": 210.0
+    },
+    "outer": {
+     "x": 233,
+     "y": 210.0
+    },
+    "upper": {
+     "x": 256.5,
+     "y": 190
+    },
+    "lower": {
+     "x": 256.5,
+     "y": 230
+    },
+    "iris": {
+     "x": 256.5,
+     "y": 210.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 256.5,
+    "cy": 210.0,
+    "rx": 35.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "escarcha_frost_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "escarcha_frost_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 326,
+     "y": 233.0
+    },
+    "outer": {
+     "x": 374,
+     "y": 233.0
+    },
+    "upper": {
+     "x": 350.0,
+     "y": 214
+    },
+    "lower": {
+     "x": 350.0,
+     "y": 252
+    },
+    "iris": {
+     "x": 350.0,
+     "y": 233.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 350.0,
+    "cy": 233.0,
+    "rx": 36.0,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "escarcha_frost_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 455,
+     "y": 470
+    },
+    "spine1": {
+     "x": 468,
+     "y": 380
+    },
+    "spine2": {
+     "x": 490,
+     "y": 295
+    },
+    "spine3": {
+     "x": 540,
+     "y": 245
+    },
+    "spine4": {
+     "x": 600,
+     "y": 258
+    },
+    "spine5": {
+     "x": 635,
+     "y": 310
+    },
+    "spine6": {
+     "x": 640,
+     "y": 360
+    }
+   },
+   "notes": "radius=50"
+  }
+ ]
+}

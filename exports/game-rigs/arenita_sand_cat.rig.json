@@ -1,0 +1,207 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/arenita_sand_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "arenita_sand_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 260,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 260,
+    "cy": 200,
+    "rx": 150,
+    "ry": 115
+   }
+  },
+  {
+   "id": "arenita_sand_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arenita_sand_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 110
+    },
+    "tip": {
+     "x": 170,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "arenita_sand_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arenita_sand_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 370,
+     "y": 155
+    },
+    "tip": {
+     "x": 410,
+     "y": 127
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "arenita_sand_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arenita_sand_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 245,
+     "y": 217.5
+    },
+    "outer": {
+     "x": 202,
+     "y": 217.5
+    },
+    "upper": {
+     "x": 223.5,
+     "y": 197
+    },
+    "lower": {
+     "x": 223.5,
+     "y": 238
+    },
+    "iris": {
+     "x": 223.5,
+     "y": 217.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 223.5,
+    "cy": 217.5,
+    "rx": 32.25,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "arenita_sand_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arenita_sand_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 287,
+     "y": 247.0
+    },
+    "outer": {
+     "x": 331,
+     "y": 247.0
+    },
+    "upper": {
+     "x": 309.0,
+     "y": 227
+    },
+    "lower": {
+     "x": 309.0,
+     "y": 267
+    },
+    "iris": {
+     "x": 309.0,
+     "y": 247.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 309.0,
+    "cy": 247.0,
+    "rx": 33.0,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "arenita_sand_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 490,
+     "y": 520
+    },
+    "spine1": {
+     "x": 455,
+     "y": 450
+    },
+    "spine2": {
+     "x": 440,
+     "y": 370
+    },
+    "spine3": {
+     "x": 440,
+     "y": 290
+    },
+    "spine4": {
+     "x": 435,
+     "y": 210
+    },
+    "spine5": {
+     "x": 470,
+     "y": 130
+    },
+    "spine6": {
+     "x": 540,
+     "y": 95
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "arenita_sand_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 555,
+    "cy": 365,
+    "rx": 75,
+    "ry": 75
+   }
+  }
+ ]
+}

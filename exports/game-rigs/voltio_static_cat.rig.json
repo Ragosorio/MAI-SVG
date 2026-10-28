@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/voltio_static_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "voltio_static_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 275,
+     "y": 336
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 262,
+    "cy": 228,
+    "rx": 150,
+    "ry": 108
+   }
+  },
+  {
+   "id": "voltio_static_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "voltio_static_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 194,
+     "y": 136
+    },
+    "tip": {
+     "x": 187,
+     "y": 54
+    }
+   },
+   "notes": "halfWidth=35"
+  },
+  {
+   "id": "voltio_static_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "voltio_static_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 393,
+     "y": 226
+    },
+    "tip": {
+     "x": 447,
+     "y": 183
+    }
+   },
+   "notes": "halfWidth=33"
+  },
+  {
+   "id": "voltio_static_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "voltio_static_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 230,
+     "y": 235.5
+    },
+    "outer": {
+     "x": 181,
+     "y": 235.5
+    },
+    "upper": {
+     "x": 205.5,
+     "y": 210
+    },
+    "lower": {
+     "x": 205.5,
+     "y": 261
+    },
+    "iris": {
+     "x": 205.5,
+     "y": 235.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 205.5,
+    "cy": 235.5,
+    "rx": 36.75,
+    "ry": 48.45
+   }
+  },
+  {
+   "id": "voltio_static_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "voltio_static_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 268,
+     "y": 273.5
+    },
+    "outer": {
+     "x": 320,
+     "y": 273.5
+    },
+    "upper": {
+     "x": 294.0,
+     "y": 249
+    },
+    "lower": {
+     "x": 294.0,
+     "y": 298
+    },
+    "iris": {
+     "x": 294.0,
+     "y": 273.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 294.0,
+    "cy": 273.5,
+    "rx": 39.0,
+    "ry": 46.55
+   }
+  },
+  {
+   "id": "voltio_static_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 505,
+     "y": 443
+    },
+    "spine1": {
+     "x": 560,
+     "y": 435
+    },
+    "spine2": {
+     "x": 614,
+     "y": 389
+    },
+    "spine3": {
+     "x": 626,
+     "y": 334
+    },
+    "spine4": {
+     "x": 618,
+     "y": 280
+    },
+    "spine5": {
+     "x": 599,
+     "y": 233
+    },
+    "spine6": {
+     "x": 580,
+     "y": 190
+    }
+   },
+   "notes": "radius=40"
+  }
+ ]
+}

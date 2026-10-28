@@ -40,15 +40,15 @@ export async function callSession(tool:string,args:Record<string,unknown>){const
 // Read-only workspace over a file: lets agents inspect/audit assets without a running editor.
 export function fileWorkspace(svg:string,name:string):Workspace{const model=new VectorDocument(svg,name);model.project.documentId??=`file-${name.replace(/[^\w.-]/g,'_').slice(0,60)}`;const cache=join(tmpdir(),'mai-offline');const no=()=>{throw new AgentError('SESSION_REQUIRED','This tool changes the scene: load the file into a session (mai serve; mai load FILE --expected-revision N)',{},400);};
  return {model:()=>model,revision:()=>model.project.revision,asset:()=>name,sessionId:()=>'offline',documentId:()=>model.project.documentId!,snapshots:new Snapshots(join(cache,'snapshots')),cache,root:process.cwd(),selection:()=>[],apply:no,undo:no,redo:no,history:()=>({revision:model.project.revision,entries:[],canUndo:false,canRedo:false}),previous:()=>undefined,queued:w=>w(),broadcast:()=>{},choices:new Choices(join(cache,'choices')),comments:new Comments(join(cache,'comments')),inbox:new Inbox(join(cache,'inbox.jsonl')),exportFile:no};}
-const OFFLINE=new Set(['capabilities','scene.inspect','scene.semantics','scene.timeline','scene.identity','audit','critique','performance','export.capabilities','part.resolve','preview.render','identity.check']);
+const OFFLINE=new Set(['capabilities','context.get','operations.list','operations.describe','scene.inspect','scene.semantics','scene.timeline','scene.identity','audit','critique','performance','export.capabilities','part.resolve','preview.render','render.filmstrip','compare.motion','performance.probe','render.motion','render.video','motion.verify','identity.check']);
 export async function runTool(argv:string[]):Promise<number>{
  const compact=argv.includes('--compact');const print=(v:unknown)=>console.log(JSON.stringify(v,null,compact?0:2));
  try{const found=matchTool(argv);if(!found)return -1;const {tool,rest}=found;
   const fileIndex=rest.findIndex(a=>/\.svg$/i.test(a)&&!rest[rest.indexOf(a)-1]?.startsWith('--'));const file=rest.includes('--file')?rest[rest.indexOf('--file')+1]:fileIndex>=0&&OFFLINE.has(tool.name)?rest[fileIndex]:undefined;
   const cleaned=file?rest.filter((a,i)=>a!==file&&!(a==='--file'&&rest[i+1]===file)):rest;const args=await parseArgs(tool,cleaned);
-  if(tool.name==='capabilities'){const service=new AgentService(fileWorkspace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"/>','registry'));print(await service.call('capabilities',args));return 0;}
+  // Registry/catalog queries need no document: answer them without a session.
+  if(['capabilities','operations.list','operations.describe'].includes(tool.name)){const service=new AgentService(fileWorkspace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"/>','registry'));print(await service.call(tool.name,args));return 0;}
   if(file){if(!OFFLINE.has(tool.name))throw new AgentError('SESSION_REQUIRED',`${tool.name} needs a running session`);const svg=await readFile(file,'utf8');const service=new AgentService(fileWorkspace(svg,file.split('/').at(-1)!));try{const out=await service.call(tool.name,args);print(tool.name==='scene.inspect'?{...out,validation:assertSvg(svg)}:out);return 0;}finally{await closeRenderer();}}
-  if(['capabilities'].includes(tool.name)){print(await new AgentService(fileWorkspace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"/>','registry')).call(tool.name,args));return 0;}
   const r=await callSession(tool.name,args);print(r.body);return r.body.ok?0:r.status===409?2:1;
  }catch(error){const e=error as AgentError;print({ok:false,error:{code:e.code??'CLI_ERROR',message:String(e.message??e),...(e.extra??{})}});return e.status===409?2:1;}
 }

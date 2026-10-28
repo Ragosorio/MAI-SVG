@@ -1,0 +1,199 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/cerito_fur_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "cerito_fur_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 400
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 325,
+    "cy": 246,
+    "rx": 181,
+    "ry": 149
+   }
+  },
+  {
+   "id": "cerito_fur_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cerito_fur_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 230,
+     "y": 135
+    },
+    "tip": {
+     "x": 213,
+     "y": 38
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "cerito_fur_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cerito_fur_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 470,
+     "y": 195
+    },
+    "tip": {
+     "x": 548,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "cerito_fur_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cerito_fur_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 288,
+     "y": 228.0
+    },
+    "outer": {
+     "x": 200,
+     "y": 228.0
+    },
+    "upper": {
+     "x": 244.0,
+     "y": 184
+    },
+    "lower": {
+     "x": 244.0,
+     "y": 272
+    },
+    "iris": {
+     "x": 244.0,
+     "y": 228.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 244.0,
+    "cy": 228.0,
+    "rx": 44.0,
+    "ry": 44.0
+   },
+   "notes": "lid=5 · párpado elíptico: el ojo es la elipse de la caja y solo bajan los 5 px pintados justo encima de su contorno (juego: 5º valor de la caja, catRigs.json eyes[k][4]) · párpado elíptico (5 y 3 px): la elipse empieza 2 px arriba del contorno del ojo, así baja solo el pelaje (o la estática) entre la ceja y el ojo; el contorno queda como pestaña y el anillo de la frente no se mueve"
+  },
+  {
+   "id": "cerito_fur_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cerito_fur_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 315,
+     "y": 264.0
+    },
+    "outer": {
+     "x": 405,
+     "y": 264.0
+    },
+    "upper": {
+     "x": 360.0,
+     "y": 223
+    },
+    "lower": {
+     "x": 360.0,
+     "y": 305
+    },
+    "iris": {
+     "x": 360.0,
+     "y": 264.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360.0,
+    "cy": 264.0,
+    "rx": 45.0,
+    "ry": 41.0
+   },
+   "notes": "lid=3 · párpado elíptico: el ojo es la elipse de la caja y solo bajan los 3 px pintados justo encima de su contorno (juego: 5º valor de la caja, catRigs.json eyes[k][4]) · párpado elíptico (5 y 3 px): la elipse empieza 2 px arriba del contorno del ojo, así baja solo el pelaje (o la estática) entre la ceja y el ojo; el contorno queda como pestaña y el anillo de la frente no se mueve"
+  },
+  {
+   "id": "cerito_fur_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 615
+    },
+    "spine1": {
+     "x": 535,
+     "y": 615
+    },
+    "spine2": {
+     "x": 580,
+     "y": 580
+    },
+    "spine3": {
+     "x": 596,
+     "y": 520
+    },
+    "spine4": {
+     "x": 580,
+     "y": 462
+    },
+    "spine5": {
+     "x": 545,
+     "y": 425
+    },
+    "spine6": {
+     "x": 505,
+     "y": 428
+    },
+    "spine7": {
+     "x": 488,
+     "y": 462
+    }
+   },
+   "notes": "radius=32"
+  }
+ ],
+ "notes": "Cerito con pelaje (final, F36). MISMO rig que cerito_static_cat: las dos pinturas salen del mismo dibujo y tienen la misma silueta, para el fundido."
+}

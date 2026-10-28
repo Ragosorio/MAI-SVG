@@ -1,0 +1,211 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/farolillo_angler_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "farolillo_angler_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 310,
+     "y": 315
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 315,
+    "cy": 205,
+    "rx": 150,
+    "ry": 105
+   }
+  },
+  {
+   "id": "farolillo_angler_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "farolillo_angler_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 230,
+     "y": 142
+    },
+    "tip": {
+     "x": 212,
+     "y": 72
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "farolillo_angler_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "farolillo_angler_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 408,
+     "y": 203
+    },
+    "tip": {
+     "x": 470,
+     "y": 150
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "farolillo_angler_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "farolillo_angler_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 270,
+     "y": 236.0
+    },
+    "outer": {
+     "x": 226,
+     "y": 236.0
+    },
+    "upper": {
+     "x": 248.0,
+     "y": 215
+    },
+    "lower": {
+     "x": 248.0,
+     "y": 257
+    },
+    "iris": {
+     "x": 248.0,
+     "y": 236.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 248.0,
+    "cy": 236.0,
+    "rx": 33.0,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "farolillo_angler_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "farolillo_angler_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 316,
+     "y": 266.0
+    },
+    "outer": {
+     "x": 365,
+     "y": 266.0
+    },
+    "upper": {
+     "x": 340.5,
+     "y": 245
+    },
+    "lower": {
+     "x": 340.5,
+     "y": 287
+    },
+    "iris": {
+     "x": 340.5,
+     "y": 266.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 340.5,
+    "cy": 266.0,
+    "rx": 36.75,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "farolillo_angler_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 545,
+     "y": 565
+    },
+    "spine1": {
+     "x": 600,
+     "y": 500
+    },
+    "spine2": {
+     "x": 585,
+     "y": 420
+    },
+    "spine3": {
+     "x": 525,
+     "y": 365
+    },
+    "spine4": {
+     "x": 495,
+     "y": 300
+    },
+    "spine5": {
+     "x": 530,
+     "y": 252
+    },
+    "spine6": {
+     "x": 590,
+     "y": 250
+    },
+    "spine7": {
+     "x": 625,
+     "y": 305
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "farolillo_angler_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 105,
+    "cy": 185,
+    "rx": 50,
+    "ry": 50
+   }
+  }
+ ]
+}

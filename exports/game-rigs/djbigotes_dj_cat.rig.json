@@ -1,0 +1,168 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/djbigotes_dj_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "djbigotes_dj_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 395,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 400,
+    "cy": 180,
+    "rx": 165,
+    "ry": 130
+   }
+  },
+  {
+   "id": "djbigotes_dj_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "djbigotes_dj_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 325,
+     "y": 110
+    },
+    "tip": {
+     "x": 318,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "djbigotes_dj_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "djbigotes_dj_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 520,
+     "y": 170
+    },
+    "tip": {
+     "x": 556,
+     "y": 146
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "djbigotes_dj_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 565,
+     "y": 580
+    },
+    "spine1": {
+     "x": 595,
+     "y": 500
+    },
+    "spine2": {
+     "x": 600,
+     "y": 420
+    },
+    "spine3": {
+     "x": 585,
+     "y": 355
+    },
+    "spine4": {
+     "x": 555,
+     "y": 335
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "djbigotes_dj_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 140,
+    "cy": 235,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "djbigotes_dj_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 170,
+    "cy": 275,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "djbigotes_dj_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 85,
+    "cy": 350,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "djbigotes_dj_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 490,
+    "cy": 490,
+    "rx": 25,
+    "ry": 25
+   }
+  }
+ ]
+}

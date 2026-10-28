@@ -2,6 +2,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';import {mkdtemp,writeFile,rm} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join,resolve as resolvePath} from 'node:path';
 import {VectorDocument} from '../packages/core/document.js';
 import {OPERATION_TYPES} from '../packages/core/model.js';
+import {capabilities} from '../packages/core/agent.js';
 import {resolve} from '../packages/agent/address.js';
 import {AgentService,validate} from '../packages/agent/service.js';
 import {TOOLS} from '../packages/agent/registry.js';
@@ -58,6 +59,8 @@ test('F08: schemas reject incomplete unions, examples validate, operation types 
  for(const t of TOOLS)for(const ex of t.examples)validate(t.input,ex.args);
  assert.throws(()=>validate(TOOLS.find(t=>t.name==='ops.apply')!.input,{ops:[{type:'not.real'}],expectedRevision:0}),/allowed values|equal to one of/);
  const m=new VectorDocument(face);for(const type of OPERATION_TYPES){try{m.apply([{type} as never]);}catch(e){assert.ok(!/Unknown operation/.test(String((e as Error).message)),`${type} is listed but not dispatched`);}}
+ // `mai context` advertises the same operation list as the registry (it used to be a stale hand-written subset).
+ assert.deepEqual(capabilities.operationTypes,[...OPERATION_TYPES]);
 });
 test('F05: CLI routes return one JSON object with stable exit codes',async()=>{
  const dir=await mkdtemp(join(tmpdir(),'mai cli space-'));const file=join(dir,'face with spaces.svg');await writeFile(file,face);

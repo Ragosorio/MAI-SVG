@@ -1,0 +1,233 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/tanquecito_fuel_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "tanquecito_fuel_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 240,
+     "y": 340
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 235,
+    "cy": 230,
+    "rx": 150,
+    "ry": 110
+   }
+  },
+  {
+   "id": "tanquecito_fuel_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tanquecito_fuel_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 165,
+     "y": 140
+    },
+    "tip": {
+     "x": 165,
+     "y": 52
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "tanquecito_fuel_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tanquecito_fuel_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 330,
+     "y": 165
+    },
+    "tip": {
+     "x": 410,
+     "y": 140
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "tanquecito_fuel_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tanquecito_fuel_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 222,
+     "y": 222.5
+    },
+    "outer": {
+     "x": 175,
+     "y": 222.5
+    },
+    "upper": {
+     "x": 198.5,
+     "y": 200
+    },
+    "lower": {
+     "x": 198.5,
+     "y": 245
+    },
+    "iris": {
+     "x": 198.5,
+     "y": 222.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 198.5,
+    "cy": 222.5,
+    "rx": 35.25,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "tanquecito_fuel_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tanquecito_fuel_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 263,
+     "y": 253.5
+    },
+    "outer": {
+     "x": 312,
+     "y": 253.5
+    },
+    "upper": {
+     "x": 287.5,
+     "y": 232
+    },
+    "lower": {
+     "x": 287.5,
+     "y": 275
+    },
+    "iris": {
+     "x": 287.5,
+     "y": 253.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 287.5,
+    "cy": 253.5,
+    "rx": 36.75,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "tanquecito_fuel_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 560
+    },
+    "spine1": {
+     "x": 540,
+     "y": 560
+    },
+    "spine2": {
+     "x": 590,
+     "y": 500
+    },
+    "spine3": {
+     "x": 595,
+     "y": 420
+    },
+    "spine4": {
+     "x": 570,
+     "y": 370
+    },
+    "spine5": {
+     "x": 545,
+     "y": 352
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "tanquecito_fuel_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 435,
+    "cy": 385,
+    "rx": 70,
+    "ry": 105
+   }
+  },
+  {
+   "id": "tanquecito_fuel_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 470,
+    "cy": 270,
+    "rx": 80,
+    "ry": 45
+   }
+  },
+  {
+   "id": "tanquecito_fuel_cat.prop-pin-3",
+   "role": "prop-pin",
+   "label": "Fijo 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 500,
+    "cy": 300,
+    "rx": 42,
+    "ry": 35
+   }
+  }
+ ]
+}

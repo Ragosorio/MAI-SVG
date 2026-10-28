@@ -1,0 +1,204 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/estambre_yarnstorm_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "estambre_yarnstorm_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 370,
+     "y": 255
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 375,
+    "cy": 157,
+    "rx": 106,
+    "ry": 98
+   }
+  },
+  {
+   "id": "estambre_yarnstorm_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "estambre_yarnstorm_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 100
+    },
+    "tip": {
+     "x": 289,
+     "y": 44
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "estambre_yarnstorm_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "estambre_yarnstorm_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 450,
+     "y": 120
+    },
+    "tip": {
+     "x": 495,
+     "y": 89
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "estambre_yarnstorm_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "estambre_yarnstorm_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 364,
+     "y": 162.0
+    },
+    "outer": {
+     "x": 330,
+     "y": 162.0
+    },
+    "upper": {
+     "x": 347.0,
+     "y": 150
+    },
+    "lower": {
+     "x": 347.0,
+     "y": 174
+    },
+    "iris": {
+     "x": 347.0,
+     "y": 162.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 347.0,
+    "cy": 162.0,
+    "rx": 25.5,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "estambre_yarnstorm_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "estambre_yarnstorm_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 404,
+     "y": 193.0
+    },
+    "outer": {
+     "x": 438,
+     "y": 193.0
+    },
+    "upper": {
+     "x": 421.0,
+     "y": 180
+    },
+    "lower": {
+     "x": 421.0,
+     "y": 206
+    },
+    "iris": {
+     "x": 421.0,
+     "y": 193.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 421.0,
+    "cy": 193.0,
+    "rx": 25.5,
+    "ry": 24.7
+   }
+  },
+  {
+   "id": "estambre_yarnstorm_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 560,
+     "y": 300
+    },
+    "spine1": {
+     "x": 605,
+     "y": 270
+    },
+    "spine2": {
+     "x": 630,
+     "y": 225
+    },
+    "spine3": {
+     "x": 620,
+     "y": 180
+    },
+    "spine4": {
+     "x": 585,
+     "y": 160
+    },
+    "spine5": {
+     "x": 550,
+     "y": 175
+    }
+   },
+   "notes": "radius=28"
+  },
+  {
+   "id": "estambre_yarnstorm_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (remolino de estambre)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 355,
+    "cy": 535,
+    "rx": 200,
+    "ry": 125
+   }
+  }
+ ],
+ "notes": "El remolino de la parte baja va fijo (pin): ni la cola ni la cabeza lo arrastran."
+}

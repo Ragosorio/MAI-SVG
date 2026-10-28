@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/murciegato_cowl_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "murciegato_cowl_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 255,
+     "y": 215
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 255,
+    "cy": 140,
+    "rx": 73,
+    "ry": 72
+   }
+  },
+  {
+   "id": "murciegato_cowl_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "murciegato_cowl_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 207,
+     "y": 95
+    },
+    "tip": {
+     "x": 213,
+     "y": 39
+    }
+   },
+   "notes": "halfWidth=18"
+  },
+  {
+   "id": "murciegato_cowl_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "murciegato_cowl_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 298,
+     "y": 92
+    },
+    "tip": {
+     "x": 317,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=18"
+  },
+  {
+   "id": "murciegato_cowl_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "murciegato_cowl_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 250,
+     "y": 148.0
+    },
+    "outer": {
+     "x": 222,
+     "y": 148.0
+    },
+    "upper": {
+     "x": 236.0,
+     "y": 136
+    },
+    "lower": {
+     "x": 236.0,
+     "y": 160
+    },
+    "iris": {
+     "x": 236.0,
+     "y": 148.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 236.0,
+    "cy": 148.0,
+    "rx": 21.0,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "murciegato_cowl_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "murciegato_cowl_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 270,
+     "y": 150.0
+    },
+    "outer": {
+     "x": 300,
+     "y": 150.0
+    },
+    "upper": {
+     "x": 285.0,
+     "y": 138
+    },
+    "lower": {
+     "x": 285.0,
+     "y": 162
+    },
+    "iris": {
+     "x": 285.0,
+     "y": 150.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 285.0,
+    "cy": 150.0,
+    "rx": 22.5,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "murciegato_cowl_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 455,
+     "y": 610
+    },
+    "spine1": {
+     "x": 500,
+     "y": 600
+    },
+    "spine2": {
+     "x": 540,
+     "y": 585
+    },
+    "spine3": {
+     "x": 560,
+     "y": 555
+    },
+    "spine4": {
+     "x": 555,
+     "y": 530
+    },
+    "spine5": {
+     "x": 530,
+     "y": 522
+    },
+    "spine6": {
+     "x": 515,
+     "y": 535
+    }
+   },
+   "notes": "radius=16"
+  }
+ ]
+}

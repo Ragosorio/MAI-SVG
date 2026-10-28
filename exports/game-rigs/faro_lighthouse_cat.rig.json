@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/faro_lighthouse_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "faro_lighthouse_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 360,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 365,
+    "cy": 175,
+    "rx": 165,
+    "ry": 130
+   }
+  },
+  {
+   "id": "faro_lighthouse_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "faro_lighthouse_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 285,
+     "y": 100
+    },
+    "tip": {
+     "x": 264,
+     "y": 52
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "faro_lighthouse_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "faro_lighthouse_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 500,
+     "y": 160
+    },
+    "tip": {
+     "x": 538,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "faro_lighthouse_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "faro_lighthouse_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 344,
+     "y": 192.5
+    },
+    "outer": {
+     "x": 302,
+     "y": 192.5
+    },
+    "upper": {
+     "x": 323.0,
+     "y": 172
+    },
+    "lower": {
+     "x": 323.0,
+     "y": 213
+    },
+    "iris": {
+     "x": 323.0,
+     "y": 192.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 323.0,
+    "cy": 192.5,
+    "rx": 31.5,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "faro_lighthouse_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "faro_lighthouse_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 382,
+     "y": 216.0
+    },
+    "outer": {
+     "x": 425,
+     "y": 216.0
+    },
+    "upper": {
+     "x": 403.5,
+     "y": 196
+    },
+    "lower": {
+     "x": 403.5,
+     "y": 236
+    },
+    "iris": {
+     "x": 403.5,
+     "y": 216.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 403.5,
+    "cy": 216.0,
+    "rx": 32.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "faro_lighthouse_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 540,
+     "y": 560
+    },
+    "spine1": {
+     "x": 600,
+     "y": 480
+    },
+    "spine2": {
+     "x": 630,
+     "y": 390
+    },
+    "spine3": {
+     "x": 620,
+     "y": 300
+    },
+    "spine4": {
+     "x": 575,
+     "y": 250
+    },
+    "spine5": {
+     "x": 515,
+     "y": 270
+    }
+   },
+   "notes": "radius=55"
+  },
+  {
+   "id": "faro_lighthouse_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 80,
+    "cy": 202,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "faro_lighthouse_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 80,
+    "cy": 555,
+    "rx": 22,
+    "ry": 22
+   }
+  }
+ ]
+}

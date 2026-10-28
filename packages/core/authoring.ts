@@ -1,3 +1,6 @@
+import {reverseKeys,scaleHandles} from './curves.js';
+import {parseExpr} from './expr.js';
+import {validateAssertions} from './assertions.js';
 import type {VectorDocument} from './document.js';
 import {safeId} from './document.js';
 import {elements,SVG_NS,parseSvg} from '../converter/svg.js';
@@ -8,7 +11,7 @@ import {FLUID_PRESETS,MODIFIER_KINDS,pathsBounds,flowFilter} from './modifiers.j
 import {normalizePair} from './morph.js';
 import {validateRegion,invalidateBoxes,pathBoxes,semanticOperation,LEVELS} from './semantic.js';
 import {isEasing,filterId,frameState} from './animation.js';
-import {DEFAULT_LAYERS,PROPERTIES,type Operation,type Project,type Modifier,type Keyframe,type Viseme,type FilterPrimitive,type Track} from './model.js';
+import {DEFAULT_LAYERS,PROPERTIES,type Operation,type Project,type Modifier,type Keyframe,type Viseme,type FilterPrimitive,type Track,type Signal} from './model.js';
 const num=(n:unknown,min=-1e6,max=1e6,label='value')=>{if(typeof n!=='number'||!Number.isFinite(n)||n<min||n>max)throw Error(`Invalid ${label}`);return n;};
 const paramName=(s:string)=>{if(typeof s!=='string'||!/^[a-z][\w.-]{0,60}(@[a-z][\w-]{0,40})?$/i.test(s)||['__proto__','constructor','prototype'].includes(s))throw Error(`Invalid parameter name ${s}`);return s;};
 const ensureParam=(p:Project,name:string,min=0,max=1)=>{p.params??={};const base=name.split('@')[0];if(!p.params[name])p.params[name]={min:['look-x','look-y'].includes(base)?-1:min,max,default:0};};
@@ -32,6 +35,7 @@ export function authoringOperation(m:VectorDocument,op:Operation,touched:Set<str
  if(op.type.startsWith('semantic.')||op.type==='landmark.set'||op.type==='landmark.delete'){semanticOperation(m,op);return false;}
  switch(op.type){
   case 'preservation':if(!['strict','balanced','free'].includes(op.mode))throw Error('Preservation mode: strict | balanced | free');p.preservation=op.mode;return false;
+  case 'motion.assertions':validateAssertions(op.assertions);p.assertions=structuredClone(op.assertions);return false;
   case 'decision.log':{const d=op.decision;if(typeof d.kind!=='string'||d.kind.length>60||typeof d.summary!=='string'||d.summary.length>2000||!['user','agent'].includes(d.source))throw Error('Invalid decision');(p.decisions??=[]).push({...d,at:new Date().toISOString()});p.decisions=p.decisions.slice(-500);return false;}
   case 'choice.accept':{const a=op.acceptance;if(!/^[a-zA-Z][\w-]{0,60}$/.test(a.boardId)||!Number.isInteger(a.version)||a.version<1||!/^[a-zA-Z][\w-]{0,60}$/.test(a.option)||!['user-direction','editor-choice'].includes(a.source)||(a.text!==undefined&&(typeof a.text!=='string'||a.text.length>4000)))throw Error('Invalid choice acceptance');if(a.supersedes!==undefined&&!/^[a-zA-Z][\w-]{0,60}$/.test(a.supersedes))throw Error('Invalid choice acceptance');const last=[...(p.acceptances??[])].reverse().find(x=>x.boardId===a.boardId&&x.version===a.version);if(last?a.supersedes!==last.option:a.supersedes!==undefined)throw Object.assign(Error(last?`This board version was already accepted (${last.option}); a new acceptance must supersede it explicitly`:'There is no acceptance to supersede'),{code:'STALE_CHOICE',status:409});(p.acceptances??=[]).push({...structuredClone(a),at:new Date().toISOString()});p.acceptances=p.acceptances.slice(-200);return false;}
   case 'baseline.add':{const b=op.baseline;safeId(b.id);if(!/^[a-f0-9]{64}$/.test(b.sha256)||typeof b.label!=='string'||b.label.length>200||!['unreviewed','human-approved'].includes(b.approval))throw Error('Invalid baseline');if(b.source.kind==='file'&&(typeof b.source.path!=='string'||b.source.path.includes('..')||b.source.path.startsWith('/')))throw Error('Baseline file must be a project-relative path');if((p.baselines??[]).some(x=>x.id===b.id))throw Error('Baselines are immutable: use a new id');(p.baselines??=[]).push(structuredClone(b));return false;}
@@ -73,9 +77,12 @@ export function authoringOperation(m:VectorDocument,op:Operation,touched:Set<str
   case 'clip.define':{const c=op.clip;safeId(c.id);num(c.start,0,p.duration,'clip start');num(c.end,0,p.duration,'clip end');if(c.end<=c.start)throw Error('Clip end must follow start');if(c.targets)c.targets.forEach(safeId);p.clips=[...(p.clips??[]).filter(x=>x.id!==c.id),{id:c.id,name:String(c.name).slice(0,120),start:c.start,end:c.end,...(c.targets?{targets:c.targets}:{})}];return false;}
   case 'clip.place':{const c=(p.clips??[]).find(x=>x.id===op.clip);if(!c)throw Error('Clip not found');const speed=num(op.speed??1,.05,20,'speed'),len=(c.end-c.start)/speed,at=num(op.at,0,p.duration,'time');if(at+len*(op.pingpong?2:1)>p.duration+1e-9)throw Error('Placed clip exceeds the timeline duration');
    const source=p.tracks.filter(t=>(!c.targets||c.targets.includes(t.target))&&t.keys.some(k=>k.time>=c.start&&k.time<=c.end));if(!source.length)throw Error('Clip contains no keyframes');
-   for(const t of source){const target=op.targets?.[t.target]??t.target;if(target!==t.target&&t.property!=='param'&&!t.property.startsWith('bone')&&!t.property.startsWith('mesh'))m.editable(target);const keys=t.keys.filter(k=>k.time>=c.start&&k.time<=c.end);
-    const place=(k:Keyframe,reverse:boolean,offset:number)=>{const local=(k.time-c.start)/speed;setKey(p,target,t.property,Number((at+offset+(reverse?len-local:local)).toFixed(6)),k.value,k.easing,op.layer??t.layer);};
-    for(const k of keys)place(k,!!op.reverse,0);if(op.pingpong)for(const k of keys)place(k,!op.reverse,len);}
+   for(const t of source){const target=op.targets?.[t.target]??t.target;if(target!==t.target&&t.property!=='param'&&!t.property.startsWith('bone')&&!t.property.startsWith('mesh'))m.editable(target);const keys=structuredClone(t.keys.filter(k=>k.time>=c.start&&k.time<=c.end));
+    const place=(reverse:boolean,offset:number)=>{// Held (step) clips keep the legacy mirror (sprite states); continuous ones reverse their curves exactly.
+      const input=reverse?(keys.some(k=>k.easing==='step')?keys.map(k=>({...structuredClone(k),time:c.start+c.end-k.time})):reverseKeys(keys,c.start,c.end)):structuredClone(keys);for(const k of input){const time=Number((at+offset+(k.time-c.start)/speed).toFixed(6));scaleHandles(k,speed);setKey(p,target,t.property,time,k.value,k.easing,op.layer??t.layer);
+      const tr=p.tracks.find(tr=>tr.target===target&&tr.property===t.property&&(tr.layer??'base')===(op.layer??t.layer??'base'))!;Object.assign(tr.keys.find(k=>Math.abs(k.time-time)<1e-9)!,{...k,time});}};
+    place(!!op.reverse,0);if(op.pingpong)place(!op.reverse,len);}
+
    return false;}
   case 'expression.feature':{const f=op.feature;safeId(f.id);if(typeof f.role!=='string'||!/^[a-z][a-z0-9-]{0,59}$/.test(f.role))throw Error('Invalid feature role');
    const ids=expandPaths(m,f.paths,false);if(!ids.length||ids.length>4000)throw Error('Expression feature needs 1–4000 paths');const rest:Record<string,string>={};
@@ -150,7 +157,8 @@ export function authoringOperation(m:VectorDocument,op:Operation,touched:Set<str
    for(const name of names)ensureParam(p,name);for(const c of cues){const v=table[c.viseme as Viseme]??{};for(const name of names)setKey(p,name,'param',c.time,Number(((v[name]??0)*strength).toFixed(3)),'ease-in-out',op.layer??'lipsync');}return false;}
   case 'filter.set':{const id=op.id;safeId(id);const existing=m.index.get(id);if(existing&&existing.localName!=='filter')throw Error('ID is not a filter');if(!Array.isArray(op.primitives)||!op.primitives.length||op.primitives.length>24)throw Error('Filter needs 1–24 primitives');
    const f=m.doc.createElementNS(SVG_NS,'filter');f.setAttribute('id',id);f.setAttribute('x','-50%');f.setAttribute('y','-50%');f.setAttribute('width','200%');f.setAttribute('height','200%');f.setAttribute('color-interpolation-filters','sRGB');
-   op.primitives.forEach((pr,i)=>{const tag=FILTER_TAGS[pr.kind];if(!tag)throw Error('Unknown filter primitive');const e=m.doc.createElementNS(SVG_NS,tag);e.setAttribute('id',`${id}-${i}`);for(const [k,v]of Object.entries(pr.attrs)){if(!FILTER_ATTRS.has(k))throw Error(`Filter attribute not allowed: ${k}`);const s=String(v);if(s.length>400||/[<>"]|url\(|javascript:|data:/i.test(s))throw Error('Unsafe filter value');if(k==='stdDeviation'&&s.split(/[\s,]+/).some(x=>Number(x)>200))throw Error('Blur radius over 200 is a performance risk');e.setAttribute(k,s);}
+   op.primitives.forEach((pr,i)=>{const tag=FILTER_TAGS[pr.kind];if(!tag)throw Error('Unknown filter primitive');const e=m.doc.createElementNS(SVG_NS,tag);e.setAttribute('id',`${id}-${i}`);for(const [k,v]of Object.entries(pr.attrs)){// merge inputs and point-light coordinates are handled below (child nodes), not as attributes.
+     if((k==='inputs'&&pr.kind==='merge')||(/^light-[xyz]$/.test(k)&&pr.kind==='lighting'))continue;if(!FILTER_ATTRS.has(k))throw Error(`Filter attribute not allowed: ${k}`);const s=String(v);if(s.length>400||/[<>"]|url\(|javascript:|data:/i.test(s))throw Error('Unsafe filter value');if(k==='stdDeviation'&&s.split(/[\s,]+/).some(x=>Number(x)>200))throw Error('Blur radius over 200 is a performance risk');e.setAttribute(k,s);}
     for(const k of ['result','in','in2'] as const){const v=pr[k];if(v!==undefined){if(!/^[A-Za-z][\w-]{0,40}$/.test(v))throw Error('Invalid filter reference');e.setAttribute(k,v);}}
     if(pr.kind==='lighting'){const light=m.doc.createElementNS(SVG_NS,'fePointLight');for(const k of ['x','y','z'])light.setAttribute(k,String(num(Number((pr.attrs as Record<string,unknown>)['light-'+k]??0))));e.appendChild(light);for(const k of ['light-x','light-y','light-z'])e.removeAttribute(k);}
     if(pr.kind==='merge'){for(const input of String((pr.attrs as Record<string,unknown>).inputs??'').split(/[\s,]+/).filter(Boolean)){if(!/^[A-Za-z][\w-]{0,40}$/.test(input))throw Error('Invalid merge input');const n=m.doc.createElementNS(SVG_NS,'feMergeNode');n.setAttribute('in',input);e.appendChild(n);}e.removeAttribute('inputs');}
@@ -194,5 +202,13 @@ export function cleanupDeleted(p:Project,deleted:Set<string>){
  if(p.expression){for(const f of p.expression.features){f.paths=f.paths.filter(id=>!deleted.has(id));for(const id of deleted)delete f.rest[id];}p.expression.features=p.expression.features.filter(f=>f.paths.length);p.expression.drivers=p.expression.drivers.filter(d=>!deleted.has(d.target));}
  if(p.modifiers){for(const mod of p.modifiers){mod.targets=mod.targets.filter(id=>!deleted.has(id));for(const id of deleted)delete mod.rest[id];}p.modifiers=p.modifiers.filter(x=>x.targets.length);}
  if(p.secondary)p.secondary=p.secondary.filter(s=>!deleted.has(s.target)&&!deleted.has(s.driver));
+ if(p.beats)for(const b of p.beats)if(b.targets)b.targets=b.targets.filter(t=>!deleted.has(t));
+ if(p.motionPaths)p.motionPaths=p.motionPaths.filter(x=>!deleted.has(x.target));
+ if(p.effects){const gone=p.effects.filter(x=>deleted.has(x.target));p.effects=p.effects.filter(x=>!deleted.has(x.target));if(p.signals)p.signals=p.signals.filter(s=>!gone.some(g=>g.signals.includes(s.id)));}
+ if(p.signals)p.signals=p.signals.filter(s=>(s.output.property==='param'||s.output.property.startsWith('bone')||!deleted.has(s.output.target))&&!(s.source.kind==='speed'&&deleted.has(s.source.target)));
+ // Expression signals that read a deleted part go too, and so (transitively) do signals that read those signals.
+ if(p.signals?.some(s=>s.source.kind==='expr'))for(let list=p.signals,changed=true;changed;){const ids=new Set(list.map(s=>s.id));
+  const keep:Signal[]=list.filter(s=>{if(s.source.kind!=='expr')return true;try{const r=parseExpr(s.source.expr).refs;return !r.parts.some(x=>deleted.has(x.id))&&r.signals.every(x=>ids.has(x));}catch{return false;}});
+  changed=keep.length!==list.length;list=p.signals=keep;}
 }
 export type {Point};

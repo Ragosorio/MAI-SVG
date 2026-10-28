@@ -1,0 +1,220 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/gatzilla_kaiju_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "gatzilla_kaiju_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 500,
+     "y": 240
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 510,
+    "cy": 134,
+    "rx": 90,
+    "ry": 91
+   }
+  },
+  {
+   "id": "gatzilla_kaiju_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatzilla_kaiju_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 90
+    },
+    "tip": {
+     "x": 429,
+     "y": 40
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "gatzilla_kaiju_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatzilla_kaiju_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 555,
+     "y": 85
+    },
+    "tip": {
+     "x": 574,
+     "y": 59
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "gatzilla_kaiju_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatzilla_kaiju_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 526,
+     "y": 117.0
+    },
+    "outer": {
+     "x": 490,
+     "y": 117.0
+    },
+    "upper": {
+     "x": 508.0,
+     "y": 104
+    },
+    "lower": {
+     "x": 508.0,
+     "y": 130
+    },
+    "iris": {
+     "x": 508.0,
+     "y": 117.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 508.0,
+    "cy": 117.0,
+    "rx": 27.0,
+    "ry": 24.7
+   }
+  },
+  {
+   "id": "gatzilla_kaiju_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatzilla_kaiju_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 556,
+     "y": 128.0
+    },
+    "outer": {
+     "x": 580,
+     "y": 128.0
+    },
+    "upper": {
+     "x": 568.0,
+     "y": 118
+    },
+    "lower": {
+     "x": 568.0,
+     "y": 138
+    },
+    "iris": {
+     "x": 568.0,
+     "y": 128.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 568.0,
+    "cy": 128.0,
+    "rx": 18.0,
+    "ry": 19.0
+   }
+  },
+  {
+   "id": "gatzilla_kaiju_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 260,
+     "y": 470
+    },
+    "spine1": {
+     "x": 160,
+     "y": 460
+    },
+    "spine2": {
+     "x": 95,
+     "y": 420
+    },
+    "spine3": {
+     "x": 65,
+     "y": 350
+    },
+    "spine4": {
+     "x": 80,
+     "y": 290
+    },
+    "spine5": {
+     "x": 130,
+     "y": 250
+    },
+    "spine6": {
+     "x": 180,
+     "y": 215
+    },
+    "spine7": {
+     "x": 160,
+     "y": 175
+    },
+    "spine8": {
+     "x": 100,
+     "y": 170
+    },
+    "spine9": {
+     "x": 50,
+     "y": 210
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "gatzilla_kaiju_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1 (escombro que cae)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 632,
+    "cy": 540,
+    "rx": 22,
+    "ry": 22
+   }
+  }
+ ],
+ "notes": "Cola grande (r 45). Solo un ojo y medio visibles (3/4)."
+}

@@ -1,0 +1,199 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/gatarana_blanca_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "gatarana_blanca_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 275,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 265,
+    "cy": 194,
+    "rx": 142,
+    "ry": 136
+   }
+  },
+  {
+   "id": "gatarana_blanca_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_blanca_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 150,
+     "y": 135
+    },
+    "tip": {
+     "x": 116,
+     "y": 68
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "gatarana_blanca_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_blanca_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 345,
+     "y": 110
+    },
+    "tip": {
+     "x": 367,
+     "y": 37
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "gatarana_blanca_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_blanca_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 236,
+     "y": 243.5
+    },
+    "outer": {
+     "x": 174,
+     "y": 243.5
+    },
+    "upper": {
+     "x": 205.0,
+     "y": 219
+    },
+    "lower": {
+     "x": 205.0,
+     "y": 268
+    },
+    "iris": {
+     "x": 205.0,
+     "y": 243.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 205.0,
+    "cy": 243.5,
+    "rx": 31.0,
+    "ry": 24.5
+   },
+   "notes": "lid=8 · párpado elíptico: el ojo es la elipse de la caja y solo bajan los 8 px pintados justo encima de su contorno (juego: 5º valor de la caja, catRigs.json eyes[k][4]) · párpado elíptico de 8 px: baja el delineado negro de la máscara"
+  },
+  {
+   "id": "gatarana_blanca_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_blanca_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 268,
+     "y": 234.5
+    },
+    "outer": {
+     "x": 342,
+     "y": 234.5
+    },
+    "upper": {
+     "x": 305.0,
+     "y": 207
+    },
+    "lower": {
+     "x": 305.0,
+     "y": 262
+    },
+    "iris": {
+     "x": 305.0,
+     "y": 234.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 305.0,
+    "cy": 234.5,
+    "rx": 37.0,
+    "ry": 27.5
+   },
+   "notes": "lid=8 · párpado elíptico: el ojo es la elipse de la caja y solo bajan los 8 px pintados justo encima de su contorno (juego: 5º valor de la caja, catRigs.json eyes[k][4]) · párpado elíptico de 8 px: baja el delineado negro de la máscara"
+  },
+  {
+   "id": "gatarana_blanca_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 410
+    },
+    "spine1": {
+     "x": 550,
+     "y": 430
+    },
+    "spine2": {
+     "x": 620,
+     "y": 390
+    },
+    "spine3": {
+     "x": 650,
+     "y": 320
+    },
+    "spine4": {
+     "x": 640,
+     "y": 250
+    },
+    "spine5": {
+     "x": 600,
+     "y": 190
+    },
+    "spine6": {
+     "x": 545,
+     "y": 170
+    },
+    "spine7": {
+     "x": 500,
+     "y": 200
+    }
+   },
+   "notes": "radius=36"
+  }
+ ],
+ "notes": "Ojos grandes: párpado elíptico lid 8 (baja el delineado negro). Con el párpado clásico se estiraba toda la máscara blanca."
+}

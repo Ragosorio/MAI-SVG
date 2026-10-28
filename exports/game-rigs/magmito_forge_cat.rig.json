@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/magmito_forge_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "magmito_forge_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 380,
+     "y": 315
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360,
+    "cy": 205,
+    "rx": 130,
+    "ry": 108
+   }
+  },
+  {
+   "id": "magmito_forge_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "magmito_forge_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 292,
+     "y": 121
+    },
+    "tip": {
+     "x": 276,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "magmito_forge_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "magmito_forge_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 459,
+     "y": 187
+    },
+    "tip": {
+     "x": 513,
+     "y": 136
+    }
+   },
+   "notes": "halfWidth=35"
+  },
+  {
+   "id": "magmito_forge_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "magmito_forge_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 327,
+     "y": 205.5
+    },
+    "outer": {
+     "x": 284,
+     "y": 205.5
+    },
+    "upper": {
+     "x": 305.5,
+     "y": 184
+    },
+    "lower": {
+     "x": 305.5,
+     "y": 227
+    },
+    "iris": {
+     "x": 305.5,
+     "y": 205.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 305.5,
+    "cy": 205.5,
+    "rx": 32.25,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "magmito_forge_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "magmito_forge_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 366,
+     "y": 235.5
+    },
+    "outer": {
+     "x": 415,
+     "y": 235.5
+    },
+    "upper": {
+     "x": 390.5,
+     "y": 214
+    },
+    "lower": {
+     "x": 390.5,
+     "y": 257
+    },
+    "iris": {
+     "x": 390.5,
+     "y": 235.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 390.5,
+    "cy": 235.5,
+    "rx": 36.75,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "magmito_forge_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 560,
+     "y": 529
+    },
+    "spine1": {
+     "x": 529,
+     "y": 451
+    },
+    "spine2": {
+     "x": 560,
+     "y": 373
+    },
+    "spine3": {
+     "x": 529,
+     "y": 311
+    },
+    "spine4": {
+     "x": 591,
+     "y": 280
+    },
+    "spine5": {
+     "x": 645,
+     "y": 319
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "magmito_forge_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 194,
+    "cy": 124,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "magmito_forge_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 560,
+    "cy": 252,
+    "rx": 9,
+    "ry": 9
+   }
+  }
+ ]
+}

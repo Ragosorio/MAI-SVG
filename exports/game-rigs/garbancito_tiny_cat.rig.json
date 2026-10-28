@@ -1,0 +1,222 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/garbancito_tiny_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "garbancito_tiny_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 350,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 370,
+    "cy": 190,
+    "rx": 133,
+    "ry": 115
+   }
+  },
+  {
+   "id": "garbancito_tiny_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "garbancito_tiny_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 270,
+     "y": 130
+    },
+    "tip": {
+     "x": 281,
+     "y": 40
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "garbancito_tiny_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "garbancito_tiny_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 480,
+     "y": 185
+    },
+    "tip": {
+     "x": 542,
+     "y": 140
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "garbancito_tiny_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "garbancito_tiny_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 318,
+     "y": 193.0
+    },
+    "outer": {
+     "x": 270,
+     "y": 193.0
+    },
+    "upper": {
+     "x": 294.0,
+     "y": 170
+    },
+    "lower": {
+     "x": 294.0,
+     "y": 216
+    },
+    "iris": {
+     "x": 294.0,
+     "y": 193.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 294.0,
+    "cy": 193.0,
+    "rx": 36.0,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "garbancito_tiny_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "garbancito_tiny_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 362,
+     "y": 222.0
+    },
+    "outer": {
+     "x": 410,
+     "y": 222.0
+    },
+    "upper": {
+     "x": 386.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 386.0,
+     "y": 246
+    },
+    "iris": {
+     "x": 386.0,
+     "y": 222.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 386.0,
+    "cy": 222.0,
+    "rx": 36.0,
+    "ry": 45.6
+   }
+  },
+  {
+   "id": "garbancito_tiny_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 440,
+     "y": 560
+    },
+    "spine1": {
+     "x": 520,
+     "y": 580
+    },
+    "spine2": {
+     "x": 580,
+     "y": 560
+    },
+    "spine3": {
+     "x": 610,
+     "y": 510
+    },
+    "spine4": {
+     "x": 600,
+     "y": 460
+    },
+    "spine5": {
+     "x": 560,
+     "y": 430
+    },
+    "spine6": {
+     "x": 525,
+     "y": 450
+    }
+   },
+   "notes": "radius=28"
+  },
+  {
+   "id": "garbancito_tiny_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1 (puntas del pañuelo)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 485,
+    "cy": 385,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "garbancito_tiny_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (lata de aerosol y pata)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 172,
+    "cy": 235,
+    "rx": 45,
+    "ry": 62
+   }
+  }
+ ]
+}

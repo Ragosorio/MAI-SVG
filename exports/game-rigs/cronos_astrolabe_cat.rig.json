@@ -1,0 +1,199 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/cronos_astrolabe_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "cronos_astrolabe_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 330
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 345,
+    "cy": 185,
+    "rx": 165,
+    "ry": 140
+   }
+  },
+  {
+   "id": "cronos_astrolabe_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cronos_astrolabe_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 295,
+     "y": 140
+    },
+    "tip": {
+     "x": 290,
+     "y": 88
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "cronos_astrolabe_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cronos_astrolabe_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 175
+    },
+    "tip": {
+     "x": 470,
+     "y": 148
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "cronos_astrolabe_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cronos_astrolabe_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 321,
+     "y": 211.5
+    },
+    "outer": {
+     "x": 287,
+     "y": 211.5
+    },
+    "upper": {
+     "x": 304.0,
+     "y": 197
+    },
+    "lower": {
+     "x": 304.0,
+     "y": 226
+    },
+    "iris": {
+     "x": 304.0,
+     "y": 211.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 304.0,
+    "cy": 211.5,
+    "rx": 25.5,
+    "ry": 27.55
+   }
+  },
+  {
+   "id": "cronos_astrolabe_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "cronos_astrolabe_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 358,
+     "y": 234.0
+    },
+    "outer": {
+     "x": 394,
+     "y": 234.0
+    },
+    "upper": {
+     "x": 376.0,
+     "y": 219
+    },
+    "lower": {
+     "x": 376.0,
+     "y": 249
+    },
+    "iris": {
+     "x": 376.0,
+     "y": 234.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 376.0,
+    "cy": 234.0,
+    "rx": 27.0,
+    "ry": 28.5
+   }
+  },
+  {
+   "id": "cronos_astrolabe_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 520,
+     "y": 560
+    },
+    "spine1": {
+     "x": 565,
+     "y": 480
+    },
+    "spine2": {
+     "x": 590,
+     "y": 400
+    },
+    "spine3": {
+     "x": 585,
+     "y": 320
+    },
+    "spine4": {
+     "x": 555,
+     "y": 270
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "cronos_astrolabe_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 125,
+    "cy": 225,
+    "rx": 80,
+    "ry": 80
+   }
+  }
+ ]
+}

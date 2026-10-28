@@ -1,0 +1,222 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/sonambulo_sleepwalker_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "sonambulo_sleepwalker_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 295,
+     "y": 285
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 180,
+    "rx": 140,
+    "ry": 110
+   }
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonambulo_sleepwalker_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 244,
+     "y": 119
+    },
+    "tip": {
+     "x": 229,
+     "y": 44
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonambulo_sleepwalker_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 388,
+     "y": 163
+    },
+    "tip": {
+     "x": 438,
+     "y": 105
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonambulo_sleepwalker_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 264,
+     "y": 183.0
+    },
+    "outer": {
+     "x": 227,
+     "y": 183.0
+    },
+    "upper": {
+     "x": 245.5,
+     "y": 166
+    },
+    "lower": {
+     "x": 245.5,
+     "y": 200
+    },
+    "iris": {
+     "x": 245.5,
+     "y": 183.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 245.5,
+    "cy": 183.0,
+    "rx": 27.75,
+    "ry": 32.3
+   }
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonambulo_sleepwalker_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 302,
+     "y": 206.0
+    },
+    "outer": {
+     "x": 344,
+     "y": 206.0
+    },
+    "upper": {
+     "x": 323.0,
+     "y": 188
+    },
+    "lower": {
+     "x": 323.0,
+     "y": 224
+    },
+    "iris": {
+     "x": 323.0,
+     "y": 206.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 323.0,
+    "cy": 206.0,
+    "rx": 31.5,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 430,
+     "y": 575
+    },
+    "spine1": {
+     "x": 500,
+     "y": 600
+    },
+    "spine2": {
+     "x": 570,
+     "y": 560
+    },
+    "spine3": {
+     "x": 600,
+     "y": 480
+    },
+    "spine4": {
+     "x": 580,
+     "y": 420
+    },
+    "spine5": {
+     "x": 530,
+     "y": 395
+    },
+    "spine6": {
+     "x": 485,
+     "y": 410
+    }
+   },
+   "notes": "radius=38"
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 600,
+    "cy": 345,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "sonambulo_sleepwalker_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 470,
+    "cy": 485,
+    "rx": 38,
+    "ry": 50
+   }
+  }
+ ]
+}

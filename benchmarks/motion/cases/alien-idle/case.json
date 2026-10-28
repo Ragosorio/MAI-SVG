@@ -1,0 +1,254 @@
+{
+ "id": "alien-idle",
+ "title": "Game inventory idle for alien_galaxy_cat",
+ "source": {
+  "file": "assets/vector/alien_galaxy_cat.svg"
+ },
+ "approvedName": "alien_galaxy_cat.svg",
+ "timeline": {
+  "duration": 3,
+  "fps": 24,
+  "loop": true
+ },
+ "prepare": [
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "alien_galaxy_cat",
+       "role": "character",
+       "label": "alien galaxy cat",
+       "targets": [],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "head",
+       "role": "head",
+       "label": "Cabeza",
+       "targets": [],
+       "parent": "alien_galaxy_cat",
+       "status": "confirmed",
+       "source": "agent",
+       "notes": "From exports/game-rigs annotation (visual review pending)",
+       "region": {
+        "kind": "ellipse",
+        "cx": 372,
+        "cy": 280,
+        "rx": 128,
+        "ry": 108
+       },
+       "landmarks": {
+        "neck": {
+         "x": 385,
+         "y": 388
+        }
+       }
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "ear-left",
+       "role": "ear-left",
+       "label": "Oreja izquierda",
+       "targets": [],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent",
+       "notes": "From exports/game-rigs annotation (visual review pending)",
+       "landmarks": {
+        "base": {
+         "x": 250,
+         "y": 212
+        },
+        "tip": {
+         "x": 110,
+         "y": 135
+        }
+       }
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "ear-right",
+       "role": "ear-right",
+       "label": "Oreja derecha",
+       "targets": [],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent",
+       "notes": "From exports/game-rigs annotation (visual review pending)",
+       "landmarks": {
+        "base": {
+         "x": 452,
+         "y": 168
+        },
+        "tip": {
+         "x": 482,
+         "y": 10
+        }
+       }
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-left",
+       "role": "eye-left",
+       "label": "Ojo izquierdo",
+       "targets": [],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent",
+       "notes": "From exports/game-rigs annotation (visual review pending)",
+       "region": {
+        "kind": "ellipse",
+        "cx": 319.0,
+        "cy": 311.0,
+        "rx": 67.5,
+        "ry": 77.89999999999999
+       },
+       "landmarks": {
+        "inner": {
+         "x": 364,
+         "y": 311.0
+        },
+        "outer": {
+         "x": 274,
+         "y": 311.0
+        },
+        "upper": {
+         "x": 319.0,
+         "y": 270
+        },
+        "lower": {
+         "x": 319.0,
+         "y": 352
+        },
+        "iris": {
+         "x": 319.0,
+         "y": 311.0
+        }
+       }
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-right",
+       "role": "eye-right",
+       "label": "Ojo derecho",
+       "targets": [],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent",
+       "notes": "From exports/game-rigs annotation (visual review pending)",
+       "region": {
+        "kind": "ellipse",
+        "cx": 441.0,
+        "cy": 269.0,
+        "rx": 51.0,
+        "ry": 77.89999999999999
+       },
+       "landmarks": {
+        "inner": {
+         "x": 407,
+         "y": 269.0
+        },
+        "outer": {
+         "x": 475,
+         "y": 269.0
+        },
+        "upper": {
+         "x": 441.0,
+         "y": 228
+        },
+        "lower": {
+         "x": 441.0,
+         "y": 310
+        },
+        "iris": {
+         "x": 441.0,
+         "y": 269.0
+        }
+       }
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "tail",
+       "role": "tail",
+       "label": "Cola",
+       "targets": [],
+       "parent": "alien_galaxy_cat",
+       "status": "confirmed",
+       "source": "agent",
+       "notes": "From exports/game-rigs annotation (visual review pending)",
+       "landmarks": {
+        "spine0": {
+         "x": 468,
+         "y": 580
+        },
+        "spine1": {
+         "x": 580,
+         "y": 560
+        },
+        "spine2": {
+         "x": 592,
+         "y": 470
+        },
+        "spine3": {
+         "x": 545,
+         "y": 400
+        },
+        "spine4": {
+         "x": 600,
+         "y": 355
+        },
+        "spine5": {
+         "x": 632,
+         "y": 392
+        },
+        "spine6": {
+         "x": 615,
+         "y": 432
+        }
+       }
+      }
+     }
+    ]
+   },
+   "label": "Partes (anotación de rig)"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "eye-left",
+   "eye-right",
+   "head"
+  ]
+ },
+ "context": {
+  "purpose": "game-sprite",
+  "placement": "inventory grid",
+  "viewport": {
+   "width": 256,
+   "height": 256
+  },
+  "loop": {
+   "required": true
+  },
+  "performance": {
+   "profile": "game"
+  }
+ }
+}

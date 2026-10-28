@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/tic_pocketwatch_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "tic_pocketwatch_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 270,
+     "y": 305
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 270,
+    "cy": 190,
+    "rx": 160,
+    "ry": 115
+   }
+  },
+  {
+   "id": "tic_pocketwatch_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tic_pocketwatch_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 205,
+     "y": 115
+    },
+    "tip": {
+     "x": 185,
+     "y": 50
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "tic_pocketwatch_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tic_pocketwatch_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 160
+    },
+    "tip": {
+     "x": 432,
+     "y": 127
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "tic_pocketwatch_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tic_pocketwatch_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 244,
+     "y": 212.5
+    },
+    "outer": {
+     "x": 197,
+     "y": 212.5
+    },
+    "upper": {
+     "x": 220.5,
+     "y": 192
+    },
+    "lower": {
+     "x": 220.5,
+     "y": 233
+    },
+    "iris": {
+     "x": 220.5,
+     "y": 212.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 220.5,
+    "cy": 212.5,
+    "rx": 35.25,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "tic_pocketwatch_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tic_pocketwatch_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 287,
+     "y": 242.5
+    },
+    "outer": {
+     "x": 335,
+     "y": 242.5
+    },
+    "upper": {
+     "x": 311.0,
+     "y": 222
+    },
+    "lower": {
+     "x": 311.0,
+     "y": 263
+    },
+    "iris": {
+     "x": 311.0,
+     "y": 242.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 311.0,
+    "cy": 242.5,
+    "rx": 36.0,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "tic_pocketwatch_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 480,
+     "y": 495
+    },
+    "spine1": {
+     "x": 555,
+     "y": 475
+    },
+    "spine2": {
+     "x": 590,
+     "y": 405
+    },
+    "spine3": {
+     "x": 582,
+     "y": 325
+    },
+    "spine4": {
+     "x": 535,
+     "y": 278
+    },
+    "spine5": {
+     "x": 475,
+     "y": 268
+    },
+    "spine6": {
+     "x": 442,
+     "y": 300
+    }
+   },
+   "notes": "radius=42"
+  }
+ ]
+}

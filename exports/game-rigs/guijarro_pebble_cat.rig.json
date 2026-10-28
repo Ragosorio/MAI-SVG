@@ -1,0 +1,248 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/guijarro_pebble_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "guijarro_pebble_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 345
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 305,
+    "cy": 225,
+    "rx": 150,
+    "ry": 112
+   }
+  },
+  {
+   "id": "guijarro_pebble_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "guijarro_pebble_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 241,
+     "y": 117
+    },
+    "tip": {
+     "x": 226,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "guijarro_pebble_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "guijarro_pebble_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 467,
+     "y": 179
+    },
+    "tip": {
+     "x": 513,
+     "y": 132
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "guijarro_pebble_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "guijarro_pebble_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 289,
+     "y": 226.5
+    },
+    "outer": {
+     "x": 243,
+     "y": 226.5
+    },
+    "upper": {
+     "x": 266.0,
+     "y": 204
+    },
+    "lower": {
+     "x": 266.0,
+     "y": 249
+    },
+    "iris": {
+     "x": 266.0,
+     "y": 226.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 266.0,
+    "cy": 226.5,
+    "rx": 34.5,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "guijarro_pebble_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "guijarro_pebble_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 328,
+     "y": 256.5
+    },
+    "outer": {
+     "x": 380,
+     "y": 256.5
+    },
+    "upper": {
+     "x": 354.0,
+     "y": 233
+    },
+    "lower": {
+     "x": 354.0,
+     "y": 280
+    },
+    "iris": {
+     "x": 354.0,
+     "y": 256.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 354.0,
+    "cy": 256.5,
+    "rx": 39.0,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "guijarro_pebble_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 529,
+     "y": 506
+    },
+    "spine1": {
+     "x": 583,
+     "y": 451
+    },
+    "spine2": {
+     "x": 603,
+     "y": 389
+    },
+    "spine3": {
+     "x": 583,
+     "y": 327
+    },
+    "spine4": {
+     "x": 537,
+     "y": 307
+    },
+    "spine5": {
+     "x": 498,
+     "y": 327
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "guijarro_pebble_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 109,
+    "cy": 299,
+    "rx": 37,
+    "ry": 37
+   }
+  },
+  {
+   "id": "guijarro_pebble_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 134,
+    "cy": 177,
+    "rx": 17,
+    "ry": 17
+   }
+  },
+  {
+   "id": "guijarro_pebble_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 530,
+    "cy": 259,
+    "rx": 25,
+    "ry": 25
+   }
+  },
+  {
+   "id": "guijarro_pebble_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 144,
+    "cy": 484,
+    "rx": 19,
+    "ry": 19
+   }
+  }
+ ]
+}

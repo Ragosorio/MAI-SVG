@@ -1,0 +1,259 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/espumita_foam_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "espumita_foam_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 265,
+     "y": 310
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 270,
+    "cy": 190,
+    "rx": 170,
+    "ry": 115
+   }
+  },
+  {
+   "id": "espumita_foam_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espumita_foam_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 205,
+     "y": 120
+    },
+    "tip": {
+     "x": 195,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "espumita_foam_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espumita_foam_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 430,
+     "y": 195
+    },
+    "tip": {
+     "x": 467,
+     "y": 152
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "espumita_foam_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espumita_foam_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 249,
+     "y": 212.5
+    },
+    "outer": {
+     "x": 198,
+     "y": 212.5
+    },
+    "upper": {
+     "x": 223.5,
+     "y": 189
+    },
+    "lower": {
+     "x": 223.5,
+     "y": 236
+    },
+    "iris": {
+     "x": 223.5,
+     "y": 212.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 223.5,
+    "cy": 212.5,
+    "rx": 38.25,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "espumita_foam_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espumita_foam_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 293,
+     "y": 251.0
+    },
+    "outer": {
+     "x": 346,
+     "y": 251.0
+    },
+    "upper": {
+     "x": 319.5,
+     "y": 228
+    },
+    "lower": {
+     "x": 319.5,
+     "y": 274
+    },
+    "iris": {
+     "x": 319.5,
+     "y": 251.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 319.5,
+    "cy": 251.0,
+    "rx": 39.75,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "espumita_foam_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 480,
+     "y": 548
+    },
+    "spine1": {
+     "x": 525,
+     "y": 485
+    },
+    "spine2": {
+     "x": 548,
+     "y": 415
+    },
+    "spine3": {
+     "x": 545,
+     "y": 345
+    },
+    "spine4": {
+     "x": 520,
+     "y": 295
+    }
+   },
+   "notes": "radius=55"
+  },
+  {
+   "id": "espumita_foam_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 548,
+    "cy": 240,
+    "rx": 26,
+    "ry": 26
+   }
+  },
+  {
+   "id": "espumita_foam_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 416,
+    "cy": 362,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "espumita_foam_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 106,
+    "cy": 514,
+    "rx": 15,
+    "ry": 15
+   }
+  },
+  {
+   "id": "espumita_foam_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 517,
+    "cy": 580,
+    "rx": 17,
+    "ry": 17
+   }
+  },
+  {
+   "id": "espumita_foam_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 594,
+    "cy": 270,
+    "rx": 10,
+    "ry": 10
+   }
+  }
+ ]
+}

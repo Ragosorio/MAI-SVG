@@ -1,0 +1,248 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/headliner_rock_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "headliner_rock_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 375,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 200,
+    "rx": 132,
+    "ry": 112
+   }
+  },
+  {
+   "id": "headliner_rock_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "headliner_rock_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 115
+    },
+    "tip": {
+     "x": 290,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "headliner_rock_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "headliner_rock_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 510,
+     "y": 170
+    },
+    "tip": {
+     "x": 545,
+     "y": 142
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "headliner_rock_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "headliner_rock_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 369,
+     "y": 222.5
+    },
+    "outer": {
+     "x": 327,
+     "y": 222.5
+    },
+    "upper": {
+     "x": 348.0,
+     "y": 202
+    },
+    "lower": {
+     "x": 348.0,
+     "y": 243
+    },
+    "iris": {
+     "x": 348.0,
+     "y": 222.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 348.0,
+    "cy": 222.5,
+    "rx": 31.5,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "headliner_rock_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "headliner_rock_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 407,
+     "y": 246.5
+    },
+    "outer": {
+     "x": 447,
+     "y": 246.5
+    },
+    "upper": {
+     "x": 427.0,
+     "y": 227
+    },
+    "lower": {
+     "x": 427.0,
+     "y": 266
+    },
+    "iris": {
+     "x": 427.0,
+     "y": 246.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 427.0,
+    "cy": 246.5,
+    "rx": 30.0,
+    "ry": 37.05
+   }
+  },
+  {
+   "id": "headliner_rock_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 230,
+     "y": 560
+    },
+    "spine1": {
+     "x": 160,
+     "y": 560
+    },
+    "spine2": {
+     "x": 90,
+     "y": 520
+    },
+    "spine3": {
+     "x": 60,
+     "y": 460
+    },
+    "spine4": {
+     "x": 90,
+     "y": 405
+    },
+    "spine5": {
+     "x": 140,
+     "y": 395
+    }
+   },
+   "notes": "radius=45"
+  },
+  {
+   "id": "headliner_rock_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 175,
+    "cy": 130,
+    "rx": 25,
+    "ry": 25
+   }
+  },
+  {
+   "id": "headliner_rock_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 155,
+    "cy": 285,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "headliner_rock_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 525,
+    "cy": 345,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "headliner_rock_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 620,
+    "cy": 485,
+    "rx": 20,
+    "ry": 20
+   }
+  }
+ ]
+}

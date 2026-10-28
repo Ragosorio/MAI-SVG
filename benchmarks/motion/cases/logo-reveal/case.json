@@ -1,0 +1,98 @@
+{
+ "id": "logo-reveal",
+ "title": "Logo reveal for an app launch",
+ "source": {
+  "case": "original.svg"
+ },
+ "approvedName": "logo.svg",
+ "timeline": {
+  "duration": 2.5,
+  "fps": 30,
+  "loop": false
+ },
+ "prepare": [
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "logo",
+       "role": "logo",
+       "label": "Logo",
+       "targets": [
+        "logo"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "mark",
+       "role": "mark",
+       "label": "Símbolo",
+       "targets": [
+        "mark"
+       ],
+       "parent": "logo",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "wordmark",
+       "role": "wordmark",
+       "label": "Texto",
+       "targets": [
+        "wordmark"
+       ],
+       "parent": "logo",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "backdrop",
+       "role": "background",
+       "label": "Fondo",
+       "targets": [
+        "backdrop"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     }
+    ]
+   },
+   "label": "Partes"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "logo"
+  ],
+  "finalFrameEqualsOriginal": true
+ },
+ "context": {
+  "purpose": "logo",
+  "placement": "app launch screen",
+  "viewport": {
+   "width": 640,
+   "height": 360
+  },
+  "loop": {
+   "required": false
+  },
+  "motionStyle": {
+   "energy": 0.6,
+   "cinematic": 0.6
+  }
+ }
+}

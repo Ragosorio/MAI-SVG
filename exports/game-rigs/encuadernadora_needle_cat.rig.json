@@ -1,0 +1,209 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/encuadernadora_needle_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "encuadernadora_needle_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 345,
+     "y": 255
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 350,
+    "cy": 173,
+    "rx": 89,
+    "ry": 82
+   }
+  },
+  {
+   "id": "encuadernadora_needle_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "encuadernadora_needle_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 295,
+     "y": 120
+    },
+    "tip": {
+     "x": 301,
+     "y": 64
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "encuadernadora_needle_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "encuadernadora_needle_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 420,
+     "y": 135
+    },
+    "tip": {
+     "x": 467,
+     "y": 113
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "encuadernadora_needle_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "encuadernadora_needle_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 323,
+     "y": 183.0
+    },
+    "outer": {
+     "x": 292,
+     "y": 183.0
+    },
+    "upper": {
+     "x": 307.5,
+     "y": 170
+    },
+    "lower": {
+     "x": 307.5,
+     "y": 196
+    },
+    "iris": {
+     "x": 307.5,
+     "y": 183.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 307.5,
+    "cy": 183.0,
+    "rx": 15.5,
+    "ry": 13.0
+   },
+   "notes": "lid=4 · párpado elíptico: el ojo es la elipse de la caja y solo bajan los 4 px pintados justo encima de su contorno (juego: 5º valor de la caja, catRigs.json eyes[k][4]) · párpado elíptico de 4 px: los goggles de la frente quedan quietos"
+  },
+  {
+   "id": "encuadernadora_needle_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "encuadernadora_needle_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 351,
+     "y": 195.5
+    },
+    "outer": {
+     "x": 386,
+     "y": 195.5
+    },
+    "upper": {
+     "x": 368.5,
+     "y": 182
+    },
+    "lower": {
+     "x": 368.5,
+     "y": 209
+    },
+    "iris": {
+     "x": 368.5,
+     "y": 195.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 368.5,
+    "cy": 195.5,
+    "rx": 17.5,
+    "ry": 13.5
+   },
+   "notes": "lid=4 · párpado elíptico: el ojo es la elipse de la caja y solo bajan los 4 px pintados justo encima de su contorno (juego: 5º valor de la caja, catRigs.json eyes[k][4]) · párpado elíptico de 4 px: los goggles de la frente quedan quietos"
+  },
+  {
+   "id": "encuadernadora_needle_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 455,
+     "y": 530
+    },
+    "spine1": {
+     "x": 520,
+     "y": 540
+    },
+    "spine2": {
+     "x": 550,
+     "y": 490
+    },
+    "spine3": {
+     "x": 545,
+     "y": 440
+    },
+    "spine4": {
+     "x": 555,
+     "y": 405
+    },
+    "spine5": {
+     "x": 590,
+     "y": 400
+    },
+    "spine6": {
+     "x": 612,
+     "y": 440
+    }
+   },
+   "notes": "radius=28"
+  },
+  {
+   "id": "encuadernadora_needle_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (aguja e hilo en la pata)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 170,
+    "cy": 135,
+    "rx": 65,
+    "ry": 95
+   }
+  }
+ ]
+}

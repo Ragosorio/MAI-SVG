@@ -1,0 +1,180 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/aurea_halo_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "aurea_halo_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 315,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 330,
+    "cy": 178,
+    "rx": 160,
+    "ry": 148
+   }
+  },
+  {
+   "id": "aurea_halo_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "aurea_halo_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 255,
+     "y": 165
+    },
+    "tip": {
+     "x": 240,
+     "y": 112
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "aurea_halo_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "aurea_halo_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 420,
+     "y": 195
+    },
+    "tip": {
+     "x": 462,
+     "y": 176
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "aurea_halo_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "aurea_halo_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 296,
+     "y": 243.0
+    },
+    "outer": {
+     "x": 256,
+     "y": 243.0
+    },
+    "upper": {
+     "x": 276.0,
+     "y": 226
+    },
+    "lower": {
+     "x": 276.0,
+     "y": 260
+    },
+    "iris": {
+     "x": 276.0,
+     "y": 243.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 276.0,
+    "cy": 243.0,
+    "rx": 30.0,
+    "ry": 32.3
+   }
+  },
+  {
+   "id": "aurea_halo_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "aurea_halo_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 336,
+     "y": 263.5
+    },
+    "outer": {
+     "x": 378,
+     "y": 263.5
+    },
+    "upper": {
+     "x": 357.0,
+     "y": 246
+    },
+    "lower": {
+     "x": 357.0,
+     "y": 281
+    },
+    "iris": {
+     "x": 357.0,
+     "y": 263.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 357.0,
+    "cy": 263.5,
+    "rx": 31.5,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "aurea_halo_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 560,
+     "y": 610
+    },
+    "spine1": {
+     "x": 600,
+     "y": 560
+    },
+    "spine2": {
+     "x": 625,
+     "y": 500
+    },
+    "spine3": {
+     "x": 640,
+     "y": 440
+    }
+   },
+   "notes": "radius=50"
+  }
+ ]
+}

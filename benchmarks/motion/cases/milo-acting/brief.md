@@ -1,0 +1,1 @@
+Milo recibe una buena noticia. Primero se queda quieto escuchando, duda un instante, y luego se emociona y salta de alegría; termina contento. Tiene que leerse sin palabras, como un plano de una película animada. 4 segundos, sin loop. Es el mismo Milo: no le cambies la cara ni los colores.

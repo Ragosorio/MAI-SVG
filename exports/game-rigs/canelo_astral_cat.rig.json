@@ -1,0 +1,241 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/canelo_astral_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "canelo_astral_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 295,
+     "y": 305
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 295,
+    "cy": 195,
+    "rx": 160,
+    "ry": 110
+   }
+  },
+  {
+   "id": "canelo_astral_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "canelo_astral_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 248,
+     "y": 115
+    },
+    "tip": {
+     "x": 232,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "canelo_astral_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "canelo_astral_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 402,
+     "y": 170
+    },
+    "tip": {
+     "x": 462,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "canelo_astral_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "canelo_astral_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 285,
+     "y": 209.0
+    },
+    "outer": {
+     "x": 241,
+     "y": 209.0
+    },
+    "upper": {
+     "x": 263.0,
+     "y": 190
+    },
+    "lower": {
+     "x": 263.0,
+     "y": 228
+    },
+    "iris": {
+     "x": 263.0,
+     "y": 209.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 263.0,
+    "cy": 209.0,
+    "rx": 33.0,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "canelo_astral_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "canelo_astral_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 330,
+     "y": 233.5
+    },
+    "outer": {
+     "x": 375,
+     "y": 233.5
+    },
+    "upper": {
+     "x": 352.5,
+     "y": 217
+    },
+    "lower": {
+     "x": 352.5,
+     "y": 250
+    },
+    "iris": {
+     "x": 352.5,
+     "y": 233.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 352.5,
+    "cy": 233.5,
+    "rx": 33.75,
+    "ry": 31.35
+   }
+  },
+  {
+   "id": "canelo_astral_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 550,
+     "y": 625
+    },
+    "spine1": {
+     "x": 610,
+     "y": 535
+    },
+    "spine2": {
+     "x": 605,
+     "y": 465
+    },
+    "spine3": {
+     "x": 550,
+     "y": 400
+    },
+    "spine4": {
+     "x": 495,
+     "y": 350
+    },
+    "spine5": {
+     "x": 505,
+     "y": 275
+    },
+    "spine6": {
+     "x": 570,
+     "y": 252
+    },
+    "spine7": {
+     "x": 620,
+     "y": 320
+    }
+   },
+   "notes": "radius=55"
+  },
+  {
+   "id": "canelo_astral_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 152,
+    "cy": 145,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "canelo_astral_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 355,
+    "cy": 102,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "canelo_astral_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 104,
+    "cy": 218,
+    "rx": 11,
+    "ry": 11
+   }
+  }
+ ]
+}

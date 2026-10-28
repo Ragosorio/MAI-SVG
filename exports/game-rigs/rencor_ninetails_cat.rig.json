@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/rencor_ninetails_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "rencor_ninetails_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 430,
+     "y": 360
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 420,
+    "cy": 245,
+    "rx": 140,
+    "ry": 115
+   }
+  },
+  {
+   "id": "rencor_ninetails_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "rencor_ninetails_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 362,
+     "y": 187
+    },
+    "tip": {
+     "x": 342,
+     "y": 117
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "rencor_ninetails_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "rencor_ninetails_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 521,
+     "y": 218
+    },
+    "tip": {
+     "x": 572,
+     "y": 167
+    }
+   },
+   "notes": "halfWidth=34"
+  },
+  {
+   "id": "rencor_ninetails_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "rencor_ninetails_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 408,
+     "y": 262.5
+    },
+    "outer": {
+     "x": 359,
+     "y": 262.5
+    },
+    "upper": {
+     "x": 383.5,
+     "y": 245
+    },
+    "lower": {
+     "x": 383.5,
+     "y": 280
+    },
+    "iris": {
+     "x": 383.5,
+     "y": 262.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 383.5,
+    "cy": 262.5,
+    "rx": 36.75,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "rencor_ninetails_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "rencor_ninetails_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 445,
+     "y": 285.5
+    },
+    "outer": {
+     "x": 494,
+     "y": 285.5
+    },
+    "upper": {
+     "x": 469.5,
+     "y": 268
+    },
+    "lower": {
+     "x": 469.5,
+     "y": 303
+    },
+    "iris": {
+     "x": 469.5,
+     "y": 285.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 469.5,
+    "cy": 285.5,
+    "rx": 36.75,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "rencor_ninetails_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 250,
+     "y": 380
+    },
+    "spine1": {
+     "x": 171,
+     "y": 389
+    },
+    "spine2": {
+     "x": 101,
+     "y": 350
+    },
+    "spine3": {
+     "x": 62,
+     "y": 272
+    },
+    "spine4": {
+     "x": 86,
+     "y": 194
+    },
+    "spine5": {
+     "x": 140,
+     "y": 132
+    }
+   },
+   "notes": "radius=70"
+  },
+  {
+   "id": "rencor_ninetails_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 653,
+    "cy": 459,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "rencor_ninetails_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 572,
+    "cy": 606,
+    "rx": 20,
+    "ry": 20
+   }
+  }
+ ]
+}

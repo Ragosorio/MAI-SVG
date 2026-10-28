@@ -1,0 +1,200 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/espejito_mirror_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "espejito_mirror_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 390,
+     "y": 295
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 395,
+    "cy": 182,
+    "rx": 142,
+    "ry": 104
+   }
+  },
+  {
+   "id": "espejito_mirror_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espejito_mirror_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 340,
+     "y": 133
+    },
+    "tip": {
+     "x": 332,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "espejito_mirror_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espejito_mirror_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 505,
+     "y": 170
+    },
+    "tip": {
+     "x": 575,
+     "y": 107
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "espejito_mirror_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espejito_mirror_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 370,
+     "y": 201.5
+    },
+    "outer": {
+     "x": 325,
+     "y": 201.5
+    },
+    "upper": {
+     "x": 347.5,
+     "y": 181
+    },
+    "lower": {
+     "x": 347.5,
+     "y": 222
+    },
+    "iris": {
+     "x": 347.5,
+     "y": 201.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 347.5,
+    "cy": 201.5,
+    "rx": 33.75,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "espejito_mirror_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "espejito_mirror_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 413,
+     "y": 231.5
+    },
+    "outer": {
+     "x": 462,
+     "y": 231.5
+    },
+    "upper": {
+     "x": 437.5,
+     "y": 211
+    },
+    "lower": {
+     "x": 437.5,
+     "y": 252
+    },
+    "iris": {
+     "x": 437.5,
+     "y": 231.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 437.5,
+    "cy": 231.5,
+    "rx": 36.75,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "espejito_mirror_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 160,
+     "y": 575
+    },
+    "spine1": {
+     "x": 125,
+     "y": 530
+    },
+    "spine2": {
+     "x": 92,
+     "y": 470
+    },
+    "spine3": {
+     "x": 78,
+     "y": 405
+    },
+    "spine4": {
+     "x": 92,
+     "y": 330
+    },
+    "spine5": {
+     "x": 137,
+     "y": 278
+    },
+    "spine6": {
+     "x": 195,
+     "y": 280
+    },
+    "spine7": {
+     "x": 228,
+     "y": 318
+    },
+    "spine8": {
+     "x": 205,
+     "y": 360
+    }
+   },
+   "notes": "radius=48"
+  }
+ ]
+}

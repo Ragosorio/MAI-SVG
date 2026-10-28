@@ -1,0 +1,244 @@
+{
+ "id": "milo-acting",
+ "title": "Milo acting a beat: listens, hesitates, jumps with joy",
+ "source": {
+  "file": "examples/emotions/milo-source.svg"
+ },
+ "approvedName": "milo.svg",
+ "timeline": {
+  "duration": 4,
+  "fps": 30,
+  "loop": false
+ },
+ "prepare": [
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "milo",
+       "role": "character",
+       "label": "Milo",
+       "targets": [
+        "character"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "head",
+       "role": "head",
+       "label": "Cabeza",
+       "targets": [
+        "head"
+       ],
+       "parent": "milo",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "face",
+       "role": "face",
+       "label": "Cara",
+       "targets": [
+        "face"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-left",
+       "role": "eye-left",
+       "label": "Ojo izquierdo",
+       "targets": [
+        "eye-left",
+        "shine-left"
+       ],
+       "parent": "face",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-right",
+       "role": "eye-right",
+       "label": "Ojo derecho",
+       "targets": [
+        "eye-right",
+        "shine-right"
+       ],
+       "parent": "face",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "brow-left",
+       "role": "brow-left",
+       "label": "Ceja izquierda",
+       "targets": [
+        "brow-left"
+       ],
+       "parent": "face",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "brow-right",
+       "role": "brow-right",
+       "label": "Ceja derecha",
+       "targets": [
+        "brow-right"
+       ],
+       "parent": "face",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "mouth",
+       "role": "mouth",
+       "label": "Boca",
+       "targets": [
+        "mouth"
+       ],
+       "parent": "face",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "ear-left",
+       "role": "ear-left",
+       "label": "Oreja izquierda",
+       "targets": [
+        "ear-left"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "ear-right",
+       "role": "ear-right",
+       "label": "Oreja derecha",
+       "targets": [
+        "ear-right"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "body",
+       "role": "body",
+       "label": "Cuerpo",
+       "targets": [
+        "body",
+        "jacket"
+       ],
+       "parent": "milo",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "arm-left",
+       "role": "arm-left",
+       "label": "Brazo izquierdo",
+       "targets": [
+        "arm-left"
+       ],
+       "parent": "body",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "arm-right",
+       "role": "arm-right",
+       "label": "Brazo derecho",
+       "targets": [
+        "arm-right"
+       ],
+       "parent": "body",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "tail",
+       "role": "tail",
+       "label": "Cola",
+       "targets": [
+        "tail"
+       ],
+       "parent": "milo",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     }
+    ]
+   },
+   "label": "Partes de Milo"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "eye-left",
+   "eye-right",
+   "mouth"
+  ]
+ },
+ "context": {
+  "purpose": "character-acting",
+  "placement": "social video",
+  "viewport": {
+   "width": 1080,
+   "height": 1080
+  },
+  "loop": {
+   "required": false
+  },
+  "motionStyle": {
+   "energy": 0.7,
+   "playfulness": 0.8,
+   "cinematic": 0.5
+  }
+ }
+}

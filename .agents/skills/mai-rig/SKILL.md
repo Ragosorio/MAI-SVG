@@ -2,6 +2,7 @@
 name: mai-rig
 description: Prepare SVG parts and build constrained bones, normalized weights, two-bone IK and control meshes in a live MAI SVG session.
 ---
+<!-- Generated from skills-src by scripts/build-skills.ts — edit the source, then run: npm run skills -->
 
 # Parts and rig
 

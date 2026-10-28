@@ -1,0 +1,201 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/ito_threads_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "ito_threads_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 420,
+     "y": 240
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 420,
+    "cy": 154,
+    "rx": 80,
+    "ry": 81
+   }
+  },
+  {
+   "id": "ito_threads_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ito_threads_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 370,
+     "y": 100
+    },
+    "tip": {
+     "x": 353,
+     "y": 38
+    }
+   },
+   "notes": "halfWidth=20"
+  },
+  {
+   "id": "ito_threads_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ito_threads_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 470,
+     "y": 100
+    },
+    "tip": {
+     "x": 498,
+     "y": 61
+    }
+   },
+   "notes": "halfWidth=20"
+  },
+  {
+   "id": "ito_threads_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ito_threads_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 426,
+     "y": 153.0
+    },
+    "outer": {
+     "x": 397,
+     "y": 153.0
+    },
+    "upper": {
+     "x": 411.5,
+     "y": 140
+    },
+    "lower": {
+     "x": 411.5,
+     "y": 166
+    },
+    "iris": {
+     "x": 411.5,
+     "y": 153.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 411.5,
+    "cy": 153.0,
+    "rx": 21.75,
+    "ry": 24.7
+   }
+  },
+  {
+   "id": "ito_threads_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ito_threads_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 445,
+     "y": 161.5
+    },
+    "outer": {
+     "x": 471,
+     "y": 161.5
+    },
+    "upper": {
+     "x": 458.0,
+     "y": 150
+    },
+    "lower": {
+     "x": 458.0,
+     "y": 173
+    },
+    "iris": {
+     "x": 458.0,
+     "y": 161.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 458.0,
+    "cy": 161.5,
+    "rx": 19.5,
+    "ry": 21.85
+   }
+  },
+  {
+   "id": "ito_threads_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 320,
+     "y": 560
+    },
+    "spine1": {
+     "x": 268,
+     "y": 555
+    },
+    "spine2": {
+     "x": 220,
+     "y": 505
+    },
+    "spine3": {
+     "x": 205,
+     "y": 445
+    },
+    "spine4": {
+     "x": 222,
+     "y": 385
+    },
+    "spine5": {
+     "x": 232,
+     "y": 328
+    },
+    "spine6": {
+     "x": 205,
+     "y": 285
+    },
+    "spine7": {
+     "x": 168,
+     "y": 290
+    },
+    "spine8": {
+     "x": 150,
+     "y": 330
+    }
+   },
+   "notes": "radius=26"
+  }
+ ],
+ "notes": "Itō, el Titiritero del Anime. Quieto: sin flotantes. La espada de hilos la dibuja el juego en su espalda."
+}

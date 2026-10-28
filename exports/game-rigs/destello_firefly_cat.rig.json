@@ -1,0 +1,248 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/destello_firefly_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "destello_firefly_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 285,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 285,
+    "cy": 185,
+    "rx": 140,
+    "ry": 115
+   }
+  },
+  {
+   "id": "destello_firefly_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "destello_firefly_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 232,
+     "y": 108
+    },
+    "tip": {
+     "x": 214,
+     "y": 46
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "destello_firefly_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "destello_firefly_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 395,
+     "y": 155
+    },
+    "tip": {
+     "x": 446,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "destello_firefly_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "destello_firefly_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 258,
+     "y": 207.0
+    },
+    "outer": {
+     "x": 212,
+     "y": 207.0
+    },
+    "upper": {
+     "x": 235.0,
+     "y": 186
+    },
+    "lower": {
+     "x": 235.0,
+     "y": 228
+    },
+    "iris": {
+     "x": 235.0,
+     "y": 207.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 235.0,
+    "cy": 207.0,
+    "rx": 34.5,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "destello_firefly_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "destello_firefly_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 306,
+     "y": 236.5
+    },
+    "outer": {
+     "x": 352,
+     "y": 236.5
+    },
+    "upper": {
+     "x": 329.0,
+     "y": 216
+    },
+    "lower": {
+     "x": 329.0,
+     "y": 257
+    },
+    "iris": {
+     "x": 329.0,
+     "y": 236.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 329.0,
+    "cy": 236.5,
+    "rx": 34.5,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "destello_firefly_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 525,
+     "y": 510
+    },
+    "spine1": {
+     "x": 590,
+     "y": 450
+    },
+    "spine2": {
+     "x": 600,
+     "y": 370
+    },
+    "spine3": {
+     "x": 560,
+     "y": 315
+    },
+    "spine4": {
+     "x": 510,
+     "y": 280
+    },
+    "spine5": {
+     "x": 480,
+     "y": 245
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "destello_firefly_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 574,
+    "cy": 196,
+    "rx": 58,
+    "ry": 58
+   }
+  },
+  {
+   "id": "destello_firefly_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 612,
+    "cy": 284,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "destello_firefly_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 440,
+    "cy": 232,
+    "rx": 10,
+    "ry": 10
+   }
+  },
+  {
+   "id": "destello_firefly_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 455,
+    "cy": 340,
+    "rx": 10,
+    "ry": 10
+   }
+  }
+ ]
+}

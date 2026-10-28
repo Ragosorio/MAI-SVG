@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/vitral_stainedglass_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "vitral_stainedglass_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 265,
+     "y": 310
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 265,
+    "cy": 185,
+    "rx": 150,
+    "ry": 120
+   }
+  },
+  {
+   "id": "vitral_stainedglass_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vitral_stainedglass_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 185,
+     "y": 105
+    },
+    "tip": {
+     "x": 165,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "vitral_stainedglass_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vitral_stainedglass_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 375,
+     "y": 150
+    },
+    "tip": {
+     "x": 436,
+     "y": 116
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "vitral_stainedglass_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vitral_stainedglass_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 243,
+     "y": 203.0
+    },
+    "outer": {
+     "x": 197,
+     "y": 203.0
+    },
+    "upper": {
+     "x": 220.0,
+     "y": 182
+    },
+    "lower": {
+     "x": 220.0,
+     "y": 224
+    },
+    "iris": {
+     "x": 220.0,
+     "y": 203.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 220.0,
+    "cy": 203.0,
+    "rx": 34.5,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "vitral_stainedglass_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "vitral_stainedglass_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 292,
+     "y": 227.5
+    },
+    "outer": {
+     "x": 337,
+     "y": 227.5
+    },
+    "upper": {
+     "x": 314.5,
+     "y": 207
+    },
+    "lower": {
+     "x": 314.5,
+     "y": 248
+    },
+    "iris": {
+     "x": 314.5,
+     "y": 227.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 314.5,
+    "cy": 227.5,
+    "rx": 33.75,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "vitral_stainedglass_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 540
+    },
+    "spine1": {
+     "x": 560,
+     "y": 500
+    },
+    "spine2": {
+     "x": 595,
+     "y": 420
+    },
+    "spine3": {
+     "x": 595,
+     "y": 330
+    },
+    "spine4": {
+     "x": 560,
+     "y": 260
+    },
+    "spine5": {
+     "x": 500,
+     "y": 228
+    },
+    "spine6": {
+     "x": 440,
+     "y": 255
+    }
+   },
+   "notes": "radius=45"
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/arcanito_lantern_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "arcanito_lantern_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 340,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 345,
+    "cy": 185,
+    "rx": 185,
+    "ry": 115
+   }
+  },
+  {
+   "id": "arcanito_lantern_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arcanito_lantern_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 272,
+     "y": 124
+    },
+    "tip": {
+     "x": 257,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "arcanito_lantern_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arcanito_lantern_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 459,
+     "y": 194
+    },
+    "tip": {
+     "x": 502,
+     "y": 156
+    }
+   },
+   "notes": "halfWidth=32"
+  },
+  {
+   "id": "arcanito_lantern_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arcanito_lantern_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 303,
+     "y": 215.5
+    },
+    "outer": {
+     "x": 259,
+     "y": 215.5
+    },
+    "upper": {
+     "x": 281.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 281.0,
+     "y": 233
+    },
+    "iris": {
+     "x": 281.0,
+     "y": 215.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 281.0,
+    "cy": 215.5,
+    "rx": 33.0,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "arcanito_lantern_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "arcanito_lantern_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 346,
+     "y": 253.5
+    },
+    "outer": {
+     "x": 401,
+     "y": 253.5
+    },
+    "upper": {
+     "x": 373.5,
+     "y": 237
+    },
+    "lower": {
+     "x": 373.5,
+     "y": 270
+    },
+    "iris": {
+     "x": 373.5,
+     "y": 253.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 373.5,
+    "cy": 253.5,
+    "rx": 41.25,
+    "ry": 31.35
+   }
+  },
+  {
+   "id": "arcanito_lantern_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 436,
+     "y": 575
+    },
+    "spine1": {
+     "x": 513,
+     "y": 537
+    },
+    "spine2": {
+     "x": 560,
+     "y": 467
+    },
+    "spine3": {
+     "x": 583,
+     "y": 389
+    },
+    "spine4": {
+     "x": 568,
+     "y": 334
+    },
+    "spine5": {
+     "x": 521,
+     "y": 311
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "arcanito_lantern_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 172,
+    "cy": 125,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "arcanito_lantern_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 120,
+    "cy": 240,
+    "rx": 38,
+    "ry": 38
+   }
+  }
+ ]
+}

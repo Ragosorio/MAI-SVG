@@ -1,0 +1,278 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/prismarina_seaglass_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "prismarina_seaglass_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 268,
+     "y": 305
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 268,
+    "cy": 195,
+    "rx": 160,
+    "ry": 105
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "prismarina_seaglass_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 206,
+     "y": 128
+    },
+    "tip": {
+     "x": 197,
+     "y": 46
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "prismarina_seaglass_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "prismarina_seaglass_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 385,
+     "y": 160
+    },
+    "tip": {
+     "x": 440,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "prismarina_seaglass_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "prismarina_seaglass_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 261,
+     "y": 210.0
+    },
+    "outer": {
+     "x": 214,
+     "y": 210.0
+    },
+    "upper": {
+     "x": 237.5,
+     "y": 188
+    },
+    "lower": {
+     "x": 237.5,
+     "y": 232
+    },
+    "iris": {
+     "x": 237.5,
+     "y": 210.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 237.5,
+    "cy": 210.0,
+    "rx": 35.25,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "prismarina_seaglass_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 303,
+     "y": 236.0
+    },
+    "outer": {
+     "x": 350,
+     "y": 236.0
+    },
+    "upper": {
+     "x": 326.5,
+     "y": 215
+    },
+    "lower": {
+     "x": 326.5,
+     "y": 257
+    },
+    "iris": {
+     "x": 326.5,
+     "y": 236.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 326.5,
+    "cy": 236.0,
+    "rx": 35.25,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 540,
+     "y": 520
+    },
+    "spine1": {
+     "x": 565,
+     "y": 450
+    },
+    "spine2": {
+     "x": 580,
+     "y": 380
+    },
+    "spine3": {
+     "x": 565,
+     "y": 310
+    },
+    "spine4": {
+     "x": 520,
+     "y": 265
+    },
+    "spine5": {
+     "x": 460,
+     "y": 255
+    }
+   },
+   "notes": "radius=55"
+  },
+  {
+   "id": "prismarina_seaglass_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 450,
+    "cy": 197,
+    "rx": 24,
+    "ry": 24
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 643,
+    "cy": 250,
+    "rx": 16,
+    "ry": 16
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 450,
+    "cy": 372,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 82,
+    "cy": 358,
+    "rx": 24,
+    "ry": 24
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 125,
+    "cy": 145,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "prismarina_seaglass_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 150,
+    "cy": 545,
+    "rx": 14,
+    "ry": 14
+   }
+  }
+ ]
+}

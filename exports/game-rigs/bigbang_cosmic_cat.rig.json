@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/bigbang_cosmic_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "bigbang_cosmic_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 440,
+     "y": 360
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 455,
+    "cy": 205,
+    "rx": 160,
+    "ry": 150
+   }
+  },
+  {
+   "id": "bigbang_cosmic_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigbang_cosmic_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 345,
+     "y": 175
+    },
+    "tip": {
+     "x": 332,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "bigbang_cosmic_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigbang_cosmic_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 545,
+     "y": 205
+    },
+    "tip": {
+     "x": 585,
+     "y": 182
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "bigbang_cosmic_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigbang_cosmic_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 433,
+     "y": 253.5
+    },
+    "outer": {
+     "x": 385,
+     "y": 253.5
+    },
+    "upper": {
+     "x": 409.0,
+     "y": 231
+    },
+    "lower": {
+     "x": 409.0,
+     "y": 276
+    },
+    "iris": {
+     "x": 409.0,
+     "y": 253.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 409.0,
+    "cy": 253.5,
+    "rx": 36.0,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "bigbang_cosmic_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bigbang_cosmic_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 466,
+     "y": 275.0
+    },
+    "outer": {
+     "x": 513,
+     "y": 275.0
+    },
+    "upper": {
+     "x": 489.5,
+     "y": 252
+    },
+    "lower": {
+     "x": 489.5,
+     "y": 298
+    },
+    "iris": {
+     "x": 489.5,
+     "y": 275.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 489.5,
+    "cy": 275.0,
+    "rx": 35.25,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "bigbang_cosmic_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 270,
+     "y": 560
+    },
+    "spine1": {
+     "x": 170,
+     "y": 520
+    },
+    "spine2": {
+     "x": 110,
+     "y": 430
+    },
+    "spine3": {
+     "x": 105,
+     "y": 330
+    },
+    "spine4": {
+     "x": 150,
+     "y": 250
+    },
+    "spine5": {
+     "x": 215,
+     "y": 215
+    }
+   },
+   "notes": "radius=55"
+  }
+ ]
+}

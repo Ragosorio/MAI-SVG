@@ -1,0 +1,237 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/fanguito_mud_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "fanguito_mud_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 330
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 282,
+    "cy": 205,
+    "rx": 165,
+    "ry": 128
+   }
+  },
+  {
+   "id": "fanguito_mud_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "fanguito_mud_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 206,
+     "y": 124
+    },
+    "tip": {
+     "x": 187,
+     "y": 47
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "fanguito_mud_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "fanguito_mud_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 389,
+     "y": 175
+    },
+    "tip": {
+     "x": 442,
+     "y": 123
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "fanguito_mud_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "fanguito_mud_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 250,
+     "y": 201.5
+    },
+    "outer": {
+     "x": 204,
+     "y": 201.5
+    },
+    "upper": {
+     "x": 227.0,
+     "y": 179
+    },
+    "lower": {
+     "x": 227.0,
+     "y": 224
+    },
+    "iris": {
+     "x": 227.0,
+     "y": 201.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 227.0,
+    "cy": 201.5,
+    "rx": 34.5,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "fanguito_mud_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "fanguito_mud_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 294,
+     "y": 232.5
+    },
+    "outer": {
+     "x": 342,
+     "y": 232.5
+    },
+    "upper": {
+     "x": 318.0,
+     "y": 210
+    },
+    "lower": {
+     "x": 318.0,
+     "y": 255
+    },
+    "iris": {
+     "x": 318.0,
+     "y": 232.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 318.0,
+    "cy": 232.5,
+    "rx": 36.0,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "fanguito_mud_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 537,
+     "y": 498
+    },
+    "spine1": {
+     "x": 498,
+     "y": 404
+    },
+    "spine2": {
+     "x": 474,
+     "y": 327
+    },
+    "spine3": {
+     "x": 498,
+     "y": 264
+    },
+    "spine4": {
+     "x": 560,
+     "y": 233
+    },
+    "spine5": {
+     "x": 622,
+     "y": 272
+    },
+    "spine6": {
+     "x": 634,
+     "y": 334
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "fanguito_mud_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 86,
+    "cy": 198,
+    "rx": 15,
+    "ry": 15
+   }
+  },
+  {
+   "id": "fanguito_mud_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 78,
+    "cy": 276,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "fanguito_mud_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 490,
+    "cy": 206,
+    "rx": 20,
+    "ry": 20
+   }
+  }
+ ]
+}

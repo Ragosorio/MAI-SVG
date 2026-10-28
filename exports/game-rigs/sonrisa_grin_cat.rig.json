@@ -1,0 +1,215 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/sonrisa_grin_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "sonrisa_grin_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 275
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 340,
+    "cy": 175,
+    "rx": 110,
+    "ry": 95
+   }
+  },
+  {
+   "id": "sonrisa_grin_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonrisa_grin_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 275,
+     "y": 110
+    },
+    "tip": {
+     "x": 275,
+     "y": 45
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "sonrisa_grin_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonrisa_grin_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 175
+    },
+    "tip": {
+     "x": 502,
+     "y": 153
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "sonrisa_grin_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonrisa_grin_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 322,
+     "y": 163.5
+    },
+    "outer": {
+     "x": 285,
+     "y": 163.5
+    },
+    "upper": {
+     "x": 303.5,
+     "y": 145
+    },
+    "lower": {
+     "x": 303.5,
+     "y": 182
+    },
+    "iris": {
+     "x": 303.5,
+     "y": 163.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 303.5,
+    "cy": 163.5,
+    "rx": 27.75,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "sonrisa_grin_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "sonrisa_grin_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 348,
+     "y": 207.5
+    },
+    "outer": {
+     "x": 396,
+     "y": 207.5
+    },
+    "upper": {
+     "x": 372.0,
+     "y": 192
+    },
+    "lower": {
+     "x": 372.0,
+     "y": 223
+    },
+    "iris": {
+     "x": 372.0,
+     "y": 207.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 372.0,
+    "cy": 207.5,
+    "rx": 36.0,
+    "ry": 29.45
+   }
+  },
+  {
+   "id": "sonrisa_grin_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 450,
+     "y": 565
+    },
+    "spine1": {
+     "x": 530,
+     "y": 555
+    },
+    "spine2": {
+     "x": 575,
+     "y": 500
+    },
+    "spine3": {
+     "x": 560,
+     "y": 440
+    },
+    "spine4": {
+     "x": 505,
+     "y": 400
+    },
+    "spine5": {
+     "x": 470,
+     "y": 360
+    },
+    "spine6": {
+     "x": 490,
+     "y": 320
+    },
+    "spine7": {
+     "x": 550,
+     "y": 310
+    },
+    "spine8": {
+     "x": 595,
+     "y": 345
+    }
+   },
+   "notes": "radius=28"
+  },
+  {
+   "id": "sonrisa_grin_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (punta de la rama con hojas)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 535,
+    "cy": 615,
+    "rx": 45,
+    "ry": 45
+   }
+  }
+ ]
+}

@@ -2,6 +2,7 @@
 name: mai-cleanup
 description: Clean selected SVG geometry in MAI SVG through revision-checked CLI operations, preserving unrelated effects and animation.
 ---
+<!-- Generated from skills-src by scripts/build-skills.ts — edit the source, then run: npm run skills -->
 
 # Geometry cleanup
 

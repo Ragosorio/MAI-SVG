@@ -2,6 +2,7 @@
 name: mai-validate
 description: Validate MAI SVG vector outputs, local references, raster purity and static render evidence; distinguish structural validity from visual approval.
 ---
+<!-- Generated from skills-src by scripts/build-skills.ts — edit the source, then run: npm run skills -->
 
 # MAI validation
 

@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/plasmin_plasma_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "plasmin_plasma_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 280,
+     "y": 310
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 265,
+    "cy": 200,
+    "rx": 155,
+    "ry": 112
+   }
+  },
+  {
+   "id": "plasmin_plasma_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "plasmin_plasma_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 202,
+     "y": 128
+    },
+    "tip": {
+     "x": 183,
+     "y": 54
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "plasmin_plasma_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "plasmin_plasma_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 381,
+     "y": 175
+    },
+    "tip": {
+     "x": 429,
+     "y": 132
+    }
+   },
+   "notes": "halfWidth=33"
+  },
+  {
+   "id": "plasmin_plasma_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "plasmin_plasma_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 253,
+     "y": 202.0
+    },
+    "outer": {
+     "x": 204,
+     "y": 202.0
+    },
+    "upper": {
+     "x": 228.5,
+     "y": 177
+    },
+    "lower": {
+     "x": 228.5,
+     "y": 227
+    },
+    "iris": {
+     "x": 228.5,
+     "y": 202.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 228.5,
+    "cy": 202.0,
+    "rx": 36.75,
+    "ry": 47.5
+   }
+  },
+  {
+   "id": "plasmin_plasma_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "plasmin_plasma_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 298,
+     "y": 236.5
+    },
+    "outer": {
+     "x": 348,
+     "y": 236.5
+    },
+    "upper": {
+     "x": 323.0,
+     "y": 212
+    },
+    "lower": {
+     "x": 323.0,
+     "y": 261
+    },
+    "iris": {
+     "x": 323.0,
+     "y": 236.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 323.0,
+    "cy": 236.5,
+    "rx": 37.5,
+    "ry": 46.55
+   }
+  },
+  {
+   "id": "plasmin_plasma_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 425,
+     "y": 530
+    },
+    "spine1": {
+     "x": 445,
+     "y": 430
+    },
+    "spine2": {
+     "x": 495,
+     "y": 345
+    },
+    "spine3": {
+     "x": 565,
+     "y": 330
+    },
+    "spine4": {
+     "x": 598,
+     "y": 290
+    },
+    "spine5": {
+     "x": 575,
+     "y": 250
+    },
+    "spine6": {
+     "x": 545,
+     "y": 225
+    }
+   },
+   "notes": "radius=45"
+  }
+ ]
+}

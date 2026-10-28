@@ -1,0 +1,212 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/marcapaginas_bookmark_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "marcapaginas_bookmark_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 245,
+     "y": 312
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 240,
+    "cy": 212,
+    "rx": 140,
+    "ry": 103
+   }
+  },
+  {
+   "id": "marcapaginas_bookmark_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marcapaginas_bookmark_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 186,
+     "y": 145
+    },
+    "tip": {
+     "x": 167,
+     "y": 45
+    }
+   },
+   "notes": "halfWidth=44"
+  },
+  {
+   "id": "marcapaginas_bookmark_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marcapaginas_bookmark_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 335,
+     "y": 200
+    },
+    "tip": {
+     "x": 435,
+     "y": 132
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "marcapaginas_bookmark_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marcapaginas_bookmark_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 215,
+     "y": 222.5
+    },
+    "outer": {
+     "x": 171,
+     "y": 222.5
+    },
+    "upper": {
+     "x": 193.0,
+     "y": 200
+    },
+    "lower": {
+     "x": 193.0,
+     "y": 245
+    },
+    "iris": {
+     "x": 193.0,
+     "y": 222.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 193.0,
+    "cy": 222.5,
+    "rx": 33.0,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "marcapaginas_bookmark_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "marcapaginas_bookmark_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 257,
+     "y": 254.0
+    },
+    "outer": {
+     "x": 306,
+     "y": 254.0
+    },
+    "upper": {
+     "x": 281.5,
+     "y": 233
+    },
+    "lower": {
+     "x": 281.5,
+     "y": 275
+    },
+    "iris": {
+     "x": 281.5,
+     "y": 254.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 281.5,
+    "cy": 254.0,
+    "rx": 36.75,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "marcapaginas_bookmark_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 430,
+     "y": 425
+    },
+    "spine1": {
+     "x": 480,
+     "y": 398
+    },
+    "spine2": {
+     "x": 506,
+     "y": 350
+    },
+    "spine3": {
+     "x": 488,
+     "y": 297
+    },
+    "spine4": {
+     "x": 458,
+     "y": 245
+    },
+    "spine5": {
+     "x": 470,
+     "y": 195
+    },
+    "spine6": {
+     "x": 510,
+     "y": 165
+    },
+    "spine7": {
+     "x": 548,
+     "y": 185
+    },
+    "spine8": {
+     "x": 575,
+     "y": 260
+    },
+    "spine9": {
+     "x": 572,
+     "y": 340
+    },
+    "spine10": {
+     "x": 575,
+     "y": 420
+    },
+    "spine11": {
+     "x": 575,
+     "y": 480
+    }
+   },
+   "notes": "radius=32"
+  }
+ ]
+}

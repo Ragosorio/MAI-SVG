@@ -1,4 +1,16 @@
-import {writeFile,mkdir,readFile} from 'node:fs/promises';import {sha256} from '../server/snapshots.js';import {join} from 'node:path';import {randomUUID} from 'node:crypto';import sharp from 'sharp';
+import {priors} from '../core/context.js';
+import {PRESET_CATALOG} from '../core/presets.js';
+import {significantTimes} from '../core/timing.js';
+import {directionAssertions,directionReport} from '../core/direction.js';
+import {channelSeries,type NumericChannel} from '../core/channels.js';
+import {compareMotion,visiblePixels} from '../server/motion-observe.js';
+import {registerArtifact,loadArtifact,pruneObservations} from '../server/artifacts.js';
+import {probePlayback} from '../server/render.js';
+import {renderVideo,type VideoOptions} from '../server/video.js';
+import {partSeries,type Target} from '../core/space.js';
+import {verifyMotion,sampleTimes,motionStats,type Assertion} from '../core/verify.js';
+import {motionView} from '../server/motion-view.js';
+import {writeFile,mkdir,readFile,readdir,rm,stat,copyFile} from 'node:fs/promises';import {sha256} from '../server/snapshots.js';import {join,dirname} from 'node:path';import {randomUUID} from 'node:crypto';import sharp from 'sharp';
 import {VectorDocument} from '../core/document.js';
 import type {Operation,SemanticNode,ProtectionLevel} from '../core/model.js';
 import {frameParams,frameState} from '../core/animation.js';
@@ -13,23 +25,26 @@ import {critique} from '../core/critique.js';
 import {profile} from '../core/profiler.js';
 import {signals} from '../core/signals.js';
 import {exportCapabilities} from '../core/compat.js';
-import {categories,protectedNodes} from '../core/identity-guard.js';
+import {categories,protectedNodes,envelopeSubjects} from '../core/identity-guard.js';
+import {measureEnvelope} from '../core/envelope.js';
 import {candidates} from '../core/semantic.js';
 import {analyzeMorph} from '../core/morph.js';
 import {exportSvg} from '../core/export.js';
 import {elements} from '../converter/svg.js';
 import {renderSvg} from '../server/render.js';
+import {renderTimes,contactSheet,filmstripTimes} from '../server/observe.js';
 import {metrics,raw} from '../server/perceptual.js';
 import type {Snapshots} from '../server/snapshots.js';import type {Choices} from '../server/choices.js';import type {Comments} from '../server/comments.js';import type {Inbox} from '../server/inbox.js';
 import {TOOLS,CONVENTIONS,toolByName,type Schema} from './registry.js';
 import type {PlanExecutor,Plan} from './plan.js';
 import {Ajv2020,type ValidateFunction} from 'ajv/dist/2020.js';
+import {OPERATION_DOCS,OPERATION_FAMILIES,operationSchema,operationUnionSchema,type OperationType} from '../core/operation-schemas.js';
 import {resolve,nodes,addressOf,nodeIds,slotOfRole,AgentError,requireConfirmed} from './address.js';
 export type Workspace={plans?:()=>PlanExecutor;model:()=>VectorDocument;revision:()=>number;asset:()=>string;sessionId:()=>string;documentId:()=>string;snapshots:Snapshots;cache:string;root:string;selection:()=>string[];
  apply:(ops:Operation[],expectedRevision:number,label:string,source:string)=>Promise<{revision:number;transaction:{revision:number;id:string;label:string};reload:boolean;elapsedMs:number}>;
  undo:(expectedRevision:number,token?:string)=>Promise<unknown>;redo:(expectedRevision:number)=>Promise<unknown>;history:()=>{revision:number;entries:{revision:number;id:string;label:string;time:string}[];canUndo:boolean;canRedo:boolean};
  previous:()=>VectorDocument|undefined;queued:<T>(work:()=>Promise<T>)=>Promise<T>;broadcast:(change:Record<string,unknown>)=>void;choices:Choices;comments:Comments;inbox:Inbox;
- exportFile:(profile:'editable'|'standalone',expectedRevision:number)=>Promise<{savedFile:string;report:unknown}>};
+ exportFile:(profile:'editable'|'standalone',expectedRevision:number,extra?:{reducedMotion?:'still'|'fade';at?:number})=>Promise<{savedFile:string;report:unknown}>};
 type Result=Record<string,unknown>;
 // Schema validation with a pinned standard validator (Ajv 8, JSON Schema 2020-12). One validator for every
 // transport; errors carry JSON paths so the agent can fix its call.
@@ -40,6 +55,11 @@ export function validate(schema:Schema,value:unknown,path='args'):void{let v=com
  const raw=v.errors??[];const branch=(e:{schemaPath:string})=>/oneOf\/(\d+)/.exec(e.schemaPath)?.[1];const wrong=new Set(raw.filter(e=>e.keyword==='const').map(branch));const relevant=raw.filter(e=>e.keyword!=='oneOf'&&!(branch(e)!==undefined&&wrong.has(branch(e))));
  const errors=(relevant.length?relevant:raw).filter(e=>e.keyword!=='if').slice(0,8).map(e=>({path:`${path}${e.instancePath.replace(/\//g,'.')}`,message:e.message??'invalid',...(e.keyword==='additionalProperties'?{property:(e.params as {additionalProperty:string}).additionalProperty}:{}),...(e.keyword==='enum'?{allowed:(e.params as {allowedValues:unknown[]}).allowedValues}:{})}));
  const first=errors.find(e=>!/must match exactly one schema in oneOf/.test(e.message))??errors[0];throw new AgentError('INVALID_ARGUMENT',`${first.path}: ${first.message}${first.property?` (${first.property})`:''}`,{path:first.path,errors});}
+// Every operation an agent sends is checked against its full schema before any transaction (plan F0).
+const OPERATION_UNION=operationUnionSchema() as Schema;
+export function validateOps(ops:unknown,path='args.ops'){if(!Array.isArray(ops))return;ops.forEach((op,i)=>{try{validate(OPERATION_UNION,op,`${path}.${i}`);}catch(e){
+ const type=(op as {type?:string})?.type,doc=type?OPERATION_DOCS[type as OperationType]:undefined;if(!(e instanceof AgentError)||!doc)throw e;
+ throw new AgentError(e.code,e.message,{...e.extra,operation:type,accepted:Object.keys(doc.schema.properties as object),example:doc.examples[0].op,hint:`operations.describe {type:'${type}'}`},e.status);}});}
 const round=(n:number,d=3)=>Number(n.toFixed(d));
 export class AgentService{
  constructor(readonly ws:Workspace){}
@@ -83,7 +103,7 @@ export class AgentService{
   const top=[...m.doc.documentElement.childNodes].filter(n=>n.nodeType===1).map(n=>n as Element).filter(e=>!['defs','metadata','title','style'].includes(e.localName)).map(e=>({id:e.getAttribute('id'),name:e.getAttribute('data-mai-name')??undefined,tag:e.localName,paths:[e,...elements(e)].filter(x=>x.localName==='path').length}));
   const choice=this.ws.choices.inspect();const sig=signals(m,{choice:choice?.status??null,openComments:this.ws.comments.list.filter(c=>c.status==='open').length,inboxSeq:this.ws.inbox.seq});
   const snap=await this.ws.snapshots.save(m,this.ws.documentId(),this.ws.revision());
-  return {sessionId:this.ws.sessionId(),documentId:this.ws.documentId(),snapshotId:snap.id,asset:this.ws.asset(),canvas:m.doc.documentElement.getAttribute('viewBox'),duration:p.duration,fps:p.fps,loop:p.loop,preservation:p.preservation??'balanced',parts:all.filter(n=>!n.parent||!all.some(x=>x.id===n.parent)).map(n=>this.part(n,Number(a.depth??8))),
+  return {sessionId:this.ws.sessionId(),documentId:this.ws.documentId(),snapshotId:snap.id,asset:this.ws.asset(),canvas:m.doc.documentElement.getAttribute('viewBox'),duration:p.duration,fps:p.fps,loop:p.loop,preservation:p.preservation??'balanced',direction:p.direction?{brief:p.direction.brief,latitude:p.direction.latitude,musts:p.direction.musts.map(x=>({id:x.id,text:x.text,assertions:x.assertions?.length??0}))}:null,context:p.context?{...p.context,priors:priors(p.context)}:null,motion:{signals:(p.signals??[]).length,beats:(p.beats??[]).length,camera:!!p.camera,effects:(p.effects??[]).map(e=>({id:e.id,target:e.target,kinds:e.kinds})),assertions:(p.assertions??[]).length},parts:all.filter(n=>!n.parent||!all.some(x=>x.id===n.parent)).map(n=>this.part(n,Number(a.depth??8))),
    unlabeled:{paths:[...boxes.keys()].filter(id=>!labeled.has(id)).length,topLevel:top.slice(0,30)},parameters:Object.fromEntries(Object.entries(p.params??{}).map(([k,d])=>[k,{value:round(params[k]??d.default),min:d.min,max:d.max,animated:p.tracks.some(t=>t.property==='param'&&t.target===k)}])),
    layers:(p.layers??[]).map(l=>({id:l.id,blend:l.blend,weight:l.weight,mute:!!l.mute,solo:!!l.solo})),expressionFeatures:(p.expression?.features??[]).map(f=>({id:f.id,role:f.role,part:f.node,frozen:!!f.frozen,params:Object.keys(f.keys),sizePx:f.size})),smokeEmitters:p.smokeEmitters??[],modifiers:(p.modifiers??[]).map(x=>({id:x.id,kind:x.kind,preset:x.preset,technique:x.technique??'geometry',enabled:x.enabled,targets:x.targets.length,params:x.params})),secondary:(p.secondary??[]).map(s=>({id:s.id,kind:s.kind,target:s.target,driver:s.driver,property:s.property,gain:s.gain,stiffness:s.stiffness,damping:s.damping,delay:s.delay})),
    choice:choice?{id:choice.id,status:choice.status,options:choice.options.map(o=>({id:o.id,position:o.position,label:o.label}))}:null,comments:{open:this.ws.comments.list.filter(c=>c.status==='open').length,latest:this.ws.comments.list.slice(-3).map(c=>({id:c.id,text:c.text,parts:c.parts.map(x=>x.id),status:c.status}))},selection:this.ws.selection(),next:sig.next};}
@@ -93,7 +113,8 @@ export class AgentService{
  async t_scene_timeline(a:Result){const m=this.m(),p=m.project;const filter=a.target?this.deep(a.target).ids:null;const inScope=(id:string)=>!filter||filter.has(id.split('::')[0]);const params=frameParams(p,0);
   return {duration:p.duration,fps:p.fps,loop:p.loop,layers:p.layers??[],tracks:p.tracks.filter(t=>t.property==='param'||inScope(t.target)).map(t=>({target:t.target,property:t.property,layer:t.layer??'base',keys:t.keys.length,from:t.keys[0].time,to:t.keys.at(-1)!.time,values:t.property==='d'?'(path data)':t.keys.slice(0,12).map(k=>[k.time,k.value,k.easing])})),markers:p.markers??[],regions:p.regions??[],clips:p.clips??[],params:Object.fromEntries(Object.entries(p.params??{}).map(([k,d])=>[k,{...d,valueAt0:round(params[k]??d.default)}])),modifiers:(p.modifiers??[]).filter(x=>x.targets.some(inScope)).map(x=>({id:x.id,kind:x.kind,preset:x.preset,technique:x.technique??'geometry',enabled:x.enabled,params:x.params,direction:x.direction,anchor:x.anchor})),secondary:(p.secondary??[]).filter(s=>inScope(s.target))};}
  async t_scene_identity(){const m=this.m(),p=m.project,mode=p.preservation??'balanced';const crit=critique(m,{samples:24});
-  return {preservation:{mode,...PRESERVATION[mode]},modes:PRESERVATION,levels:Object.fromEntries(Object.entries(LEVEL_MEANING).map(([k,v])=>[k,{meaning:v,allows:ALLOWED[k as ProtectionLevel]}])),protected:protectedNodes(m).map(n=>{const node=nodes(m).find(x=>x.id===n.id);return {id:n.id,address:node?addressOf(m,node):undefined,levels:n.levels,targets:n.targets.length};}),
+  return {preservation:{mode,...PRESERVATION[mode]},modes:PRESERVATION,levels:Object.fromEntries(Object.entries(LEVEL_MEANING).map(([k,v])=>[k,{meaning:v,allows:ALLOWED[k as ProtectionLevel]}])),protected:protectedNodes(m).map(n=>{const node=nodes(m).find(x=>x.id===n.id);return {id:n.id,address:node?addressOf(m,node):undefined,levels:n.levels,targets:n.targets.length,...(n.envelope?{envelope:n.envelope,allows:[...n.allowed]}:{})};}),
+   envelopes:envelopeSubjects(m).map(e=>{const r=measureEnvelope(p,e);return {part:e.id,metrics:r.metrics,excursions:r.spans,note:'ratio = peak/budget over the timeline; excursions over budget are accepted only as short transients that recover before rest'};}),
    features:(p.expression?.features??[]).map(f=>({id:f.id,role:f.role,part:f.node,frozen:!!f.frozen,sizePx:f.size,budgetPx:round(PRESERVATION[mode].maxDisplacement*f.size,2),currentMaxDisplacementPx:round(Math.max(0,...Object.values(featureDisplacements(f,frameParams(p,0),mode)).map(d=>Math.hypot(d.dx,d.dy))),2)})),findings:crit.deterministic.findings.filter(x=>/IDENTITY|SILHOUETTE|SQUASH/.test(x.code))};}
  async t_scene_history(a:Result){const h=this.ws.history();return {...h,entries:h.entries.slice(-Number(a.limit??20)).map(e=>({...e,token:`rev:${e.revision}`}))};}
  async t_choices_inspect(){const c=this.ws.choices.inspect();if(!c)return {choice:null};const m=this.m();
@@ -108,7 +129,8 @@ export class AgentService{
  async t_performance(){return profile(this.m()) as unknown as Result;}
  // ── Proposals ────────────────────────────────────────────────────────────────────────────
  async t_expression_propose(a:Result){return this.ws.queued(async()=>{this.expected(a);const r=await this.ws.choices.proposeExpression({emotion:String(a.emotion),intensity:Number(a.intensity),count:a.count as number|undefined,time:a.time as number|undefined,slots:a.slots as string[]|undefined,keep:a.preserve as string[]|undefined,previewRegion:a.previewRegion as never,previewScale:a.previewScale as 1|2|undefined,prompt:a.prompt as string|undefined,recommended:a.recommended as string|undefined,reason:a.reason as string|undefined},this.m(),this.ws.revision());this.ws.broadcast({patches:[]});await this.ws.inbox.push('choice.proposed',{id:r!.id,options:r!.options.map(o=>o.id)},'Espera la elección o un comentario del usuario.');return {choice:this.ws.choices.inspect(),_next:'Muestra las previews (previewPath) al usuario y espera su decisión; no elijas por él.'};});}
- async t_choice_propose(a:Result){return this.ws.queued(async()=>{this.expected(a);await this.ws.choices.propose(a.request as never,this.m(),this.ws.revision());this.ws.broadcast({patches:[]});await this.ws.inbox.push('choice.proposed',{id:this.ws.choices.current!.id},'Espera la elección del usuario.');return {choice:this.ws.choices.inspect(),_next:'Muestra las previews al usuario y espera su decisión.'};});}
+ async t_choice_propose(a:Result){const req=a.request as {options?:{ops?:unknown[];spec?:{base?:unknown[];slots?:Record<string,unknown[]>}}[]};for(const [i,o] of (req.options??[]).entries()){validateOps(o.ops,`args.request.options.${i}.ops`);validateOps(o.spec?.base,`args.request.options.${i}.spec.base`);for(const [k,v] of Object.entries(o.spec?.slots??{}))validateOps(v,`args.request.options.${i}.spec.slots.${k}`);}
+  return this.ws.queued(async()=>{this.expected(a);await this.ws.choices.propose(a.request as never,this.m(),this.ws.revision());this.ws.broadcast({patches:[]});await this.ws.inbox.push('choice.proposed',{id:this.ws.choices.current!.id},'Espera la elección del usuario.');return {choice:this.ws.choices.inspect(),_next:'Muestra las previews al usuario y espera su decisión.'};});}
  async t_variant_combine(a:Result){const c=this.ws.choices.current;if(!c)throw new AgentError('NO_CHOICE','There is no choice board');
   const combined=await this.ws.queued(async()=>{this.expected(a);const r=await this.ws.choices.combine(c.id,{base:String(a.base),take:a.take as Record<string,string>|undefined,preserve:a.preserve as string[]|undefined,scale:a.scale as Record<string,number>|undefined,label:a.label as string|undefined},this.m(),this.ws.revision());this.ws.broadcast({patches:[]});return r;});
   if(!a.apply)return {...combined,choice:{id:c.id,version:this.ws.choices.current?.version,options:this.ws.choices.inspect()!.options.map(o=>({id:o.id,label:o.label}))},_next:`Muestra ${combined.option.previewPath} al usuario; aplícala con choice.choose option=${combined.option.id} cuando la acepte.`};
@@ -182,23 +204,147 @@ export class AgentService{
   if(a.layer){const l=a.layer as Record<string,unknown>,cur=(p.layers??[]).find(x=>x.id===l.id);ops.push({type:'layer.set',layer:{id:String(l.id),name:String(cur?.name??l.id),blend:(l.blend as 'additive')??cur?.blend??'additive',weight:Number(l.weight??cur?.weight??1),mute:l.mute as boolean|undefined??cur?.mute,solo:l.solo as boolean|undefined??cur?.solo,locked:l.locked as boolean|undefined??cur?.locked}});changes[`layer:${l.id}`]={from:cur??null,to:l};}
   if(a.marker){ops.push({type:'marker.set',marker:a.marker as never});changes.marker={from:null,to:a.marker};}
   return this.commit('timeline.set',a,ops,{changes});}
- async t_ops_apply(a:Result){return this.commit('ops.apply',a,a.ops as Operation[],{changes:{operations:(a.ops as Operation[]).map(o=>o.type)}});}
+ // ── Variations: internal creative branches (dry-run drafts with evaluation), distinct from human choice boards ──────
+ private branchDir(){return join(this.ws.cache,'branches');}
+ private plans(){const pl=this.ws.plans?.();if(!pl)throw new AgentError('SESSION_REQUIRED','Variations need a live session (plan executor)',{},400);return pl;}
+ private planFrom(a:Result,mode:'dry-run'|'commit',expectedRevision:number):import('./plan.js').Plan{return {protocol:'mai.motion-plan/v2',requestId:`var-${randomUUID().slice(0,12)}`,sessionId:this.ws.sessionId(),documentId:this.ws.documentId(),expectedRevision,mode,label:String(a.label??a.name??'Variación').slice(0,120),
+  commands:a.commands as never,...(a.assertions?{assertions:a.assertions as never}:{}),evaluation:(a.evaluation as never)??{filmstrip:{count:8,sampling:'significant'},critique:true},validation:{times:[0],required:['structural'],preview:false},provenance:{kind:'agent-proposal',text:String(a.name??'variation')}};}
+ private async branch(id:string){if(!/^[a-z0-9-]{6,40}$/.test(id))throw new AgentError('INVALID_ARGUMENT','Invalid branch id');try{return JSON.parse(await readFile(join(this.branchDir(),`${id}.json`),'utf8')) as Record<string,any>;}catch{throw new AgentError('NOT_FOUND',`Branch ${id} not found`,{},404);}}
+ async t_variation_branch(a:Result){const rev=this.ws.revision();const r=await this.plans().execute(this.planFrom(a,'dry-run',rev)) as Record<string,any>;
+  const id=`b-${randomUUID().slice(0,8)}`;const rec={id,name:String(a.name),label:a.label,baseRevision:rev,commands:a.commands,assertions:a.assertions,evaluation:a.evaluation,createdAt:new Date().toISOString(),result:{filmstrip:r.evaluation?.filmstrip?.sheet?.path,verify:r.verify,critique:r.evaluation?.critique,loop:r.loop,identity:r.identity?.status,changes:r.changes,warnings:r.warnings}};
+  await mkdir(this.branchDir(),{recursive:true});await writeFile(join(this.branchDir(),`${id}.json`),JSON.stringify(rec));
+  return {branch:{id,name:rec.name,baseRevision:rev,...rec.result},...(r.evaluation?.filmstrip?{filmstrip:r.evaluation.filmstrip}:{}),_next:'Compare branches (variation.compare), promote the one that reads best (variation.promote) or refine and branch again. Ask the human only if the intention itself is ambiguous.'};}
+ async t_variation_list(){const dir=this.branchDir();const files=(await readdir(dir).catch(()=>[])).filter(f=>f.endsWith('.json'));const rev=this.ws.revision();
+  const list=[];for(const f of files){try{const b=JSON.parse(await readFile(join(dir,f),'utf8'));list.push({id:b.id,name:b.name,baseRevision:b.baseRevision,stale:b.baseRevision!==rev,verify:b.result?.verify?.passed,createdAt:b.createdAt});}catch{}}return {branches:list.sort((x,y)=>String(x.createdAt).localeCompare(String(y.createdAt)))};}
+ async t_variation_compare(a:Result){const ids=a.branches as string[];const rev=this.ws.revision();const rows=[];const pictures:Buffer[]=[],captions:string[]=[];
+  for(const id of ids){const b=await this.branch(id);const scores=b.result?.critique?.scores??{};rows.push({id,name:b.name,stale:b.baseRevision!==rev,verify:b.result?.verify??null,identity:b.result?.identity,scores,findings:(b.result?.critique?.findings??[]).map((f:{code:string})=>f.code)});
+   if(b.result?.filmstrip&&await stat(b.result.filmstrip).catch(()=>undefined)){pictures.push(await readFile(b.result.filmstrip));captions.push(`${b.name} (${id})${b.baseRevision!==rev?' · stale':''}`);}}
+  let sheet:Record<string,unknown>|undefined;if(pictures.length){const cs=await contactSheet(pictures,captions,{columns:1,maxWidth:1800});const dir=join(this.ws.cache,'observe',`r${rev}`);await mkdir(dir,{recursive:true});const path=join(dir,`variations-${randomUUID().slice(0,8)}.png`);await writeFile(path,cs.png);sheet={path,width:cs.width,height:cs.height,columns:1,rows:cs.rows};}
+  return {...(sheet?{sheet}:{}),branches:rows,interpretation:'Side-by-side filmstrips and deterministic evidence. Which one reads best is your judgement (record it with critique.record); involve the human only for intent.'};}
+ async t_variation_promote(a:Result){const b=await this.branch(String(a.branch));const expected=this.expected(a);if(b.baseRevision!==expected)throw new AgentError('STALE_BRANCH',`Branch ${b.id} was prepared at revision ${b.baseRevision}; the scene is at ${expected}`,{recovery:{action:'rebranch',hint:'Branch again from the current scene.'}},409);
+  const r=await this.plans().execute(this.planFrom({...b,label:a.label??b.label??b.name},'commit',expected)) as Record<string,any>;if(r.committed)await rm(join(this.branchDir(),`${b.id}.json`),{force:true});return {promoted:b.id,receipt:r};}
+ // ── Studies: motion that worked, kept as reusable references (recipe + context + filmstrip + verdict) ───────────────
+ // Approval is the human's: without an approval quote a study stays pending-review and must not be presented as approved.
+ private studyDir(){return join(this.ws.cache,'..','studies');}
+ async t_study_save(a:Result){const m=this.m(),p=m.project;const id=`s-${String(a.title).toLowerCase().normalize('NFD').replace(/[^\w]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'study'}-${randomUUID().slice(0,6)}`;
+  const approval=a.approval as {by?:string;quote?:string}|undefined;if(approval&&(approval.by!=='human'||!String(approval.quote??'').trim()))throw new AgentError('INVALID_ARGUMENT','approval needs by:"human" and the human\'s own words (quote)',{path:'args.approval'});
+  const from=String(a.from??'current');const dir=join(this.studyDir(),id);await mkdir(dir,{recursive:true});let recipe:Record<string,unknown>,film:string|undefined;
+  if(from==='current'){const strip=(v:unknown)=>v;recipe={duration:p.duration,loop:p.loop,layers:p.layers,tracks:p.tracks.map(t=>t.property==='d'?{target:t.target,property:t.property,layer:t.layer,keys:t.keys.length,note:'path data omitted'}:t),signals:p.signals,beats:p.beats,motionPaths:p.motionPaths,secondary:p.secondary,effects:p.effects,camera:p.camera,assertions:p.assertions};void strip;
+   film=(await this.filmstrip(m,{count:12,sampling:'significant'},'study')).sheet.path;}
+  else{const b=await this.branch(from);recipe={commands:b.commands,assertions:b.assertions,baseRevision:b.baseRevision};film=b.result?.filmstrip;}
+  if(film){const png=await readFile(film).catch(()=>undefined);if(png)await writeFile(join(dir,'filmstrip.png'),png);}
+  const critique=(p.decisions??[]).filter(d=>d.kind==='critique').slice(-1)[0];
+  const study={id,title:String(a.title),status:approval?'approved':'pending-review',...(approval?{approval:{by:'human',quote:String(approval.quote),at:new Date().toISOString()}}:{}),createdAt:new Date().toISOString(),
+   source:{asset:this.ws.asset(),revision:this.ws.revision(),from},context:p.context,brief:a.brief,notes:a.notes,tags:a.tags??[],teaches:a.teaches??[],recipe,lastCritique:critique,filmstrip:film?'filmstrip.png':undefined};
+  await writeFile(join(dir,'study.json'),JSON.stringify(study,null,1));
+  return {study:{id,status:study.status,path:join(dir,'study.json'),filmstrip:film?join(dir,'filmstrip.png'):undefined},_next:study.status==='approved'?'Reuse it later via study.get / mai://study/{id}: adapt the recipe, never paste it blindly.':'Saved as pending-review: show the filmstrip to the human; only their approval (study.save again with approval) makes it a reference.'};}
+ async t_study_list(a:Result){const dir=this.studyDir();const out=[];for(const d of await readdir(dir).catch(()=>[] as string[])){try{const s=JSON.parse(await readFile(join(dir,d,'study.json'),'utf8'));if(a.tag&&!(s.tags??[]).includes(a.tag))continue;if(a.status&&s.status!==a.status)continue;out.push({id:s.id,title:s.title,status:s.status,purpose:s.context?.purpose,tags:s.tags,teaches:s.teaches,createdAt:s.createdAt});}catch{}}
+  return {studies:out.sort((x,y)=>String(y.createdAt).localeCompare(String(x.createdAt))),note:'Only status approved is a human-approved reference; pending-review studies are unreviewed examples.'};}
+ async t_study_get(a:Result){const id=String(a.id);if(!/^s-[\w-]{1,60}$/.test(id))throw new AgentError('INVALID_ARGUMENT','Invalid study id');const dir=join(this.studyDir(),id);
+  try{const s=JSON.parse(await readFile(join(dir,'study.json'),'utf8'));return {study:s,...(s.filmstrip?{sheet:{path:join(dir,s.filmstrip)}}:{})};}catch{throw new AgentError('NOT_FOUND',`Study ${id} not found`,{},404);}}
+ async t_variation_discard(a:Result){const ids=(a.branches as string[]);for(const id of ids){await this.branch(id);await rm(join(this.branchDir(),`${id}.json`),{force:true});}return {discarded:ids};}
+ async t_direction_get(){const m=this.m(),d=m.project.direction;if(!d)return {direction:null,_next:'No brief stored: when the human says what must happen, record it with direction.set (musts + latitude).'};
+  const musts=directionAssertions(m.project);const v=musts.length?await this.verifyDoc(m,musts.map(x=>x.assertion)):{results:[]};return {direction:d,report:directionReport(m.project,v.results as {status:string}[])};}
+ async t_direction_set(a:Result){const d=a.direction as import('../core/model.js').Direction|null;return this.commit('direction.set',a,[{type:'direction.set',direction:d}],{changes:{direction:d?{musts:d.musts.length}:null}});}
+ async t_context_get(){const c=this.m().project.context;return {context:c??null,priors:c?priors(c):null,_next:c?'Use the priors as defaults; deviate deliberately and say why.':'No context yet: ask the human where and why this will be seen, then context.set.'};}
+ async t_context_set(a:Result){const ctx=a.context as import('../core/model.js').ContextManifest;const r=await this.commit('context.set',a,[{type:'context.set',context:ctx}],{changes:{context:ctx.purpose}});return {...r,priors:priors(ctx)};}
+ async t_operations_list(a:Result){const ops=(Object.entries(OPERATION_DOCS) as [OperationType,typeof OPERATION_DOCS[OperationType]][]).filter(([,d])=>!a.family||d.family===a.family);
+  return {families:OPERATION_FAMILIES,operations:ops.map(([type,d])=>({type,family:d.family,summary:d.summary,...(d.expands?{expands:d.expands}:{})})),_next:'operations.describe {type} for fields and examples.'};}
+ async t_operations_describe(a:Result){const type=String(a.type) as OperationType,d=OPERATION_DOCS[type];if(!d)throw new AgentError('NOT_FOUND',`Unknown operation ${type}`,{types:Object.keys(OPERATION_DOCS)},404);
+  // Identity categories are computed from the worked example, the same classifier the identity guard uses.
+  const cats=[...new Set(d.examples.flatMap(x=>categories(x.op).cats))];const identity={staticCategories:cats,note:cats.length?'The identity guard blocks these change categories on protected parts before applying.':'No static category: the identity guard checks this operation through evaluated frames (state before vs after the transaction), so protected parts are still enforced.'};
+  return {type,family:d.family,summary:d.summary,...(type==='motion.preset'?{presets:PRESET_CATALOG}:{}),schema:operationSchema(type),examples:d.examples.map(x=>({why:x.why,op:x.op,...(x.setup?{setup:x.setup}:{}),...(x.fixture&&x.fixture!=='starter'?{fixture:x.fixture}:{})})),...(d.expands?{expands:d.expands}:{}),identity};}
+ async t_ops_apply(a:Result){validateOps(a.ops);const ops=await this.resolveOps(a.ops as Operation[]);return this.commit('ops.apply',a,ops,{changes:{operations:ops.map(o=>o.type)}});}
  async t_history_undo(a:Result){await this.ws.undo(this.expected(a),a.token as string|undefined);return {undone:a.token??'latest'};}
  async t_history_redo(a:Result){await this.ws.redo(this.expected(a));return {redone:true};}
  async t_comments_reply(a:Result){const c=await this.ws.comments.reply(String(a.id),{text:String(a.text),author:'agent',status:a.status as never,choice:a.choice as string|undefined,revision:this.ws.revision()});this.ws.broadcast({patches:[]});return {comment:{id:c.id,status:c.status,replies:c.replies.length}};}
  // ── Render and verification ──────────────────────────────────────────────────────────────
+ private motionTarget(m:VectorDocument,part:string):Target{
+  const r=resolve(m,part);
+  if(r.nodes.some(n=>n.region)){if(r.nodes.length!==1||r.ids.length!==1)throw new AgentError('UNSUPPORTED_MEASUREMENT','Moving semantic regions require one SVG owner');const b=regionBounds(r.nodes[0].region!);return {ids:r.ids,region:{x0:b.x,y0:b.y,x1:b.x+b.width,y1:b.y+b.height}};}
+  return {ids:r.nodes.length?[...new Set(r.nodes.flatMap(n=>nodeIds(m,n,true)))]:r.ids};
+ }
+ async t_motion_verify(a:Result){const m=this.m();if(a.assertions)return this.verifyDoc(m,a.assertions as Assertion[],a.count as number|undefined);
+  // Default: the saved assertions plus the human's musts (direction), each must reported as passed/failed/untested.
+  const own=m.project.assertions??[],musts=directionAssertions(m.project);const r=await this.verifyDoc(m,[...own,...musts.map(x=>x.assertion)],a.count as number|undefined);
+  return {...r,...(m.project.direction?{direction:directionReport(m.project,r.results.slice(own.length))}:{})};}
+ /** Resolve project files referenced by operations (part.borrow {file}) before validation and apply. */
+ async resolveOps(ops:Operation[]){return Promise.all(ops.map(async op=>{if(op.type!=='part.borrow'||op.svg!==undefined)return op;const file=(op as {file?:string}).file;
+  if(typeof file!=='string'||file.startsWith('/')||file.split(/[\\/]/).includes('..'))throw new AgentError('INVALID_ARGUMENT','part.borrow needs svg or a project-relative file',{path:'file'});
+  const svg=await readFile(join(this.ws.root,file),'utf8').catch(()=>{throw new AgentError('NOT_FOUND',`File ${file} not found`,{path:'file'},404);});const {file:_f,...rest}=op as Operation&{file?:string};return {...rest,svg} as Operation;}));}
+ async t_part_borrow(a:Result){const op={type:'part.borrow',id:a.id,ids:a.ids,...(a.parent?{parent:a.parent}:{}),...(a.name?{name:a.name}:{}),...(a.hidden!==undefined?{hidden:a.hidden}:{}),...(a.align?{align:a.align}:{}),...(a.svg?{svg:a.svg}:{file:a.file})} as unknown as Operation;
+  const [resolved]=await this.resolveOps([op]);return this.commit('part.borrow',a,[resolved],{target:String(a.id),changes:{borrowed:a.ids,from:a.file??'inline svg',hidden:a.hidden!==false}});}
+ /** Assertions on any document (the live scene or a plan draft). */
+ async verifyDoc(m:VectorDocument,assertions:Assertion[],requested?:number){const hasVisible=assertions.some(x=>x.type==='visible'),count=Number(requested??(hasVisible?12:61));
+  if(hasVisible&&count>24)throw new AgentError('BUDGET_EXCEEDED','Rendered visibility supports at most 24 times per call');
+  const result=verifyMotion(m,assertions,part=>this.motionTarget(m,part),count);
+  for(const r of result.results){if(r.assertion.type!=='visible')continue;try{const times=sampleTimes(m.project.duration,count,r.assertion.during),ids=resolve(m,r.assertion.part).ids;if(!ids.length)throw Error('No visibility targets');
+    const samples=await visiblePixels(m,ids,times,1),minPixels=Math.min(...samples.map(s=>s.pixels));Object.assign(r,{status:minPixels>=r.assertion.minPixels?'passed':'failed',measured:{minPixels},times,hint:'Rendered pixel contribution when this target is hidden, including occlusion; not semantic visibility.'});
+   }catch(e){r.status='not_evaluated';r.hint=String((e as Error).message);}}
+  for(const r of result.results){if(r.assertion.type!=='matchesBaseline')continue;const x=r.assertion;try{
+    const ids=(m.project.baselines??[]).map(b=>b.id),id=x.baseline??(ids.length===1?ids[0]:undefined);if(!id)throw Error(ids.length?`Several baselines (${ids.join(', ')}): name one`:'No baseline registered: baseline.capture the approved file first');
+    if(x.at<0||x.at>m.project.duration)throw Error(`at ${x.at} outside the timeline`);const ref=await this.reference({kind:'baseline',id});const box=this.regionOf(m,{part:x.part.replace(/^#/,'')});if(!box)throw Error(`No measurable region for ${x.part}`);
+    let held:string[]=[];if(x.relativeTo){const r=resolve(m,x.relativeTo.replace(/^#/,''));if(r.ids.length!==1)throw Error('relativeTo must resolve to one SVG element');let e:Element|null=m.index.get(r.ids[0])??null;while(e&&e.nodeType===1){const id=e.getAttribute('id');if(id)held.push(id);e=e.parentNode as Element|null;}}
+    const [A,B]=await Promise.all([this.png(ref.doc,0,undefined,1,true),held.length?renderSvg(m.frame(x.at,{camera:false,rest:held}),0,'chromium',1).then(r=>r.png):this.png(m,x.at,undefined,1,true)]);const q=metrics(await raw(A),await raw(B),box);const max=x.maxMae??2;
+    Object.assign(r,{status:q.mae<=max?'passed':'failed',measured:{mae:q.mae,ssim:q.ssim,silhouetteIoU:q.silhouetteIoU,maxMae:max},times:[x.at],hint:`Rendered ${x.part} at ${x.at}s vs baseline ${id} (${held.length?`inside ${x.relativeTo} held at rest`:'world space'}, camera off). Bring every channel and sprite back to the approved pose at that time.`});
+   }catch(e){r.status='not_evaluated';r.hint=String((e as Error).message);}}
+  return {...result,passed:result.results.length>0&&result.results.every(r=>r.status==='passed'),failed:result.results.filter(r=>r.status!=='passed')};
+ }
+ private async observeArtifact(path:string,m=this.m()){return registerArtifact(join(this.ws.cache,'observe'),path,m,this.ws.revision());}
+ async t_motion_assertions(a:Result){return this.commit('motion.assertions',a,[{type:'motion.assertions',assertions:a.assertions as Assertion[]}],{changes:{assertions:(a.assertions as Assertion[]).length}});}
+ async t_performance_probe(a:Result){return {probe:await probePlayback(exportSvg(this.m(),{profile:'standalone'}).svg,{frames:a.frames as number|undefined,embedding:a.embedding as 'inline'|'img'|undefined})};}
+ async t_critique_record(a:Result){const m=this.m(),evidence=[];for(const id of a.artifacts as string[]){try{evidence.push(await loadArtifact(join(this.ws.cache,'observe'),id,m));}catch(e){throw new AgentError('STALE_EVIDENCE',String((e as Error).message));}}
+  const summary=JSON.stringify({verdict:a.verdict,confidence:a.confidence,notes:a.notes,artifacts:evidence.map(e=>e.id)});if(summary.length>2000)throw new AgentError('INVALID_ARGUMENT','Critique summary exceeds 2000 characters');
+  return this.commit('critique.record',a,[{type:'decision.log',decision:{kind:'critique',source:'agent',summary}}],{changes:{critique:{verdict:a.verdict,artifacts:evidence.map(e=>e.id),isGate:false}}});
+ }
+ async t_compare_motion(a:Result){const m=this.m(),ref=a.reference as {kind:string;id?:string};const previous=ref.kind==='previous'?this.ws.previous():undefined;
+  if(ref.kind==='previous'&&!previous)throw new AgentError('NO_PREVIOUS_STATE','No previous committed state is available');
+  const reference=previous?{doc:previous,label:'previous'}:await this.reference(ref),duration=Math.min(m.project.duration,reference.doc.project.duration);
+  const times=(a.times as number[]|undefined)??filmstripTimes(duration,false,Number(a.count??8));
+  const r=await compareMotion(reference.doc,m,times,Number(a.scale??1)),dir=join(this.ws.cache,'observe',`r${this.ws.revision()}`);await mkdir(dir,{recursive:true});const path=join(dir,`compare-${randomUUID().slice(0,8)}.png`);await writeFile(path,r.sheet.png);const artifact=await this.observeArtifact(path,m);
+  const parts=[];for(const part of (a.parts??[]) as string[]){try{const A=partSeries(reference.doc,this.motionTarget(reference.doc,part),times),B=partSeries(m,this.motionTarget(m,part),times),sa=motionStats(A),sb=motionStats(B);parts.push({part,status:'measured',rmsSpeedDelta:sb.rmsSpeed-sa.rmsSpeed,pathLengthDelta:sb.pathLength-sa.pathLength});}catch(e){parts.push({part,status:'not_evaluated',reason:String((e as Error).message)});}}
+  await pruneObservations(join(this.ws.cache,'observe'),[path]);return {reference:reference.label,sheet:{path,width:r.sheet.width,height:r.sheet.height},artifact,frames:r.frames,parts,sources:r.sources,sourceNotes:r.sourceNotes,interpretation:'Pixel and trajectory changes; not quality scores or identity approval.'};
+ }
+
+ async t_render_video(a:Result){try{const m=this.m(),r=await renderVideo(m,join(this.ws.cache,'observe',`r${this.ws.revision()}`),a as VideoOptions);const artifact=await this.observeArtifact(r.posterPath,m);await pruneObservations(join(this.ws.cache,'observe'),[r.path,r.posterPath]);return {...r,artifact};}catch(e){throw new AgentError('VIDEO_FAILED',String((e as Error).message));}}
+ async t_render_motion(a:Result){const m=this.m();let samples:ReturnType<typeof partSeries>;
+  try{samples=partSeries(m,this.motionTarget(m,String(a.part)),sampleTimes(m.project.duration,Number(a.count??61),a.during as [number,number]|undefined));}
+  catch(e){if(e instanceof AgentError)throw e;throw new AgentError('UNSUPPORTED_MEASUREMENT',String((e as Error).message));}
+  const dir=join(this.ws.cache,'observe',`r${this.ws.revision()}`);await mkdir(dir,{recursive:true});const views=[];
+  for(const kind of (a.views??['trail','spacing','graph']) as ('trail'|'spacing'|'graph')[]){const target=this.motionTarget(m,String(a.part));if(a.channel&&target.ids.length!==1)throw new AgentError('AMBIGUOUS_TARGET','Channel graphs require one SVG id');const channel=a.channel?channelSeries(m,target.ids[0],a.channel as NumericChannel,samples.map(s=>s.time)):undefined;const svg=motionView(samples,kind,String(a.part),channel,a.channel as string|undefined),base=join(dir,`motion-${kind}-${randomUUID().slice(0,8)}`);
+   await writeFile(`${base}.svg`,svg);await writeFile(`${base}.png`,await sharp(Buffer.from(svg)).png().toBuffer());views.push({kind,path:`${base}.png`,svgPath:`${base}.svg`});}
+  const artifacts=await Promise.all(views.map(v=>this.observeArtifact(v.path,m)));await pruneObservations(join(this.ws.cache,'observe'),views.flatMap(v=>[v.path,v.svgPath]));
+  return {views,artifacts,samples,stats:motionStats(samples),space:'world',measurement:'geometric center and bounds; no stroke, clipping, filter or visibility evaluation',_next:'Inspect the trail with render.filmstrip; use motion.verify for explicit numerical assertions.'};
+ }
  private regionOf(m:VectorDocument,a:Record<string,unknown>){if(a.region)return a.region as {x:number;y:number;width:number;height:number};if(!a.part)return undefined;const r0=resolve(m,String(a.part));
   // Parts with a region (extracted features, heads…) are framed by it: clipped source paths can span the whole canvas.
   const regions=r0.nodes.filter(n=>n.region).map(n=>regionBounds(n.region!));if(regions.length){const pad=6,x=Math.min(...regions.map(b=>b.x))-pad,y=Math.min(...regions.map(b=>b.y))-pad;return {x,y,width:Math.max(...regions.map(b=>b.x+b.width))+pad-x,height:Math.max(...regions.map(b=>b.y+b.height))+pad-y};}
   const {ids}=this.deep(a.part);const boxes=pathBoxes(m);const bs=[...ids].map(id=>boxes.get(id)).filter(Boolean) as {x0:number;y0:number;x1:number;y1:number}[];if(!bs.length)return undefined;const pad=12;const x=Math.min(...bs.map(b=>b.x0))-pad,y=Math.min(...bs.map(b=>b.y0))-pad;return {x,y,width:Math.max(...bs.map(b=>b.x1))+pad-x,height:Math.max(...bs.map(b=>b.y1))+pad-y};}
- private async png(m:VectorDocument,time:number,region?:{x:number;y:number;width:number;height:number},scale=1){const r=await renderSvg(m.frame(time),0,'chromium',scale);let img=sharp(r.png);if(region){const left=Math.max(0,Math.floor(region.x*scale)),top=Math.max(0,Math.floor(region.y*scale)),width=Math.max(1,Math.min(r.width-left,Math.ceil(region.width*scale))),height=Math.max(1,Math.min(r.height-top,Math.ceil(region.height*scale)));img=sharp(await img.extract({left,top,width,height}).png().toBuffer());}return img.png().toBuffer();}
- async renderFrames(m:VectorDocument,a:Record<string,unknown>,tag:string){const times=(a.times as number[]|undefined)??[0];const dir=join(this.ws.cache,'previews');await mkdir(dir,{recursive:true});const region=this.regionOf(m,a);const frames=[];
+ // world=true renders without the camera: identity and comparisons judge the artwork, not the shot; region crops are world coordinates.
+ private async png(m:VectorDocument,time:number,region?:{x:number;y:number;width:number;height:number},scale=1,world=false){const r=await renderSvg(m.frame(time,{camera:!(world||region)}),0,'chromium',scale);let img=sharp(r.png);if(region){const left=Math.max(0,Math.floor(region.x*scale)),top=Math.max(0,Math.floor(region.y*scale)),width=Math.max(1,Math.min(r.width-left,Math.ceil(region.width*scale))),height=Math.max(1,Math.min(r.height-top,Math.ceil(region.height*scale)));img=sharp(await img.extract({left,top,width,height}).png().toBuffer());}return img.png().toBuffer();}
+ // Filmstrip: one contact sheet of the whole animation (plus onion-skin ghosts), rendered from one page load.
+ private async filmstrip(m:VectorDocument,a:Record<string,unknown>,tag:string){const p=m.project,D=p.duration;
+  const times=((a.times as number[]|undefined)??(a.sampling==='significant'?significantTimes(p,Number(a.count??12)):filmstripTimes(D,p.loop,Number(a.count??12)))).slice(0,36);for(const t of times)if(t<0||t>D)throw new AgentError('INVALID_ARGUMENT',`time ${t} outside 0–${D}`,{path:'args.times'});
+  const region=this.regionOf(m,a);const vb=(m.doc.documentElement.getAttribute('viewBox')??'0 0 700 700').split(/[\s,]+/).map(Number);const scale=Number(a.scale??Math.min(2,Math.max(.1,420/(region?.width??vb[2]))));
+  const ghosts=Math.max(0,Math.min(4,Math.round(Number(a.ghost??0)))),step=times.length>1?Math.abs(times[1]-times[0]):D/12,spacing=Number(a.ghostSpacing??step/(ghosts+1));
+  const wrap=(t:number)=>p.loop?((t%D)+D)%D:Math.max(0,t),key=(t:number)=>Number(t.toFixed(4));const ghostTimes=times.map(t=>Array.from({length:ghosts},(_,k)=>key(wrap(t-(k+1)*spacing))));
+  const unique=[...new Set([...times.map(key),...ghostTimes.flat()])];const r=await renderTimes(m,unique,{region,scale,source:(a.source as 'auto'|'export'|'engine'|undefined)??'auto'});const byTime=new Map(unique.map((t,i)=>[t,r.frames[i]]));
+  const captions=times.map((t,i)=>{const mk=(p.markers??[]).find(x=>Math.abs(x.time-t)<=step/2);return `${i+1} · ${t.toFixed(2)} s${mk?` · ${mk.label}`:''}`;});
+  const sheet=await contactSheet(times.map(t=>byTime.get(key(t))!),captions,{columns:a.columns as number|undefined,background:a.background as string|undefined,...(ghosts?{ghosts:ghostTimes.map(g=>g.map(t=>byTime.get(t)!))}:{})});
+  const dir=join(this.ws.cache,'observe',`r${this.ws.revision()}`);await mkdir(dir,{recursive:true});const path=join(dir,`${tag}-${randomUUID().slice(0,8)}.png`);await writeFile(path,sheet.png);
+  const artifact=await this.observeArtifact(path,m);await pruneObservations(join(this.ws.cache,'observe'),[path]);
+  return {artifact,sheet:{path,width:sheet.width,height:sheet.height,columns:sheet.columns,rows:sheet.rows,cell:sheet.cell},frames:times.map((t,i)=>({time:t,caption:captions[i],cell:sheet.cells[i]})),source:r.source,...(r.reason?{sourceNote:r.reason}:{}),...(region?{region}:{}),scale:Number(scale.toFixed(3)),...(ghosts?{ghost:{count:ghosts,spacing:Number(spacing.toFixed(4))}}:{})};}
+ /** Filmstrip of any document (plan drafts use it for dry-run evaluation). */
+ async filmstripOf(m:VectorDocument,opts:Record<string,unknown>,tag='plan'){return this.filmstrip(m,opts,tag);}
+ async t_render_filmstrip(a:Result){return {...await this.filmstrip(this.m(),a,'filmstrip'),_next:'Mira la hoja completa antes de describir: ¿se lee la acción principal, hay arcos y anticipación, las partes se solapan, el loop es invisible? Cambia una cosa y vuelve a mirar.'};}
+ async renderFrames(m:VectorDocument,a:Record<string,unknown>,tag:string){const times=(a.times as number[]|undefined)??(a.filmstrip?[]:[0]);const dir=join(this.ws.cache,'previews');await mkdir(dir,{recursive:true});const region=this.regionOf(m,a);const frames=[];
   for(const t of times.slice(0,8)){if(t<0||t>m.project.duration)throw new AgentError('INVALID_ARGUMENT',`time ${t} outside 0–${m.project.duration}`);const png=await this.png(m,t,region,Number(a.scale??1));const meta=await sharp(png).metadata();const path=join(dir,`${tag}-r${this.ws.revision()}-${t.toFixed(2)}-${randomUUID().slice(0,6)}.png`);await writeFile(path,png);frames.push({time:t,path,width:meta.width,height:meta.height});}
-  return {frames,region};}
+  const filmstrip=a.filmstrip?await this.filmstrip(m,{...(a.filmstrip as object),part:a.part,region:a.region},`${tag}-filmstrip`):undefined;
+  return {frames,region,...(filmstrip?{filmstrip}:{})};}
  async t_preview_render(a:Result){return {...await this.renderFrames(this.m(),a,'preview'),_next:'Abre los PNG (path) y evalúalos visualmente antes de describir el resultado.'};}
  private undeformed(m:VectorDocument){const d=new VectorDocument(m.toSVG());const p=d.project;p.tracks=p.tracks.filter(t=>t.property!=='param');for(const k of Object.keys(p.params??{}))p.params![k].default=0;for(const x of p.modifiers??[])x.enabled=false;return d;}
  async t_compare_frames(a:Result){const m=this.m();const before=a.against==='rest'?this.undeformed(m):this.ws.previous();if(!before)throw new AgentError('NO_PREVIOUS','No previous state in history to compare with');const times=(a.times as number[]|undefined)??[0];const frames=[];
-  for(const t of times){const [x,y]=await Promise.all([this.png(before,t),this.png(m,t)]);const A=await raw(x),B=await raw(y);const parts:Record<string,unknown>={};for(const ref of (a.parts as string[]|undefined)??[]){const box=this.regionOf(m,{part:ref});parts[ref]=box?metrics(A,B,box):'no bounds';}frames.push({time:t,...metrics(A,B),parts});}
+  for(const t of times){const [x,y]=await Promise.all([this.png(before,t,undefined,1,true),this.png(m,t,undefined,1,true)]);const A=await raw(x),B=await raw(y);const parts:Record<string,unknown>={};for(const ref of (a.parts as string[]|undefined)??[]){const box=this.regionOf(m,{part:ref});parts[ref]=box?metrics(A,B,box):'no bounds';}const dir=join(this.ws.cache,'observe',`r${this.ws.revision()}`);await mkdir(dir,{recursive:true});const base=join(dir,`frames-${randomUUID().slice(0,8)}`),path=`${base}-current.png`,referencePath=`${base}-reference.png`;await writeFile(path,y);await writeFile(referencePath,x);frames.push({time:t,path,referencePath,...metrics(A,B),parts});}
   return {against:a.against??'previous',frames,interpretation:'mae en 0–255 (premultiplicado); ssim 1 = idéntico; métricas de cambio, no de calidad artística.'};}
  // Identity verification needs an explicit reference and real coverage. Nothing evaluated is never a pass.
  //  snapshot: regression against an immutable session snapshot ("como está" = what the agent observed);
@@ -217,7 +363,7 @@ export class AgentService{
   const parts=refs.flatMap(ref=>{try{const r=resolve(m,ref);if(!r.nodes.length)return [{ref,node:undefined as SemanticNode|undefined}];return r.nodes.map(node=>({ref,node}));}catch(e){skipped.push({part:ref,reason:String((e as Error).message)});return [];}});
   const plan=parts.map(({ref,node})=>{const box=this.regionOf(m,{part:node?node.id:ref});if(!box){skipped.push({part:ref,reason:'no measurable region'});return undefined;}const set=node?new Set(nodeIds(m,node,true)):new Set<string>();const feature=(p.expression?.features??[]).find(f=>(node&&f.node===node.id)||f.paths.some(id=>set.has(id)));
    const levels=node?.protection??[];const kind=levels.some(l=>l==='locked'||l==='protected')||feature?.frozen?'unchanged':levels.includes('silhouette-preserved')?'silhouette':feature&&levels.includes('deformable')?'bounded':levels.length?'unchanged':'reported';return {part:node?addressOf(m,node):ref,box,feature,kind};}).filter(Boolean) as {part:string;box:{x:number;y:number;width:number;height:number};feature?:import('../core/model.js').ExpressionFeature;kind:string}[];
-  if(plan.length){try{for(const t of times){const [x,y]=await Promise.all([this.png(reference.doc,t),this.png(m,t)]);const A=await raw(x),B=await raw(y);
+  if(plan.length){try{for(const t of times){const [x,y]=await Promise.all([this.png(reference.doc,t,undefined,1,true),this.png(m,t,undefined,1,true)]);const A=await raw(x),B=await raw(y);
     for(const q of plan){const r=metrics(A,B,q.box);const fp=frameParams(p,t);const drift=q.feature?Math.max(0,...Object.values(featureDisplacements(q.feature,fp,mode)).map(d=>Math.hypot(d.dx,d.dy))):0;const budget=q.feature?PRESERVATION[mode].maxDisplacement*q.feature.size:0;
      const status=q.kind==='unchanged'?(r.mae<=threshold?'pass':'fail'):q.kind==='silhouette'?(r.silhouetteIoU>=.9?'pass':'fail'):q.kind==='bounded'?(drift<=budget*1.001?'pass':'fail'):'reported';
      evaluated.push({part:q.part,time:t,expectation:q.kind,status,mae:r.mae,ssim:r.ssim,silhouetteIoU:r.silhouetteIoU,...(q.feature?{landmarkDriftPx:round(drift,2),budgetPx:round(budget,2)}:{}),threshold:q.kind==='unchanged'?threshold:q.kind==='silhouette'?.9:undefined});}}}
@@ -235,7 +381,13 @@ export class AgentService{
  async t_plan_execute(a:Result){const r=await this.planner().execute(a.plan as Plan);return {...r,ok:r.ok!==false};}
  async t_plan_status(a:Result){return this.planner().status(String(a.requestId)) as Result;}
  async t_plan_cancel(a:Result){return this.planner().cancel(String(a.requestId)) as Result;}
- async t_export(a:Result){const r=await this.ws.exportFile(a.profile as 'editable'|'standalone',this.expected(a));return {...r,compatibility:exportCapabilities(this.m(),a.profile==='editable'?'editable':'standalone').targets[0]};}
+ async t_export(a:Result){if(a.reducedMotion&&a.profile!=='standalone')throw Object.assign(Error('reducedMotion variants are standalone deliveries'),{code:'INVALID_ARGUMENT'});
+  let target:string|undefined;if(a.output!==undefined){const rel=String(a.output);if(rel.startsWith('/')||rel.split(/[\\/]/).includes('..')||!rel.endsWith('.svg'))throw new AgentError('INVALID_ARGUMENT','output must be a project-relative .svg path',{path:'output'});target=join(this.ws.root,rel);
+   if(await stat(target).then(()=>true,()=>false))throw new AgentError('FILE_EXISTS',`${rel} already exists; exports never overwrite. Choose a new path.`,{path:'output'});}
+  const r=await this.ws.exportFile(a.profile as 'editable'|'standalone',this.expected(a),a.reducedMotion?{reducedMotion:a.reducedMotion as 'still'|'fade',at:a.at as number|undefined}:undefined);
+  // The unique copy in exports/ stays the audit record; `output` adds the requested delivery path.
+  if(target){await mkdir(dirname(target),{recursive:true});await copyFile(r.savedFile,target);}
+  return {...r,...(target?{output:target}:{}),compatibility:exportCapabilities(this.m(),a.profile==='editable'?'editable':'standalone').targets[0]};}
 }
 export function capabilitiesOffline(){return {ok:true,tool:'capabilities',schemaVersion:2,tools:TOOLS,conventions:CONVENTIONS};}
 export {frameState};

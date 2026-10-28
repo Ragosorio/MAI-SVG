@@ -1,0 +1,1 @@
+Hero de una landing page (16:9): quiero un reveal cinematográfico de 5 segundos que presente al gato en su paisaje, como el primer plano de una película. Puedes usar sensación de cámara y profundidad. El gato tiene que seguir siendo el mismo.

@@ -1,0 +1,201 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/gatarana_noir_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "gatarana_noir_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 240,
+     "y": 420
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 215,
+    "cy": 264,
+    "rx": 152,
+    "ry": 151
+   }
+  },
+  {
+   "id": "gatarana_noir_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_noir_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 100,
+     "y": 195
+    },
+    "tip": {
+     "x": 72,
+     "y": 139
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "gatarana_noir_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_noir_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 155
+    },
+    "tip": {
+     "x": 328,
+     "y": 110
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "gatarana_noir_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_noir_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 190,
+     "y": 354.0
+    },
+    "outer": {
+     "x": 130,
+     "y": 354.0
+    },
+    "upper": {
+     "x": 160.0,
+     "y": 336
+    },
+    "lower": {
+     "x": 160.0,
+     "y": 372
+    },
+    "iris": {
+     "x": 160.0,
+     "y": 354.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 160.0,
+    "cy": 354.0,
+    "rx": 45.0,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "gatarana_noir_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatarana_noir_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 252,
+     "y": 346.0
+    },
+    "outer": {
+     "x": 306,
+     "y": 346.0
+    },
+    "upper": {
+     "x": 279.0,
+     "y": 328
+    },
+    "lower": {
+     "x": 279.0,
+     "y": 364
+    },
+    "iris": {
+     "x": 279.0,
+     "y": 346.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 279.0,
+    "cy": 346.0,
+    "rx": 40.5,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "gatarana_noir_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 540,
+     "y": 420
+    },
+    "spine1": {
+     "x": 610,
+     "y": 385
+    },
+    "spine2": {
+     "x": 650,
+     "y": 325
+    },
+    "spine3": {
+     "x": 655,
+     "y": 255
+    },
+    "spine4": {
+     "x": 625,
+     "y": 195
+    },
+    "spine5": {
+     "x": 570,
+     "y": 165
+    },
+    "spine6": {
+     "x": 515,
+     "y": 175
+    },
+    "spine7": {
+     "x": 490,
+     "y": 215
+    },
+    "spine8": {
+     "x": 500,
+     "y": 250
+    }
+   },
+   "notes": "radius=30"
+  }
+ ],
+ "notes": "Ojos dentro de goggles: párpado clásico (el párpado elíptico estiraba el brillo del vidrio en rayas). Al cerrar, el aro superior se dobla un poco."
+}

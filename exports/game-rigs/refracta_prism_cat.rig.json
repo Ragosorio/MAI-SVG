@@ -1,0 +1,267 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/refracta_prism_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "refracta_prism_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 255,
+     "y": 305
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 258,
+    "cy": 205,
+    "rx": 132,
+    "ry": 96
+   }
+  },
+  {
+   "id": "refracta_prism_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "refracta_prism_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 215,
+     "y": 165
+    },
+    "tip": {
+     "x": 200,
+     "y": 87
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "refracta_prism_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "refracta_prism_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 357,
+     "y": 199
+    },
+    "tip": {
+     "x": 403,
+     "y": 146
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "refracta_prism_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "refracta_prism_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 251,
+     "y": 224.0
+    },
+    "outer": {
+     "x": 210,
+     "y": 224.0
+    },
+    "upper": {
+     "x": 230.5,
+     "y": 205
+    },
+    "lower": {
+     "x": 230.5,
+     "y": 243
+    },
+    "iris": {
+     "x": 230.5,
+     "y": 224.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 230.5,
+    "cy": 224.0,
+    "rx": 30.75,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "refracta_prism_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "refracta_prism_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 289,
+     "y": 247.5
+    },
+    "outer": {
+     "x": 330,
+     "y": 247.5
+    },
+    "upper": {
+     "x": 309.5,
+     "y": 229
+    },
+    "lower": {
+     "x": 309.5,
+     "y": 266
+    },
+    "iris": {
+     "x": 309.5,
+     "y": 247.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 309.5,
+    "cy": 247.5,
+    "rx": 30.75,
+    "ry": 35.15
+   }
+  },
+  {
+   "id": "refracta_prism_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 520
+    },
+    "spine1": {
+     "x": 545,
+     "y": 560
+    },
+    "spine2": {
+     "x": 610,
+     "y": 525
+    },
+    "spine3": {
+     "x": 630,
+     "y": 450
+    },
+    "spine4": {
+     "x": 610,
+     "y": 390
+    },
+    "spine5": {
+     "x": 560,
+     "y": 362
+    },
+    "spine6": {
+     "x": 505,
+     "y": 365
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "refracta_prism_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 280,
+    "cy": 80,
+    "rx": 38,
+    "ry": 38
+   }
+  },
+  {
+   "id": "refracta_prism_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 93,
+    "cy": 245,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "refracta_prism_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 600,
+    "cy": 622,
+    "rx": 18,
+    "ry": 18
+   }
+  },
+  {
+   "id": "refracta_prism_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 495,
+    "cy": 262,
+    "rx": 42,
+    "ry": 40
+   }
+  },
+  {
+   "id": "refracta_prism_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 585,
+    "cy": 262,
+    "rx": 68,
+    "ry": 42
+   }
+  }
+ ]
+}

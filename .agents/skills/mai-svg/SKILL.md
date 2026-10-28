@@ -13,17 +13,22 @@ You are the intelligence; MAI is the instrument. **MAI never interprets human la
 2. `inspect_scene` / `mai inspect` — parts with addresses (`candy.flask.smoke`), real IDs, animation `sources`, parameters, `sessionId`, `documentId`, `snapshotId`, `revision`, board summary and suggested next steps.
 3. If the human talks about options: `inspect_choices` / `mai choices inspect` (board `id`/`version`, options by position 1..n, slots, `slotParts`, preview PNG paths you can look at, the human's notes).
 
+Over MCP you can also read one thing at a time instead of whole scenes: `mai://operation/{type}`, `mai://part/{ref}`, `mai://preset/{name}`, `mai://shot/{intent}`, `mai://catalog/curves|signals|effects`, `mai://expr/functions`, `mai://context/current`. You can subscribe to `mai://scene/summary`, and prompts give ready-made workflows (`animate-character-idle`, `cinematic-reveal`, `refine-until-alive`, `direct-a-shot`, `preserve-and-express`, `deliver-for-game`).
+
 Every mutation needs the `expectedRevision` you last read. `REVISION_CONFLICT` → re-inspect and re-plan; never retry blind.
 
 ## Route by intention — load only the playbook you need
 
 | The human asks for… | Read |
 |---|---|
+| The human describes what must happen ("ojos abiertos y guiña a los 3 s, lo demás creativo"), timings, a start different from the approved art | [brief.md](reference/brief.md) |
 | Choosing/mixing options, "la primera pero…", "conserva X", several changes in one sentence | [direction.md](reference/direction.md) |
 | An emotion, expression, "más triste", "menos", eyes/mouth changes | [expression.md](reference/expression.md) + [identity.md](reference/identity.md) |
 | "No le cambies…", keep features, protect, compare with the original | [identity.md](reference/identity.md) |
 | Smoke, steam, water, fire, lava, wind, hair, cloth flowing | [fluid.md](reference/fluid.md) |
-| Timing, speed, follow-through, tail/ears reacting, breathing | [motion.md](reference/motion.md) |
+| Animating anything: acting, timing, overlap, follow-through, alive idles, breathing, speed | [motion.md](reference/motion.md) (+ [curves.md](reference/curves.md) for feel, [observe.md](reference/observe.md) to look and judge) |
+| Camera moves, shots, reveals, parallax, "como una película", hero scenes | [camera.md](reference/camera.md) |
+| One part reacting to another, overlap chains, formulas (spring/smooth/delay), "que la cola siga al cuerpo" | [relations.md](reference/relations.md) |
 | "This part", unknown or ambiguous parts, labeling what is what | [semantics.md](reference/semantics.md) |
 | Checking, critique, performance, export, delivery | [verify.md](reference/verify.md) |
 | Emotion libraries and sprite states (legacy authoring) | [emotion-library.md](reference/emotion-library.md) |

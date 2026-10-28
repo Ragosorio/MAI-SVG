@@ -1,0 +1,222 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/hipolito_tavern_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "hipolito_tavern_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 355,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360,
+    "cy": 200,
+    "rx": 135,
+    "ry": 105
+   }
+  },
+  {
+   "id": "hipolito_tavern_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hipolito_tavern_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 285,
+     "y": 120
+    },
+    "tip": {
+     "x": 300,
+     "y": 45
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "hipolito_tavern_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hipolito_tavern_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 470,
+     "y": 150
+    },
+    "tip": {
+     "x": 520,
+     "y": 95
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "hipolito_tavern_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hipolito_tavern_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 340,
+     "y": 180.0
+    },
+    "outer": {
+     "x": 280,
+     "y": 180.0
+    },
+    "upper": {
+     "x": 310.0,
+     "y": 162
+    },
+    "lower": {
+     "x": 310.0,
+     "y": 198
+    },
+    "iris": {
+     "x": 310.0,
+     "y": 180.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 310.0,
+    "cy": 180.0,
+    "rx": 45.0,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "hipolito_tavern_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "hipolito_tavern_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 365,
+     "y": 195.0
+    },
+    "outer": {
+     "x": 425,
+     "y": 195.0
+    },
+    "upper": {
+     "x": 395.0,
+     "y": 177
+    },
+    "lower": {
+     "x": 395.0,
+     "y": 213
+    },
+    "iris": {
+     "x": 395.0,
+     "y": 195.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 395.0,
+    "cy": 195.0,
+    "rx": 45.0,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "hipolito_tavern_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 545,
+     "y": 612
+    },
+    "spine1": {
+     "x": 600,
+     "y": 592
+    },
+    "spine2": {
+     "x": 640,
+     "y": 548
+    },
+    "spine3": {
+     "x": 655,
+     "y": 492
+    },
+    "spine4": {
+     "x": 645,
+     "y": 442
+    },
+    "spine5": {
+     "x": 615,
+     "y": 414
+    },
+    "spine6": {
+     "x": 586,
+     "y": 420
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "hipolito_tavern_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 125,
+    "cy": 160,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "hipolito_tavern_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 115,
+    "cy": 285,
+    "rx": 90,
+    "ry": 110
+   }
+  }
+ ]
+}

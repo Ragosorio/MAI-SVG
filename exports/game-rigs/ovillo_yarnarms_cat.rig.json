@@ -1,0 +1,245 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/ovillo_yarnarms_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "ovillo_yarnarms_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 335,
+    "cy": 210,
+    "rx": 105,
+    "ry": 95
+   }
+  },
+  {
+   "id": "ovillo_yarnarms_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ovillo_yarnarms_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 255,
+     "y": 170
+    },
+    "tip": {
+     "x": 229,
+     "y": 131
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "ovillo_yarnarms_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ovillo_yarnarms_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 390,
+     "y": 140
+    },
+    "tip": {
+     "x": 418,
+     "y": 99
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "ovillo_yarnarms_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ovillo_yarnarms_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 312,
+     "y": 220.0
+    },
+    "outer": {
+     "x": 282,
+     "y": 220.0
+    },
+    "upper": {
+     "x": 297.0,
+     "y": 208
+    },
+    "lower": {
+     "x": 297.0,
+     "y": 232
+    },
+    "iris": {
+     "x": 297.0,
+     "y": 220.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 297.0,
+    "cy": 220.0,
+    "rx": 22.5,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "ovillo_yarnarms_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "ovillo_yarnarms_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 358,
+     "y": 214.0
+    },
+    "outer": {
+     "x": 392,
+     "y": 214.0
+    },
+    "upper": {
+     "x": 375.0,
+     "y": 202
+    },
+    "lower": {
+     "x": 375.0,
+     "y": 226
+    },
+    "iris": {
+     "x": 375.0,
+     "y": 214.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 375.0,
+    "cy": 214.0,
+    "rx": 25.5,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "ovillo_yarnarms_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 525,
+     "y": 520
+    },
+    "spine1": {
+     "x": 565,
+     "y": 490
+    },
+    "spine2": {
+     "x": 600,
+     "y": 450
+    },
+    "spine3": {
+     "x": 625,
+     "y": 420
+    },
+    "spine4": {
+     "x": 640,
+     "y": 405
+    }
+   },
+   "notes": "radius=25"
+  },
+  {
+   "id": "ovillo_yarnarms_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1 (ovillo rojo arriba)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 165,
+    "cy": 100,
+    "rx": 50,
+    "ry": 50
+   }
+  },
+  {
+   "id": "ovillo_yarnarms_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2 (ovillo azul)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 575,
+    "cy": 120,
+    "rx": 55,
+    "ry": 55
+   }
+  },
+  {
+   "id": "ovillo_yarnarms_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3 (ovillo amarillo)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 108,
+    "cy": 310,
+    "rx": 48,
+    "ry": 48
+   }
+  },
+  {
+   "id": "ovillo_yarnarms_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4 (ovillo rojo derecho)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 610,
+    "cy": 315,
+    "rx": 50,
+    "ry": 50
+   }
+  }
+ ],
+ "notes": "Los 4 ovillos de los brazos mecánicos flotan (bob ±6 px); los brazos se doblan apenas."
+}

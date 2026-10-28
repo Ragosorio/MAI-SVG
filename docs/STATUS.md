@@ -1,4 +1,152 @@
-# Estado de implementación — 2026-10-05
+# Estado de implementación — 2026-10-08
+
+## Brief en lenguaje natural y estados distintos al arte aprobado — 2026-10-08
+
+`npm test` **167/167**, typecheck limpio. Sin Codex: todo verificado aquí.
+
+- **`direction.set` / `direction.get`** (`packages/core/direction.ts`): el brief del humano como dato. `brief` literal, `musts` (requisitos con aserciones que los prueban) y `latitude` (lo creativo). `motion.verify` sin argumentos, los recibos de plan v2 (`verify.direction`) y el crítico (`MAI_DIRECTION_UNTESTED`) reportan cada requisito como passed, failed o untested. Prompt MCP `animate-from-brief`; skill `reference/brief.md`.
+- **Estados que el arte aprobado no muestra:** `part.borrow` trae un dibujo de otro SVG del mismo design system (desde un archivo del proyecto, en tool, `ops.apply` o plan), oculto y con IDs prefijados, sin redibujar. Exige la misma mesa de trabajo, salvo con `align`. Rechaza `url(#…)`. Luego `sprite.define` y `sprite.keyframe` hacen el cambio.
+- **Aserciones nuevas:**
+  - `state`: qué variante de un sprite se ve en `at` o en `during`.
+  - `matchesBaseline`: renderizada; la parte se ve como el aprobado en `at`. Con `relativeTo`, el padre y sus ancestros se mantienen en reposo (`frame({rest})`).
+- **Crítica:** `MAI_SQUASH` ignora los fotogramas en que la parte está oculta.
+
+## Prueba con una mascota de otro proyecto — 2026-10-08, Claude en vivo
+
+Claude animó una mascota de otro proyecto en una sesión aislada (no incluida en este repositorio) usando solo las tools de MAI: plan v2, señales, `track.set` con tangentes, `motion.propagate`, envelopes, cámara, efectos, `motion.verify`, filmstrip, video y export. No se tocó la sesión del usuario.
+
+- **Fallos reales de la herramienta encontrados y corregidos (con test):**
+  - Guard de identidad: una señal de escala se trataba como escala 100 %, así que una respiración de 2 % en un ancestro nunca pasaba con rasgos `preserve`. Ahora usa la amplitud real (`signalPeak`). El error nombra el canal del envelope, si llega por un ancestro, la escala y el presupuesto, y sugiere `bounded`.
+  - Aserciones: `relativeTo` (y en eventos de `before`) mide una parte dentro del marco de otra; antes era imposible probar "el brazo vuelve a reposo" mientras el torso respira.
+  - `export` ignoraba `output`: ahora escribe la copia pedida dentro del proyecto, nunca sobrescribe ni sale del proyecto (`FILE_EXISTS`/`INVALID_ARGUMENT`).
+  - `render.video` tenía fondo blanco fijo (un personaje blanco era invisible): `background` `auto` (gris si el arte es mayormente claro) o `#rrggbb`.
+  - Crítica: `MAI_LOOP_POP` compara rotación módulo 360 (spinners); `MAI_SQUASH` ignora pop-ins uniformes desde escala 0; `MAI_SUBFRAME_KEYS` solo dentro de una misma pista (desfases entre canales son overlap intencional).
+  - Benchmark: el verificador contaba solo pistas de keyframes; ahora cuenta señales, paths, cámara, efectos, beats, aserciones y contexto. Corrida `final` re-puntuada.
+- **Lecciones en las skills** (`observe.md`, `motion.md`, `verify.md`, `identity.md`): blanco sobre blanco oculta el movimiento (comprobar el signo de rotación con zoom), detalles de reposo (pliegues) que se desvanecen al salir de reposo, primer plano demasiado cerrado, y timidez de amplitud.
+- **Límite conocido:** `render.video` tiene presupuesto de 128 M píxeles; para 1024 px × 5 s se renderizan rangos `start/end` y se concatenan con ffmpeg (sin recodificar).
+
+
+## Motion Director — continuación 2026-10-08 (Claude, tras la sesión de Codex)
+
+`npm test` **155/155 pasan**; `npm run typecheck` pasa; golden intactos (sin regenerar).
+
+- **Correcciones al trabajo de Codex (keyframes v2):** `track.edit reverse` convertía `linear` en `cubic-bezier` numérico, y eso rompía los golden. Ahora los easings con nombre se invierten de forma exacta (ease-in↔ease-out, overshoot↔anticipate). `clip.place` volvió a aceptar clips discretos invertidos (estados de sprite). Tests nuevos en `tests/curves.test.ts`: equivalencia legado↔handles, tangentes, hold, curva custom con rollback, auto con costura de loop, roving, reverse, stretch, inercia y round-trip.
+- **Export con cortes:** un `step` dentro de una pista continua ya no lanza "discontinuity". Se exporta como transición instantánea, se cuenta en `report.jumps` y coincide con el motor en Chromium a ambos lados del corte.
+- **Señales procedurales** (`packages/core/procedural.ts`; ops `signal.add/update/remove/bake`):
+  - fuentes noise, wiggle, oscillator, pulse, blink, drift y curve, con envolvente (ventana, fades, decay, ramp, `multiplyBy` de param o de otra señal, clamp);
+  - deterministas por semilla y sin costura en loops (valor y velocidad);
+  - se mezclan como pistas en su capa (las aditivas suman; las override hacen crossfade por la envolvente) y alimentan params;
+  - export SMIL: los eventos cortos (parpadeos) son puntos de corte del muestreo, y los atributos de filtro de dos componentes (`stdDeviation`) se interpolan por componente;
+  - identidad clasificada por salida; limpieza al borrar targets; detector `MAI_ORPHAN_SIGNAL`;
+  - tests en `tests/procedural.test.ts`, incluido SMIL vs motor en Chromium.
+- **Beats y `acting.beat`** (`packages/core/timing.ts`):
+  - beats como datos (`beat.set/delete`);
+  - `acting.beat` compila reposo → anticipación opuesta → acción → overshoot → asentamiento largo (rebotes opcionales) en keys con tangentes, y registra los beats;
+  - crítica informativa: `MAI_BEAT_HOLD_MOTION`, `MAI_BEAT_NO_ANTICIPATION`, `MAI_BEAT_OVERSHOOT_NO_SETTLE`, `MAI_BEAT_TOO_SHORT`;
+  - `restPoints`; muestreo significativo con bordes de beats y picos de parpadeo.
+- **Presets transparentes** (`packages/core/presets.ts`):
+  - `expandPreset` devuelve las ops exactas; los clásicos producen las mismas keys de siempre (lo prueban los golden);
+  - `breathe` con `style:"organic"`: asimétrico, con contra-escala y deriva;
+  - `idle`: respiración, parpadeos con semilla compartida, mirada si hay `look-x/y`, orejas y cola desde su landmark `base`. Salta con nota las partes protegidas o que solo son región;
+  - `operations.describe motion.preset` incluye el catálogo de lo que enseña cada preset;
+  - inspección visual: los parpadeos y la cola se ven en el filmstrip con muestreo significativo.
+- **Cámara 2.5D** (`packages/core/camera.ts`; ops `camera.set/depth/shot/fit`):
+  - target reservado `@camera` (x, y = punto mirado, zoom, rotation) con pistas y señales;
+  - planos de profundidad con parallax (`T(P)·S(z^(f−1))·T(−P_f)`, el roll se cancela);
+  - `camera.shot` con 10 intents, paneo+zoom óptimo de van Wijk–Nuij y encuadres wide/medium/close-up con offset; handheld e impact como señales en `camera-shake`;
+  - `frame()` envuelve la escena en `g#mai-camera`; el export SMIL descompone la cámara en grupos animables y coincide con el motor en Chromium (push-in, roll, parallax y corte);
+  - `identity.check`, `compare.frames` y el gate perceptual de planes renderizan en espacio mundo, así que la cámara no cuenta como cambio del arte;
+  - crítica: `MAI_CAMERA_SUBJECT_OUTSIDE`, `FAST`, `ZOOM_RATE`, `ROLL` y `PLANE_EDGE` (un plano full-bleed revela su borde: falta bleed);
+  - `wide`/`establish` nunca alejan la cámara de una escena que llena la vista;
+  - prueba visual con la escena hero del benchmark (establish → push-in con parallax).
+- **Efectos** (`packages/core/effects.ts`; ops `effect.stack/remove`):
+  - una macro transparente compila blur, glow (con pulso), shadow, saturate, hue, displace, motionSmear (blur direccional guiado por la velocidad real, con la fuente de señal `speed`) y echo (fantasmas `<use>` a poses retrasadas, sin IDs duplicados, también en SMIL);
+  - nueva categoría de identidad `effects`: los overlays se permiten en partes protegidas (no en `locked`); recolor es `style` y displace es `geometry`;
+  - arreglado de paso: `filter.set` rechazaba `merge.inputs` y `lighting light-x/y/z`.
+- **Motion paths** (`packages/core/motion-path.ts`; ops `motion.path/remove/bake`): recorrido por longitud de arco a lo largo de `d` o por puntos con Catmull-Rom centrípeto, orientación a la tangente (pivote al ancla), modo absoluto o relativo, vueltas en paths cerrados, bake adaptativo y export SMIL igual al motor.
+- **F3 · Motion Plan v2** (`mai.motion-plan/v2`, `packages/agent/plan-schema.ts`):
+  - comando `ops` con cualquier operación (validada con su schema completo);
+  - `assertions` evaluadas sobre el borrador y guardadas con la escena, gate opcional `verify`;
+  - `evaluation` con filmstrip y crítica del borrador, y estado `loop` (`shouldContinue`);
+  - v1 sigue aceptado sin cambios; `plan.execute` es la ruta principal (no destructiva) y MCP adjunta el filmstrip del borrador.
+- **F3 · Contexto de uso** (`packages/core/context.ts`; op `context.set`; tools `context.get/set`): manifest con propósito, ubicación, viewport, loop, legibilidad facial, perfil, estilo y reduced-motion. Los priors por propósito (icono, hero, idle, sprite, logo…) aparecen en `scene.inspect`. La crítica informa desviaciones (`MAI_CONTEXT_DURATION/LOOP/CAMERA/PROFILE/REDUCED_MOTION`) sin bloquear.
+- **F3 · Ramas** (`variation.branch/list/compare/promote/discard`): borradores evaluados guardados en `.cache/branches`, comparación lado a lado (una fila de filmstrip por rama más evidencia determinista), promoción con CAS y detección de ramas obsoletas. Son distintas de los choice boards humanos.
+- **F4 · MCP v2:**
+  - resources: `mai://scene/summary`, `context/current`, `timeline`, `operations`, `catalog/curves|signals|effects` y plantillas `operation/{type}`, `part/{ref}`, `preset/{name}`, `shot/{intent}`, `capability/{tool}`;
+  - suscripciones que notifican cambios de revisión;
+  - 6 prompts de flujo;
+  - completions desde catálogos y desde la escena viva;
+  - tests con el cliente oficial del SDK.
+- **Carril A · Expresiones** (`packages/core/expr.ts`; fuente de señal `expr`):
+  - Pratt parser seguro, sin `eval`: solo números, identificadores en lista blanca y límites (1000 caracteres, 256 nodos, profundidad 24, 8 funciones temporales, 32 referencias);
+  - errores con código: `MAI_EXPR_SYNTAX`, `UNKNOWN_IDENTIFIER`, `UNKNOWN_FUNCTION`, `ARITY`, `TOO_COMPLEX`, `NONCONSTANT`, `BAD_REFERENCE`, `MISSING_TARGET` y `CYCLE` (con la ruta);
+  - referencias a canales de otras partes (`body.rotation`, `ref('id','prop')`, huesos), `param.X` y `sig('id')`;
+  - las referencias leen el movimiento previo a las expresiones (keys, paths, otras señales, rig, secondary), así que no hay auto-ciclos;
+  - temporales `spring`, `smooth`, `delay`, `velocity`, `accel` y `valueAt`, simulados una vez por versión de escena (fingerprint) y sin costura en loops;
+  - catálogo `mai://expr/functions`.
+- **Carril A · `motion.propagate`:** cadena de overlap compilada en señales `expr` transparentes. Cada eslabón lee el canal final del anterior, así que el retraso se propaga y el látigo crece hacia la punta. Modos `drag` (respuesta de resorte a la velocidad, con límite suave `tanh`) y `follow` (copia tardía). Borrar una parte elimina en cascada los eslabones que la leían. SMIL coincide con el motor en Chromium.
+- **Cámara `follow` real:** entra con van Wijk a un encuadre y luego sigue al sujeto con `smooth(ref(subject), lag)` según `motion`. Al terminar se queda donde el sujeto la llevó: la key final es el valor seguido, sin paneo de regreso.
+- **F3 · Creative Envelope** (`packages/core/envelope.ts`; op `semantic.envelope`):
+  - por canal (rigidTransform, deform, paint, topology, effects, visibility) se elige `free`, `bounded` o `preserve`, y eso sobrescribe lo que permiten los niveles; `preserve` niega incluso en partes libres;
+  - lo `bounded` pasa el guard y luego se mide en el tiempo (≤240 muestras con puntos de reposo y bordes de beats): traslación y deformación relativas al tamaño de la parte, rotación, escala, pintura y opacidad;
+  - una excursión transitoria se acepta solo si no supera `maxPeak`× el presupuesto, dura ≤ `maxDuration` y se recupera antes de cada punto de reposo (los loops envuelven la costura);
+  - corre aunque la misma transacción afloje la política; si falla, hace rollback con `IDENTITY_BLOCKED` (`detail.kind` envelope/transient, canal, métrica, valor medido, presupuesto, tramo y razón);
+  - `scene.identity` muestra los ratios pico/presupuesto. Ejemplo: un ojo protegido que parpadea sin perder su forma en reposo;
+  - pendiente: `transientBoost` de landmarks dentro de beats de acción.
+- **F5 · Reduced motion:** `export {profile:"standalone", reducedMotion:"still"|"fade", at?}` genera un archivo aparte, porque SMIL no lee `prefers-reduced-motion` y duplicar el arte duplicaría IDs.
+  - `still`: un fotograma congelado (0 en loops, el final en one-shots).
+  - `fade`: la escena congelada que conserva solo las transiciones de opacidad y color, sin transformaciones, cámara, paths, señales de movimiento, secundario, warps ni ecos.
+  - El reporte trae el snippet `<picture>`. Verificado en Chromium.
+- **F5 · Compat e IR:** features `camera`, `camera-parallax`, `motion-path`, `signals`, `expressions`, `effects-stack`, `echo` y `keyframe-handles`, con opciones por target (Lottie: handles y paths nativos, señales y expresiones horneadas; SVG estático: congelar). `buildIR` resume señales, paths, cámara, beats, efectos y envelopes.
+- **F4 · Estudios** (`study.save/list/get`, `mai://study/{id}`):
+  - guarda en `studies/<id>/` contexto, brief, receta (escena actual o rama), aserciones, última crítica y filmstrip;
+  - sin la cita de aprobación del humano queda en `pending-review` y nunca se presenta como aprobado.
+- **F4 · Skills migradas:**
+  - las 9 skills escritas a mano viven en `skills-src/` y se generan para Claude Code y Codex (`agents/openai.yaml` incluido); el test de drift las cubre;
+  - se actualizaron mai-animate (controles del motor, presets como punto de partida), mai-refine-animation (ciclo filmstrip → verify → cambio único → compare; envelope) y mai-preserve-identity (envelope);
+  - referencias nuevas `relations.md` (expresiones y cadenas) y secciones de envelope (identity) y reduced motion (verify).
+- **Editor, cambio mínimo:** guía de encuadre de cámara con action-safe y title-safe (rotada con el roll), más el toggle "Vista de cámara", que reencuadra el lienzo al viewBox de la cámara sin parallax y recorta al artboard. Verificado en el sandbox; la edición de puntos en vista de cámara no se probó.
+- **Skills:** `motion.md` reescrito como ciclo completo de dirección (con plan v2, contexto, ramas, efectos y paths); nueva referencia `camera.md`; referencias nuevas `curves.md` (vocabulario de tangentes y recetas de señales) y `observe.md` (cómo mirar y juzgar).
+- **Baseline:** re-puntuada con `--rescore`. Válidas: alien-idle (Claude: 48 llamadas, 61 keyframes, 5 presets, idle correcto pero casi imperceptible), bell (Claude) y Candy (cortada por cuota). Todas las de Codex y 5 de Claude fallaron por cuota; repetir cuando se liberen.
+
+
+## Motion Director F1 — continuación 2026-10-07 (parcial)
+
+Se retomó `packages/core/space.ts` de la sesión interrumpida. El motor no se refactorizó y los golden no se regeneraron.
+
+- `space.ts`: transformaciones acumuladas de padres + poses + base; bounds de curvas con extremos cúbicos, geometría animada, exclusión de defs sin depender de DOM de navegador. Targets vacíos o no soportados fallan explícitamente; caché de evaluación acotada.
+- `render.motion` / `render_motion` / `mai motion render`: PNG/SVG de trayectoria del centro, espaciado y velocidad; muestras numéricas. MCP adjunta las imágenes.
+- `motion.verify` / `verify_motion` / `mai motion verify`: seis predicados muestreados (`moves`, `still`, `energy`, `arc`, `returnsToRest`, `loopSeamless`). `not_evaluated` cuenta como fallo. Energía = RMS de velocidad del centro; arco = cambio total de rumbo; reposo y costura comparan bounds, no pintura/identidad. No confundir con aprobación visual.
+- `render.video` / `render_video` / `mai video`: MP4/WebM mediante ffmpeg local, fuente export con fallback engine reportado, póster, máximo 600 frames/1024 px/128 millones de píxeles; limpia temporales y archivos parciales ante fallo. Preview sobre blanco, sin audio, alpha ni motion blur.
+- Las tres tools son experimentales, de lectura/render y utilizables offline con `--file`. No alteran documento, revisión o protecciones.
+- Evidencia reproducible: `node --import tsx scripts/motion-f1-proof.ts`; `experiments/evidence/motion-f1/report.json`, `bell-baseline.mp4`, `bell-poster.png`. Usa la campana guardada del benchmark anterior: no es una nueva ejecución de Claude/Codex. Filmstrip inspeccionado: oscilación amortiguada y badge visible; el trail muestra el arco del centro.
+
+Verificación de esta continuación: `npm test` **91/91 pasan, 0 omitidas**; `npm run typecheck` y `npm run build` pasan. Incluye los 8 golden intactos, 8 pruebas espaciales/de contrato y 2 de video (MP4/WebM decodificados con frames distintos). Después de acotar la caché espacial se repitieron las 16 pruebas core/golden y typecheck. Logs: `experiments/evidence/motion-f1-tests.log` y `motion-f1-core-tests.log`.
+
+**F1 sigue abierta:** faltan predicados before/lags/overshoots/settles/insideFrame/visible, persistencia de assertions, gráficas por canal y siluetas, regiones semánticas móviles, muestreo por beats/keys, compare.motion, performance.probe, critique v2/record y retención de artifacts. Video aún sin GIF/WebP, crop por parte, motion blur o fallback de encoder. Geometría no mide stroke, clipping, filtros ni visibilidad; use/text/imagen y SVG anidado no se evalúan. Las métricas no prueban identidad ni calidad artística.
+
+La copia `experiments/evidence/motion-bench-2026-10-08-baseline.json` encontrada sigue sin re-puntuación guardada (changed=false incluso en casos con llamadas). Baseline completa con ambos agentes sigue pendiente; no tratar los fallos de cuota como evidencia de calidad. El plan completo recuperado está en `docs/MOTION-DIRECTOR-PLAN.md` (diseño objetivo, no estado implementado).
+
+
+## Motion Director F0 — 2026-10-07 (plan `~/.claude/plans/lazy-gliding-church.md`)
+
+Objetivo: que el agente tenga los mandos de un animador y vea el movimiento, con la identidad protegida por invariantes. F0 = línea base y desbloqueos baratos. `npm run typecheck` pasa; `npm test` **81 pruebas, 81 pasan** (63 previas + 18 nuevas).
+
+| Pieza | Estado | Evidencia |
+|---|---|---|
+| Golden del motor (frames, proyecto, exports editable/standalone) | **Hecho** | `tests/golden.test.ts`, `tests/golden-scenes.ts`, `tests/fixtures/golden-*.json`; regenerar solo ante un cambio intencional: `npx tsx scripts/golden.ts --update` |
+| Tests que faltaban: easing, springs, critique | **Hecho** | `tests/golden.test.ts` |
+| Schemas completos de las 106 operaciones | **Hecho** | `packages/core/operation-schemas.ts`; tools `operations.list` / `operations.describe` (sin sesión); `ops.apply`, ops de tableros y `mai apply` del CLI validan contra el schema completo y rechazan campos desconocidos con la lista aceptada. 552 ops reales de la suite validan sin falsos rechazos. `tests/operations-schema.test.ts` |
+| Ojos mínimos: `render.filmstrip` | **Hecho (experimental)** | Hoja de contactos rotulada, onion skin, encuadre por parte, una sola carga de página (`openRenderSession`); dry-runs aceptan `preview.filmstrip`; MCP adjunta la hoja (JPEG si excede 1.5 MB). `tests/observe.test.ts` |
+| Skills sin techo de presets | **Hecho** | `skills-src/mai-svg/reference/motion.md` reescrito (primitivas, beats, overlap, arcos, loops, mirar y refinar); `mai-animate` y el editor exponen todos los easings |
+| Benchmark de movimiento | **Arnés hecho; baseline pendiente** | 8 casos en `benchmarks/motion/cases`; `scripts/motion-bench.ts` (workspace aislado, sesión de cualquier commit con `--ref`, adaptadores Claude Code y Codex, verificación con las métricas actuales, galería). Corridas sin agente pasan en los 8 casos. La baseline real (`--ref 4476799 --agent claude,codex --all --label baseline`) no se pudo correr: cuota semanal de Claude CLI agotada hasta el 10-oct 4 pm y cuota de Codex agotada hasta las 7:40 pm del 7-oct |
+
+Hallazgos de F0:
+- Bug corregido: el export standalone fallaba con cualquier color (`fill`/`stroke`) interpolado, porque el redondeo a hex (±0,5) superaba la tolerancia de 0,25. Regresión en `tests/golden.test.ts`.
+- La lista MCP de tools pesa ~114 KB por cliente y el schema completo de ops ~93 KB, por eso este último se sirve bajo demanda (`operations.describe`) y no en la definición de `apply_operations`.
+- `ops.apply` sigue marcada *destructive*, y los clientes MCP piden confirmación en cada llamada. El plan v2 (F3) será la ruta principal de autoría sin esa fricción.
+- El editor sigue usando `/api/apply` sin validación de schema (solo el CLI se valida); pendiente cuando haya cobertura de flujos del navegador.
+
 
 ## Superficie de agentes S0–S4 — estado verificado 2026-10-04
 

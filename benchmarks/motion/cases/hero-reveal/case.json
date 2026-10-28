@@ -1,0 +1,152 @@
+{
+ "id": "hero-reveal",
+ "title": "Landing hero: cinematic reveal of a character in its landscape",
+ "source": {
+  "case": "original.svg"
+ },
+ "approvedName": "hero.svg",
+ "timeline": {
+  "duration": 5,
+  "fps": 30,
+  "loop": false
+ },
+ "prepare": [
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "scene",
+       "role": "scene",
+       "label": "Escena",
+       "targets": [
+        "sky"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "cat",
+       "role": "character",
+       "label": "Gato",
+       "targets": [
+        "cat"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "cat-eyes",
+       "role": "eyes",
+       "label": "Ojos",
+       "targets": [
+        "cat-eye-left",
+        "cat-eye-right"
+       ],
+       "parent": "cat",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "cat-nose",
+       "role": "nose",
+       "label": "Nariz",
+       "targets": [
+        "cat-nose"
+       ],
+       "parent": "cat",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "sun",
+       "role": "sun",
+       "label": "Sol",
+       "targets": [
+        "sun"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "hills-far",
+       "role": "background",
+       "label": "Colinas lejanas",
+       "targets": [
+        "hills-far"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "hills-near",
+       "role": "midground",
+       "label": "Colinas cercanas",
+       "targets": [
+        "hills-near"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "grass",
+       "role": "foreground",
+       "label": "Pasto",
+       "targets": [
+        "grass"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     }
+    ]
+   },
+   "label": "Partes"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "cat-eyes",
+   "cat-nose"
+  ]
+ },
+ "context": {
+  "purpose": "hero",
+  "placement": "landing page hero 16:9",
+  "viewport": {
+   "width": 960,
+   "height": 540,
+   "responsive": true
+  },
+  "loop": {
+   "required": false
+  },
+  "motionStyle": {
+   "energy": 0.5,
+   "cinematic": 0.9
+  }
+ }
+}

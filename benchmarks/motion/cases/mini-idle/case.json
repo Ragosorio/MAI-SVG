@@ -1,0 +1,156 @@
+{
+ "id": "mini-idle",
+ "title": "Mini character idle for a game inventory",
+ "source": {
+  "fixture": "mini"
+ },
+ "approvedName": "mini.svg",
+ "timeline": {
+  "duration": 4,
+  "fps": 24,
+  "loop": true
+ },
+ "prepare": [
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "char",
+       "role": "character",
+       "label": "Personaje",
+       "targets": [
+        "char"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "head",
+       "role": "head",
+       "label": "Cabeza",
+       "targets": [
+        "face"
+       ],
+       "parent": "char",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "mouth",
+       "role": "mouth",
+       "label": "Boca",
+       "targets": [
+        "mouth"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-left",
+       "role": "eye-left",
+       "label": "Ojo izquierdo",
+       "targets": [
+        "eye-left-g"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-right",
+       "role": "eye-right",
+       "label": "Ojo derecho",
+       "targets": [
+        "eye-right-g"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "nose",
+       "role": "nose",
+       "label": "Nariz",
+       "targets": [
+        "nose"
+       ],
+       "parent": "head",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "flask",
+       "role": "flask",
+       "label": "Frasco",
+       "targets": [
+        "flask"
+       ],
+       "parent": "char",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "smoke",
+       "role": "smoke",
+       "label": "Humo",
+       "targets": [
+        "smoke"
+       ],
+       "parent": "flask",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     }
+    ]
+   },
+   "label": "Partes"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "eye-left",
+   "eye-right",
+   "nose"
+  ]
+ },
+ "context": {
+  "purpose": "character-idle",
+  "placement": "game inventory preview",
+  "viewport": {
+   "width": 512,
+   "height": 512
+  },
+  "loop": {
+   "required": true,
+   "shouldFeelNonRepetitive": true
+  },
+  "priority": {
+   "faceReadability": "critical"
+  }
+ }
+}

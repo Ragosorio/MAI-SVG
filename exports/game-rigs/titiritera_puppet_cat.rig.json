@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/titiritera_puppet_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "titiritera_puppet_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 360,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 370,
+    "cy": 170,
+    "rx": 160,
+    "ry": 125
+   }
+  },
+  {
+   "id": "titiritera_puppet_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "titiritera_puppet_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 110
+    },
+    "tip": {
+     "x": 290,
+     "y": 55
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "titiritera_puppet_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "titiritera_puppet_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 490,
+     "y": 190
+    },
+    "tip": {
+     "x": 528,
+     "y": 160
+    }
+   },
+   "notes": "halfWidth=22"
+  },
+  {
+   "id": "titiritera_puppet_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "titiritera_puppet_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 340,
+     "y": 185.0
+    },
+    "outer": {
+     "x": 302,
+     "y": 185.0
+    },
+    "upper": {
+     "x": 321.0,
+     "y": 167
+    },
+    "lower": {
+     "x": 321.0,
+     "y": 203
+    },
+    "iris": {
+     "x": 321.0,
+     "y": 185.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 321.0,
+    "cy": 185.0,
+    "rx": 28.5,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "titiritera_puppet_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "titiritera_puppet_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 376,
+     "y": 212.0
+    },
+    "outer": {
+     "x": 418,
+     "y": 212.0
+    },
+    "upper": {
+     "x": 397.0,
+     "y": 193
+    },
+    "lower": {
+     "x": 397.0,
+     "y": 231
+    },
+    "iris": {
+     "x": 397.0,
+     "y": 212.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 397.0,
+    "cy": 212.0,
+    "rx": 31.5,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "titiritera_puppet_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 520,
+     "y": 500
+    },
+    "spine1": {
+     "x": 530,
+     "y": 420
+    },
+    "spine2": {
+     "x": 530,
+     "y": 330
+    },
+    "spine3": {
+     "x": 550,
+     "y": 250
+    },
+    "spine4": {
+     "x": 600,
+     "y": 215
+    },
+    "spine5": {
+     "x": 640,
+     "y": 250
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "titiritera_puppet_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 110,
+    "cy": 345,
+    "rx": 55,
+    "ry": 55
+   }
+  },
+  {
+   "id": "titiritera_puppet_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 510,
+    "cy": 528,
+    "rx": 55,
+    "ry": 55
+   }
+  }
+ ]
+}

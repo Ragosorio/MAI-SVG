@@ -1,0 +1,184 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/valquiria_lightning_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "valquiria_lightning_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 355,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 365,
+    "cy": 200,
+    "rx": 155,
+    "ry": 115
+   }
+  },
+  {
+   "id": "valquiria_lightning_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "valquiria_lightning_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 280,
+     "y": 165
+    },
+    "tip": {
+     "x": 265,
+     "y": 100
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "valquiria_lightning_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "valquiria_lightning_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 450,
+     "y": 215
+    },
+    "tip": {
+     "x": 472,
+     "y": 165
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "valquiria_lightning_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "valquiria_lightning_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 334,
+     "y": 234.0
+    },
+    "outer": {
+     "x": 296,
+     "y": 234.0
+    },
+    "upper": {
+     "x": 315.0,
+     "y": 216
+    },
+    "lower": {
+     "x": 315.0,
+     "y": 252
+    },
+    "iris": {
+     "x": 315.0,
+     "y": 234.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 315.0,
+    "cy": 234.0,
+    "rx": 28.5,
+    "ry": 34.2
+   }
+  },
+  {
+   "id": "valquiria_lightning_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "valquiria_lightning_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 376,
+     "y": 248.5
+    },
+    "outer": {
+     "x": 418,
+     "y": 248.5
+    },
+    "upper": {
+     "x": 397.0,
+     "y": 231
+    },
+    "lower": {
+     "x": 397.0,
+     "y": 266
+    },
+    "iris": {
+     "x": 397.0,
+     "y": 248.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 397.0,
+    "cy": 248.5,
+    "rx": 31.5,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "valquiria_lightning_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 510,
+     "y": 610
+    },
+    "spine1": {
+     "x": 560,
+     "y": 560
+    },
+    "spine2": {
+     "x": 585,
+     "y": 470
+    },
+    "spine3": {
+     "x": 590,
+     "y": 390
+    },
+    "spine4": {
+     "x": 565,
+     "y": 345
+    }
+   },
+   "notes": "radius=50"
+  }
+ ]
+}

@@ -1,0 +1,282 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/galaxia_jelly_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "galaxia_jelly_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 340
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 285,
+    "cy": 215,
+    "rx": 170,
+    "ry": 125
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "galaxia_jelly_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 249,
+     "y": 124
+    },
+    "tip": {
+     "x": 233,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=35"
+  },
+  {
+   "id": "galaxia_jelly_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "galaxia_jelly_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 416,
+     "y": 206
+    },
+    "tip": {
+     "x": 455,
+     "y": 163
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "galaxia_jelly_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "galaxia_jelly_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 274,
+     "y": 229.0
+    },
+    "outer": {
+     "x": 229,
+     "y": 229.0
+    },
+    "upper": {
+     "x": 251.5,
+     "y": 205
+    },
+    "lower": {
+     "x": 251.5,
+     "y": 253
+    },
+    "iris": {
+     "x": 251.5,
+     "y": 229.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 251.5,
+    "cy": 229.0,
+    "rx": 33.75,
+    "ry": 45.6
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "galaxia_jelly_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 317,
+     "y": 263.5
+    },
+    "outer": {
+     "x": 366,
+     "y": 263.5
+    },
+    "upper": {
+     "x": 341.5,
+     "y": 241
+    },
+    "lower": {
+     "x": 341.5,
+     "y": 286
+    },
+    "iris": {
+     "x": 341.5,
+     "y": 263.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 341.5,
+    "cy": 263.5,
+    "rx": 36.75,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 467,
+     "y": 482
+    },
+    "spine1": {
+     "x": 544,
+     "y": 505
+    },
+    "spine2": {
+     "x": 622,
+     "y": 467
+    },
+    "spine3": {
+     "x": 657,
+     "y": 381
+    },
+    "spine4": {
+     "x": 638,
+     "y": 296
+    },
+    "spine5": {
+     "x": 575,
+     "y": 249
+    },
+    "spine6": {
+     "x": 521,
+     "y": 257
+    }
+   },
+   "notes": "radius=44"
+  },
+  {
+   "id": "galaxia_jelly_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 179,
+    "cy": 89,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 505,
+    "cy": 226,
+    "rx": 22,
+    "ry": 22
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 566,
+    "cy": 208,
+    "rx": 17,
+    "ry": 17
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 43,
+    "cy": 249,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 78,
+    "cy": 292,
+    "rx": 20,
+    "ry": 20
+   }
+  },
+  {
+   "id": "galaxia_jelly_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 117,
+    "cy": 579,
+    "rx": 15,
+    "ry": 15
+   }
+  }
+ ]
+}

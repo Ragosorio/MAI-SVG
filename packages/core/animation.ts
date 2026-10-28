@@ -1,8 +1,12 @@
+import {numericCurve,customEase} from './curves.js';
 import {mixPaths,pathData,segments,mix,type Point} from './geometry.js';
-import {defaultPose,DEFAULT_LAYERS,type Project,type Track,type Bone,type Mesh,type Pose,type Easing,type Layer,type Modifier} from './model.js';
+import {defaultPose,DEFAULT_LAYERS,type Project,type Track,type Bone,type Mesh,type Pose,type Easing,type Layer,type Modifier,type Secondary} from './model.js';
 import {evaluateRig} from './expression.js';
 import {applyModifier,flowField,flowFilter} from './modifiers.js';
 import {simulateSecondary,secondaryAt} from './secondary.js';
+import {applySignals,applyParamSignals} from './procedural.js';
+import {cameraState} from './camera.js';
+import {applyMotionPaths} from './motion-path.js';
 export type Matrix=[number,number,number,number,number,number];
 export const identity=():Matrix=>[1,0,0,1,0,0];
 export function multiply(a:Matrix,b:Matrix):Matrix{return [a[0]*b[0]+a[2]*b[1],a[1]*b[0]+a[3]*b[1],a[0]*b[2]+a[2]*b[3],a[1]*b[2]+a[3]*b[3],a[0]*b[4]+a[2]*b[5]+a[4],a[1]*b[4]+a[3]*b[5]+a[5]];}
@@ -17,9 +21,10 @@ export function ease(e:Easing,t:number):number{
  const m=e.match(bezier);if(!m)return t;const [x1,y1,x2,y2]=m.slice(1).map(Number);const f=(a:number,b:number,s:number)=>3*a*s*(1-s)*(1-s)+3*b*s*s*(1-s)+s*s*s;
  let lo=0,hi=1,s=t;for(let i=0;i<30;i++){s=(lo+hi)/2;if(f(x1,x2,s)<t)lo=s;else hi=s;}return f(y1,y2,s);
 }
-export function valueAt(track:Track,time:number):number|string {
+export function valueAt(track:Track,time:number,loop=false):number|string {
  const keys=track.keys;if(!keys.length)throw Error('Empty track');if(time<=keys[0].time)return keys[0].value;if(time>=keys.at(-1)!.time)return keys.at(-1)!.value;
- const j=keys.findIndex(k=>k.time>time),a=keys[j-1],b=keys[j];if(a.easing==='step')return a.value;const t=ease(a.easing,(time-a.time)/(b.time-a.time));
+ const j=keys.findIndex(k=>k.time>time),a=keys[j-1],b=keys[j];if(a.easing==='step')return a.value;const u=(time-a.time)/(b.time-a.time);const t=a.curve?customEase(a.curve,u):ease(a.easing,u);
+ if(typeof a.value==='number'&&typeof b.value==='number'&&!a.curve&&(a.out||b.in||a.auto||b.auto))return numericCurve(keys,j-1,u,loop);
  if(typeof a.value==='number'&&typeof b.value==='number')return a.value+(b.value-a.value)*t;
  if(track.property==='d')return mixPaths(String(a.value),String(b.value),Math.max(0,Math.min(1,t)));
  const hex=(v:string)=>/^#[0-9a-f]{6}$/i.test(v)?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):null;
@@ -31,16 +36,18 @@ export const layersOf=(p:Project):Layer[]=>{const list=p.layers?.length?p.layers
 export function mixTracks(p:Project,tracks:Track[],time:number,base:number|string|undefined){
  const layers=layersOf(p),order=new Map(layers.map((l,i)=>[l.id,i])),solo=layers.some(l=>l.solo);
  const active=tracks.map(t=>({t,l:layers.find(l=>l.id===(t.layer??'base'))??{id:t.layer!,name:t.layer!,blend:'override' as const,weight:1}})).filter(({l})=>!l.mute&&(!solo||l.solo||l.id==='base')).sort((a,b)=>(order.get(a.l.id)??99)-(order.get(b.l.id)??99));
- let value=base;for(const {t,l}of active){const v=valueAt(t,time);if(l.blend==='additive'&&typeof v==='number'){value=(typeof value==='number'?value:0)+l.weight*v;}
+ let value=base;for(const {t,l}of active){const v=valueAt(t,time,p.loop);if(l.blend==='additive'&&typeof v==='number'){value=(typeof value==='number'?value:0)+l.weight*v;}
   else if(typeof v==='number'&&typeof value==='number'&&l.weight<1)value=value+(v-value)*l.weight;else if(l.weight>=.5||value===undefined)value=v;}
  return value;
 }
 const poseProps=['x','y','rotation','scaleX','scaleY'];
-export type FrameOptions={params?:Record<string,number>;modifiers?:boolean;secondary?:boolean};
-export function frameParams(project:Project,time:number,overrides?:Record<string,number>){
+export type FrameOptions={params?:Record<string,number>;modifiers?:boolean;secondary?:boolean;signals?:boolean;camera?:boolean};
+/** Params at a time. `expr:false` leaves out expression signals (used when expressions read params: no self-reference). */
+export function frameParams(project:Project,time:number,overrides?:Record<string,number>,opts?:{expr?:boolean}){
  const t=Math.max(0,Math.min(project.duration,time)),params:Record<string,number>={};for(const [name,def]of Object.entries(project.params??{}))params[name]=def.default;
  const groups=new Map<string,Track[]>();for(const track of project.tracks)if(track.property==='param'){const g=groups.get(track.target)??[];g.push(track);groups.set(track.target,g);}
  for(const [name,tracks]of groups){const v=mixTracks(project,tracks,t,params[name]??0);if(typeof v==='number')params[name]=v;}
+ if(project.signals?.length)applyParamSignals(project,t,params,opts?.expr===false);
  Object.assign(params,overrides??{});for(const [name,def]of Object.entries(project.params??{}))if(name in params)params[name]=Math.max(def.min,Math.min(def.max,params[name]));
  return params;
 }
@@ -49,7 +56,7 @@ function field(m:Modifier,duration:number,loop:boolean){const key=JSON.stringify
 export const filterId=(m:Modifier)=>m.filter??`${m.id}-flow`;
 export function frameState(project:Project,time:number,options:FrameOptions={}){
  const t=Math.max(0,Math.min(project.duration,time));const poses=structuredClone(project.poses),attrs:Record<string,Record<string,string>>={};const bones=structuredClone(project.bones),meshes=structuredClone(project.meshes);
- const groups=new Map<string,Track[]>();for(const track of project.tracks){if(track.property==='param')continue;const key=track.target+'\u0000'+track.property,g=groups.get(key)??[];g.push(track);groups.set(key,g);}
+ const groups=new Map<string,Track[]>();for(const track of project.tracks){if(track.property==='param'||track.target==='@camera')continue;const key=track.target+'\u0000'+track.property,g=groups.get(key)??[];g.push(track);groups.set(key,g);}
  for(const tracks of groups.values()){const {target,property}=tracks[0];
   if(poseProps.includes(property)){poses[target]??=defaultPose();const pose=poses[target] as unknown as Record<string,number>;pose[property]=Number(mixTracks(project,tracks,t,pose[property]));}
   else if(property.startsWith('bone')){const b=bones.find(b=>b.id===target);if(b){const k={boneRotation:'rotation',boneX:'x',boneY:'y'}[property as 'boneRotation'|'boneX'|'boneY'] as 'rotation';b[k]=Number(mixTracks(project,tracks,t,b[k]));}}
@@ -57,15 +64,13 @@ export function frameState(project:Project,time:number,options:FrameOptions={}){
   else{attrs[target]??={};attrs[target][property]=String(mixTracks(project,tracks,t,undefined));}
  }
  const params=frameParams(project,t,options.params);
+ // Procedural signals act like tracks on their layer: after keyed motion, before rig drivers and secondary motion.
+ if(project.motionPaths?.length)applyMotionPaths(project,t,poses);
+ if(options.signals!==false&&project.signals?.length)applySignals(project,t,{poses,bones,attrs,params});
  const rig=evaluateRig(project.expression,params,project.preservation??'balanced');
  for(const [id,a]of Object.entries(rig.attrs))Object.assign(attrs[id]??={},a);
  for(const [id,p]of Object.entries(rig.poses)){poses[id]??=defaultPose();Object.assign(poses[id],p);}
- if(options.secondary!==false)for(const s of project.secondary??[]){
-  let offset:number;if(s.kind==='look-at')offset=Math.max(-s.limit,Math.min(s.limit,s.gain*s.limit*(params[s.driver]??0)));
-  else{const prop=s.driverProperty??s.property,tracks=project.tracks.filter(tr=>tr.target===s.driver&&tr.property===prop);const rest=(project.poses[s.driver] as unknown as Record<string,number>|undefined)?.[prop]??(prop.startsWith('scale')?1:0);
-   const driver=(time:number)=>tracks.length?Number(mixTracks(project,tracks,time,rest)):rest;offset=secondaryAt(simulateSecondary(s,driver,project.duration,project.loop),project.duration,t);}
-  poses[s.target]??=defaultPose();(poses[s.target] as unknown as Record<string,number>)[s.property]+=offset;
- }
+ if(options.secondary!==false)for(const s of project.secondary??[]){poses[s.target]??=defaultPose();(poses[s.target] as unknown as Record<string,number>)[s.property]+=secondaryOffset(project,s,t,params);}
  if(options.modifiers!==false)for(const m of project.modifiers??[]){if(!m.enabled)continue;const live={...m,params:{...m.params}};for(const k of Object.keys(m.params))if(`${m.id}.${k}` in params)live.params[k]=params[`${m.id}.${k}`];
   if(m.technique==='filter'&&m.kind==='flow'){const f=flowFilter(live,filterId(m),project.duration).at(t);attrs[`${filterId(m)}-scroll`]={dx:String(f.dx),dy:String(f.dy)};continue;}
   const F=m.kind==='flow'?field(live,project.duration,project.loop):undefined;for(const id of m.targets){const d=attrs[id]?.d??m.rest[id];if(!d)continue;(attrs[id]??={}).d=applyModifier(live,d,t,project.duration,F);}
@@ -75,8 +80,15 @@ export function frameState(project:Project,time:number,options:FrameOptions={}){
   for(const s of data)for(let j=0;j<s.points.length;j++){const restPoint=s.points[j],mesh=meshes.find(m=>m.target===skin.target),p=mesh?deformMesh(mesh,restPoint):restPoint,weights=skin.weights[i++]??{};let x=0,y=0,total=0;for(const [id,w]of Object.entries(weights)){const m=matrices.get(id);if(!m)continue;const q=applyMatrix(m.delta,p);x+=q.x*w;y+=q.y*w;total+=w;}s.points[j]=total?{x:x/total,y:y/total}:p;}
   attrs[skin.target]??={};attrs[skin.target].d=pathData(data);
  }
- return {poses,attrs,bones,meshes,matrices,params};
+ // The camera is a view transform (camera.ts): it never changes the artwork's poses.
+ const camera=project.camera&&options.camera!==false?cameraState(project,t,params):undefined;
+ return {poses,attrs,bones,meshes,matrices,params,...(camera?{camera}:{})};
 }
+/** Offset a secondary-motion rule adds to its target at time t (look-at reads a param; springs read the driver's keys). */
+export function secondaryOffset(project:Project,s:Secondary,t:number,params:Record<string,number>){
+ if(s.kind==='look-at')return Math.max(-s.limit,Math.min(s.limit,s.gain*s.limit*(params[s.driver]??0)));
+ const prop=s.driverProperty??s.property,tracks=project.tracks.filter(tr=>tr.target===s.driver&&tr.property===prop);const rest=(project.poses[s.driver] as unknown as Record<string,number>|undefined)?.[prop]??(prop.startsWith('scale')?1:0);
+ const driver=(time:number)=>tracks.length?Number(mixTracks(project,tracks,time,rest)):rest;return secondaryAt(simulateSecondary(s,driver,project.duration,project.loop),project.duration,t);}
 export function poseTransform(p:Pose){return `translate(${p.x} ${p.y}) translate(${p.pivotX} ${p.pivotY}) rotate(${p.rotation}) scale(${p.scaleX} ${p.scaleY}) translate(${-p.pivotX} ${-p.pivotY})`;}
 export function boneMatrices(bones:Bone[]){const map=new Map<string,{rest:Matrix;world:Matrix;delta:Matrix}>(),visiting=new Set<string>();
  const visit=(b:Bone):void=>{if(map.has(b.id))return;if(visiting.has(b.id))throw Error('Bone hierarchy cycle');visiting.add(b.id);const rest=transform(b.rest.x,b.rest.y,b.rest.angle);let world=rest;

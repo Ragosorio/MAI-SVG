@@ -1,0 +1,207 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/emiau_rapper_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "emiau_rapper_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 280
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 295,
+    "cy": 142,
+    "rx": 126,
+    "ry": 133
+   }
+  },
+  {
+   "id": "emiau_rapper_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "emiau_rapper_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 180,
+     "y": 150
+    },
+    "tip": {
+     "x": 135,
+     "y": 122
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "emiau_rapper_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "emiau_rapper_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 350,
+     "y": 95
+    },
+    "tip": {
+     "x": 356,
+     "y": 39
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "emiau_rapper_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "emiau_rapper_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 258,
+     "y": 234.0
+    },
+    "outer": {
+     "x": 222,
+     "y": 234.0
+    },
+    "upper": {
+     "x": 240.0,
+     "y": 222
+    },
+    "lower": {
+     "x": 240.0,
+     "y": 246
+    },
+    "iris": {
+     "x": 240.0,
+     "y": 234.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 240.0,
+    "cy": 234.0,
+    "rx": 27.0,
+    "ry": 22.8
+   }
+  },
+  {
+   "id": "emiau_rapper_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "emiau_rapper_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 300,
+     "y": 196.5
+    },
+    "outer": {
+     "x": 340,
+     "y": 196.5
+    },
+    "upper": {
+     "x": 320.0,
+     "y": 180
+    },
+    "lower": {
+     "x": 320.0,
+     "y": 213
+    },
+    "iris": {
+     "x": 320.0,
+     "y": 196.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 320.0,
+    "cy": 196.5,
+    "rx": 30.0,
+    "ry": 31.35
+   }
+  },
+  {
+   "id": "emiau_rapper_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 485,
+     "y": 575
+    },
+    "spine1": {
+     "x": 540,
+     "y": 565
+    },
+    "spine2": {
+     "x": 570,
+     "y": 520
+    },
+    "spine3": {
+     "x": 568,
+     "y": 465
+    },
+    "spine4": {
+     "x": 540,
+     "y": 418
+    },
+    "spine5": {
+     "x": 505,
+     "y": 405
+    },
+    "spine6": {
+     "x": 480,
+     "y": 422
+    }
+   },
+   "notes": "radius=28"
+  },
+  {
+   "id": "emiau_rapper_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (mano que señala)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 415,
+    "cy": 305,
+    "rx": 48,
+    "ry": 50
+   }
+  }
+ ]
+}

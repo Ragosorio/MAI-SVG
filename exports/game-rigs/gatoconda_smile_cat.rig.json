@@ -1,0 +1,192 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/gatoconda_smile_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "gatoconda_smile_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 280
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 295,
+    "cy": 148,
+    "rx": 119,
+    "ry": 122
+   }
+  },
+  {
+   "id": "gatoconda_smile_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatoconda_smile_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 220,
+     "y": 100
+    },
+    "tip": {
+     "x": 195,
+     "y": 38
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "gatoconda_smile_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatoconda_smile_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 395,
+     "y": 105
+    },
+    "tip": {
+     "x": 434,
+     "y": 57
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "gatoconda_smile_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatoconda_smile_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 252,
+     "y": 183.0
+    },
+    "outer": {
+     "x": 213,
+     "y": 183.0
+    },
+    "upper": {
+     "x": 232.5,
+     "y": 167
+    },
+    "lower": {
+     "x": 232.5,
+     "y": 199
+    },
+    "iris": {
+     "x": 232.5,
+     "y": 183.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 232.5,
+    "cy": 183.0,
+    "rx": 29.25,
+    "ry": 30.4
+   }
+  },
+  {
+   "id": "gatoconda_smile_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gatoconda_smile_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 294,
+     "y": 190.0
+    },
+    "outer": {
+     "x": 340,
+     "y": 190.0
+    },
+    "upper": {
+     "x": 317.0,
+     "y": 174
+    },
+    "lower": {
+     "x": 317.0,
+     "y": 206
+    },
+    "iris": {
+     "x": 317.0,
+     "y": 190.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 317.0,
+    "cy": 190.0,
+    "rx": 34.5,
+    "ry": 30.4
+   }
+  },
+  {
+   "id": "gatoconda_smile_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 560,
+     "y": 600
+    },
+    "spine1": {
+     "x": 605,
+     "y": 565
+    },
+    "spine2": {
+     "x": 635,
+     "y": 510
+    },
+    "spine3": {
+     "x": 640,
+     "y": 455
+    },
+    "spine4": {
+     "x": 615,
+     "y": 412
+    },
+    "spine5": {
+     "x": 575,
+     "y": 392
+    },
+    "spine6": {
+     "x": 535,
+     "y": 410
+    }
+   },
+   "notes": "radius=38"
+  }
+ ]
+}

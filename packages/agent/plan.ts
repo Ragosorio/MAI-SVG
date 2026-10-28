@@ -10,22 +10,28 @@ import {renderSet,categories} from '../core/identity-guard.js';
 import {combineSpecs,compileSpec,type OptionSpec} from '../core/direct.js';
 import {flowFilter} from '../core/modifiers.js';
 import {detect} from '../core/detectors.js';
+import {critique} from '../core/critique.js';
+import type {Assertion} from '../core/assertions.js';
+import {directionAssertions,directionReport} from '../core/direction.js';
+import {validateOps} from './service.js';
 import {elements} from '../converter/svg.js';
 import {regionBounds} from '../core/warp.js';
 import {nodes,ownerOf,addressOf,AgentError} from './address.js';
 import type {Choice} from '../server/choices.js';
-const schema=JSON.parse(readFileSync(new URL('./schemas/agent-plan.v1.schema.json',import.meta.url),'utf8'));
-const ajv=new Ajv2020({allErrors:true,strict:false});const validatePlan=ajv.compile(schema);
+import {PLAN_V1_SCHEMA as schema,PLAN_V2_SCHEMA} from './plan-schema.js';
+const ajv=new Ajv2020({allErrors:true,strict:false});const validatePlanV1=ajv.compile(schema);
+const validatePlanV2=ajv.compile(PLAN_V2_SCHEMA);
 export type PartRef={partId:string;within?:string};
-export type Plan={protocol:'mai.agent-plan/v1';requestId:string;sessionId:string;documentId:string;expectedRevision:number;mode:'dry-run'|'commit';label:string;
+export type Plan={protocol:'mai.agent-plan/v1'|'mai.motion-plan/v2';assertions?:Assertion[];keepAssertions?:boolean;evaluation?:{filmstrip?:{count?:number;ghost?:number;sampling?:'uniform'|'significant'};critique?:boolean};requestId:string;sessionId:string;documentId:string;expectedRevision:number;mode:'dry-run'|'commit';label:string;
  constraints?:{preserve:{part:PartRef;reference:{kind:'snapshot'|'baseline';id:string};channels:('geometry'|'paint'|'expression')[];allowRigidMotion:boolean}[]};
- commands:({id:string;type:'variant.apply';target:PartRef;board:{id:string;version:number};base:string;take?:Record<string,string>;rechoose?:boolean}|{id:string;type:'identity.preserve';target:PartRef;reference:{kind:'snapshot'|'baseline';id:string};policy:ProtectionLevel}|{id:string;type:'animation.adjust';target:PartRef;sourceId:string;property:'speed';scale:number;onOverflow:'reject'})[];
- validation:{times:number[];required:('structural'|'identity'|'perceptual')[];preview:boolean};provenance:{kind:'user-direction'|'editor-choice'|'agent-proposal';text:string;referenceId?:string}};
+ commands:({id:string;type:'variant.apply';target:PartRef;board:{id:string;version:number};base:string;take?:Record<string,string>;rechoose?:boolean}|{id:string;type:'identity.preserve';target:PartRef;reference:{kind:'snapshot'|'baseline';id:string};policy:ProtectionLevel}|{id:string;type:'ops';label?:string;ops:Operation[]}|{id:string;type:'animation.adjust';target:PartRef;sourceId:string;property:'speed';scale:number;onOverflow:'reject'})[];
+ validation:{times:number[];required:('structural'|'identity'|'perceptual'|'verify')[];preview:boolean};provenance:{kind:'user-direction'|'editor-choice'|'agent-proposal';text:string;referenceId?:string}};
 export type Receipt=Record<string,unknown>&{requestId:string;hash:string;status:string};
 export type PlanHost={model:()=>VectorDocument;revision:()=>number;sessionId:()=>string;documentId:()=>string;board:()=>Choice|undefined;
  reference:(ref:{kind:'snapshot'|'baseline';id:string})=>Promise<{doc:VectorDocument;label:string}>;saveSnapshot:(doc:VectorDocument,label:number|string)=>Promise<string>;
  render:(doc:VectorDocument,time:number,region?:{x:number;y:number;width:number;height:number})=>Promise<Buffer>;metrics:(a:Buffer,b:Buffer,region?:{x:number;y:number;width:number;height:number})=>Promise<{mae:number;ssim:number;silhouetteIoU:number}>;writeArtifact:(name:string,png:Buffer)=>Promise<string>;
- commit:(ops:Operation[],expectedRevision:number,label:string,precondition:()=>void,receipt:(tx:{revision:number;id:string})=>Receipt)=>Promise<Receipt>;receipts:Map<string,Receipt>};
+ commit:(ops:Operation[],expectedRevision:number,label:string,precondition:()=>void,receipt:(tx:{revision:number;id:string})=>Receipt)=>Promise<Receipt>;receipts:Map<string,Receipt>;
+ verify?:(doc:VectorDocument,assertions:Assertion[])=>Promise<{passed:boolean;results:unknown[];failed:unknown[]}>;resolveOps?:(ops:Operation[])=>Promise<Operation[]>;filmstrip?:(doc:VectorDocument,opts:Record<string,unknown>)=>Promise<Record<string,unknown>>};
 const canonical=(v:unknown):string=>Array.isArray(v)?`[${v.map(canonical).join(',')}]`:v&&typeof v==='object'?`{${Object.keys(v as object).sort().map(k=>`${JSON.stringify(k)}:${canonical((v as Record<string,unknown>)[k])}`).join(',')}}`:JSON.stringify(v);
 export const planHash=(p:unknown)=>createHash('sha256').update(canonical(p)).digest('hex');
 export const undoToken=(documentId:string,transactionId:string)=>Buffer.from(JSON.stringify({v:1,d:documentId,t:transactionId})).toString('base64url');
@@ -38,6 +44,7 @@ export class PlanExecutor{
  status(requestId:string){const r=this.host.receipts.get(requestId);if(r)return {...r,replayed:true};const run=this.running.get(requestId);if(run)return {ok:true,requestId,status:'running',committed:false,startedAt:run.startedAt};return {ok:false,requestId,status:'unknown',committed:false,error:{code:'NOT_FOUND',message:`No receipt for ${requestId} (never received, or outside retention)`}};}
  cancel(requestId:string){const run=this.running.get(requestId);if(!run)return {ok:false,requestId,error:{code:'NOT_FOUND',message:'Not running'}};run.cancel=true;return {ok:true,requestId,status:'cancelling'};}
  async execute(plan:Plan):Promise<Receipt>{
+  const validatePlan=(plan as {protocol?:string})?.protocol==='mai.motion-plan/v2'?validatePlanV2:validatePlanV1;
   if(!validatePlan(plan)){const e=validatePlan.errors![0];throw new AgentError(e.keyword==='const'&&e.instancePath==='/protocol'?'UNSUPPORTED_VERSION':'INVALID_ARGUMENT',`plan${e.instancePath}: ${e.message}`,{path:`plan${e.instancePath.replace(/\//g,'.')}`,errors:validatePlan.errors!.slice(0,10).map(x=>({path:x.instancePath,message:x.message}))},400);}
   const hash=planHash(plan);const prior=this.host.receipts.get(plan.requestId);
   if(prior){if(prior.hash!==hash)throw new AgentError('REQUEST_ID_REUSED',`requestId ${plan.requestId} was used for a different plan`,{recovery:{action:'new-request-id'}},409);return {...prior,replayed:true};}
@@ -98,6 +105,7 @@ export class PlanExecutor{
     const before=base.project.params??{};changes.push({commandId:cmd.id,kind:'variant',board:{id:c.id,version:c.version},base:cmd.base,take,preservedSlots:[...preservedSlots],option:optionId,params:Object.fromEntries(Object.entries(spec.params??{}).map(([k,v])=>[k,{from:before[k]?.default??before[k.split('@')[0]]?.default??0,to:v}]))});}
    else if(cmd.type==='identity.preserve'){part(cmd.target,`${path}.target`);const n=nodes(draft).find(n=>n.id===cmd.target.partId)!;await h.reference(cmd.reference);const levels=[...new Set([...(n.protection??[]),cmd.policy])] as ProtectionLevel[];
     ops=[{type:'semantic.protect',id:n.id,protection:levels},{type:'semantic.label',node:{...structuredClone(n),protection:levels,reference:cmd.reference}}];changes.push({commandId:cmd.id,kind:'identity',part:addressOf(base,n),levels:{from:n.protection??[],to:levels},reference:cmd.reference});}
+   else if(cmd.type==='ops'){validateOps(cmd.ops,`plan.${path}.ops`);ops=structuredClone(cmd.ops);if(h.resolveOps)ops=await h.resolveOps(ops);changes.push({commandId:cmd.id,kind:'ops',...(cmd.label?{label:cmd.label}:{}),operations:ops.map(o=>o.type)});}
    else{const n=part(cmd.target,`${path}.target`);const set=partSet(n);const p=draft.project;const k=cmd.scale;
     const mod=(p.modifiers??[]).find(m=>m.id===cmd.sourceId),sec=(p.secondary??[]).find(s=>s.id===cmd.sourceId);const trackRef=/^track:([^:]+):([^:]+)(?::(.+))?$/.exec(cmd.sourceId);
     if(mod){if(!mod.targets.some(t=>set.has(t)))throw new AgentError('NOT_FOUND',`Source ${cmd.sourceId} does not animate ${n.id}`,{path:`${path}.sourceId`},404);const from=mod.params.speedFactor??1,to=round(from*k,6);
@@ -119,11 +127,24 @@ export class PlanExecutor{
   if(plan.validation.required.includes('identity')){if(identity.status==='not_evaluated')throw new AgentError('VALIDATION_NOT_EVALUATED','Identity gate required but one or more preserved parts could not be evaluated',{identity},422);if(identity.status==='fail')throw new AgentError('IDENTITY_BLOCKED','A preserved part would change',{identity},422);}
   let perceptual:Record<string,unknown>={status:'not_requested'};
   if(plan.validation.required.includes('perceptual')){perceptual=await this.perceptual(captured,draft,times,plan);if(perceptual.status!=='pass')throw new AgentError(perceptual.status==='not_evaluated'?'VALIDATION_NOT_EVALUATED':'VALIDATION_FAILED','Perceptual gate did not pass',{perceptual},422);}
+  // v2: motion assertions are the animation's tests; they run on the draft (a gate only when `verify` is required).
+  // The human's musts (direction.set, possibly in this same plan) are tests too; their report says passed/failed/untested.
+  const own=plan.assertions??[],musts=directionAssertions(draft.project),all=[...own,...musts.map(x=>x.assertion)];
+  let verify:Record<string,unknown>|undefined;if(all.length||draft.project.direction){if(all.length&&!h.verify)throw new AgentError('VALIDATION_NOT_EVALUATED','This host cannot verify motion assertions',{},422);
+   const v=all.length?await h.verify!(draft,all):{passed:true,failed:[],results:[]};verify={passed:v.passed,failed:v.failed,results:v.results.length,...(draft.project.direction?{direction:directionReport(draft.project,(v.results as {status:string}[]).slice(own.length))}:{})};
+   if(plan.validation.required.includes('verify')&&!v.passed)throw new AgentError('VERIFY_FAILED','Motion assertions failed on the draft',{verify:v,recovery:{action:'refine',hint:'Change the commands (curves, timing, overlap) and dry-run again; the failed list says what each predicate measured.'}},422);
+   if(own.length&&plan.keepAssertions!==false){const op:Operation={type:'motion.assertions',assertions:own};draft.apply([op]);allOps.push(op);}}
+  else if(plan.validation.required.includes('verify'))throw new AgentError('INVALID_ARGUMENT','The verify gate needs assertions',{path:'plan.assertions'},400);
+  const evaluation:Record<string,unknown>={};if(plan.evaluation?.critique){const c=critique(draft);evaluation.critique={scores:c.deterministic.scores,findings:c.deterministic.findings.map(f=>({code:f.code,severity:f.severity,target:f.target,message:f.message}))};}
+  if(plan.evaluation?.filmstrip){if(h.filmstrip){try{evaluation.filmstrip=await h.filmstrip(draft,plan.evaluation.filmstrip);}catch(e){warnings.push(`filmstrip failed: ${String((e as Error).message).slice(0,160)}`);}}else warnings.push('filmstrip not available on this host');}
+  const technical=((evaluation.critique as {findings?:{severity:string}[]}|undefined)?.findings??[]).filter(f=>f.severity!=='info').length;
+  const loop={stop:{identity:identity.status,verify:verify?verify.passed?'pass':'fail':'not_requested',technicalWarnings:plan.evaluation?.critique?technical:'not_requested'},shouldContinue:(verify?!verify.passed:false)||technical>0,
+   note:'MAI never decides taste: look at the filmstrip, record your judgement (critique.record) and refine the single thing that helps most.'};
   this.cancelled(plan);
   // 5. Draft snapshot and previews outside the write queue.
   const draftSnapshot=await h.saveSnapshot(draft,`draft-${plan.requestId}`);const artifacts:Record<string,unknown>[]=[];
   if(plan.validation.preview)for(const t of times){try{const png=await h.render(draft,t);artifacts.push({id:`preview-${plan.requestId}-${t}`,kind:'preview',time:t,snapshotId:draftSnapshot,path:await h.writeArtifact(`${plan.requestId}-${t}.png`,png),sha256:createHash('sha256').update(png).digest('hex')});}catch(e){warnings.push(`preview at ${t}s failed: ${String((e as Error).message).slice(0,160)}`);}}
-  const common={protocol:'mai.agent-result/v1',requestId:plan.requestId,hash,tool:'plan.execute',sessionId:h.sessionId(),documentId:h.documentId(),baseRevision:plan.expectedRevision,changes,identity:{...identity,...(perceptual.status!=='not_requested'?{perceptual}:{})},structural,artifacts,warnings,operations:allOps.length};
+  const common={protocol:'mai.agent-result/v1',requestId:plan.requestId,hash,tool:'plan.execute',sessionId:h.sessionId(),documentId:h.documentId(),baseRevision:plan.expectedRevision,changes,identity:{...identity,...(perceptual.status!=='not_requested'?{perceptual}:{})},structural,artifacts,warnings,operations:allOps.length,...(plan.protocol==='mai.motion-plan/v2'?{...(verify?{verify}:{}),evaluation,loop}:{})};
   if(plan.mode==='dry-run')return {ok:true,...common,status:'prepared',committed:false,revision:plan.expectedRevision,snapshotId:draftSnapshot};
   this.cancelled(plan);
   // 6. Commit: CAS on revision and board version, one transaction, receipt journaled with it.

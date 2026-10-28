@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/almohadon_pillow_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "almohadon_pillow_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 290,
+     "y": 345
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 285,
+    "cy": 232,
+    "rx": 180,
+    "ry": 118
+   }
+  },
+  {
+   "id": "almohadon_pillow_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "almohadon_pillow_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 235,
+     "y": 153
+    },
+    "tip": {
+     "x": 225,
+     "y": 81
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "almohadon_pillow_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "almohadon_pillow_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 411,
+     "y": 217
+    },
+    "tip": {
+     "x": 472,
+     "y": 170
+    }
+   },
+   "notes": "halfWidth=42"
+  },
+  {
+   "id": "almohadon_pillow_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "almohadon_pillow_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 270,
+     "y": 244.5
+    },
+    "outer": {
+     "x": 217,
+     "y": 244.5
+    },
+    "upper": {
+     "x": 243.5,
+     "y": 227
+    },
+    "lower": {
+     "x": 243.5,
+     "y": 262
+    },
+    "iris": {
+     "x": 243.5,
+     "y": 244.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 243.5,
+    "cy": 244.5,
+    "rx": 39.75,
+    "ry": 33.25
+   }
+  },
+  {
+   "id": "almohadon_pillow_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "almohadon_pillow_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 319,
+     "y": 285.5
+    },
+    "outer": {
+     "x": 378,
+     "y": 285.5
+    },
+    "upper": {
+     "x": 348.5,
+     "y": 270
+    },
+    "lower": {
+     "x": 348.5,
+     "y": 301
+    },
+    "iris": {
+     "x": 348.5,
+     "y": 285.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 348.5,
+    "cy": 285.5,
+    "rx": 44.25,
+    "ry": 29.45
+   }
+  },
+  {
+   "id": "almohadon_pillow_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 530,
+     "y": 500
+    },
+    "spine1": {
+     "x": 590,
+     "y": 460
+    },
+    "spine2": {
+     "x": 630,
+     "y": 390
+    },
+    "spine3": {
+     "x": 635,
+     "y": 310
+    },
+    "spine4": {
+     "x": 612,
+     "y": 262
+    },
+    "spine5": {
+     "x": 585,
+     "y": 240
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "almohadon_pillow_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 350,
+    "cy": 380,
+    "rx": 330,
+    "ry": 330
+   }
+  },
+  {
+   "id": "almohadon_pillow_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 300,
+    "cy": 445,
+    "rx": 262,
+    "ry": 72
+   }
+  }
+ ]
+}

@@ -108,6 +108,40 @@ Un solo registro (`packages/agent/registry.ts`, esquemas JSON 2020-12 validados 
 - **API:** `POST /api/agent/call {tool, args}` (token local), `GET /api/agent/capabilities`. Errores: `{ok:false, error:{code, message, path?, candidates?, suggestions?, recovery?}}` con HTTP 400/404/409/422/500/503 según `docs/AGENT-CONTRACT.md`.
 - **MCP:** `npm run --silent mcp` o `.mcp.json` del proyecto (Claude Code). Codex: `codex exec -c 'mcp_servers.mai_svg.command="node"' -c 'mcp_servers.mai_svg.args=["<ruta>/node_modules/tsx/dist/cli.mjs","<ruta>/packages/cli/main.ts","mcp"]'`. `MAI_ROOT` elige el workspace (su `.cache` contiene la sesión) y `MAI_PORT` el puerto si el servidor MCP debe arrancar el editor. SDK oficial 1.32.0; herramientas con `inputSchema`, `outputSchema`, anotaciones (`destructiveHint` en release/undo/dismiss/ops), disponibilidad `stable|experimental`; las previews vuelven también como imágenes (máx. 4, ≤1,5 MB cada una).
 
+Descubrimiento y observación (Motion Director F0): `operations [--family F]` y `operations describe --type T` (schema completo, ejemplos con setup, expansión de macros; sin sesión), `filmstrip [--count N] [--ghost K] [--part REF]` (hoja de contactos del movimiento; con `--file escena.svg` funciona sin sesión). Benchmark: `npx tsx scripts/motion-bench.ts --case ID|--all --agent claude,codex|none [--ref COMMIT] [--label L]`.
+
 Verbos principales: `inspect`, `semantics`, `selection`, `timeline`, `identity`, `history`, `choices inspect`, `resolve`, `part candidates|label|extract`, `expression propose|rig|apply`, `variant combine`, `choices choose|dismiss|regenerate|note`, `identity preserve|release|mode|check`, `baseline capture`, `animate adjust`, `fluid animate`, `motion spring|preset`, `morph`, `timeline set`, `execute` (plan atómico), `execution` (recibo), `undo --token`, `preview`, `compare`, `critique`, `audit`, `profile`, `export`, `export capabilities`, `inbox`. Lista completa con efectos y ejemplos: `mai capabilities`.
 
 **Plan atómico (`mai execute`)**: `mai.agent-plan/v1` (`packages/agent/schemas/agent-plan.v1.schema.json`) con `constraints.preserve` (capturadas antes de compilar), comandos `variant.apply`, `identity.preserve`, `animation.adjust`, gates `structural|identity|perceptual`, `mode: dry-run|commit` y `requestId` idempotente. Un commit = una transacción del journal con escena, aceptación del tablero y recibo; `transaction.undoToken` (opaco) deshace todo. Si el humano cambia de opinión sobre un tablero ya elegido, `variant.apply` lleva `rechoose:true` (la nueva aceptación reemplaza la anterior; undo vuelve a ella). Una parte preservada que solo es región del arte compartido se evalúa por píxeles de esa región. Ver `docs/AGENT-CONTRACT.md`.
+
+
+## Observación de movimiento F1 (experimental)
+
+Las siguientes herramientas también aceptan `--file escena.svg`, sin sesión viva:
+
+```sh
+npm run mai -- motion render --part '#tail' --views trail,spacing,graph --count 61
+npm run mai -- motion verify --args '{"assertions":[{"type":"moves","part":"#tail","direction":"right","minDistance":10,"during":[0,1]}]}'
+npm run mai -- video --fps 24 --width 640 --format mp4
+```
+
+`render.motion` devuelve imágenes y muestras del centro geométrico en coordenadas SVG de mundo. `graph` muestra velocidad del centro, todavía no canales arbitrarios. Espaciado es distancia entre muestras; energía es velocidad RMS en unidades SVG/s; curvatura es cambio total de rumbo en radianes, incluyendo reversas. `returnsToRest` compara bounds con `restTime` (0 por defecto); `loopSeamless` compara bounds y velocidades de entrada/salida y exige timeline loop. Las seis aserciones disponibles se descubren con `capabilities --tool motion.verify`.
+
+`motion.verify` nunca aprueba targets sin evaluar y no persiste las aserciones todavía. El muestreo uniforme puede omitir eventos entre muestras; las métricas no sustituyen el filmstrip ni identity.check. Se excluyen pintura, clipping, stroke, filtros y visibilidad; regiones semánticas, use/text y SVG anidado no están soportados.
+
+`render.video` requiere ffmpeg en PATH. Devuelve MP4/WebM con fondo blanco y póster; informa fuente (export/engine), fps, dimensiones y duración codificada, que redondea hacia arriba al frame completo. No incluye audio, alpha, motion blur ni cámara nueva. Límite: 600 frames y 128 millones de píxeles; bajar width/fps o acortar start/end si se excede. No instala encoders.
+
+## Motion Director: relaciones, envelope, entrega accesible y estudios (2026-10-08)
+
+```sh
+# Expresiones y cadenas: van como operaciones dentro de un plan v2 o de ops.apply
+npm run mai -- operations describe --type motion.propagate
+npm run mai -- operations describe --type semantic.envelope
+# Variante prefers-reduced-motion (archivo aparte; el reporte trae el snippet <picture>)
+npm run mai -- export --profile standalone --reduced-motion still --expected-revision N
+# Estudios: lo que funcionó, con la aprobación literal del humano o como pending-review
+npm run mai -- study save --args '{"title":"Idle vivo","teaches":["Periodos coprimos"],"approval":{"by":"human","quote":"Así sí"}}'
+npm run mai -- study list --status approved
+```
+
+Las expresiones (`source:{kind:"expr"}`) se describen en `mai://expr/functions`. Un envelope `bounded` se mide en el tiempo después de cada transacción; `scene.identity` muestra cuánto presupuesto queda.

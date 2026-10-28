@@ -1,0 +1,252 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/infernal_obsidian_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "infernal_obsidian_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 320,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 310,
+    "cy": 205,
+    "rx": 155,
+    "ry": 120
+   }
+  },
+  {
+   "id": "infernal_obsidian_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "infernal_obsidian_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 257,
+     "y": 132
+    },
+    "tip": {
+     "x": 237,
+     "y": 54
+    }
+   },
+   "notes": "halfWidth=38"
+  },
+  {
+   "id": "infernal_obsidian_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "infernal_obsidian_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 447,
+     "y": 191
+    },
+    "tip": {
+     "x": 494,
+     "y": 132
+    }
+   },
+   "notes": "halfWidth=36"
+  },
+  {
+   "id": "infernal_obsidian_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "infernal_obsidian_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 311,
+     "y": 218.0
+    },
+    "outer": {
+     "x": 268,
+     "y": 218.0
+    },
+    "upper": {
+     "x": 289.5,
+     "y": 196
+    },
+    "lower": {
+     "x": 289.5,
+     "y": 240
+    },
+    "iris": {
+     "x": 289.5,
+     "y": 218.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 289.5,
+    "cy": 218.0,
+    "rx": 32.25,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "infernal_obsidian_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "infernal_obsidian_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 354,
+     "y": 245.0
+    },
+    "outer": {
+     "x": 403,
+     "y": 245.0
+    },
+    "upper": {
+     "x": 378.5,
+     "y": 226
+    },
+    "lower": {
+     "x": 378.5,
+     "y": 264
+    },
+    "iris": {
+     "x": 378.5,
+     "y": 245.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 378.5,
+    "cy": 245.0,
+    "rx": 36.75,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "infernal_obsidian_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 560,
+     "y": 544
+    },
+    "spine1": {
+     "x": 529,
+     "y": 451
+    },
+    "spine2": {
+     "x": 498,
+     "y": 358
+    },
+    "spine3": {
+     "x": 498,
+     "y": 280
+    },
+    "spine4": {
+     "x": 552,
+     "y": 241
+    },
+    "spine5": {
+     "x": 614,
+     "y": 257
+    },
+    "spine6": {
+     "x": 645,
+     "y": 311
+    }
+   },
+   "notes": "radius=48"
+  },
+  {
+   "id": "infernal_obsidian_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 548,
+    "cy": 204,
+    "rx": 24,
+    "ry": 24
+   }
+  },
+  {
+   "id": "infernal_obsidian_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 614,
+    "cy": 599,
+    "rx": 25,
+    "ry": 25
+   }
+  },
+  {
+   "id": "infernal_obsidian_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 140,
+    "cy": 432,
+    "rx": 14,
+    "ry": 14
+   }
+  },
+  {
+   "id": "infernal_obsidian_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 48,
+    "cy": 333,
+    "rx": 14,
+    "ry": 14
+   }
+  }
+ ]
+}

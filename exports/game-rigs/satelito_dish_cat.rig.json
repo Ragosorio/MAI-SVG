@@ -1,0 +1,293 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/satelito_dish_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "satelito_dish_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 265,
+     "y": 340
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 265,
+    "cy": 250,
+    "rx": 115,
+    "ry": 95
+   }
+  },
+  {
+   "id": "satelito_dish_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "satelito_dish_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 185,
+     "y": 200
+    },
+    "tip": {
+     "x": 112,
+     "y": 82
+    }
+   },
+   "notes": "halfWidth=52"
+  },
+  {
+   "id": "satelito_dish_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "satelito_dish_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 360,
+     "y": 215
+    },
+    "tip": {
+     "x": 488,
+     "y": 190
+    }
+   },
+   "notes": "halfWidth=48"
+  },
+  {
+   "id": "satelito_dish_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "satelito_dish_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 252,
+     "y": 235.0
+    },
+    "outer": {
+     "x": 205,
+     "y": 235.0
+    },
+    "upper": {
+     "x": 228.5,
+     "y": 215
+    },
+    "lower": {
+     "x": 228.5,
+     "y": 255
+    },
+    "iris": {
+     "x": 228.5,
+     "y": 235.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 228.5,
+    "cy": 235.0,
+    "rx": 35.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "satelito_dish_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "satelito_dish_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 295,
+     "y": 259.0
+    },
+    "outer": {
+     "x": 342,
+     "y": 259.0
+    },
+    "upper": {
+     "x": 318.5,
+     "y": 238
+    },
+    "lower": {
+     "x": 318.5,
+     "y": 280
+    },
+    "iris": {
+     "x": 318.5,
+     "y": 259.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 318.5,
+    "cy": 259.0,
+    "rx": 35.25,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "satelito_dish_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 505
+    },
+    "spine1": {
+     "x": 530,
+     "y": 475
+    },
+    "spine2": {
+     "x": 572,
+     "y": 420
+    },
+    "spine3": {
+     "x": 585,
+     "y": 360
+    },
+    "spine4": {
+     "x": 560,
+     "y": 310
+    },
+    "spine5": {
+     "x": 520,
+     "y": 295
+    }
+   },
+   "notes": "radius=38"
+  },
+  {
+   "id": "satelito_dish_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 100,
+    "rx": 55,
+    "ry": 55
+   }
+  },
+  {
+   "id": "satelito_dish_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 255,
+    "cy": 75,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "satelito_dish_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 302,
+    "cy": 140,
+    "rx": 11,
+    "ry": 11
+   }
+  },
+  {
+   "id": "satelito_dish_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 505,
+    "cy": 147,
+    "rx": 12,
+    "ry": 12
+   }
+  },
+  {
+   "id": "satelito_dish_cat.prop-float-5",
+   "role": "prop-float",
+   "label": "Flotante 5",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 400,
+    "cy": 170,
+    "rx": 9,
+    "ry": 9
+   }
+  },
+  {
+   "id": "satelito_dish_cat.prop-float-6",
+   "role": "prop-float",
+   "label": "Flotante 6",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 530,
+    "cy": 205,
+    "rx": 8,
+    "ry": 8
+   }
+  },
+  {
+   "id": "satelito_dish_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 102,
+    "rx": 62,
+    "ry": 52
+   }
+  }
+ ]
+}

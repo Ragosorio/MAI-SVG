@@ -1,0 +1,1 @@
+Candy está concentrada preparando una poción. Quiero un loop de 6 segundos que se sienta vivo: el humo de su frasco tiene que subir y enroscarse de forma natural, ella respira y parpadea, como si la estuviéramos filmando. Conserva sus ojos (turquesa y violeta) y su nariz exactamente como están.

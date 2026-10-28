@@ -2,6 +2,7 @@
 name: mai-separate-parts
 description: Preparar partes SVG conservando textura y transparencia mediante segmentación OpenCV asistida y recortes vectoriales.
 ---
+<!-- Generated from skills-src by scripts/build-skills.ts — edit the source, then run: npm run skills -->
 # mai-separate-parts
 
 Leer [herramientas](../../../docs/PRESERVATION.md). Ejecutar segment con rectángulos nombrados sobre PNG/WebP/JPG orientado. GrabCut distingue primer plano/fondo por color: no descubre anatomía ni regiones ocultas. Revisar contornos; ajustar hints o usar mode rectangle si la textura hace ambigua la separación.

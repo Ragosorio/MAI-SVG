@@ -1,0 +1,208 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/bocina_boombox_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "bocina_boombox_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 285
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 285,
+    "cy": 171,
+    "rx": 118,
+    "ry": 109
+   }
+  },
+  {
+   "id": "bocina_boombox_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bocina_boombox_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 190,
+     "y": 160
+    },
+    "tip": {
+     "x": 143,
+     "y": 121
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "bocina_boombox_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bocina_boombox_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 355,
+     "y": 95
+    },
+    "tip": {
+     "x": 355,
+     "y": 42
+    }
+   },
+   "notes": "halfWidth=26"
+  },
+  {
+   "id": "bocina_boombox_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bocina_boombox_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 262,
+     "y": 217.5
+    },
+    "outer": {
+     "x": 222,
+     "y": 217.5
+    },
+    "upper": {
+     "x": 242.0,
+     "y": 206
+    },
+    "lower": {
+     "x": 242.0,
+     "y": 229
+    },
+    "iris": {
+     "x": 242.0,
+     "y": 217.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 242.0,
+    "cy": 217.5,
+    "rx": 30.0,
+    "ry": 21.85
+   }
+  },
+  {
+   "id": "bocina_boombox_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "bocina_boombox_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 308,
+     "y": 187.5
+    },
+    "outer": {
+     "x": 346,
+     "y": 187.5
+    },
+    "upper": {
+     "x": 327.0,
+     "y": 174
+    },
+    "lower": {
+     "x": 327.0,
+     "y": 201
+    },
+    "iris": {
+     "x": 327.0,
+     "y": 187.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 327.0,
+    "cy": 187.5,
+    "rx": 28.5,
+    "ry": 25.65
+   }
+  },
+  {
+   "id": "bocina_boombox_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 240,
+     "y": 530
+    },
+    "spine1": {
+     "x": 190,
+     "y": 560
+    },
+    "spine2": {
+     "x": 150,
+     "y": 530
+    },
+    "spine3": {
+     "x": 125,
+     "y": 480
+    },
+    "spine4": {
+     "x": 100,
+     "y": 430
+    },
+    "spine5": {
+     "x": 95,
+     "y": 390
+    },
+    "spine6": {
+     "x": 125,
+     "y": 368
+    }
+   },
+   "notes": "radius=34"
+  },
+  {
+   "id": "bocina_boombox_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (estéreo)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 525,
+    "cy": 215,
+    "rx": 115,
+    "ry": 125
+   }
+  }
+ ],
+ "notes": "El estéreo va fijo (pin): la cabeza no lo arrastra."
+}

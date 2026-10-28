@@ -2,6 +2,7 @@
 name: mai-game-delivery
 description: Entregar gatos SVG y sprites de MAI a un proyecto de videojuego con rutas, correspondencias y capacidades de reproducción verificadas.
 ---
+<!-- Generated from skills-src by scripts/build-skills.ts — edit the source, then run: npm run skills -->
 # mai-game-delivery
 
 Leer [catálogo](../../../docs/GAME-ASSETS.md) y GAME-ASSETS.json para las 32 correspondencias PNG → SVG y rutas absolutas. assets/vector contiene personajes; assets/animated contiene composiciones con efectos originales. La existencia y validez técnica no significan rig preparado ni aprobación estética de los 32 gatos.

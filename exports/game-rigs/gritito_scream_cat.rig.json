@@ -1,0 +1,227 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/gritito_scream_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "gritito_scream_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 380,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 152,
+    "rx": 106,
+    "ry": 118
+   }
+  },
+  {
+   "id": "gritito_scream_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gritito_scream_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 285,
+     "y": 130
+    },
+    "tip": {
+     "x": 263,
+     "y": 91
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "gritito_scream_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gritito_scream_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 100
+    },
+    "tip": {
+     "x": 468,
+     "y": 42
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "gritito_scream_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gritito_scream_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 370,
+     "y": 175.5
+    },
+    "outer": {
+     "x": 320,
+     "y": 175.5
+    },
+    "upper": {
+     "x": 345.0,
+     "y": 152
+    },
+    "lower": {
+     "x": 345.0,
+     "y": 199
+    },
+    "iris": {
+     "x": 345.0,
+     "y": 175.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 345.0,
+    "cy": 175.5,
+    "rx": 37.5,
+    "ry": 44.65
+   }
+  },
+  {
+   "id": "gritito_scream_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "gritito_scream_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 402,
+     "y": 163.0
+    },
+    "outer": {
+     "x": 446,
+     "y": 163.0
+    },
+    "upper": {
+     "x": 424.0,
+     "y": 140
+    },
+    "lower": {
+     "x": 424.0,
+     "y": 186
+    },
+    "iris": {
+     "x": 424.0,
+     "y": 163.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 424.0,
+    "cy": 163.0,
+    "rx": 33.0,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "gritito_scream_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 300,
+     "y": 575
+    },
+    "spine1": {
+     "x": 235,
+     "y": 560
+    },
+    "spine2": {
+     "x": 185,
+     "y": 520
+    },
+    "spine3": {
+     "x": 165,
+     "y": 465
+    },
+    "spine4": {
+     "x": 175,
+     "y": 410
+    },
+    "spine5": {
+     "x": 160,
+     "y": 365
+    },
+    "spine6": {
+     "x": 125,
+     "y": 365
+    },
+    "spine7": {
+     "x": 112,
+     "y": 405
+    }
+   },
+   "notes": "radius=25"
+  },
+  {
+   "id": "gritito_scream_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1 (remolino de fondo izq.)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 150,
+    "cy": 160,
+    "rx": 95,
+    "ry": 85
+   }
+  },
+  {
+   "id": "gritito_scream_cat.prop-pin-2",
+   "role": "prop-pin",
+   "label": "Fijo 2 (remolino de fondo der.)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 585,
+    "cy": 290,
+    "rx": 60,
+    "ry": 100
+   }
+  }
+ ],
+ "notes": "Los remolinos del fondo van fijos: la cabeza no los arrastra."
+}

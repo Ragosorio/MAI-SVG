@@ -1,0 +1,218 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/platillo_saucer_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "platillo_saucer_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 300,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 305,
+    "cy": 205,
+    "rx": 130,
+    "ry": 110
+   }
+  },
+  {
+   "id": "platillo_saucer_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "platillo_saucer_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 240,
+     "y": 130
+    },
+    "tip": {
+     "x": 255,
+     "y": 70
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "platillo_saucer_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "platillo_saucer_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 390,
+     "y": 160
+    },
+    "tip": {
+     "x": 450,
+     "y": 135
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "platillo_saucer_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "platillo_saucer_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 298,
+     "y": 199.0
+    },
+    "outer": {
+     "x": 252,
+     "y": 199.0
+    },
+    "upper": {
+     "x": 275.0,
+     "y": 178
+    },
+    "lower": {
+     "x": 275.0,
+     "y": 220
+    },
+    "iris": {
+     "x": 275.0,
+     "y": 199.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 275.0,
+    "cy": 199.0,
+    "rx": 34.5,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "platillo_saucer_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "platillo_saucer_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 330,
+     "y": 216.5
+    },
+    "outer": {
+     "x": 377,
+     "y": 216.5
+    },
+    "upper": {
+     "x": 353.5,
+     "y": 195
+    },
+    "lower": {
+     "x": 353.5,
+     "y": 238
+    },
+    "iris": {
+     "x": 353.5,
+     "y": 216.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 353.5,
+    "cy": 216.5,
+    "rx": 35.25,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "platillo_saucer_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 440,
+     "y": 350
+    },
+    "spine1": {
+     "x": 470,
+     "y": 290
+    },
+    "spine2": {
+     "x": 510,
+     "y": 280
+    },
+    "spine3": {
+     "x": 545,
+     "y": 330
+    },
+    "spine4": {
+     "x": 555,
+     "y": 400
+    },
+    "spine5": {
+     "x": 530,
+     "y": 460
+    }
+   },
+   "notes": "radius=38"
+  },
+  {
+   "id": "platillo_saucer_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 350,
+    "cy": 380,
+    "rx": 340,
+    "ry": 340
+   }
+  },
+  {
+   "id": "platillo_saucer_cat.prop-pin-1",
+   "role": "prop-pin",
+   "label": "Fijo 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 310,
+    "cy": 450,
+    "rx": 215,
+    "ry": 65
+   }
+  }
+ ]
+}

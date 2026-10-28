@@ -1,0 +1,150 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/nadie_static_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "nadie_static_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 285,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 280,
+    "cy": 195,
+    "rx": 140,
+    "ry": 115
+   }
+  },
+  {
+   "id": "nadie_static_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nadie_static_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 240,
+     "y": 110
+    },
+    "tip": {
+     "x": 230,
+     "y": 58
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "nadie_static_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nadie_static_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 395,
+     "y": 150
+    },
+    "tip": {
+     "x": 437,
+     "y": 117
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "nadie_static_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nadie_static_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 300,
+     "y": 219.0
+    },
+    "outer": {
+     "x": 252,
+     "y": 219.0
+    },
+    "upper": {
+     "x": 276.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 276.0,
+     "y": 240
+    },
+    "iris": {
+     "x": 276.0,
+     "y": 219.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 276.0,
+    "cy": 219.0,
+    "rx": 36.0,
+    "ry": 39.9
+   }
+  },
+  {
+   "id": "nadie_static_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 500,
+     "y": 570
+    },
+    "spine1": {
+     "x": 560,
+     "y": 500
+    },
+    "spine2": {
+     "x": 575,
+     "y": 420
+    },
+    "spine3": {
+     "x": 545,
+     "y": 345
+    },
+    "spine4": {
+     "x": 480,
+     "y": 295
+    },
+    "spine5": {
+     "x": 455,
+     "y": 245
+    }
+   },
+   "notes": "radius=45"
+  }
+ ]
+}

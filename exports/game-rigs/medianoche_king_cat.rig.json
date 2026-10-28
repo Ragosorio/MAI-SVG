@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/medianoche_king_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "medianoche_king_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 315,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 315,
+    "cy": 195,
+    "rx": 150,
+    "ry": 125
+   }
+  },
+  {
+   "id": "medianoche_king_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "medianoche_king_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 250,
+     "y": 110
+    },
+    "tip": {
+     "x": 245,
+     "y": 48
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "medianoche_king_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "medianoche_king_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 440,
+     "y": 150
+    },
+    "tip": {
+     "x": 480,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "medianoche_king_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "medianoche_king_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 308,
+     "y": 213.0
+    },
+    "outer": {
+     "x": 264,
+     "y": 213.0
+    },
+    "upper": {
+     "x": 286.0,
+     "y": 190
+    },
+    "lower": {
+     "x": 286.0,
+     "y": 236
+    },
+    "iris": {
+     "x": 286.0,
+     "y": 213.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 286.0,
+    "cy": 213.0,
+    "rx": 33.0,
+    "ry": 43.7
+   }
+  },
+  {
+   "id": "medianoche_king_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "medianoche_king_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 337,
+     "y": 236.0
+    },
+    "outer": {
+     "x": 384,
+     "y": 236.0
+    },
+    "upper": {
+     "x": 360.5,
+     "y": 216
+    },
+    "lower": {
+     "x": 360.5,
+     "y": 256
+    },
+    "iris": {
+     "x": 360.5,
+     "y": 236.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 360.5,
+    "cy": 236.0,
+    "rx": 35.25,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "medianoche_king_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 520,
+     "y": 520
+    },
+    "spine1": {
+     "x": 525,
+     "y": 430
+    },
+    "spine2": {
+     "x": 545,
+     "y": 345
+    },
+    "spine3": {
+     "x": 575,
+     "y": 285
+    },
+    "spine4": {
+     "x": 620,
+     "y": 285
+    },
+    "spine5": {
+     "x": 645,
+     "y": 330
+    }
+   },
+   "notes": "radius=50"
+  }
+ ]
+}

@@ -16,3 +16,5 @@ Preservación: docs/PRESERVATION.md, identity.protect/release, segment/separate 
 
 
 Fluidos y preguntas al usuario: docs/FLUIDS-AND-CHOICES.md, fluid.add / fluid --live, choices propose/show/choose/dismiss y emotion.update. No elegir automáticamente una alternativa pendiente. Las propuestas pueden variar facciones o componentes con operaciones explícitas, conservando invariantes y referencias. Los fluidos actuales son efectos procedurales vectoriales, no física ni inferencia automática desde píxeles.
+
+Motion Director (plan aprobado 2026-10-07): F0 hecho salvo la corrida baseline. Antes de refactorizar el motor, `tests/golden.test.ts` debe seguir en verde; regenerar golden solo ante un cambio intencional y revisado. Campos de cualquier operación: `operations.describe`. Para ver movimiento: `render.filmstrip`. Benchmark: `scripts/motion-bench.ts` (métricas como evidencia, nunca aprobación estética).

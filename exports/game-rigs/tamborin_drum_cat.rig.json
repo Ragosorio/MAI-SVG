@@ -1,0 +1,244 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/tamborin_drum_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "tamborin_drum_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 330,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 350,
+    "cy": 185,
+    "rx": 150,
+    "ry": 120
+   }
+  },
+  {
+   "id": "tamborin_drum_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tamborin_drum_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 275,
+     "y": 125
+    },
+    "tip": {
+     "x": 285,
+     "y": 68
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "tamborin_drum_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tamborin_drum_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 475,
+     "y": 200
+    },
+    "tip": {
+     "x": 520,
+     "y": 172
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "tamborin_drum_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tamborin_drum_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 314,
+     "y": 210.0
+    },
+    "outer": {
+     "x": 272,
+     "y": 210.0
+    },
+    "upper": {
+     "x": 293.0,
+     "y": 188
+    },
+    "lower": {
+     "x": 293.0,
+     "y": 232
+    },
+    "iris": {
+     "x": 293.0,
+     "y": 210.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 293.0,
+    "cy": 210.0,
+    "rx": 31.5,
+    "ry": 41.8
+   }
+  },
+  {
+   "id": "tamborin_drum_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "tamborin_drum_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 356,
+     "y": 251.0
+    },
+    "outer": {
+     "x": 394,
+     "y": 251.0
+    },
+    "upper": {
+     "x": 375.0,
+     "y": 232
+    },
+    "lower": {
+     "x": 375.0,
+     "y": 270
+    },
+    "iris": {
+     "x": 375.0,
+     "y": 251.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 375.0,
+    "cy": 251.0,
+    "rx": 28.5,
+    "ry": 36.1
+   }
+  },
+  {
+   "id": "tamborin_drum_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 470,
+     "y": 570
+    },
+    "spine1": {
+     "x": 540,
+     "y": 535
+    },
+    "spine2": {
+     "x": 585,
+     "y": 470
+    },
+    "spine3": {
+     "x": 600,
+     "y": 400
+    },
+    "spine4": {
+     "x": 575,
+     "y": 355
+    }
+   },
+   "notes": "radius=40"
+  },
+  {
+   "id": "tamborin_drum_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 205,
+    "cy": 125,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "tamborin_drum_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 100,
+    "cy": 225,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "tamborin_drum_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 535,
+    "cy": 295,
+    "rx": 30,
+    "ry": 30
+   }
+  },
+  {
+   "id": "tamborin_drum_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 155,
+    "cy": 135,
+    "rx": 12,
+    "ry": 12
+   }
+  }
+ ]
+}

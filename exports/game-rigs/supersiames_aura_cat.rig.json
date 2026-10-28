@@ -1,0 +1,238 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/supersiames_aura_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "supersiames_aura_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 380,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 193,
+    "rx": 100,
+    "ry": 97
+   }
+  },
+  {
+   "id": "supersiames_aura_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "supersiames_aura_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 150
+    },
+    "tip": {
+     "x": 275,
+     "y": 63
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "supersiames_aura_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "supersiames_aura_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 455,
+     "y": 160
+    },
+    "tip": {
+     "x": 498,
+     "y": 113
+    }
+   },
+   "notes": "halfWidth=24"
+  },
+  {
+   "id": "supersiames_aura_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "supersiames_aura_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 378,
+     "y": 215.5
+    },
+    "outer": {
+     "x": 338,
+     "y": 215.5
+    },
+    "upper": {
+     "x": 358.0,
+     "y": 195
+    },
+    "lower": {
+     "x": 358.0,
+     "y": 236
+    },
+    "iris": {
+     "x": 358.0,
+     "y": 215.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 358.0,
+    "cy": 215.5,
+    "rx": 30.0,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "supersiames_aura_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "supersiames_aura_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 408,
+     "y": 231.0
+    },
+    "outer": {
+     "x": 440,
+     "y": 231.0
+    },
+    "upper": {
+     "x": 424.0,
+     "y": 214
+    },
+    "lower": {
+     "x": 424.0,
+     "y": 248
+    },
+    "iris": {
+     "x": 424.0,
+     "y": 231.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 424.0,
+    "cy": 231.0,
+    "rx": 24.0,
+    "ry": 32.3
+   }
+  },
+  {
+   "id": "supersiames_aura_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 235,
+     "y": 455
+    },
+    "spine1": {
+     "x": 180,
+     "y": 440
+    },
+    "spine2": {
+     "x": 135,
+     "y": 410
+    },
+    "spine3": {
+     "x": 115,
+     "y": 360
+    },
+    "spine4": {
+     "x": 110,
+     "y": 310
+    },
+    "spine5": {
+     "x": 95,
+     "y": 280
+    },
+    "spine6": {
+     "x": 78,
+     "y": 290
+    }
+   },
+   "notes": "radius=22"
+  },
+  {
+   "id": "supersiames_aura_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1 (punta de la faja roja)",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 575,
+    "cy": 470,
+    "rx": 45,
+    "ry": 45
+   }
+  },
+  {
+   "id": "supersiames_aura_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2 (llama del aura (izq.))",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 210,
+    "cy": 150,
+    "rx": 28,
+    "ry": 28
+   }
+  },
+  {
+   "id": "supersiames_aura_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3 (llama del aura (der.))",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 535,
+    "cy": 250,
+    "rx": 26,
+    "ry": 26
+   }
+  }
+ ],
+ "notes": "Aura: dos lenguas de fuego y la punta de la faja flotan; el resto del aura se dobla con el cuerpo."
+}

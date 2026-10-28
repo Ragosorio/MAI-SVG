@@ -1,0 +1,309 @@
+{
+ "id": "candy-potion",
+ "title": "Candy brewing a potion: living loop with original smoke",
+ "source": {
+  "file": "assets/vector/candy_alchemist_cat.svg"
+ },
+ "approvedName": "candy_alchemist_cat.svg",
+ "timeline": {
+  "duration": 6,
+  "fps": 24,
+  "loop": true
+ },
+ "prepare": [
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "mouth",
+    "name": "Boca original",
+    "source": "#mai-artwork",
+    "alpha": false,
+    "region": {
+     "kind": "ellipse",
+     "cx": 344,
+     "cy": 230,
+     "rx": 28,
+     "ry": 14
+    },
+    "role": "mouth"
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "eye-left",
+    "name": "Ojo turquesa",
+    "source": "#mai-artwork",
+    "alpha": false,
+    "region": {
+     "kind": "ellipse",
+     "cx": 296,
+     "cy": 195,
+     "rx": 24,
+     "ry": 23
+    },
+    "role": "eye-left"
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "eye-right",
+    "name": "Ojo violeta",
+    "source": "#mai-artwork",
+    "alpha": false,
+    "region": {
+     "kind": "ellipse",
+     "cx": 379,
+     "cy": 180,
+     "rx": 24,
+     "ry": 23
+    },
+    "role": "eye-right"
+   }
+  },
+  {
+   "tool": "part.extract",
+   "args": {
+    "id": "smoke",
+    "name": "Humo original del frasco",
+    "source": "#mai-artwork",
+    "role": "smoke",
+    "region": {
+     "kind": "polygon",
+     "points": [
+      {
+       "x": 482,
+       "y": 76
+      },
+      {
+       "x": 630,
+       "y": 76
+      },
+      {
+       "x": 630,
+       "y": 214
+      },
+      {
+       "x": 548,
+       "y": 214
+      },
+      {
+       "x": 530,
+       "y": 204
+      },
+      {
+       "x": 518,
+       "y": 197
+      },
+      {
+       "x": 500,
+       "y": 197
+      },
+      {
+       "x": 484,
+       "y": 180
+      }
+     ]
+    }
+   }
+  },
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "group",
+      "ids": [
+       "mai-artwork",
+       "mouth",
+       "eye-left",
+       "eye-right",
+       "smoke"
+      ],
+      "id": "candy-root",
+      "name": "Candy"
+     }
+    ]
+   },
+   "label": "Agrupar"
+  },
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "candy",
+       "role": "character",
+       "label": "Candy",
+       "targets": [
+        "candy-root"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "head",
+       "role": "head",
+       "label": "Cabeza",
+       "targets": [],
+       "parent": "candy",
+       "region": {
+        "kind": "ellipse",
+        "cx": 337,
+        "cy": 190,
+        "rx": 112,
+        "ry": 86
+       },
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "flask",
+       "role": "flask",
+       "label": "Frasco",
+       "targets": [],
+       "parent": "candy",
+       "region": {
+        "kind": "rect",
+        "x": 443,
+        "y": 198,
+        "width": 122,
+        "height": 210
+       },
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "nose",
+       "role": "nose",
+       "label": "Nariz",
+       "targets": [],
+       "parent": "head",
+       "region": {
+        "kind": "ellipse",
+        "cx": 340,
+        "cy": 211,
+        "rx": 11,
+        "ry": 7
+       },
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "mouth",
+       "role": "mouth",
+       "label": "Boca",
+       "targets": [
+        "mouth"
+       ],
+       "parent": "head",
+       "region": {
+        "kind": "ellipse",
+        "cx": 344,
+        "cy": 230,
+        "rx": 28,
+        "ry": 14
+       },
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-left",
+       "role": "eye-left",
+       "label": "Ojo izquierdo (turquesa)",
+       "targets": [
+        "eye-left"
+       ],
+       "parent": "head",
+       "region": {
+        "kind": "ellipse",
+        "cx": 296,
+        "cy": 195,
+        "rx": 24,
+        "ry": 23
+       },
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "eye-right",
+       "role": "eye-right",
+       "label": "Ojo derecho (violeta)",
+       "targets": [
+        "eye-right"
+       ],
+       "parent": "head",
+       "region": {
+        "kind": "ellipse",
+        "cx": 379,
+        "cy": 180,
+        "rx": 24,
+        "ry": 23
+       },
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "smoke",
+       "role": "smoke",
+       "label": "Humo",
+       "targets": [
+        "smoke"
+       ],
+       "parent": "flask",
+       "status": "confirmed",
+       "source": "agent"
+      }
+     }
+    ]
+   },
+   "label": "Partes de Candy"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "eye-left",
+   "eye-right",
+   "nose"
+  ]
+ },
+ "context": {
+  "purpose": "character-idle",
+  "placement": "game hub hero card",
+  "viewport": {
+   "width": 700,
+   "height": 700
+  },
+  "loop": {
+   "required": true,
+   "shouldFeelNonRepetitive": true
+  },
+  "priority": {
+   "faceReadability": "critical"
+  }
+ }
+}

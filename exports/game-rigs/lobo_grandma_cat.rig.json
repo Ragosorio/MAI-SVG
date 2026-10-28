@@ -1,0 +1,193 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/lobo_grandma_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "lobo_grandma_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 500,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 515,
+    "cy": 188,
+    "rx": 109,
+    "ry": 112
+   }
+  },
+  {
+   "id": "lobo_grandma_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lobo_grandma_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 430,
+     "y": 135
+    },
+    "tip": {
+     "x": 405,
+     "y": 51
+    }
+   },
+   "notes": "halfWidth=16 · oreja dentro del gorro: angosta (halfWidth 16) para no arrastrar el encaje"
+  },
+  {
+   "id": "lobo_grandma_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lobo_grandma_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 585,
+     "y": 140
+    },
+    "tip": {
+     "x": 613,
+     "y": 71
+    }
+   },
+   "notes": "halfWidth=16 · oreja que asoma por el gorro: angosta"
+  },
+  {
+   "id": "lobo_grandma_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lobo_grandma_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 522,
+     "y": 208.0
+    },
+    "outer": {
+     "x": 484,
+     "y": 208.0
+    },
+    "upper": {
+     "x": 503.0,
+     "y": 194
+    },
+    "lower": {
+     "x": 503.0,
+     "y": 222
+    },
+    "iris": {
+     "x": 503.0,
+     "y": 208.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 503.0,
+    "cy": 208.0,
+    "rx": 28.5,
+    "ry": 26.6
+   }
+  },
+  {
+   "id": "lobo_grandma_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "lobo_grandma_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 546,
+     "y": 216.0
+    },
+    "outer": {
+     "x": 580,
+     "y": 216.0
+    },
+    "upper": {
+     "x": 563.0,
+     "y": 203
+    },
+    "lower": {
+     "x": 563.0,
+     "y": 229
+    },
+    "iris": {
+     "x": 563.0,
+     "y": 216.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 563.0,
+    "cy": 216.0,
+    "rx": 25.5,
+    "ry": 24.7
+   }
+  },
+  {
+   "id": "lobo_grandma_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 225,
+     "y": 470
+    },
+    "spine1": {
+     "x": 175,
+     "y": 440
+    },
+    "spine2": {
+     "x": 145,
+     "y": 390
+    },
+    "spine3": {
+     "x": 130,
+     "y": 330
+    },
+    "spine4": {
+     "x": 120,
+     "y": 270
+    },
+    "spine5": {
+     "x": 100,
+     "y": 225
+    },
+    "spine6": {
+     "x": 60,
+     "y": 215
+    }
+   },
+   "notes": "radius=52"
+  }
+ ],
+ "notes": "Orejas dentro del gorro de encaje: orejas angostas (16) para que el movimiento no deforme el encaje."
+}

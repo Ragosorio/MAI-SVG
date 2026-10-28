@@ -1,0 +1,70 @@
+{
+ "id": "bell-notify",
+ "title": "Notification bell micro-interaction",
+ "source": {
+  "case": "original.svg"
+ },
+ "approvedName": "bell.svg",
+ "timeline": {
+  "duration": 0.8,
+  "fps": 60,
+  "loop": false
+ },
+ "prepare": [
+  {
+   "tool": "ops.apply",
+   "args": {
+    "ops": [
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "bell",
+       "role": "icon",
+       "label": "Campana",
+       "targets": [
+        "bell"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     },
+     {
+      "type": "semantic.label",
+      "node": {
+       "id": "badge",
+       "role": "badge",
+       "label": "Insignia",
+       "targets": [
+        "badge"
+       ],
+       "status": "confirmed",
+       "source": "agent"
+      }
+     }
+    ]
+   },
+   "label": "Partes"
+  }
+ ],
+ "invariants": {
+  "parts": [
+   "bell",
+   "badge"
+  ],
+  "finalFrameEqualsOriginal": true
+ },
+ "context": {
+  "purpose": "ui-icon",
+  "placement": "toolbar button",
+  "viewport": {
+   "width": 48,
+   "height": 48
+  },
+  "loop": {
+   "required": false
+  },
+  "accessibility": {
+   "reducedMotionVariant": true
+  }
+ }
+}

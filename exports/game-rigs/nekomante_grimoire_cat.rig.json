@@ -1,0 +1,244 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/nekomante_grimoire_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "nekomante_grimoire_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 380,
+     "y": 300
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 180,
+    "rx": 140,
+    "ry": 115
+   }
+  },
+  {
+   "id": "nekomante_grimoire_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nekomante_grimoire_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 325,
+     "y": 120
+    },
+    "tip": {
+     "x": 330,
+     "y": 62
+    }
+   },
+   "notes": "halfWidth=30"
+  },
+  {
+   "id": "nekomante_grimoire_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nekomante_grimoire_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 480,
+     "y": 160
+    },
+    "tip": {
+     "x": 526,
+     "y": 137
+    }
+   },
+   "notes": "halfWidth=28"
+  },
+  {
+   "id": "nekomante_grimoire_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nekomante_grimoire_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 366,
+     "y": 195.5
+    },
+    "outer": {
+     "x": 320,
+     "y": 195.5
+    },
+    "upper": {
+     "x": 343.0,
+     "y": 173
+    },
+    "lower": {
+     "x": 343.0,
+     "y": 218
+    },
+    "iris": {
+     "x": 343.0,
+     "y": 195.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 343.0,
+    "cy": 195.5,
+    "rx": 34.5,
+    "ry": 42.75
+   }
+  },
+  {
+   "id": "nekomante_grimoire_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "nekomante_grimoire_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 398,
+     "y": 218.5
+    },
+    "outer": {
+     "x": 445,
+     "y": 218.5
+    },
+    "upper": {
+     "x": 421.5,
+     "y": 197
+    },
+    "lower": {
+     "x": 421.5,
+     "y": 240
+    },
+    "iris": {
+     "x": 421.5,
+     "y": 218.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 421.5,
+    "cy": 218.5,
+    "rx": 35.25,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "nekomante_grimoire_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 570,
+     "y": 560
+    },
+    "spine1": {
+     "x": 615,
+     "y": 480
+    },
+    "spine2": {
+     "x": 630,
+     "y": 390
+    },
+    "spine3": {
+     "x": 615,
+     "y": 305
+    },
+    "spine4": {
+     "x": 570,
+     "y": 272
+    }
+   },
+   "notes": "radius=42"
+  },
+  {
+   "id": "nekomante_grimoire_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 145,
+    "cy": 262,
+    "rx": 85,
+    "ry": 85
+   }
+  },
+  {
+   "id": "nekomante_grimoire_cat.prop-float-2",
+   "role": "prop-float",
+   "label": "Flotante 2",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 182,
+    "cy": 102,
+    "rx": 38,
+    "ry": 38
+   }
+  },
+  {
+   "id": "nekomante_grimoire_cat.prop-float-3",
+   "role": "prop-float",
+   "label": "Flotante 3",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 238,
+    "cy": 152,
+    "rx": 26,
+    "ry": 26
+   }
+  },
+  {
+   "id": "nekomante_grimoire_cat.prop-float-4",
+   "role": "prop-float",
+   "label": "Flotante 4",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 515,
+    "cy": 270,
+    "rx": 15,
+    "ry": 15
+   }
+  }
+ ]
+}

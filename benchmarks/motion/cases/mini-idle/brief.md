@@ -1,0 +1,1 @@
+Este personaje va en la pantalla de inventario del juego (se ve a unos 512 px). Necesito un idle de 4 segundos en loop que se sienta vivo y nada robótico: que respire, que tenga algo de mirada, y que el humo del frasco fluya. No le cambies los ojos ni la nariz.

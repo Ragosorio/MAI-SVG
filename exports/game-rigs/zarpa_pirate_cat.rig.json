@@ -1,0 +1,188 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/zarpa_pirate_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "zarpa_pirate_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 370,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 395,
+    "cy": 200,
+    "rx": 180,
+    "ry": 120
+   }
+  },
+  {
+   "id": "zarpa_pirate_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "zarpa_pirate_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 300,
+     "y": 135
+    },
+    "tip": {
+     "x": 295,
+     "y": 78
+    }
+   },
+   "notes": "halfWidth=25"
+  },
+  {
+   "id": "zarpa_pirate_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "zarpa_pirate_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 465,
+     "y": 270
+    },
+    "tip": {
+     "x": 500,
+     "y": 236
+    }
+   },
+   "notes": "halfWidth=20"
+  },
+  {
+   "id": "zarpa_pirate_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "zarpa_pirate_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 349,
+     "y": 218.0
+    },
+    "outer": {
+     "x": 307,
+     "y": 218.0
+    },
+    "upper": {
+     "x": 328.0,
+     "y": 198
+    },
+    "lower": {
+     "x": 328.0,
+     "y": 238
+    },
+    "iris": {
+     "x": 328.0,
+     "y": 218.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 328.0,
+    "cy": 218.0,
+    "rx": 31.5,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "zarpa_pirate_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "zarpa_pirate_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 386,
+     "y": 250.0
+    },
+    "outer": {
+     "x": 430,
+     "y": 250.0
+    },
+    "upper": {
+     "x": 408.0,
+     "y": 230
+    },
+    "lower": {
+     "x": 408.0,
+     "y": 270
+    },
+    "iris": {
+     "x": 408.0,
+     "y": 250.0
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 408.0,
+    "cy": 250.0,
+    "rx": 33.0,
+    "ry": 38.0
+   }
+  },
+  {
+   "id": "zarpa_pirate_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 545,
+     "y": 580
+    },
+    "spine1": {
+     "x": 595,
+     "y": 520
+    },
+    "spine2": {
+     "x": 620,
+     "y": 450
+    },
+    "spine3": {
+     "x": 625,
+     "y": 390
+    },
+    "spine4": {
+     "x": 600,
+     "y": 345
+    },
+    "spine5": {
+     "x": 560,
+     "y": 330
+    }
+   },
+   "notes": "radius=35"
+  }
+ ]
+}

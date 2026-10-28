@@ -1,0 +1,199 @@
+{
+ "schema": "mai.game-rig/v1",
+ "asset": "assets/vector/manzanita_apple_cat.svg",
+ "viewBox": [
+  0,
+  0,
+  700,
+  700
+ ],
+ "deformer": "mls-rigid + linear blend (game runtime)",
+ "semanticInference": false,
+ "annotatedBy": "regenerado por RESTAURA-MAI desde game/src/data/catRigs.json (2026-10-28); geometría del juego, nombres de props no recuperados",
+ "visualReview": "pending",
+ "nodes": [
+  {
+   "id": "manzanita_apple_cat.head",
+   "role": "head",
+   "label": "Cabeza",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "neck": {
+     "x": 375,
+     "y": 320
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 380,
+    "cy": 200,
+    "rx": 165,
+    "ry": 120
+   }
+  },
+  {
+   "id": "manzanita_apple_cat.ear-left",
+   "role": "ear-left",
+   "label": "Oreja izquierda",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "manzanita_apple_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 345,
+     "y": 133
+    },
+    "tip": {
+     "x": 329,
+     "y": 64
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "manzanita_apple_cat.ear-right",
+   "role": "ear-right",
+   "label": "Oreja derecha",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "manzanita_apple_cat.head",
+   "landmarks": {
+    "base": {
+     "x": 479,
+     "y": 183
+    },
+    "tip": {
+     "x": 538,
+     "y": 128
+    }
+   },
+   "notes": "halfWidth=40"
+  },
+  {
+   "id": "manzanita_apple_cat.eye-left",
+   "role": "eye-left",
+   "label": "Ojo izquierdo",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "manzanita_apple_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 360,
+     "y": 194.5
+    },
+    "outer": {
+     "x": 313,
+     "y": 194.5
+    },
+    "upper": {
+     "x": 336.5,
+     "y": 173
+    },
+    "lower": {
+     "x": 336.5,
+     "y": 216
+    },
+    "iris": {
+     "x": 336.5,
+     "y": 194.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 336.5,
+    "cy": 194.5,
+    "rx": 35.25,
+    "ry": 40.85
+   }
+  },
+  {
+   "id": "manzanita_apple_cat.eye-right",
+   "role": "eye-right",
+   "label": "Ojo derecho",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "parent": "manzanita_apple_cat.head",
+   "landmarks": {
+    "inner": {
+     "x": 402,
+     "y": 226.5
+    },
+    "outer": {
+     "x": 457,
+     "y": 226.5
+    },
+    "upper": {
+     "x": 429.5,
+     "y": 206
+    },
+    "lower": {
+     "x": 429.5,
+     "y": 247
+    },
+    "iris": {
+     "x": 429.5,
+     "y": 226.5
+    }
+   },
+   "region": {
+    "kind": "ellipse",
+    "cx": 429.5,
+    "cy": 226.5,
+    "rx": 41.25,
+    "ry": 38.95
+   }
+  },
+  {
+   "id": "manzanita_apple_cat.tail",
+   "role": "tail",
+   "label": "Cola",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "landmarks": {
+    "spine0": {
+     "x": 440,
+     "y": 510
+    },
+    "spine1": {
+     "x": 520,
+     "y": 520
+    },
+    "spine2": {
+     "x": 575,
+     "y": 570
+    },
+    "spine3": {
+     "x": 570,
+     "y": 630
+    },
+    "spine4": {
+     "x": 530,
+     "y": 670
+    }
+   },
+   "notes": "radius=50"
+  },
+  {
+   "id": "manzanita_apple_cat.prop-float-1",
+   "role": "prop-float",
+   "label": "Flotante 1",
+   "targets": [],
+   "status": "proposed",
+   "source": "agent",
+   "region": {
+    "kind": "ellipse",
+    "cx": 350,
+    "cy": 355,
+    "rx": 345,
+    "ry": 345
+   }
+  }
+ ]
+}

@@ -8,6 +8,26 @@
 `locked` nothing · `protected` rigid motion only · `deformable` expression warps within budget, no recolor/delete/topology · `style-preserved` / `color-preserved` keep paint · `topology-preserved` keep nodes/subpaths · `silhouette-preserved` rendered-mask IoU ≥ 0.9 · `free`.
 Use `deformable` + `color-preserved` + `topology-preserved` for faces that should act; `protected` for features that must not deform (nose, logo marks). {{tool:identity.release}} only with the human's explicit consent.
 
+## Creative envelope: constrain identity, not creativity
+
+Use it when a protected part needs a short, expressive excursion, such as an eye that blinks, a body that squashes on landing, or a mark that smears on a fast move, while its shape at rest stays exact. The op is `semantic.envelope {id, envelope}`, and it needs the human's agreement, like any change to protection.
+
+- **Channels.** `rigidTransform`, `deform` (scale and geometry), `paint`, `topology`, `effects` and `visibility`. Each one is `free`, `bounded` or `preserve`. A channel's policy overrides what the protection levels allow for that channel: `preserve` denies it even on a free part.
+- **Bounds** for `bounded` channels:
+  - `translate` and `deform`: fraction of the part size;
+  - `rotation`: degrees;
+  - `scale`, `paint`, `opacity`: fractions.
+  - Defaults: .15, .12, 15°, .15, .1 and .5.
+- **`transientDeviation {allowed, maxPeak (2×), maxDuration (.5 s), mustRecover (true)}`.** A bounded channel may go over budget only briefly, up to maxPeak× the budget, and must be back before every rest point: start, end, and settle or hold beats.
+- **Measurement.** It is measured over time after every transaction, even when the same transaction loosened the policy. A failure rolls back with `IDENTITY_BLOCKED`, `detail.kind` set to `envelope` or `transient`, and the channel, metric, measured value, budget, time span and reason.
+- **`preserve` also guards ancestors.** Breathing or squash on a parent group scales the features inside it. Small ancestor scale (within the preservation budget, judged by the signal's real amplitude) passes; more than that is blocked with `envelopeChannels` and `viaAncestor` in the error. For characters that breathe and jump, give facial features `deform: "bounded"` with a small budget and a transient instead of `preserve`.
+- **Budget left.** `scene.identity` lists each part's envelope, its peak/budget ratios and its excursions.
+- **Example**, an eye that may blink:
+
+```json
+{"deform": "bounded", "bounds": {"scale": 0.5}, "transientDeviation": {"allowed": true, "maxDuration": 0.4}}
+```
+
 ## Proof
 {{tool:identity.check}} needs an explicit `reference` and non-empty `parts`/`times`:
 - `{kind:"snapshot", id}` — "nothing changed since what I saw"
