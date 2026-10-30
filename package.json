@@ -27,7 +27,7 @@
     "svgo": "4.1.0",
     "svgpath": "2.6.0",
     "ws": "8.22.0",
-    "zod": "3.25.76"
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@types/css-tree": "2.3.10",
@@ -37,6 +37,6 @@
     "@types/ws": "8.18.2",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
-    "vite": "8.3.2"
+    "vite": "8.3.5"
   }
 }
